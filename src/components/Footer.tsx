@@ -8,8 +8,8 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="font-heading text-2xl sm:text-3xl font-bold mb-3">
-              <span className="text-foreground">114</span>
-              <span className="text-neon-red-orange ml-2">Whiskey Row</span>
+              <span className="text-neon-red-orange">One Fourteen</span>
+              <span className="text-foreground ml-2">Bar</span>
             </h3>
             <p className="font-paragraph text-xs sm:text-sm text-foreground/70 mb-4">
               Modern dive. Late-night energy. Whiskey Row grit.
@@ -79,7 +79,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-8 pt-6 border-t border-neon-red-orange/20">
           <p className="font-paragraph text-xs text-center text-foreground/60">
-            © {new Date().getFullYear()} 114 Whiskey Row. All rights reserved.
+            © {new Date().getFullYear()} One Fourteen Bar. All rights reserved.
           </p>
         </div>
       </div>

@@ -23,8 +23,8 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="font-heading text-2xl sm:text-3xl font-bold">
-            <span className="text-foreground">114</span>
-            <span className="text-neon-red-orange ml-2">Whiskey Row</span>
+            <span className="text-neon-red-orange">One Fourteen</span>
+            <span className="text-foreground ml-2">Bar</span>
           </Link>
 
           {/* Desktop Navigation */}
