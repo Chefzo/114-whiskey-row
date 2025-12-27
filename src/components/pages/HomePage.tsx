@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, ArrowRight, Zap } from 'lucide-react';
+import { Calendar, MapPin, ArrowRight, Zap, Clock, Music, Flame } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -77,7 +77,7 @@ export default function HomePage() {
             >
               <Zap size={14} className="text-warm-amber" />
               <span className="font-paragraph text-xs uppercase tracking-widest text-warm-amber">
-                Est. Louisville, KY
+                Downtown Louisville's Premier Dive Bar
               </span>
             </motion.div>
 
@@ -139,7 +139,71 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== ABOUT SECTION ===== */}
+      {/* ===== QUICK INFO SECTION ===== */}
+      <section className="w-full py-12 sm:py-16 px-4 bg-gradient-to-r from-neon-red-orange/10 via-transparent to-warm-amber/10 border-y border-neon-red-orange/20">
+        <div className="max-w-[120rem] mx-auto">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8"
+          >
+            {/* Location */}
+            <motion.div variants={itemVariants} className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-neon-red-orange/20 flex items-center justify-center">
+                <MapPin size={24} className="text-neon-red-orange" />
+              </div>
+              <div>
+                <h3 className="font-heading text-lg font-bold text-foreground mb-1">
+                  114 W Main St
+                </h3>
+                <p className="font-paragraph text-sm text-foreground/70">
+                  Whiskey Row, Downtown Louisville
+                </p>
+                <Link to="/visit" className="font-paragraph text-xs text-neon-red-orange hover:text-warm-amber transition-colors mt-2 inline-flex items-center gap-1">
+                  Get Directions <ArrowRight size={12} />
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Hours */}
+            <motion.div variants={itemVariants} className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-warm-amber/20 flex items-center justify-center">
+                <Clock size={24} className="text-warm-amber" />
+              </div>
+              <div>
+                <h3 className="font-heading text-lg font-bold text-foreground mb-1">
+                  Open Now
+                </h3>
+                <p className="font-paragraph text-sm text-foreground/70">
+                  Mon-Thu: 4pm-2am<br />
+                  Fri-Sat: 12pm-4am<br />
+                  Sun: 12pm-2am
+                </p>
+              </div>
+            </motion.div>
+
+            {/* What's On */}
+            <motion.div variants={itemVariants} className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-neon-red-orange/20 flex items-center justify-center">
+                <Flame size={24} className="text-neon-red-orange" />
+              </div>
+              <div>
+                <h3 className="font-heading text-lg font-bold text-foreground mb-1">
+                  What's Happening
+                </h3>
+                <p className="font-paragraph text-sm text-foreground/70">
+                  DJs, game days & live energy
+                </p>
+                <Link to="/events" className="font-paragraph text-xs text-neon-red-orange hover:text-warm-amber transition-colors mt-2 inline-flex items-center gap-1">
+                  See Events <ArrowRight size={12} />
+                </Link>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
       <section className="w-full py-16 sm:py-24 px-4 bg-black/40 backdrop-blur-sm">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
@@ -162,6 +226,15 @@ export default function HomePage() {
               <p className="font-paragraph text-sm sm:text-base text-foreground/70">
                 No pretense. No dress code. Just good times and real energy.
               </p>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link
+                  to="/visit"
+                  className="inline-flex items-center gap-2 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-sm uppercase tracking-wider font-semibold px-6 py-3 rounded-lg transition-all shadow-lg hover:shadow-xl hover:shadow-neon-red-orange/40"
+                >
+                  Plan Your Visit
+                  <ArrowRight size={16} />
+                </Link>
+              </motion.div>
             </motion.div>
 
             {/* Image */}
