@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, MapPin } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -16,6 +16,10 @@ export default function Header() {
   ];
 
   const isActive = (path: string) => location.pathname === path;
+
+  const handleGetDirections = () => {
+    window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank');
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/98 backdrop-blur-md border-b border-neon-red-orange/10">
@@ -47,6 +51,17 @@ export default function Header() {
               </Link>
             ))}
           </nav>
+
+          {/* Desktop Get Directions Button */}
+          <motion.button
+            onClick={handleGetDirections}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="hidden md:flex items-center gap-2 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-xs uppercase tracking-wider font-semibold px-5 py-2.5 rounded-lg transition-all shadow-lg hover:shadow-xl hover:shadow-neon-red-orange/40"
+          >
+            <MapPin size={16} />
+            Get Directions
+          </motion.button>
 
           {/* Mobile Menu Button */}
           <motion.button
@@ -99,6 +114,19 @@ export default function Header() {
                   </Link>
                 </motion.div>
               ))}
+              <motion.button
+                onClick={() => {
+                  handleGetDirections();
+                  setIsMenuOpen(false);
+                }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navLinks.length * 0.05 }}
+                className="w-full flex items-center justify-center gap-2 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-xs uppercase tracking-wider font-semibold px-4 py-3 rounded-lg transition-all mt-4"
+              >
+                <MapPin size={16} />
+                Get Directions
+              </motion.button>
             </div>
           </motion.nav>
         )}

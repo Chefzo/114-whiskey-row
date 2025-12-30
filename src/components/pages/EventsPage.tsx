@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, ExternalLink } from 'lucide-react';
+import { Calendar, Clock, ExternalLink, MapPin } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -15,11 +15,11 @@ export default function EventsPage() {
     const fetchEvents = async () => {
       const { items } = await BaseCrudService.getAll<Events>('events');
       
-      // Sort by date
+      // Sort by date (upcoming first)
       const sorted = items.sort((a, b) => {
-        const dateA = a.eventDate ? new Date(a.eventDate).getTime() : 0;
-        const dateB = b.eventDate ? new Date(b.eventDate).getTime() : 0;
-        return dateB - dateA;
+        const dateA = a.eventDate ? new Date(a.eventDate).getTime() : Infinity;
+        const dateB = b.eventDate ? new Date(b.eventDate).getTime() : Infinity;
+        return dateA - dateB;
       });
       
       setEvents(sorted);
@@ -53,6 +53,20 @@ export default function EventsPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+
+      {/* Mobile Fixed Get Directions Button */}
+      <motion.button
+        onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="fixed bottom-6 left-4 right-4 md:hidden z-40 flex items-center justify-center gap-2 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-xs uppercase tracking-wider font-semibold px-6 py-3 rounded-lg transition-all shadow-xl hover:shadow-2xl hover:shadow-neon-red-orange/40"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <MapPin size={16} />
+        Get Directions
+      </motion.button>
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">

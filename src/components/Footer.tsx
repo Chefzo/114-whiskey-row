@@ -33,7 +33,7 @@ export default function Footer() {
                 <span className="text-foreground ml-2">Bar</span>
               </h3>
               <p className="font-paragraph text-xs sm:text-sm text-foreground/70 mb-4 leading-relaxed">
-                Modern dive. Late-night energy. Whiskey Row grit.
+                The grit on Whiskey Row. Loud music, strong drinks, real energy.
               </p>
               <div className="flex gap-3">
                 <motion.a
@@ -74,9 +74,15 @@ export default function Footer() {
                 <p className="font-paragraph text-xs sm:text-sm text-foreground/90">
                   Louisville, KY 40202
                 </p>
-                <p className="font-paragraph text-xs text-warm-amber">
-                  Across from KFC Yum Center
+                <p className="font-paragraph text-xs text-neon-red-orange">
+                  Walk-ins always welcome
                 </p>
+                <button
+                  onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
+                  className="font-paragraph text-xs text-warm-amber hover:text-neon-red-orange transition-colors mt-2 inline-flex items-center gap-1"
+                >
+                  Get Directions <ExternalLink size={12} />
+                </button>
               </div>
             </motion.div>
 
