@@ -45,7 +45,10 @@ export function getBarStatus(): BarStatus {
   if (isOpen) {
     const closeHour = Math.floor(todaySchedule.close / 60) % 24;
     const closeMinute = todaySchedule.close % 60;
-    nextEvent = `Closes at ${closeHour === 0 ? 12 : closeHour > 12 ? closeHour - 12 : closeHour}:${closeMinute.toString().padStart(2, '0')}${closeHour >= 12 ? 'am' : 'pm'}`;
+    const isMidnightOrLater = todaySchedule.close >= 24 * 60;
+    const displayHour = closeHour === 0 ? 12 : closeHour > 12 ? closeHour - 12 : closeHour;
+    const ampm = isMidnightOrLater ? 'am' : (closeHour >= 12 ? 'pm' : 'am');
+    nextEvent = `Closes at ${displayHour}:${closeMinute.toString().padStart(2, '0')}${ampm}`;
   } else {
     const openHour = Math.floor(todaySchedule.open / 60);
     const openMinute = todaySchedule.open % 60;

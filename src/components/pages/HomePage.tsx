@@ -100,7 +100,7 @@ export default function HomePage() {
             >
               <Zap size={14} className="text-warm-amber" />
               <span className="font-paragraph text-xs uppercase tracking-widest text-warm-amber">
-                Downtown Louisville's Premier Dive Bar
+                Whiskey Row Dive Bar
               </span>
             </motion.div>
 
@@ -434,7 +434,7 @@ export default function HomePage() {
               className="text-center py-12"
             >
               <p className="font-paragraph text-base text-foreground/60">
-                Check back soon for upcoming events
+                Weekly DJs, game days, and pop-ups. Full calendar dropping soon.
               </p>
             </motion.div>
           )}

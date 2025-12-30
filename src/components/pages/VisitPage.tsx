@@ -169,7 +169,7 @@ export default function VisitPage() {
               See You <span className="text-neon-red-orange">Tonight</span>
             </h2>
             <p className="font-paragraph text-lg text-foreground/80 mb-8 max-w-2xl mx-auto">
-              No reservations. No dress code. Just show up and vibe.
+              No reservations. No dress code. Just show up.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
