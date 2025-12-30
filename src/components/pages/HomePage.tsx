@@ -367,9 +367,6 @@ export default function HomePage() {
               <p className="font-paragraph text-base sm:text-lg text-foreground/85 leading-relaxed">
                 Grit on Whiskey Row. Loud music. Strong drinks. Real vibe.
               </p>
-              <p className="font-paragraph text-sm sm:text-base text-foreground/70">
-                No pretense. No dress code. Just good times.
-              </p>
             </motion.div>
 
             {/* Image */}
@@ -468,7 +465,7 @@ export default function HomePage() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-center py-12"
+              className="text-center py-6"
             >
               <p className="font-paragraph text-base text-foreground/60">
                 Weekly DJs, game days, and pop-ups. Full calendar dropping soon.
@@ -579,7 +576,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== CTA SECTION ===== */}
-      <section className="w-full py-16 sm:py-24 px-4">
+      <section className="w-full py-16 sm:py-24 px-4 hidden sm:block">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
