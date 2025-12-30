@@ -131,7 +131,7 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="font-paragraph text-lg sm:text-xl text-foreground/85 mb-10 leading-relaxed px-2 max-w-3xl mx-auto"
           >
-            Modern dive. Late-night energy. The spot locals choose before the game and after the show.
+            Modern dive on Whiskey Row. Pregame here. Stay late.
           </motion.p>
 
           <motion.div
@@ -141,21 +141,21 @@ export default function HomePage() {
             className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto sm:justify-center"
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 sm:flex-none">
-              <Link
-                to="/events"
+              <button
+                onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
                 className="w-full inline-flex items-center justify-center gap-3 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-sm uppercase tracking-wider font-semibold px-8 py-4 rounded-lg transition-all shadow-xl hover:shadow-2xl hover:shadow-neon-red-orange/40"
               >
-                See What's On
-                <ArrowRight size={18} />
-              </Link>
+                Get Directions
+                <MapPin size={18} />
+              </button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 sm:flex-none">
               <Link
-                to="/visit"
+                to="/events"
                 className="w-full inline-flex items-center justify-center gap-3 bg-transparent border-2 border-neon-red-orange hover:bg-neon-red-orange/10 text-neon-red-orange font-paragraph text-sm uppercase tracking-wider font-semibold px-8 py-4 rounded-lg transition-all"
               >
-                Visit Tonight
-                <MapPin size={18} />
+                See What's On
+                <ArrowRight size={18} />
               </Link>
             </motion.div>
           </motion.div>
@@ -204,12 +204,6 @@ export default function HomePage() {
                 <p className="font-paragraph text-sm text-foreground/70">
                   Whiskey Row, Downtown
                 </p>
-                <button 
-                  onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
-                  className="font-paragraph text-xs text-neon-red-orange hover:text-warm-amber transition-colors mt-2 inline-flex items-center gap-1"
-                >
-                  Get Directions <ArrowRight size={12} />
-                </button>
               </div>
             </motion.div>
 
@@ -225,9 +219,6 @@ export default function HomePage() {
                 <p className="font-paragraph text-sm text-foreground/70">
                   DJs, game days & live energy
                 </p>
-                <Link to="/events" className="font-paragraph text-xs text-neon-red-orange hover:text-warm-amber transition-colors mt-2 inline-flex items-center gap-1">
-                  See Events <ArrowRight size={12} />
-                </Link>
               </div>
             </motion.div>
           </motion.div>
@@ -237,28 +228,13 @@ export default function HomePage() {
       {/* ===== TONIGHT AT ONE FOURTEEN SECTION ===== */}
       <section className="w-full py-16 sm:py-24 px-4">
         <div className="max-w-[120rem] mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7 }}
-            className="mb-12"
-          >
-            <h2 className="font-heading text-5xl sm:text-6xl font-bold text-foreground mb-3">
-              Tonight at <span className="text-neon-red-orange">One Fourteen</span>
-            </h2>
-            <p className="font-paragraph text-base sm:text-lg text-foreground/70">
-              {barStatus.isOpen ? 'We\'re open right now. Come through.' : 'Check back when we open.'}
-            </p>
-          </motion.div>
-
           {/* Tonight Status Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mb-12 p-8 sm:p-10 bg-gradient-to-r from-neon-red-orange/15 via-warm-amber/10 to-neon-red-orange/15 border border-neon-red-orange/30 rounded-xl"
+            transition={{ duration: 0.6 }}
+            className="p-8 sm:p-10 bg-gradient-to-r from-neon-red-orange/15 via-warm-amber/10 to-neon-red-orange/15 border border-neon-red-orange/30 rounded-xl"
           >
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {/* Status */}
@@ -267,14 +243,12 @@ export default function HomePage() {
                 <p className={`font-heading text-2xl font-bold ${barStatus.isOpen ? 'text-green-400' : 'text-red-400'}`}>
                   {barStatus.isOpen ? 'OPEN' : 'CLOSED'}
                 </p>
-                <p className="font-paragraph text-sm text-foreground/70 mt-2">{barStatus.nextEvent}</p>
               </div>
 
               {/* Hours */}
               <div>
                 <p className="font-paragraph text-xs uppercase tracking-widest text-foreground/60 mb-2">Today's Hours</p>
                 <p className="font-heading text-2xl font-bold text-foreground">{barStatus.todayHours.split(':')[1]}</p>
-                <p className="font-paragraph text-sm text-foreground/70 mt-2">Walk-ins welcome</p>
               </div>
 
               {/* CTA */}
@@ -298,6 +272,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
+              className="mt-12"
             >
               <h3 className="font-heading text-2xl font-bold text-foreground mb-6">Coming Up</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -316,7 +291,7 @@ export default function HomePage() {
                       {event.eventName}
                     </h4>
                     {event.eventDate && (
-                      <div className="flex items-center gap-2 text-foreground/70 mb-3">
+                      <div className="flex items-center gap-2 text-foreground/70">
                         <Calendar size={14} className="text-neon-red-orange flex-shrink-0" />
                         <span className="font-paragraph text-sm">
                           {new Date(event.eventDate).toLocaleDateString('en-US', {
@@ -330,26 +305,11 @@ export default function HomePage() {
                   </motion.div>
                 ))}
               </div>
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                className="text-center mt-8"
-              >
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Link
-                    to="/events"
-                    className="inline-flex items-center gap-2 bg-transparent border-2 border-neon-red-orange hover:bg-neon-red-orange/10 text-neon-red-orange font-paragraph text-sm uppercase tracking-wider font-semibold px-8 py-3 rounded-lg transition-all"
-                  >
-                    View All Events
-                    <ArrowRight size={16} />
-                  </Link>
-                </motion.div>
-              </motion.div>
             </motion.div>
           )}
         </div>
       </section>
+
       {/* ===== ABOUT SECTION ===== */}
       <section className="w-full py-16 sm:py-24 px-4 bg-black/40 backdrop-blur-sm">
         <div className="max-w-[120rem] mx-auto">
@@ -368,20 +328,11 @@ export default function HomePage() {
               </h2>
               <div className="w-16 h-1.5 bg-gradient-to-r from-neon-red-orange to-warm-amber rounded-full" />
               <p className="font-paragraph text-base sm:text-lg text-foreground/85 leading-relaxed">
-                We are the grit on Whiskey Row. A place where the music is loud, the drinks are strong, and the vibe is unapologetically real.
+                Grit on Whiskey Row. Loud music. Strong drinks. Real vibe.
               </p>
               <p className="font-paragraph text-sm sm:text-base text-foreground/70">
-                No pretense. No dress code. Just good times and real energy.
+                No pretense. No dress code. Just good times.
               </p>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <button
-                  onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
-                  className="inline-flex items-center gap-2 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-sm uppercase tracking-wider font-semibold px-6 py-3 rounded-lg transition-all shadow-lg hover:shadow-xl hover:shadow-neon-red-orange/40"
-                >
-                  Plan Your Visit
-                  <ArrowRight size={16} />
-                </button>
-              </motion.div>
             </motion.div>
 
             {/* Image */}
@@ -413,7 +364,7 @@ export default function HomePage() {
               What's <span className="text-neon-red-orange">On</span>
             </h2>
             <p className="font-paragraph text-base sm:text-lg text-foreground/70">
-              DJs, game days, and late-night energy. Check what's happening at One Fourteen.
+              DJs, game days, and late-night energy.
             </p>
           </motion.div>
 
@@ -521,7 +472,7 @@ export default function HomePage() {
               The <span className="text-neon-red-orange">Vibe</span>
             </h2>
             <p className="font-paragraph text-base sm:text-lg text-foreground/70">
-              Real moments. Real energy. This is what One Fourteen looks like.
+              Real moments. Real energy.
             </p>
           </motion.div>
 
@@ -606,17 +557,17 @@ export default function HomePage() {
                 See You <span className="text-neon-red-orange">Tonight</span>
               </h2>
               <p className="font-paragraph text-base sm:text-lg text-foreground/80 mb-8 max-w-2xl mx-auto">
-                No reservations. No dress code. Just show up and vibe.
+                No reservations. No dress code. Just show up.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 sm:flex-none">
-                  <Link
-                    to="/visit"
+                  <button
+                    onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
                     className="w-full inline-flex items-center justify-center gap-3 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-sm uppercase tracking-wider font-semibold px-8 py-4 rounded-lg transition-all shadow-xl hover:shadow-2xl hover:shadow-neon-red-orange/40"
                   >
                     Find Us
                     <MapPin size={18} />
-                  </Link>
+                  </button>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 sm:flex-none">
                   <Link

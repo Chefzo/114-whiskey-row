@@ -33,7 +33,7 @@ export default function Footer() {
                 <span className="text-foreground ml-2">Bar</span>
               </h3>
               <p className="font-paragraph text-xs sm:text-sm text-foreground/70 mb-4 leading-relaxed">
-                The grit on Whiskey Row. Loud music, strong drinks, real energy.
+                Grit on Whiskey Row. Loud music. Strong drinks.
               </p>
               <div className="flex gap-3">
                 <motion.a
