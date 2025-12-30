@@ -310,8 +310,45 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== THE STORY SECTION ===== */}
+      <section className="w-full py-16 sm:py-24 px-4 border-t border-neon-red-orange/20">
+        <div className="max-w-[100rem] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7 }}
+            className="space-y-6"
+          >
+            <h2 className="font-heading text-5xl sm:text-6xl font-bold text-foreground mb-8">
+              The Story of One Fourteen
+            </h2>
+            <div className="font-paragraph text-base sm:text-lg text-foreground/85 leading-relaxed space-y-4 max-w-3xl">
+              <p>There was a kid who used to walk past a small, worn-in building on Main Street and picture it as something more.</p>
+              <p>Not because it was fancy — it wasn't.</p>
+              <p>Because it felt real.</p>
+              <p>Back then, he imagined it as a tiny coffee shop. A place where people slowed down. Talked a little longer. Showed up as themselves.</p>
+              <p>As he got older, he realized the dream was never about coffee.</p>
+              <p>It was about the feeling.</p>
+              <p>A place built from the inside out.</p>
+              <p>Where conversations mattered more than appearances.</p>
+              <p>Where people carried their stories in, and left a little lighter than they arrived.</p>
+              <p>So when the time came to open One Fourteen, he didn't cover the scars or polish the edges.</p>
+              <p>He kept the grit.</p>
+              <p>The honesty.</p>
+              <p>Because people don't connect with perfect.</p>
+              <p>They connect with real.</p>
+              <p>One Fourteen isn't about the building.</p>
+              <p>It's about what happens inside it.</p>
+              <p>No pretending. No polish. Just a bar with soul.</p>
+              <p>That's One Fourteen.</p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ===== ABOUT SECTION ===== */}
-      <section className="w-full py-16 sm:py-24 px-4 bg-black/40 backdrop-blur-sm">
+      <section className="w-full py-16 sm:py-24 px-4 bg-black/40 backdrop-blur-sm border-t border-neon-red-orange/20">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
             variants={containerVariants}
