@@ -168,49 +168,59 @@ export default function HomePage() {
       </section>
 
       {/* ===== WHAT THIS PLACE IS SECTION ===== */}
-      <section className="w-full py-16 sm:py-24 px-4 border-t border-neon-red-orange/20 bg-black/20 backdrop-blur-sm">
+      <section className="w-full py-16 sm:py-24 px-4 border-t border-neon-red-orange/20">
         <div className="max-w-[100rem] mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7 }}
-            className="space-y-8 sm:space-y-12"
-          >
+          <div className="space-y-6 sm:space-y-8 max-w-2xl">
             {/* Title */}
-            <h2 className="font-heading text-5xl sm:text-6xl md:text-7xl font-bold text-foreground">
-              What This <span className="text-neon-red-orange">Place Is</span>
+            <h2 className="font-heading text-5xl sm:text-6xl font-bold text-foreground">
+              What This Place Is
             </h2>
 
-            {/* Main Statement Block */}
-            <div className="space-y-6 sm:space-y-8 max-w-3xl">
-              <p className="font-paragraph text-lg sm:text-xl text-foreground/90 leading-relaxed">
-                We are the bar you just end up at. Before games, after concerts, when plans change. We are the most reliable, no-friction bar on Whiskey Row. You don't plan for us, you just go.
+            {/* Declarative Lines - Raw and Minimal */}
+            <div className="space-y-3 sm:space-y-4">
+              <p className="font-paragraph text-base sm:text-lg text-foreground/90">
+                This is the bar you don't overthink.
+              </p>
+              <p className="font-paragraph text-base sm:text-lg text-foreground/90">
+                You come here before the game.
+              </p>
+              <p className="font-paragraph text-base sm:text-lg text-foreground/90">
+                You end up here after the show.
+              </p>
+              <p className="font-paragraph text-base sm:text-lg text-foreground/90">
+                Sometimes it's the only plan that actually works.
               </p>
 
-              {/* Key Attributes */}
-              <div className="space-y-4 sm:space-y-5 pt-4 sm:pt-6 border-l-2 border-neon-red-orange/40 pl-6 sm:pl-8">
-                <p className="font-paragraph text-base sm:text-lg text-foreground/85 leading-relaxed">
-                  We are built for walk-ins.
-                </p>
-                <p className="font-paragraph text-base sm:text-lg text-foreground/85 leading-relaxed">
-                  Loud music.
-                </p>
-                <p className="font-paragraph text-base sm:text-lg text-foreground/85 leading-relaxed">
-                  Strong drinks.
-                </p>
-                <p className="font-paragraph text-base sm:text-lg text-foreground/85 leading-relaxed">
-                  No dress code.
-                </p>
-                <p className="font-paragraph text-base sm:text-lg text-foreground/85 leading-relaxed">
-                  No polish.
-                </p>
-                <p className="font-paragraph text-base sm:text-lg text-foreground/85 leading-relaxed">
-                  Just real people, late into the night.
-                </p>
-              </div>
+              {/* Breathing room */}
+              <div className="h-2" />
+
+              <p className="font-paragraph text-base sm:text-lg text-foreground/90">
+                No reservations.
+              </p>
+              <p className="font-paragraph text-base sm:text-lg text-foreground/90">
+                No dress code.
+              </p>
+              <p className="font-paragraph text-base sm:text-lg text-foreground/90">
+                Loud music.
+              </p>
+              <p className="font-paragraph text-base sm:text-lg text-foreground/90">
+                Strong drinks.
+              </p>
+
+              {/* Breathing room */}
+              <div className="h-2" />
+
+              <p className="font-paragraph text-base sm:text-lg text-foreground/90">
+                Built for walk-ins.
+              </p>
+              <p className="font-paragraph text-base sm:text-lg text-foreground/90">
+                Built for late nights.
+              </p>
+              <p className="font-paragraph text-base sm:text-lg text-foreground/90">
+                Built around people, not polish.
+              </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
