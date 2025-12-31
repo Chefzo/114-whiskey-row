@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, ArrowRight, Zap, Clock, Music, Flame, AlertCircle } from 'lucide-react';
+import { Calendar, MapPin, ArrowRight, Clock, Music, Flame, AlertCircle } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -98,9 +98,9 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="inline-flex items-center gap-2 mb-6 px-4 py-2 border border-warm-amber/40 rounded-full bg-warm-amber/5 backdrop-blur-sm"
             >
-              <Zap size={14} className="text-warm-amber" />
+              <MapPin size={14} className="text-warm-amber" />
               <span className="font-paragraph text-xs uppercase tracking-widest text-warm-amber">
-                Whiskey Row Dive Bar
+                Downtown Louisville • Whiskey Row
               </span>
             </motion.div>
 
