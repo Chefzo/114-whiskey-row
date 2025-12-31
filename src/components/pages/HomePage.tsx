@@ -55,7 +55,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Mobile Fixed Get Directions Button */}
+      {/* Mobile Fixed Get Directions Button - ONLY CTA on mobile */}
       <motion.button
         onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
         initial={{ opacity: 0, y: 100 }}
@@ -123,7 +123,7 @@ export default function HomePage() {
                 Bar
               </motion.span>
               <span className="block text-base sm:text-lg md:text-xl font-paragraph font-normal text-foreground/80 mt-4">
-                A Downtown Louisville Bar on Whiskey Row
+                A downtown Louisville bar on Whiskey Row.
               </span>
             </h1>
           </motion.div>
@@ -132,16 +132,18 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="font-paragraph text-lg sm:text-xl text-foreground/85 mb-10 leading-relaxed px-2 max-w-3xl mx-auto"
+            className="font-paragraph text-base sm:text-lg text-foreground/85 mb-10 leading-relaxed px-2 max-w-3xl mx-auto"
           >
-            One Fourteen Bar is a modern dive on Whiskey Row in downtown Louisville. Built for late nights, loud music, and strong drinks. No reservations. No dress code. Just show up.
+            A modern dive built for late nights, loud music, and strong drinks.
+            <br />
+            No reservations. No dress code. Just show up.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.65 }}
-            className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto sm:justify-center"
+            className="hidden sm:flex flex-col sm:flex-row gap-4 w-full sm:w-auto sm:justify-center"
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 sm:flex-none">
               <button
@@ -165,71 +167,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== QUICK INFO SECTION ===== */}
-      <section className="w-full py-12 sm:py-16 px-4 bg-gradient-to-r from-neon-red-orange/10 via-transparent to-warm-amber/10 border-y border-neon-red-orange/20">
+      {/* ===== QUICK STATUS SECTION (Mobile Only) ===== */}
+      <section className="w-full py-6 px-4 sm:hidden bg-black/60 border-b border-neon-red-orange/20">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            className="flex items-center justify-center gap-3 text-center"
           >
-            {/* Status */}
-            <motion.div variants={itemVariants} className="flex items-start gap-4">
-              <div className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center ${
-                barStatus.isOpen ? 'bg-green-500/20' : 'bg-red-500/20'
-              }`}>
-                <AlertCircle size={24} className={barStatus.isOpen ? 'text-green-400' : 'text-red-400'} />
-              </div>
-              <div>
-                <h3 className="font-heading text-lg font-bold text-foreground mb-1">
-                  {barStatus.isOpen ? '🔴 Open Now' : '⚫ Closed'}
-                </h3>
-                <p className="font-paragraph text-sm text-foreground/70">
-                  {barStatus.nextEvent}
-                </p>
-                <p className="font-paragraph text-xs text-foreground/50 mt-1">
-                  {barStatus.todayHours}
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Location */}
-            <motion.div variants={itemVariants} className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-neon-red-orange/20 flex items-center justify-center">
-                <MapPin size={24} className="text-neon-red-orange" />
-              </div>
-              <div>
-                <h3 className="font-heading text-lg font-bold text-foreground mb-1">
-                  114 W Main St
-                </h3>
-                <p className="font-paragraph text-sm text-foreground/70">
-                  Whiskey Row, Downtown
-                </p>
-              </div>
-            </motion.div>
-
-            {/* What's On */}
-            <motion.div variants={itemVariants} className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-neon-red-orange/20 flex items-center justify-center">
-                <Flame size={24} className="text-neon-red-orange" />
-              </div>
-              <div>
-                <h3 className="font-heading text-lg font-bold text-foreground mb-1">
-                  What's Happening
-                </h3>
-                <p className="font-paragraph text-sm text-foreground/70">
-                  DJs, game days & live energy
-                </p>
-              </div>
-            </motion.div>
+            <span className={`inline-block w-2 h-2 rounded-full ${barStatus.isOpen ? 'bg-green-400' : 'bg-red-400'}`} />
+            <span className="font-paragraph text-sm text-foreground">
+              {barStatus.isOpen ? 'Open Now' : 'Closed'} • {barStatus.todayHours.split(':')[1]?.trim() || 'See hours'}
+            </span>
           </motion.div>
         </div>
       </section>
 
-      {/* ===== TONIGHT AT ONE FOURTEEN SECTION ===== */}
-      <section className="w-full py-16 sm:py-24 px-4">
+      {/* ===== TONIGHT AT ONE FOURTEEN SECTION (Desktop Only) ===== */}
+      <section className="w-full py-16 sm:py-24 px-4 hidden sm:block">
         <div className="max-w-[120rem] mx-auto">
           {/* Tonight Status Card */}
           <motion.div
@@ -323,10 +279,10 @@ export default function HomePage() {
             transition={{ duration: 0.7 }}
             className="space-y-6"
           >
-            <h2 className="font-heading text-5xl sm:text-6xl font-bold text-foreground mb-8">
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-8">
               The Story of One Fourteen
             </h2>
-            <div className="font-paragraph text-base sm:text-lg text-foreground/85 leading-relaxed space-y-4 max-w-3xl">
+            <div className="font-paragraph text-sm sm:text-base text-foreground/85 leading-relaxed space-y-4 max-w-3xl">
               <p>There was a kid who used to walk past a small, worn-in building on Main Street and picture it as something more.</p>
               <p>Not because it was fancy — it wasn't.</p>
               <p>Because it felt real.</p>
@@ -476,22 +432,24 @@ export default function HomePage() {
             </motion.div>
           )}
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link
-                to="/events"
-                className="inline-flex items-center gap-2 bg-transparent border-2 border-neon-red-orange hover:bg-neon-red-orange/10 text-neon-red-orange font-paragraph text-sm uppercase tracking-wider font-semibold px-8 py-3 rounded-lg transition-all"
-              >
-                View All Events
-                <ArrowRight size={16} />
-              </Link>
+          {upcomingEvents.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link
+                  to="/events"
+                  className="inline-flex items-center gap-2 bg-transparent border-2 border-neon-red-orange hover:bg-neon-red-orange/10 text-neon-red-orange font-paragraph text-sm uppercase tracking-wider font-semibold px-8 py-3 rounded-lg transition-all"
+                >
+                  View All Events
+                  <ArrowRight size={16} />
+                </Link>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          )}
         </div>
       </section>
 
