@@ -122,6 +122,9 @@ export default function HomePage() {
               >
                 Bar
               </motion.span>
+              <span className="block text-base sm:text-lg md:text-xl font-paragraph font-normal text-foreground/80 mt-4">
+                A Downtown Louisville Bar on Whiskey Row
+              </span>
             </h1>
           </motion.div>
 
@@ -131,7 +134,7 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="font-paragraph text-lg sm:text-xl text-foreground/85 mb-10 leading-relaxed px-2 max-w-3xl mx-auto"
           >
-            Modern dive on Whiskey Row. Pregame here. Stay late.
+            One Fourteen Bar is a modern dive on Whiskey Row in downtown Louisville. Built for late nights, loud music, and strong drinks. No reservations. No dress code. Just show up.
           </motion.p>
 
           <motion.div
