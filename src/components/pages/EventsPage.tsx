@@ -83,9 +83,12 @@ export default function EventsPage() {
           >
             <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl font-bold text-foreground mb-6">
               What's <span className="text-neon-red-orange">On</span>
+              <span className="block text-base sm:text-lg md:text-xl font-paragraph font-normal text-foreground/80 mt-4">
+                Events & Entertainment at One Fourteen Bar
+              </span>
             </h1>
             <p className="font-paragraph text-lg sm:text-xl text-foreground/80 max-w-3xl">
-              DJs, game days, and late-night energy. Check what's happening at 114.
+              Weekly DJs, game days, and live entertainment at One Fourteen Bar on Whiskey Row. Check what's happening this week in downtown Louisville.
             </p>
           </motion.div>
         </div>

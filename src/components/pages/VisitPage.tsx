@@ -26,9 +26,12 @@ export default function VisitPage() {
           >
             <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl font-bold text-foreground mb-6">
               Find <span className="text-neon-red-orange">Us</span>
+              <span className="block text-base sm:text-lg md:text-xl font-paragraph font-normal text-foreground/80 mt-4">
+                One Fourteen Bar on Whiskey Row
+              </span>
             </h1>
             <p className="font-paragraph text-lg sm:text-xl text-foreground/80 max-w-3xl">
-              Right on Whiskey Row. Right across from the Yum Center. Right where you need to be.
+              Located at 114 W Main St in downtown Louisville. Right on Whiskey Row, across from the Yum Center. Open late. No reservations needed.
             </p>
           </motion.div>
         </div>
