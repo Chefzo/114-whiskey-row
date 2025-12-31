@@ -277,30 +277,140 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7 }}
-            className="space-y-6"
+            className="space-y-8 sm:space-y-12"
           >
-            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-8">
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-12 sm:mb-16">
               The Story of One Fourteen
             </h2>
-            <div className="font-paragraph text-sm sm:text-base text-foreground/85 leading-relaxed space-y-4 max-w-3xl">
-              <p>There was a kid who used to walk past a small, worn-in building on Main Street and picture it as something more.</p>
-              <p>Not because it was fancy — it wasn't.</p>
-              <p>Because it felt real.</p>
-              <p>Back then, he imagined it as a tiny coffee shop. A place where people slowed down. Talked a little longer. Showed up as themselves.</p>
-              <p>As he got older, he realized the dream was never about coffee.</p>
-              <p>It was about the feeling.</p>
-              <p>A place built from the inside out.</p>
-              <p>Where conversations mattered more than appearances.</p>
-              <p>Where people carried their stories in, and left a little lighter than they arrived.</p>
-              <p>So when the time came to open One Fourteen, he didn't cover the scars or polish the edges.</p>
-              <p>He kept the grit.</p>
-              <p>The honesty.</p>
-              <p>Because people don't connect with perfect.</p>
-              <p>They connect with real.</p>
-              <p>One Fourteen isn't about the building.</p>
-              <p>It's about what happens inside it.</p>
-              <p>No pretending. No polish. Just a bar with soul.</p>
-              <p>That's One Fourteen.</p>
+
+            {/* Opening Block */}
+            <div className="space-y-6 sm:space-y-8">
+              <div className="space-y-3 sm:space-y-4">
+                <p className="font-paragraph text-sm sm:text-base text-foreground/85 leading-relaxed">
+                  There was a kid who used to walk past a small, worn-in building on Main Street and picture it as something more.
+                </p>
+              </div>
+
+              {/* Key Statement 1 */}
+              <div className="space-y-3 sm:space-y-4">
+                <p className="font-paragraph text-sm sm:text-base text-foreground/85 leading-relaxed">
+                  Not because it was fancy — it wasn't.
+                </p>
+              </div>
+
+              {/* Key Statement 2 - Standalone */}
+              <div className="py-4 sm:py-6">
+                <p className="font-heading text-2xl sm:text-3xl font-bold text-foreground">
+                  Because it felt real.
+                </p>
+              </div>
+            </div>
+
+            {/* Vision Block */}
+            <div className="space-y-6 sm:space-y-8">
+              <div className="space-y-3 sm:space-y-4">
+                <p className="font-paragraph text-sm sm:text-base text-foreground/85 leading-relaxed">
+                  Back then, he imagined it as a tiny coffee shop. A place where people slowed down. Talked a little longer. Showed up as themselves.
+                </p>
+              </div>
+
+              {/* Realization Block */}
+              <div className="space-y-3 sm:space-y-4">
+                <p className="font-paragraph text-sm sm:text-base text-foreground/85 leading-relaxed">
+                  As he got older, he realized the dream was never about coffee.
+                </p>
+              </div>
+
+              {/* Key Statement 3 - Standalone */}
+              <div className="py-4 sm:py-6">
+                <p className="font-heading text-2xl sm:text-3xl font-bold text-foreground">
+                  It was about the feeling.
+                </p>
+              </div>
+            </div>
+
+            {/* Purpose Block */}
+            <div className="space-y-6 sm:space-y-8">
+              <div className="space-y-3 sm:space-y-4">
+                <p className="font-paragraph text-sm sm:text-base text-foreground/85 leading-relaxed">
+                  A place built from the inside out.
+                </p>
+              </div>
+
+              <div className="space-y-3 sm:space-y-4">
+                <p className="font-paragraph text-sm sm:text-base text-foreground/85 leading-relaxed">
+                  Where conversations mattered more than appearances.
+                </p>
+              </div>
+
+              <div className="space-y-3 sm:space-y-4">
+                <p className="font-paragraph text-sm sm:text-base text-foreground/85 leading-relaxed">
+                  Where people carried their stories in, and left a little lighter than they arrived.
+                </p>
+              </div>
+            </div>
+
+            {/* Execution Block */}
+            <div className="space-y-6 sm:space-y-8">
+              <div className="space-y-3 sm:space-y-4">
+                <p className="font-paragraph text-sm sm:text-base text-foreground/85 leading-relaxed">
+                  So when the time came to open One Fourteen, he didn't cover the scars or polish the edges.
+                </p>
+              </div>
+
+              {/* Key Statements - Standalone */}
+              <div className="py-4 sm:py-6 space-y-4 sm:space-y-6">
+                <p className="font-heading text-2xl sm:text-3xl font-bold text-foreground">
+                  He kept the grit.
+                </p>
+                <p className="font-heading text-2xl sm:text-3xl font-bold text-foreground">
+                  The honesty.
+                </p>
+              </div>
+            </div>
+
+            {/* Philosophy Block */}
+            <div className="space-y-6 sm:space-y-8">
+              <div className="space-y-3 sm:space-y-4">
+                <p className="font-paragraph text-sm sm:text-base text-foreground/85 leading-relaxed">
+                  Because people don't connect with perfect.
+                </p>
+              </div>
+
+              {/* Key Statement 4 - Standalone */}
+              <div className="py-4 sm:py-6">
+                <p className="font-heading text-2xl sm:text-3xl font-bold text-foreground">
+                  They connect with real.
+                </p>
+              </div>
+            </div>
+
+            {/* Closing Block - Quiet Landing */}
+            <div className="space-y-6 sm:space-y-8 pt-4 sm:pt-8">
+              <div className="space-y-3 sm:space-y-4">
+                <p className="font-paragraph text-sm sm:text-base text-foreground/85 leading-relaxed">
+                  One Fourteen isn't about the building.
+                </p>
+              </div>
+
+              <div className="space-y-3 sm:space-y-4">
+                <p className="font-paragraph text-sm sm:text-base text-foreground/85 leading-relaxed">
+                  It's about what happens inside it.
+                </p>
+              </div>
+
+              <div className="space-y-3 sm:space-y-4">
+                <p className="font-paragraph text-sm sm:text-base text-foreground/85 leading-relaxed">
+                  No pretending. No polish. Just a bar with soul.
+                </p>
+              </div>
+
+              {/* Final Statement - Quiet Landing */}
+              <div className="pt-6 sm:pt-8">
+                <p className="font-paragraph text-sm sm:text-base text-foreground/70 italic">
+                  That's One Fourteen.
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>
