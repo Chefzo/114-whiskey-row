@@ -279,247 +279,121 @@ export default function HomePage() {
             transition={{ duration: 0.7 }}
             className="space-y-8 sm:space-y-12"
           >
-            {/* Notebook-style Story Container */}
-            <div className="relative max-w-xl">
+            {/* Handwritten Note Container */}
+            <div className="relative max-w-2xl">
               {/* Subtle paper texture background */}
               <div className="absolute inset-0 bg-foreground/5 rounded-sm pointer-events-none"></div>
               
-              <div className="relative p-6 sm:p-10 space-y-0">
-                {/* Story as staggered thoughts - no paragraph wrapper */}
-                
-                {/* Opening thought */}
-                <div className="space-y-2 sm:space-y-3 pb-6 sm:pb-8">
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90">
-                    There was a kid
+              <div className="relative p-8 sm:p-12 space-y-6 sm:space-y-8">
+                {/* Title - Handwritten style */}
+                <h2 className="font-handwriting text-5xl sm:text-6xl md:text-7xl text-foreground leading-tight">
+                  The Story of One Fourteen
+                </h2>
+
+                {/* Opening Block */}
+                <div className="space-y-5 sm:space-y-6 pt-4 sm:pt-6">
+                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
+                    There was a kid who used to walk past a small, worn-in building on Main Street and picture it as something more.
                   </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90 pl-4 sm:pl-6">
-                    who used to walk past
+
+                  {/* Key Statement 1 */}
+                  <p className="font-handwriting text-lg sm:text-xl text-foreground/85 leading-relaxed">
+                    Not because it was fancy — it wasn't.
                   </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90">
-                    a small, worn-in building
-                  </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90 pl-2 sm:pl-4">
-                    on Main Street
-                  </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90">
-                    and picture it as something more.
-                  </p>
+
+                  {/* Key Statement 2 - Standalone with slight tilt */}
+                  <div className="pt-2 sm:pt-3">
+                    <p className="font-handwriting text-2xl sm:text-3xl text-neon-red-orange leading-relaxed italic">
+                      Because it felt real.
+                    </p>
+                  </div>
                 </div>
 
-                {/* Pause - white space */}
-                <div className="h-3 sm:h-4"></div>
+                {/* Vision Block */}
+                <div className="space-y-5 sm:space-y-6 pt-2 sm:pt-4">
+                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
+                    Back then, he imagined it as a tiny coffee shop. A place where people slowed down. Talked a little longer. Showed up as themselves.
+                  </p>
 
-                {/* First realization */}
-                <div className="space-y-2 sm:space-y-3 pb-6 sm:pb-8">
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/85">
-                    Not because it was fancy —
+                  {/* Realization Block */}
+                  <p className="font-handwriting text-lg sm:text-xl text-foreground/85 leading-relaxed">
+                    As he got older, he realized the dream was never about coffee.
                   </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/85 pl-6 sm:pl-8">
-                    it wasn't.
-                  </p>
+
+                  {/* Key Statement 3 - Standalone */}
+                  <div className="pt-2 sm:pt-3">
+                    <p className="font-handwriting text-2xl sm:text-3xl text-neon-red-orange leading-relaxed italic">
+                      It was about the feeling.
+                    </p>
+                  </div>
                 </div>
 
-                {/* Pause */}
-                <div className="h-2 sm:h-3"></div>
-
-                {/* Key insight - stands alone */}
-                <div className="pb-8 sm:pb-10">
-                  <p className="font-handwriting text-xl sm:text-2xl text-neon-red-orange">
-                    Because it felt real.
-                  </p>
-                </div>
-
-                {/* Pause - bigger gap */}
-                <div className="h-4 sm:h-6"></div>
-
-                {/* Vision - broken into thoughts */}
-                <div className="space-y-2 sm:space-y-3 pb-6 sm:pb-8">
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90">
-                    Back then,
-                  </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90 pl-4 sm:pl-6">
-                    he imagined it as a tiny coffee shop.
-                  </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90">
-                    A place where people slowed down.
-                  </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90 pl-2 sm:pl-4">
-                    Talked a little longer.
-                  </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90">
-                    Showed up as themselves.
-                  </p>
-                </div>
-
-                {/* Pause */}
-                <div className="h-3 sm:h-4"></div>
-
-                {/* Realization */}
-                <div className="space-y-2 sm:space-y-3 pb-6 sm:pb-8">
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/85">
-                    As he got older,
-                  </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/85 pl-4 sm:pl-6">
-                    he realized the dream
-                  </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/85">
-                    was never about coffee.
-                  </p>
-                </div>
-
-                {/* Pause */}
-                <div className="h-2 sm:h-3"></div>
-
-                {/* Key insight */}
-                <div className="pb-8 sm:pb-10">
-                  <p className="font-handwriting text-xl sm:text-2xl text-neon-red-orange">
-                    It was about the feeling.
-                  </p>
-                </div>
-
-                {/* Pause - bigger gap */}
-                <div className="h-4 sm:h-6"></div>
-
-                {/* Purpose - building blocks */}
-                <div className="space-y-2 sm:space-y-3 pb-6 sm:pb-8">
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90">
+                {/* Purpose Block */}
+                <div className="space-y-5 sm:space-y-6 pt-2 sm:pt-4">
+                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
                     A place built from the inside out.
                   </p>
-                </div>
 
-                {/* Pause */}
-                <div className="h-2 sm:h-3"></div>
-
-                <div className="space-y-2 sm:space-y-3 pb-6 sm:pb-8">
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90">
-                    Where conversations mattered
+                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
+                    Where conversations mattered more than appearances.
                   </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90 pl-4 sm:pl-6">
-                    more than appearances.
+
+                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
+                    Where people carried their stories in, and left a little lighter than they arrived.
                   </p>
                 </div>
 
-                {/* Pause */}
-                <div className="h-2 sm:h-3"></div>
+                {/* Execution Block */}
+                <div className="space-y-5 sm:space-y-6 pt-2 sm:pt-4">
+                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
+                    So when the time came to open One Fourteen, he didn't cover the scars or polish the edges.
+                  </p>
 
-                <div className="space-y-2 sm:space-y-3 pb-8 sm:pb-10">
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90">
-                    Where people carried their stories in,
-                  </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90 pl-4 sm:pl-6">
-                    and left a little lighter
-                  </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90 pl-8 sm:pl-10">
-                    than they arrived.
-                  </p>
+                  {/* Key Statements - Standalone */}
+                  <div className="pt-2 sm:pt-3 space-y-3 sm:space-y-4">
+                    <p className="font-handwriting text-2xl sm:text-3xl text-neon-red-orange leading-relaxed italic">
+                      He kept the grit.
+                    </p>
+                    <p className="font-handwriting text-2xl sm:text-3xl text-neon-red-orange leading-relaxed italic">
+                      The honesty.
+                    </p>
+                  </div>
                 </div>
 
-                {/* Pause - bigger gap */}
-                <div className="h-4 sm:h-6"></div>
+                {/* Philosophy Block */}
+                <div className="space-y-5 sm:space-y-6 pt-2 sm:pt-4">
+                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
+                    Because people don't connect with perfect.
+                  </p>
 
-                {/* Execution - the moment */}
-                <div className="space-y-2 sm:space-y-3 pb-6 sm:pb-8">
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90">
-                    So when the time came
-                  </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90 pl-4 sm:pl-6">
-                    to open One Fourteen,
-                  </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90">
-                    he didn't cover the scars
-                  </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90 pl-2 sm:pl-4">
-                    or polish the edges.
-                  </p>
+                  {/* Key Statement 4 - Standalone */}
+                  <div className="pt-2 sm:pt-3">
+                    <p className="font-handwriting text-2xl sm:text-3xl text-neon-red-orange leading-relaxed italic">
+                      They connect with real.
+                    </p>
+                  </div>
                 </div>
 
-                {/* Pause */}
-                <div className="h-3 sm:h-4"></div>
-
-                {/* Key statements - standalone */}
-                <div className="pb-4 sm:pb-6">
-                  <p className="font-handwriting text-xl sm:text-2xl text-neon-red-orange">
-                    He kept the grit.
+                {/* Closing Block - Quiet Landing */}
+                <div className="space-y-5 sm:space-y-6 pt-4 sm:pt-6">
+                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
+                    One Fourteen isn't about the building.
                   </p>
-                </div>
 
-                <div className="pb-8 sm:pb-10">
-                  <p className="font-handwriting text-xl sm:text-2xl text-neon-red-orange">
-                    The honesty.
+                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
+                    It's about what happens inside it.
                   </p>
-                </div>
 
-                {/* Pause - bigger gap */}
-                <div className="h-4 sm:h-6"></div>
-
-                {/* Philosophy */}
-                <div className="space-y-2 sm:space-y-3 pb-6 sm:pb-8">
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/85">
-                    Because people don't connect
+                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
+                    No pretending. No polish. Just a bar with soul.
                   </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/85 pl-4 sm:pl-6">
-                    with perfect.
-                  </p>
-                </div>
 
-                {/* Pause */}
-                <div className="h-2 sm:h-3"></div>
-
-                {/* Key insight */}
-                <div className="pb-8 sm:pb-10">
-                  <p className="font-handwriting text-xl sm:text-2xl text-neon-red-orange">
-                    They connect with real.
-                  </p>
-                </div>
-
-                {/* Pause - bigger gap */}
-                <div className="h-4 sm:h-6"></div>
-
-                {/* Closing - quiet landing */}
-                <div className="space-y-2 sm:space-y-3 pb-6 sm:pb-8">
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90">
-                    One Fourteen isn't about
-                  </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90 pl-4 sm:pl-6">
-                    the building.
-                  </p>
-                </div>
-
-                {/* Pause */}
-                <div className="h-2 sm:h-3"></div>
-
-                <div className="space-y-2 sm:space-y-3 pb-8 sm:pb-10">
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90">
-                    It's about what happens
-                  </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90 pl-4 sm:pl-6">
-                    inside it.
-                  </p>
-                </div>
-
-                {/* Pause */}
-                <div className="h-3 sm:h-4"></div>
-
-                <div className="space-y-2 sm:space-y-3 pb-8 sm:pb-10">
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90">
-                    No pretending.
-                  </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90 pl-2 sm:pl-4">
-                    No polish.
-                  </p>
-                  <p className="font-handwriting text-base sm:text-lg text-foreground/90">
-                    Just a bar with soul.
-                  </p>
-                </div>
-
-                {/* Final pause - contemplative */}
-                <div className="h-6 sm:h-8"></div>
-
-                {/* Final thought - quiet landing */}
-                <div>
-                  <p className="font-handwriting text-lg sm:text-xl text-foreground/70">
-                    That's One Fourteen.
-                  </p>
+                  {/* Final Statement - Quiet Landing */}
+                  <div className="pt-4 sm:pt-6">
+                    <p className="font-handwriting text-xl sm:text-2xl text-foreground/70 leading-relaxed">
+                      That's One Fourteen.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
