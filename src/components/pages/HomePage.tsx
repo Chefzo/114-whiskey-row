@@ -55,22 +55,8 @@ export default function HomePage() {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Mobile Fixed Get Directions Button - ONLY CTA on mobile */}
-      <motion.button
-        onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        className="fixed bottom-6 left-4 right-4 md:hidden z-40 flex items-center justify-center gap-2 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-xs uppercase tracking-wider font-semibold px-6 py-3 rounded-lg transition-all shadow-xl hover:shadow-2xl hover:shadow-neon-red-orange/40"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        <MapPin size={16} />
-        Get Directions
-      </motion.button>
-
       {/* ===== HERO SECTION ===== */}
-      <section className="relative w-full flex items-center justify-center pt-28 pb-16 px-4 overflow-hidden min-h-[90vh]">
+      <section className="relative w-full flex items-center justify-center pt-20 pb-0 px-4 overflow-hidden min-h-screen md:min-h-[90vh]">
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -85,67 +71,59 @@ export default function HomePage() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-[120rem] mx-auto text-center">
+        <div className="relative z-10 w-full max-w-[120rem] mx-auto text-center flex flex-col items-center justify-center min-h-[calc(100vh-80px)] md:min-h-[90vh]">
+          {/* Location Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="mb-8"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="inline-flex items-center gap-2 mb-6 px-4 py-2 border border-warm-amber/40 rounded-full bg-warm-amber/5 backdrop-blur-sm"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="inline-flex items-center gap-2 mb-6 px-4 py-2 border border-warm-amber/40 rounded-full bg-warm-amber/5 backdrop-blur-sm"
-            >
-              <MapPin size={14} className="text-warm-amber" />
-              <span className="font-paragraph text-xs uppercase tracking-widest text-warm-amber">
-                Downtown Louisville • Whiskey Row
-              </span>
-            </motion.div>
-
-            <h1 className="font-heading text-7xl sm:text-8xl md:text-9xl font-bold leading-[1.1] text-foreground mb-6">
-              <motion.span
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
-                className="inline-block text-neon-red-orange"
-              >
-                One Fourteen
-              </motion.span>
-              <br />
-              <motion.span
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, delay: 0.35, ease: "easeOut" }}
-                className="inline-block text-foreground"
-              >
-                Bar
-              </motion.span>
-              <span className="block text-base sm:text-lg md:text-xl font-paragraph font-normal text-foreground/80 mt-4">
-                A downtown Louisville bar on Whiskey Row.
-              </span>
-            </h1>
+            <MapPin size={14} className="text-warm-amber" />
+            <span className="font-paragraph text-xs uppercase tracking-widest text-warm-amber">
+              Downtown Louisville • Whiskey Row
+            </span>
           </motion.div>
 
+          {/* H1 - One Fourteen Bar */}
+          <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-[1.1] text-foreground mb-6 max-w-4xl">
+            <motion.span
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
+              className="inline-block text-neon-red-orange"
+            >
+              One Fourteen
+            </motion.span>
+            <br />
+            <motion.span
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.35, ease: "easeOut" }}
+              className="inline-block text-foreground"
+            >
+              Bar
+            </motion.span>
+          </h1>
+
+          {/* Supporting Line */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="font-paragraph text-base sm:text-lg text-foreground/85 mb-10 leading-relaxed px-2 max-w-3xl mx-auto"
+            className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/90 mb-10 leading-relaxed px-2 max-w-2xl"
           >
-            A modern dive built for late nights, loud music, and strong drinks.
-            <br />
-            No reservations. No dress code. Just show up.
+            Modern dive. Pregame here. Stay late.
           </motion.p>
 
+          {/* Desktop CTA Buttons - Hidden on Mobile */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.65 }}
-            className="hidden sm:flex flex-col sm:flex-row gap-4 w-full sm:w-auto sm:justify-center"
+            className="hidden md:flex flex-col md:flex-row gap-4 w-full md:w-auto md:justify-center"
           >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 sm:flex-none">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 md:flex-none">
               <button
                 onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
                 className="w-full inline-flex items-center justify-center gap-3 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-sm uppercase tracking-wider font-semibold px-8 py-4 rounded-lg transition-all shadow-xl hover:shadow-2xl hover:shadow-neon-red-orange/40"
@@ -154,7 +132,7 @@ export default function HomePage() {
                 <MapPin size={18} />
               </button>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 sm:flex-none">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 md:flex-none">
               <Link
                 to="/events"
                 className="w-full inline-flex items-center justify-center gap-3 bg-transparent border-2 border-neon-red-orange hover:bg-neon-red-orange/10 text-neon-red-orange font-paragraph text-sm uppercase tracking-wider font-semibold px-8 py-4 rounded-lg transition-all"
@@ -166,6 +144,36 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+
+      {/* ===== MOBILE STATUS STRIP ===== */}
+      <motion.section
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
+        className="md:hidden w-full py-4 px-4 bg-black/80 border-b border-neon-red-orange/30 cursor-pointer hover:bg-black/90 transition-colors"
+      >
+        <div className="max-w-[120rem] mx-auto flex items-center justify-center gap-3">
+          <span className={`inline-block w-2.5 h-2.5 rounded-full ${barStatus.isOpen ? 'bg-green-400' : 'bg-red-400'}`} />
+          <span className="font-paragraph text-sm text-foreground text-center">
+            {barStatus.isOpen ? '🟢 Open Now' : '🔴 Closed'} • {barStatus.todayHours}
+          </span>
+        </div>
+      </motion.section>
+
+      {/* Mobile Fixed Get Directions Button - ONLY CTA on mobile */}
+      <motion.button
+        onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="fixed bottom-6 left-4 right-4 md:hidden z-40 flex items-center justify-center gap-2 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-xs uppercase tracking-wider font-semibold px-6 py-3 rounded-lg transition-all shadow-xl hover:shadow-2xl hover:shadow-neon-red-orange/40"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <MapPin size={16} />
+        Get Directions
+      </motion.button>
 
       {/* ===== WHAT THIS PLACE IS SECTION ===== */}
       <section className="w-full py-16 sm:py-24 px-4 border-t border-neon-red-orange/20">
@@ -224,22 +232,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== QUICK STATUS SECTION (Mobile Only) ===== */}
-      <section className="w-full py-6 px-4 sm:hidden bg-black/60 border-b border-neon-red-orange/20">
-        <div className="max-w-[120rem] mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center justify-center gap-3 text-center"
-          >
-            <span className={`inline-block w-2 h-2 rounded-full ${barStatus.isOpen ? 'bg-green-400' : 'bg-red-400'}`} />
-            <span className="font-paragraph text-sm text-foreground">
-              {barStatus.isOpen ? 'Open Now' : 'Closed'} • {barStatus.todayHours.split(':')[1]?.trim() || 'See hours'}
-            </span>
-          </motion.div>
-        </div>
-      </section>
+
 
       {/* ===== TONIGHT AT ONE FOURTEEN SECTION (Desktop Only) ===== */}
       <section className="w-full py-16 sm:py-24 px-4 hidden sm:block">
