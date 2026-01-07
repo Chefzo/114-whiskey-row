@@ -321,84 +321,18 @@ export default function HomePage() {
             transition={{ duration: 0.7 }}
             className="space-y-8 sm:space-y-12"
           >
-            {/* Handwritten Note Container */}
-            <div className="relative max-w-2xl">
-              {/* Subtle paper texture background */}
-              <div className="absolute inset-0 bg-foreground/5 rounded-sm pointer-events-none"></div>
-              
-              <div className="relative p-8 sm:p-12 space-y-6 sm:space-y-8">
-                {/* Title - Handwritten style */}
-                <h2 className="font-handwriting text-5xl sm:text-6xl md:text-7xl text-foreground leading-tight">
-                  The Story of One Fourteen
-                </h2>
-
-                {/* Opening Block */}
-                <div className="space-y-4 sm:space-y-5 pt-4 sm:pt-6">
-                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
-                    There was a kid who used to walk past a small, worn-in building on Main Street.
-                  </p>
-
-                  <div className="pt-2 sm:pt-3">
-                    <p className="font-handwriting text-2xl sm:text-3xl text-neon-red-orange leading-relaxed italic">
-                      He pictured it as something real.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Vision Block */}
-                <div className="space-y-4 sm:space-y-5 pt-2 sm:pt-4">
-                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
-                    He imagined a place where people showed up as themselves. Where conversations mattered more than appearances.
-                  </p>
-
-                  <div className="pt-2 sm:pt-3">
-                    <p className="font-handwriting text-2xl sm:text-3xl text-neon-red-orange leading-relaxed italic">
-                      A place built from the inside out.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Execution Block */}
-                <div className="space-y-4 sm:space-y-5 pt-2 sm:pt-4">
-                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
-                    When the time came to open One Fourteen, he didn't cover the scars or polish the edges.
-                  </p>
-
-                  <div className="pt-2 sm:pt-3 space-y-2 sm:space-y-3">
-                    <p className="font-handwriting text-2xl sm:text-3xl text-neon-red-orange leading-relaxed italic">
-                      He kept the grit.
-                    </p>
-                    <p className="font-handwriting text-2xl sm:text-3xl text-neon-red-orange leading-relaxed italic">
-                      The honesty.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Philosophy Block */}
-                <div className="space-y-4 sm:space-y-5 pt-2 sm:pt-4">
-                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
-                    Because people don't connect with perfect.
-                  </p>
-
-                  <div className="pt-2 sm:pt-3">
-                    <p className="font-handwriting text-2xl sm:text-3xl text-neon-red-orange leading-relaxed italic">
-                      They connect with real.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Closing Block */}
-                <div className="space-y-4 sm:space-y-5 pt-4 sm:pt-6">
-                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
-                    One Fourteen is about what happens inside. Not the building. Not the polish.
-                  </p>
-
-                  <div className="pt-4 sm:pt-6">
-                    <p className="font-handwriting text-xl sm:text-2xl text-foreground/70 leading-relaxed">
-                      Just a bar with soul.
-                    </p>
-                  </div>
-                </div>
+            <div className="max-w-2xl">
+              <p className="font-paragraph text-lg sm:text-xl text-foreground/90 leading-relaxed">
+                One Fourteen is about what happens inside.
+              </p>
+              <div className="mt-6">
+                <Link
+                  to="/about"
+                  className="inline-flex items-center gap-2 text-neon-red-orange hover:text-neon-red-orange/80 font-paragraph text-sm uppercase tracking-wider font-semibold transition-colors"
+                >
+                  Learn More
+                  <ArrowRight size={16} />
+                </Link>
               </div>
             </div>
           </motion.div>
