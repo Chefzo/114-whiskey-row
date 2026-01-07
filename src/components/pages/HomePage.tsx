@@ -106,40 +106,52 @@ export default function HomePage() {
             </motion.span>
           </h1>
 
-          {/* Supporting Line */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/90 mb-10 leading-relaxed px-2 max-w-2xl"
-          >
-            Modern dive. Pregame here. Stay late.
-          </motion.p>
-
-          {/* Desktop CTA Buttons - Hidden on Mobile */}
+          {/* Identity & Status Lines */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.65 }}
-            className="hidden md:flex flex-col md:flex-row gap-4 w-full md:w-auto md:justify-center"
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="space-y-4 mb-10 max-w-2xl px-2"
           >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 md:flex-none">
+            <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed">
+              Modern dive on Whiskey Row.
+            </p>
+            <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed">
+              Built for late nights. Loud music. Strong drinks.
+            </p>
+            <p className="font-paragraph text-lg sm:text-xl md:text-2xl text-neon-red-orange font-semibold leading-relaxed">
+              No reservations. No dress code. Just show up.
+            </p>
+          </motion.div>
+
+          {/* Opening Status - Desktop */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.65 }}
+            className="hidden md:flex items-center gap-3 mb-10 px-4 py-3 bg-black/40 border border-neon-red-orange/30 rounded-lg backdrop-blur-sm"
+          >
+            <span className={`inline-block w-2.5 h-2.5 rounded-full ${barStatus.isOpen ? 'bg-green-400' : 'bg-red-400'}`} />
+            <span className="font-paragraph text-sm text-foreground">
+              {barStatus.isOpen ? 'Open Now' : 'Closed'} • {barStatus.todayHours}
+            </span>
+          </motion.div>
+
+          {/* Desktop CTA Button - Get Directions Only */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.75 }}
+            className="hidden md:flex"
+          >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <button
                 onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
-                className="w-full inline-flex items-center justify-center gap-3 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-sm uppercase tracking-wider font-semibold px-8 py-4 rounded-lg transition-all shadow-xl hover:shadow-2xl hover:shadow-neon-red-orange/40"
+                className="inline-flex items-center justify-center gap-3 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-sm uppercase tracking-wider font-semibold px-8 py-4 rounded-lg transition-all shadow-xl hover:shadow-2xl hover:shadow-neon-red-orange/40"
               >
                 Get Directions
                 <MapPin size={18} />
               </button>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 md:flex-none">
-              <Link
-                to="/events"
-                className="w-full inline-flex items-center justify-center gap-3 bg-transparent border-2 border-neon-red-orange hover:bg-neon-red-orange/10 text-neon-red-orange font-paragraph text-sm uppercase tracking-wider font-semibold px-8 py-4 rounded-lg transition-all"
-              >
-                See What's On
-                <ArrowRight size={18} />
-              </Link>
             </motion.div>
           </motion.div>
         </div>
@@ -185,28 +197,12 @@ export default function HomePage() {
             </h2>
 
             {/* Declarative Lines - Raw and Minimal */}
-            <div className="space-y-3 sm:space-y-4">
+            <div className="space-y-2 sm:space-y-3">
               <p className="font-paragraph text-base sm:text-lg text-foreground/90">
-                This is the bar you don't overthink.
+                Before the game.
               </p>
               <p className="font-paragraph text-base sm:text-lg text-foreground/90">
-                You come here before the game.
-              </p>
-              <p className="font-paragraph text-base sm:text-lg text-foreground/90">
-                You end up here after the show.
-              </p>
-              <p className="font-paragraph text-base sm:text-lg text-foreground/90">
-                Sometimes it's the only plan that actually works.
-              </p>
-
-              {/* Breathing room */}
-              <div className="h-2" />
-
-              <p className="font-paragraph text-base sm:text-lg text-foreground/90">
-                No reservations.
-              </p>
-              <p className="font-paragraph text-base sm:text-lg text-foreground/90">
-                No dress code.
+                After the show.
               </p>
               <p className="font-paragraph text-base sm:text-lg text-foreground/90">
                 Loud music.
@@ -214,18 +210,14 @@ export default function HomePage() {
               <p className="font-paragraph text-base sm:text-lg text-foreground/90">
                 Strong drinks.
               </p>
-
-              {/* Breathing room */}
-              <div className="h-2" />
-
               <p className="font-paragraph text-base sm:text-lg text-foreground/90">
-                Built for walk-ins.
+                Walk-ins welcome.
               </p>
               <p className="font-paragraph text-base sm:text-lg text-foreground/90">
-                Built for late nights.
+                Late nights.
               </p>
               <p className="font-paragraph text-base sm:text-lg text-foreground/90">
-                Built around people, not polish.
+                People over polish.
               </p>
             </div>
           </div>
@@ -341,66 +333,38 @@ export default function HomePage() {
                 </h2>
 
                 {/* Opening Block */}
-                <div className="space-y-5 sm:space-y-6 pt-4 sm:pt-6">
+                <div className="space-y-4 sm:space-y-5 pt-4 sm:pt-6">
                   <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
-                    There was a kid who used to walk past a small, worn-in building on Main Street and picture it as something more.
+                    There was a kid who used to walk past a small, worn-in building on Main Street.
                   </p>
 
-                  {/* Key Statement 1 */}
-                  <p className="font-handwriting text-lg sm:text-xl text-foreground/85 leading-relaxed">
-                    Not because it was fancy — it wasn't.
-                  </p>
-
-                  {/* Key Statement 2 - Standalone with slight tilt */}
                   <div className="pt-2 sm:pt-3">
                     <p className="font-handwriting text-2xl sm:text-3xl text-neon-red-orange leading-relaxed italic">
-                      Because it felt real.
+                      He pictured it as something real.
                     </p>
                   </div>
                 </div>
 
                 {/* Vision Block */}
-                <div className="space-y-5 sm:space-y-6 pt-2 sm:pt-4">
+                <div className="space-y-4 sm:space-y-5 pt-2 sm:pt-4">
                   <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
-                    Back then, he imagined it as a tiny coffee shop. A place where people slowed down. Talked a little longer. Showed up as themselves.
+                    He imagined a place where people showed up as themselves. Where conversations mattered more than appearances.
                   </p>
 
-                  {/* Realization Block */}
-                  <p className="font-handwriting text-lg sm:text-xl text-foreground/85 leading-relaxed">
-                    As he got older, he realized the dream was never about coffee.
-                  </p>
-
-                  {/* Key Statement 3 - Standalone */}
                   <div className="pt-2 sm:pt-3">
                     <p className="font-handwriting text-2xl sm:text-3xl text-neon-red-orange leading-relaxed italic">
-                      It was about the feeling.
+                      A place built from the inside out.
                     </p>
                   </div>
                 </div>
 
-                {/* Purpose Block */}
-                <div className="space-y-5 sm:space-y-6 pt-2 sm:pt-4">
-                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
-                    A place built from the inside out.
-                  </p>
-
-                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
-                    Where conversations mattered more than appearances.
-                  </p>
-
-                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
-                    Where people carried their stories in, and left a little lighter than they arrived.
-                  </p>
-                </div>
-
                 {/* Execution Block */}
-                <div className="space-y-5 sm:space-y-6 pt-2 sm:pt-4">
+                <div className="space-y-4 sm:space-y-5 pt-2 sm:pt-4">
                   <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
-                    So when the time came to open One Fourteen, he didn't cover the scars or polish the edges.
+                    When the time came to open One Fourteen, he didn't cover the scars or polish the edges.
                   </p>
 
-                  {/* Key Statements - Standalone */}
-                  <div className="pt-2 sm:pt-3 space-y-3 sm:space-y-4">
+                  <div className="pt-2 sm:pt-3 space-y-2 sm:space-y-3">
                     <p className="font-handwriting text-2xl sm:text-3xl text-neon-red-orange leading-relaxed italic">
                       He kept the grit.
                     </p>
@@ -411,12 +375,11 @@ export default function HomePage() {
                 </div>
 
                 {/* Philosophy Block */}
-                <div className="space-y-5 sm:space-y-6 pt-2 sm:pt-4">
+                <div className="space-y-4 sm:space-y-5 pt-2 sm:pt-4">
                   <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
                     Because people don't connect with perfect.
                   </p>
 
-                  {/* Key Statement 4 - Standalone */}
                   <div className="pt-2 sm:pt-3">
                     <p className="font-handwriting text-2xl sm:text-3xl text-neon-red-orange leading-relaxed italic">
                       They connect with real.
@@ -424,24 +387,15 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* Closing Block - Quiet Landing */}
-                <div className="space-y-5 sm:space-y-6 pt-4 sm:pt-6">
+                {/* Closing Block */}
+                <div className="space-y-4 sm:space-y-5 pt-4 sm:pt-6">
                   <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
-                    One Fourteen isn't about the building.
+                    One Fourteen is about what happens inside. Not the building. Not the polish.
                   </p>
 
-                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
-                    It's about what happens inside it.
-                  </p>
-
-                  <p className="font-handwriting text-lg sm:text-xl text-foreground/90 leading-relaxed">
-                    No pretending. No polish. Just a bar with soul.
-                  </p>
-
-                  {/* Final Statement - Quiet Landing */}
                   <div className="pt-4 sm:pt-6">
                     <p className="font-handwriting text-xl sm:text-2xl text-foreground/70 leading-relaxed">
-                      That's One Fourteen.
+                      Just a bar with soul.
                     </p>
                   </div>
                 </div>
@@ -681,45 +635,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== CTA SECTION ===== */}
-      <section className="w-full py-16 sm:py-24 px-4 hidden sm:block">
-        <div className="max-w-[120rem] mx-auto">
+      {/* ===== CLOSING SECTION ===== */}
+      <section className="w-full py-16 sm:py-24 px-4 border-t border-neon-red-orange/20">
+        <div className="max-w-[100rem] mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7 }}
-            className="relative bg-gradient-to-r from-neon-red-orange/15 via-warm-amber/10 to-neon-red-orange/15 border border-neon-red-orange/30 rounded-2xl p-8 sm:p-12 md:p-16 text-center overflow-hidden"
+            className="space-y-6 sm:space-y-8 max-w-2xl"
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20 pointer-events-none" />
-            <div className="relative z-10">
-              <h2 className="font-heading text-5xl sm:text-6xl font-bold text-foreground mb-4">
-                See You <span className="text-neon-red-orange">Tonight</span>
-              </h2>
-              <p className="font-paragraph text-base sm:text-lg text-foreground/80 mb-8 max-w-2xl mx-auto">
-                No reservations. No dress code. Just show up.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 sm:flex-none">
-                  <button
-                    onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
-                    className="w-full inline-flex items-center justify-center gap-3 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-sm uppercase tracking-wider font-semibold px-8 py-4 rounded-lg transition-all shadow-xl hover:shadow-2xl hover:shadow-neon-red-orange/40"
-                  >
-                    Find Us
-                    <MapPin size={18} />
-                  </button>
-                </motion.div>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 sm:flex-none">
-                  <Link
-                    to="/contact"
-                    className="w-full inline-flex items-center justify-center gap-3 bg-transparent border-2 border-neon-red-orange hover:bg-neon-red-orange/10 text-neon-red-orange font-paragraph text-sm uppercase tracking-wider font-semibold px-8 py-4 rounded-lg transition-all"
-                  >
-                    Get In Touch
-                    <ArrowRight size={18} />
-                  </Link>
-                </motion.div>
-              </div>
-            </div>
+            <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
+              One Fourteen is about what happens inside. The conversations. The energy. The people who show up as themselves.
+            </p>
+            <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
+              It's not about the building. It's about the feeling.
+            </p>
           </motion.div>
         </div>
       </section>
