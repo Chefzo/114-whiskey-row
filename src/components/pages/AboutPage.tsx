@@ -48,7 +48,7 @@ export default function AboutPage() {
               The Story of <span className="text-neon-red-orange">One Fourteen</span>
             </h1>
             <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed max-w-2xl">
-              A place built on authenticity, not aesthetics.
+              Built for real people. Real moments.
             </p>
           </motion.div>
         </div>
@@ -67,7 +67,7 @@ export default function AboutPage() {
             {/* Vision Block */}
             <motion.div variants={itemVariants} className="max-w-2xl space-y-4">
               <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
-                One Fourteen started with a simple idea: create a place where people show up as themselves. Where conversations matter more than appearances. Where the grit is the point.
+                One Fourteen started with a simple idea: create a place where people show up as themselves. Where conversations matter more than appearances.
               </p>
             </motion.div>
 
