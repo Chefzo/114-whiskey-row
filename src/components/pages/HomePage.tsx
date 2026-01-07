@@ -418,13 +418,10 @@ export default function HomePage() {
             {/* Text */}
             <motion.div variants={itemVariants} className="space-y-6">
               <h2 className="font-heading text-5xl sm:text-6xl font-bold text-foreground leading-tight">
-                Not Upscale.<br />
-                <span className="text-neon-red-orange">Not Corporate.</span>
+                No polish.<br />
+                <span className="text-neon-red-orange">No pretense.</span>
               </h2>
               <div className="w-16 h-1.5 bg-gradient-to-r from-neon-red-orange to-warm-amber rounded-full" />
-              <p className="font-paragraph text-base sm:text-lg text-foreground/85 leading-relaxed">
-                Grit on Whiskey Row. Loud music. Strong drinks. Real vibe.
-              </p>
             </motion.div>
 
             {/* Image */}
