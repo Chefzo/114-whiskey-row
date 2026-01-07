@@ -129,12 +129,14 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.65 }}
-            className="hidden md:flex items-center gap-3 mb-10 px-4 py-3 bg-black/40 border border-neon-red-orange/30 rounded-lg backdrop-blur-sm"
+            className="hidden md:flex flex-col items-center gap-2 mb-10"
           >
-            <span className={`inline-block w-2.5 h-2.5 rounded-full ${barStatus.isOpen ? 'bg-green-400' : 'bg-red-400'}`} />
-            <span className="font-paragraph text-sm text-foreground">
-              {barStatus.isOpen ? 'Open Now' : 'Closed'} • {barStatus.todayHours}
-            </span>
+            <p className="font-paragraph text-lg text-neon-red-orange font-semibold">
+              Opening January 14
+            </p>
+            <p className="font-paragraph text-sm text-foreground/80">
+              Walk-ins only
+            </p>
           </motion.div>
 
           {/* Desktop CTA Button - Get Directions Only */}
