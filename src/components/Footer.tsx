@@ -37,7 +37,7 @@ export default function Footer() {
               </p>
               <div className="flex gap-3">
                 <motion.a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/onefourteenwhiskeyrow/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-neon-red-orange/40 flex items-center justify-center text-neon-red-orange hover:bg-neon-red-orange hover:text-white hover:border-neon-red-orange transition-all"
