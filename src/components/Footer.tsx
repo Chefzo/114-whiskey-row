@@ -16,7 +16,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-black/80 border-t border-neon-red-orange/10 backdrop-blur-sm">
+    <footer className="bg-black/80 border-t border-foreground/5 backdrop-blur-sm grain-texture">
       <div className="w-full px-4 py-12 sm:py-16">
         <div className="max-w-[120rem] mx-auto">
           <motion.div

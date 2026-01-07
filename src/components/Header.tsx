@@ -22,13 +22,13 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/98 backdrop-blur-md border-b border-neon-red-orange/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/98 backdrop-blur-md border-b border-foreground/5 grain-texture">
       <div className="max-w-[120rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="font-heading text-xl sm:text-2xl font-bold tracking-tight group">
-            <span className="text-neon-red-orange group-hover:text-warm-amber transition-colors duration-300">One Fourteen</span>
-            <span className="text-foreground ml-2 group-hover:text-neon-red-orange transition-colors duration-300">Bar</span>
+            <span className="text-neon-red-orange group-hover:text-foreground transition-colors duration-300">One Fourteen</span>
+            <span className="text-foreground ml-2 group-hover:text-foreground/80 transition-colors duration-300">Bar</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -38,13 +38,13 @@ export default function Header() {
                 key={link.path}
                 to={link.path}
                 className={`font-paragraph text-xs uppercase tracking-widest transition-all relative group ${
-                  isActive(link.path) ? 'text-neon-red-orange' : 'text-foreground/80 hover:text-neon-red-orange'
+                  isActive(link.path) ? 'text-foreground' : 'text-foreground/60 hover:text-foreground/90'
                 }`}
               >
                 {link.label}
                 <motion.span
                   layoutId={isActive(link.path) ? 'activeNav' : undefined}
-                  className={`absolute -bottom-2 left-0 h-0.5 bg-neon-red-orange transition-all ${
+                  className={`absolute -bottom-2 left-0 h-0.5 bg-foreground transition-all ${
                     isActive(link.path) ? 'w-full' : 'w-0 group-hover:w-full'
                   }`}
                 />
@@ -57,7 +57,7 @@ export default function Header() {
             onClick={handleGetDirections}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden md:flex items-center gap-2 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-xs uppercase tracking-wider font-semibold px-5 py-2.5 rounded-lg transition-all shadow-lg hover:shadow-xl hover:shadow-neon-red-orange/40"
+            className="hidden md:flex items-center gap-2 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-xs uppercase tracking-wider font-semibold px-5 py-2.5 rounded-lg transition-all"
           >
             <MapPin size={16} />
             Get Directions
@@ -93,7 +93,7 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-background/95 border-t border-neon-red-orange/10 overflow-hidden"
+            className="md:hidden bg-background/95 border-t border-foreground/5 overflow-hidden grain-texture"
           >
             <div className="px-4 py-6 space-y-3">
               {navLinks.map((link, index) => (

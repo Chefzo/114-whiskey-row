@@ -35,8 +35,8 @@ export default function GalleryPage() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-neon-red-orange/10 to-transparent" />
-          <div className="absolute top-0 left-0 w-96 h-96 bg-warm-amber/5 rounded-full blur-3xl" />
+          <div className="absolute inset-0 bg-gradient-to-b from-neon-red-orange/5 to-transparent" />
+          <div className="absolute top-0 left-0 w-96 h-96 bg-warm-amber/3 rounded-full blur-3xl" />
         </div>
 
         <div className="relative z-10 max-w-[120rem] mx-auto">
@@ -48,7 +48,7 @@ export default function GalleryPage() {
             <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl font-bold text-foreground mb-6">
               The <span className="text-neon-red-orange">Vibe</span>
             </h1>
-            <p className="font-paragraph text-lg sm:text-xl text-foreground/80 max-w-3xl">
+            <p className="font-paragraph text-lg sm:text-xl text-foreground/70 max-w-3xl">
               Real moments. Real energy. This is what 114 looks like when the lights go down.
             </p>
           </motion.div>

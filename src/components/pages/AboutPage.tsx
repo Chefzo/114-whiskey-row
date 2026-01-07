@@ -28,12 +28,12 @@ export default function AboutPage() {
           <Image
             src="https://static.wixstatic.com/media/528274_de41e140f4b5413493d5959e97c96f5a~mv2.png?originWidth=1920&originHeight=1024"
             alt="One Fourteen Bar interior"
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-15"
             width={1920}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background" />
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neon-red-orange/8 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-warm-amber/8 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neon-red-orange/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-warm-amber/5 rounded-full blur-3xl" />
         </div>
 
         {/* Content */}

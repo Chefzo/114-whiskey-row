@@ -62,25 +62,25 @@ export default function HomePage() {
           <Image
             src="https://static.wixstatic.com/media/528274_de41e140f4b5413493d5959e97c96f5a~mv2.png?originWidth=1920&originHeight=1024"
             alt="One Fourteen Bar interior"
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-15"
             width={1920}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background" />
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neon-red-orange/8 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-warm-amber/8 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neon-red-orange/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-warm-amber/5 rounded-full blur-3xl" />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-[120rem] mx-auto text-center flex flex-col items-center justify-center min-h-[calc(100vh-80px)] md:min-h-[90vh]">
+        <div className="relative z-10 w-full max-w-[120rem] mx-auto text-left flex flex-col items-start justify-center min-h-[calc(100vh-80px)] md:min-h-[90vh] pl-4 md:pl-12">
           {/* Location Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="inline-flex items-center gap-2 mb-6 px-4 py-2 border border-warm-amber/40 rounded-full bg-warm-amber/5 backdrop-blur-sm"
+            className="inline-flex items-center gap-2 mb-6 px-4 py-2 border border-foreground/20 rounded-full bg-foreground/5 backdrop-blur-sm"
           >
-            <MapPin size={14} className="text-warm-amber" />
-            <span className="font-paragraph text-xs uppercase tracking-widest text-warm-amber">
+            <MapPin size={14} className="text-foreground" />
+            <span className="font-paragraph text-xs uppercase tracking-widest text-foreground/80">
               Downtown Louisville • Whiskey Row
             </span>
           </motion.div>
@@ -119,7 +119,7 @@ export default function HomePage() {
             <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed">
               Built for late nights. Loud music. Strong drinks.
             </p>
-            <p className="font-paragraph text-lg sm:text-xl md:text-2xl text-neon-red-orange font-semibold leading-relaxed">
+            <p className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground font-semibold leading-relaxed">
               No reservations. No dress code. Just show up.
             </p>
           </motion.div>
@@ -129,12 +129,12 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.65 }}
-            className="hidden md:flex flex-col items-center gap-2 mb-10"
+            className="hidden md:flex flex-col items-start gap-2 mb-10"
           >
-            <p className="font-paragraph text-lg text-neon-red-orange font-semibold">
+            <p className="font-paragraph text-lg text-foreground font-semibold">
               Opening January 14
             </p>
-            <p className="font-paragraph text-sm text-foreground/80">
+            <p className="font-paragraph text-sm text-foreground/70">
               Walk-ins only
             </p>
           </motion.div>
@@ -149,7 +149,7 @@ export default function HomePage() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <button
                 onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
-                className="inline-flex items-center justify-center gap-3 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-sm uppercase tracking-wider font-semibold px-8 py-4 rounded-lg transition-all shadow-xl hover:shadow-2xl hover:shadow-neon-red-orange/40"
+                className="inline-flex items-center justify-center gap-3 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-sm uppercase tracking-wider font-semibold px-8 py-4 rounded-lg transition-all"
               >
                 Get Directions
                 <MapPin size={18} />
