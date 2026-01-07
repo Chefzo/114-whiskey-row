@@ -65,9 +65,7 @@ export default function HomePage() {
             className="w-full h-full object-cover opacity-15"
             width={1920}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background" />
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neon-red-orange/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-warm-amber/5 rounded-full blur-3xl" />
+          <div className="absolute inset-0 bg-background" />
         </div>
 
         {/* Content */}
@@ -118,9 +116,6 @@ export default function HomePage() {
             </p>
             <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed">
               Built for late nights. Loud music. Strong drinks.
-            </p>
-            <p className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground font-semibold leading-relaxed">
-              No reservations. No dress code. Just show up.
             </p>
           </motion.div>
 
@@ -234,7 +229,7 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="p-8 sm:p-10 bg-gradient-to-r from-neon-red-orange/15 via-warm-amber/10 to-neon-red-orange/15 border border-neon-red-orange/30 rounded-xl"
+            className="p-8 sm:p-10 bg-black/40 border border-foreground/10 rounded-xl"
           >
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {/* Status */}
@@ -338,7 +333,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== ABOUT SECTION ===== */}
-      <section className="w-full py-16 sm:py-24 px-4 bg-black/40 backdrop-blur-sm border-t border-neon-red-orange/20">
+      <section className="w-full py-16 sm:py-24 px-4 border-t border-foreground/10">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
             variants={containerVariants}
@@ -353,7 +348,7 @@ export default function HomePage() {
                 No polish.<br />
                 <span className="text-neon-red-orange">No pretense.</span>
               </h2>
-              <div className="w-16 h-1.5 bg-gradient-to-r from-neon-red-orange to-warm-amber rounded-full" />
+              <div className="w-16 h-1.5 bg-neon-red-orange rounded-full" />
             </motion.div>
 
             {/* Image */}
@@ -364,8 +359,8 @@ export default function HomePage() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 width={600}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute inset-0 border border-neon-red-orange/20 rounded-xl" />
+              <div className="absolute inset-0 bg-black/40" />
+              <div className="absolute inset-0 border border-foreground/10 rounded-xl" />
             </motion.div>
           </motion.div>
         </div>
@@ -482,7 +477,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== GALLERY SECTION ===== */}
-      <section className="w-full py-16 sm:py-24 px-4 bg-black/40 backdrop-blur-sm">
+      <section className="w-full py-16 sm:py-24 px-4">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -560,18 +555,15 @@ export default function HomePage() {
       </section>
 
       {/* ===== CLOSING SECTION ===== */}
-      <section className="w-full py-16 sm:py-24 px-4 border-t border-neon-red-orange/20">
+      <section className="w-full py-16 sm:py-24 px-4 border-t border-foreground/10">
         <div className="max-w-[100rem] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7 }}
-            className="space-y-6 sm:space-y-8 max-w-2xl"
+            className="max-w-2xl"
           >
-            <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
-              Modern dive on Whiskey Row.
-            </p>
             <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
               Loud music. Strong drinks.
             </p>

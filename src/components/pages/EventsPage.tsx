@@ -71,8 +71,7 @@ export default function EventsPage() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-neon-red-orange/5 to-transparent" />
-          <div className="absolute top-0 right-0 w-96 h-96 bg-neon-red-orange/3 rounded-full blur-3xl" />
+          <div className="absolute inset-0 bg-background" />
         </div>
 
         <div className="relative z-10 max-w-[120rem] mx-auto">
@@ -83,12 +82,9 @@ export default function EventsPage() {
           >
             <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl font-bold text-foreground mb-6">
               What's <span className="text-neon-red-orange">On</span>
-              <span className="block text-base sm:text-lg md:text-xl font-paragraph font-normal text-foreground/70 mt-4">
-                Events & Entertainment at One Fourteen Bar
-              </span>
             </h1>
             <p className="font-paragraph text-lg sm:text-xl text-foreground/70 max-w-3xl">
-              Weekly DJs, game days, and live entertainment at One Fourteen Bar on Whiskey Row. Check what's happening this week in downtown Louisville.
+              Weekly DJs, game days, and live entertainment at One Fourteen Bar on Whiskey Row.
             </p>
           </motion.div>
         </div>
@@ -97,36 +93,36 @@ export default function EventsPage() {
       {/* Filter Section */}
       <section className="px-4 sm:px-6 lg:px-8 pb-8">
         <div className="max-w-[120rem] mx-auto">
-          <div className="flex gap-4 border-b border-foreground/10 pb-4">
+          <div className="flex gap-6 pb-4">
             <button
               onClick={() => setFilter('all')}
-              className={`font-paragraph text-sm uppercase tracking-wider px-6 py-2 rounded transition-all ${
+              className={`font-paragraph text-xs uppercase tracking-wider transition-all ${
                 filter === 'all'
-                  ? 'bg-neon-red-orange text-white'
-                  : 'bg-transparent text-foreground/60 hover:text-foreground border border-foreground/20'
+                  ? 'text-foreground'
+                  : 'text-foreground/50 hover:text-foreground/70'
               }`}
             >
-              All Events
+              All
             </button>
             <button
               onClick={() => setFilter('upcoming')}
-              className={`font-paragraph text-sm uppercase tracking-wider px-6 py-2 rounded transition-all ${
+              className={`font-paragraph text-xs uppercase tracking-wider transition-all ${
                 filter === 'upcoming'
-                  ? 'bg-neon-red-orange text-white'
-                  : 'bg-transparent text-foreground/60 hover:text-foreground border border-foreground/20'
+                  ? 'text-foreground'
+                  : 'text-foreground/50 hover:text-foreground/70'
               }`}
             >
               Upcoming
             </button>
             <button
               onClick={() => setFilter('past')}
-              className={`font-paragraph text-sm uppercase tracking-wider px-6 py-2 rounded transition-all ${
+              className={`font-paragraph text-xs uppercase tracking-wider transition-all ${
                 filter === 'past'
-                  ? 'bg-neon-red-orange text-white'
-                  : 'bg-transparent text-foreground/60 hover:text-foreground border border-foreground/20'
+                  ? 'text-foreground'
+                  : 'text-foreground/50 hover:text-foreground/70'
               }`}
             >
-              Past Events
+              Past
             </button>
           </div>
         </div>

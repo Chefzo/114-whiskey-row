@@ -35,8 +35,7 @@ export default function GalleryPage() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-neon-red-orange/5 to-transparent" />
-          <div className="absolute top-0 left-0 w-96 h-96 bg-warm-amber/3 rounded-full blur-3xl" />
+          <div className="absolute inset-0 bg-background" />
         </div>
 
         <div className="relative z-10 max-w-[120rem] mx-auto">
