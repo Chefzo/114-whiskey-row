@@ -218,9 +218,6 @@ export default function HomePage() {
               <p className="font-paragraph text-base sm:text-lg text-foreground/90">
                 Late nights.
               </p>
-              <p className="font-paragraph text-base sm:text-lg text-foreground/90">
-                People over polish.
-              </p>
             </div>
           </div>
         </div>
@@ -256,7 +253,6 @@ export default function HomePage() {
 
               {/* CTA */}
               <div className="flex flex-col justify-between">
-                <p className="font-paragraph text-xs uppercase tracking-widest text-foreground/60 mb-2">Ready?</p>
                 <button
                   onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
                   className="inline-flex items-center justify-center gap-2 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-sm uppercase tracking-wider font-semibold px-6 py-3 rounded-lg transition-all shadow-lg hover:shadow-xl hover:shadow-neon-red-orange/40 w-full sm:w-auto"
@@ -313,7 +309,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== THE STORY SECTION ===== */}
+       {/* ===== THE STORY SECTION ===== */}
       <section className="w-full py-16 sm:py-24 px-4 border-t border-neon-red-orange/20">
         <div className="max-w-[100rem] mx-auto">
           <motion.div
@@ -325,7 +321,7 @@ export default function HomePage() {
           >
             <div className="max-w-2xl">
               <p className="font-paragraph text-lg sm:text-xl text-foreground/90 leading-relaxed">
-                One Fourteen is about what happens inside.
+                One Fourteen is a walk-in bar on Whiskey Row.
               </p>
               <div className="mt-6">
                 <Link
@@ -496,10 +492,10 @@ export default function HomePage() {
             className="mb-12"
           >
             <h2 className="font-heading text-5xl sm:text-6xl font-bold text-foreground mb-3">
-              The <span className="text-neon-red-orange">Vibe</span>
+              Inside <span className="text-neon-red-orange">One Fourteen</span>
             </h2>
             <p className="font-paragraph text-base sm:text-lg text-foreground/70">
-              Real moments. Real energy.
+              A late night on Whiskey Row.
             </p>
           </motion.div>
 
@@ -527,11 +523,6 @@ export default function HomePage() {
                     />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {photo.caption && (
-                      <p className="absolute bottom-3 left-3 right-3 font-paragraph text-xs sm:text-sm text-foreground line-clamp-2">
-                        {photo.caption}
-                      </p>
-                    )}
                   </div>
                 </motion.div>
               ))}
@@ -579,10 +570,10 @@ export default function HomePage() {
             className="space-y-6 sm:space-y-8 max-w-2xl"
           >
             <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
-              One Fourteen is about what happens inside. The conversations. The energy. The people who show up as themselves.
+              Modern dive on Whiskey Row.
             </p>
             <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
-              It's not about the building. It's about the feeling.
+              Loud music. Strong drinks.
             </p>
           </motion.div>
         </div>
