@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, MapPin } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Image } from '@/components/ui/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,9 +27,13 @@ export default function Header() {
       <div className="max-w-[120rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="font-heading text-xl sm:text-2xl font-bold tracking-tight group">
-            <span className="text-neon-red-orange group-hover:text-foreground transition-colors duration-300">One Fourteen</span>
-            <span className="text-foreground ml-2 group-hover:text-foreground/80 transition-colors duration-300">Bar</span>
+          <Link to="/" className="group flex items-center">
+            <Image 
+              src="https://static.wixstatic.com/media/528274_363951d44b154fd697adf91d897f90f4~mv2.png" 
+              alt="One Fourteen Bar Logo" 
+              width={120}
+              className="h-12 w-auto object-contain group-hover:opacity-90 transition-opacity duration-300"
+            />
           </Link>
 
           {/* Desktop Navigation */}
