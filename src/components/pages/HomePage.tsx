@@ -54,7 +54,6 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-
       {/* ===== HERO SECTION ===== */}
       <section className="relative w-full flex items-center justify-center pt-20 pb-0 px-4 overflow-hidden min-h-screen md:min-h-[90vh]">
         {/* Background */}
@@ -156,7 +155,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* ===== MOBILE STATUS STRIP ===== */}
       <motion.section
         initial={{ opacity: 0, y: -10 }}
@@ -172,7 +170,6 @@ export default function HomePage() {
           </span>
         </div>
       </motion.section>
-
       {/* Mobile Fixed Get Directions Button - ONLY CTA on mobile */}
       <motion.button
         onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
@@ -186,7 +183,6 @@ export default function HomePage() {
         <MapPin size={16} />
         Get Directions
       </motion.button>
-
       {/* ===== WHAT THIS PLACE IS SECTION ===== */}
       <section className="w-full py-16 sm:py-24 px-4 border-t border-neon-red-orange/20">
         <div className="max-w-[100rem] mx-auto">
@@ -220,9 +216,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-
-
       {/* ===== TONIGHT AT ONE FOURTEEN SECTION (Desktop Only) ===== */}
       <section className="w-full py-16 sm:py-24 px-4 hidden sm:block">
         <div className="max-w-[120rem] mx-auto">
@@ -306,8 +299,7 @@ export default function HomePage() {
           )}
         </div>
       </section>
-
-       {/* ===== THE STORY SECTION ===== */}
+      {/* ===== THE STORY SECTION ===== */}
       <section className="w-full py-16 sm:py-24 px-4 border-t border-neon-red-orange/20">
         <div className="max-w-[100rem] mx-auto">
           <motion.div
@@ -334,40 +326,7 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* ===== ABOUT SECTION ===== */}
-      <section className="w-full py-16 sm:py-24 px-4 border-t border-foreground/10">
-        <div className="max-w-[120rem] mx-auto">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
-          >
-            {/* Text */}
-            <motion.div variants={itemVariants} className="space-y-6">
-              <h2 className="font-heading text-5xl sm:text-6xl font-bold text-foreground leading-tight">
-                No polish.<br />
-                <span className="text-neon-red-orange">No pretense.</span>
-              </h2>
-              <div className="w-16 h-1.5 bg-neon-red-orange rounded-full" />
-            </motion.div>
-
-            {/* Image */}
-            <motion.div variants={itemVariants} className="relative h-80 sm:h-96 rounded-xl overflow-hidden group">
-              <Image
-                src="https://static.wixstatic.com/media/528274_88f8eb54d37a4c2299daf3b1c414aae2~mv2.png?originWidth=576&originHeight=960"
-                alt="Neon lights and bar atmosphere"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                width={600}
-              />
-              <div className="absolute inset-0 bg-black/40" />
-              <div className="absolute inset-0 border border-foreground/10 rounded-xl" />
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* ===== EVENTS SECTION ===== */}
       <section className="w-full py-16 sm:py-24 px-4">
@@ -478,7 +437,6 @@ export default function HomePage() {
           )}
         </div>
       </section>
-
       {/* ===== GALLERY SECTION ===== */}
       <section className="w-full py-16 sm:py-24 px-4">
         <div className="max-w-[120rem] mx-auto">
@@ -556,7 +514,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* ===== CLOSING SECTION ===== */}
       <section className="w-full py-16 sm:py-24 px-4 border-t border-foreground/10">
         <div className="max-w-[100rem] mx-auto">
@@ -573,7 +530,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
