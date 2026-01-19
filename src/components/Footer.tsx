@@ -94,16 +94,12 @@ export default function Footer() {
               </h4>
               <div className="font-paragraph text-xs sm:text-sm text-foreground/90 space-y-2">
                 <div className="flex justify-between">
-                  <span>Mon - Thu</span>
+                  <span>Monday</span>
+                  <span className="text-foreground/60 font-semibold">Closed</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Tue - Sun</span>
                   <span className="text-neon-red-orange font-semibold">4pm - 2am</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Fri - Sat</span>
-                  <span className="text-neon-red-orange font-semibold">12pm - 4am</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sunday</span>
-                  <span className="text-neon-red-orange font-semibold">12pm - 2am</span>
                 </div>
               </div>
             </motion.div>

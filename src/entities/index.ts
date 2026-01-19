@@ -23,7 +23,7 @@ export interface Events {
   endTime?: any;
   /** @wixFieldType text */
   eventDescription?: string;
-  /** @wixFieldType image */
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   eventImage?: string;
   /** @wixFieldType url */
   callToActionUrl?: string;
@@ -38,7 +38,7 @@ export interface GalleryPhotos {
   _id: string;
   _createdDate?: Date;
   _updatedDate?: Date;
-  /** @wixFieldType image */
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   photo?: string;
   /** @wixFieldType text */
   caption?: string;

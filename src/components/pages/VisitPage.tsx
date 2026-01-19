@@ -95,16 +95,12 @@ export default function VisitPage() {
                     
                     <div className="space-y-4">
                       <div className="flex justify-between items-center pb-3 border-b border-neon-red-orange/10">
-                        <span className="font-paragraph text-base text-foreground/80">Monday - Thursday</span>
-                        <span className="font-paragraph text-base text-foreground font-medium">4pm - 2am</span>
-                      </div>
-                      <div className="flex justify-between items-center pb-3 border-b border-neon-red-orange/10">
-                        <span className="font-paragraph text-base text-foreground/80">Friday - Saturday</span>
-                        <span className="font-paragraph text-base text-neon-red-orange font-medium">12pm - 4am</span>
+                        <span className="font-paragraph text-base text-foreground/80">Monday</span>
+                        <span className="font-paragraph text-base text-foreground/60 font-medium">Closed</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="font-paragraph text-base text-foreground/80">Sunday</span>
-                        <span className="font-paragraph text-base text-foreground font-medium">12pm - 2am</span>
+                        <span className="font-paragraph text-base text-foreground/80">Tuesday - Sunday</span>
+                        <span className="font-paragraph text-base text-neon-red-orange font-medium">4:00 PM - 2:00 AM</span>
                       </div>
                     </div>
                   </div>
