@@ -82,24 +82,15 @@ export default function HomePage() {
             </span>
           </motion.div>
 
-          {/* H1 - One Fourteen Bar */}
-          <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-[1.1] text-foreground mb-6 max-w-4xl">
+          {/* H1 - Experience the Best Downtown Louisville Bars */}
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-foreground mb-6 max-w-5xl">
             <motion.span
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
-              className="inline-block text-neon-red-orange"
+              className="inline-block"
             >
-              One Fourteen
-            </motion.span>
-            <br />
-            <motion.span
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.35, ease: "easeOut" }}
-              className="inline-block text-foreground"
-            >
-              Bar
+              Experience the Best <span className="text-neon-red-orange">Downtown Louisville Bars</span>
             </motion.span>
           </h1>
 
@@ -108,16 +99,10 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="space-y-4 mb-10 max-w-2xl px-2"
+            className="mb-10 max-w-3xl px-2"
           >
             <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed">
-              Modern dive on Whiskey Row.
-            </p>
-            <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed">
-              Built for late nights. Loud music. Strong drinks.
-            </p>
-            <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed">
-              Bar inside. Backyard out back.
+              Located on Whiskey Row, One Fourteen Bar is a must-visit among downtown Louisville bars. Offering an exciting atmosphere with loud music, strong drinks, and open late hours, we provide a lively experience. Visit us at 114 W Main St to immerse yourself in the vibrant energy of downtown Louisville.
             </p>
           </motion.div>
 
