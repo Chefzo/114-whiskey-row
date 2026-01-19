@@ -1,5 +1,6 @@
 import { Instagram, Facebook, MapPin, Clock, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const containerVariants = {
@@ -110,22 +111,18 @@ export default function Footer() {
                 Quick Links
               </h4>
               <div className="space-y-2">
-                <a href="/" className="font-paragraph text-xs sm:text-sm text-foreground/80 hover:text-neon-red-orange transition-colors flex items-center gap-1 group">
+                <Link to="/" className="font-paragraph text-xs sm:text-sm text-foreground/80 hover:text-neon-red-orange transition-colors block">
                   Home
-                  <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
-                <a href="/events" className="font-paragraph text-xs sm:text-sm text-foreground/80 hover:text-neon-red-orange transition-colors flex items-center gap-1 group">
+                </Link>
+                <Link to="/events" className="font-paragraph text-xs sm:text-sm text-foreground/80 hover:text-neon-red-orange transition-colors block">
                   Events
-                  <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
-                <a href="/gallery" className="font-paragraph text-xs sm:text-sm text-foreground/80 hover:text-neon-red-orange transition-colors flex items-center gap-1 group">
+                </Link>
+                <Link to="/gallery" className="font-paragraph text-xs sm:text-sm text-foreground/80 hover:text-neon-red-orange transition-colors block">
                   Gallery
-                  <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
-                <a href="/contact" className="font-paragraph text-xs sm:text-sm text-foreground/80 hover:text-neon-red-orange transition-colors flex items-center gap-1 group">
+                </Link>
+                <Link to="/contact" className="font-paragraph text-xs sm:text-sm text-foreground/80 hover:text-neon-red-orange transition-colors block">
                   Contact
-                  <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
+                </Link>
               </div>
             </motion.div>
           </motion.div>
