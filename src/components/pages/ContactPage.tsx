@@ -241,10 +241,10 @@ export default function ContactPage() {
                     <div>
                       <p className="font-paragraph text-xs text-foreground/60 mb-1">Phone</p>
                       <a
-                        href="tel:+15025550114"
+                        href="tel:+15029071400"
                         className="font-paragraph text-sm text-foreground hover:text-neon-red-orange transition-colors"
                       >
-                        (502) 555-0114
+                        (502) 907-1400
                       </a>
                     </div>
                   </div>
