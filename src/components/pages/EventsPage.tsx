@@ -86,6 +86,9 @@ export default function EventsPage() {
             <p className="font-paragraph text-lg sm:text-xl text-foreground/70 max-w-3xl">
               Weekly DJs, game days, and live entertainment at One Fourteen Bar on Whiskey Row.
             </p>
+            <p className="font-paragraph text-base text-foreground/60 mt-4 max-w-3xl">
+              Some nights spill into the backyard.
+            </p>
           </motion.div>
         </div>
       </section>

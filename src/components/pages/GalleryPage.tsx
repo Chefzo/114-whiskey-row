@@ -58,8 +58,12 @@ export default function GalleryPage() {
       <section className="px-4 sm:px-6 lg:px-8 pb-24">
         <div className="max-w-[120rem] mx-auto">
           {photos.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {photos.map((photo, index) => (
+            <>
+              <p className="font-paragraph text-sm text-foreground/60 mb-8">
+                Backyard
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {photos.map((photo, index) => (
                 <motion.div
                   key={photo._id}
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -95,7 +99,8 @@ export default function GalleryPage() {
                   </div>
                 </motion.div>
               ))}
-            </div>
+              </div>
+            </>
           ) : (
             <div className="text-center py-24">
               <Camera size={64} className="text-neon-red-orange/30 mx-auto mb-6" />

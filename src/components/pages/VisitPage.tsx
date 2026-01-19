@@ -103,6 +103,10 @@ export default function VisitPage() {
                         <span className="font-paragraph text-base text-neon-red-orange font-medium">4:00 PM - 2:00 AM</span>
                       </div>
                     </div>
+
+                    <p className="font-paragraph text-sm text-foreground/70 mt-6 pt-4 border-t border-neon-red-orange/10">
+                      Indoor bar with a backyard out back.
+                    </p>
                   </div>
                 </div>
               </div>

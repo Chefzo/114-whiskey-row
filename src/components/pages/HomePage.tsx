@@ -117,6 +117,9 @@ export default function HomePage() {
             <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed">
               Built for late nights. Loud music. Strong drinks.
             </p>
+            <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed">
+              Bar inside. Backyard out back.
+            </p>
           </motion.div>
 
           {/* Opening Status - Desktop */}
