@@ -185,7 +185,7 @@ export default function ContactPage() {
                 
                 <div className="space-y-4">
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/onefourteenwhiskeyrow/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 p-4 bg-gradient-to-r from-neon-red-orange/10 to-transparent border border-neon-red-orange/30 rounded hover:border-neon-red-orange/60 transition-all group"
@@ -195,7 +195,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-paragraph text-sm font-medium text-foreground">Instagram</p>
-                      <p className="font-paragraph text-xs text-foreground/60">@114whiskeyrow</p>
+                      <p className="font-paragraph text-xs text-foreground/60">@onefourteenwhiskeyrow</p>
                     </div>
                   </a>
 
