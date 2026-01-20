@@ -23,16 +23,8 @@ export default function AboutPage() {
 
       {/* ===== HERO SECTION ===== */}
       <section className="relative w-full flex items-center justify-center pt-20 pb-0 px-4 overflow-hidden min-h-[60vh] md:min-h-[70vh]">
-        {/* Background */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://static.wixstatic.com/media/528274_de41e140f4b5413493d5959e97c96f5a~mv2.png?originWidth=1920&originHeight=1024"
-            alt="One Fourteen Bar interior"
-            className="w-full h-full object-cover opacity-15"
-            width={1920}
-          />
-          <div className="absolute inset-0 bg-background" />
-        </div>
+        {/* Background - Pure texture, no AI images */}
+        <div className="absolute inset-0 z-0 bg-background" />
 
         {/* Content */}
         <div className="relative z-10 w-full max-w-[120rem] mx-auto text-left flex flex-col justify-center min-h-[60vh] md:min-h-[70vh]">
@@ -121,27 +113,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ===== IMAGE SECTION ===== */}
-      <section className="w-full py-16 sm:py-24 px-4 bg-black/40 backdrop-blur-sm">
-        <div className="max-w-[120rem] mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7 }}
-            className="relative h-96 sm:h-[500px] rounded-xl overflow-hidden group"
-          >
-            <Image
-              src="https://static.wixstatic.com/media/528274_88f8eb54d37a4c2299daf3b1c414aae2~mv2.png?originWidth=576&originHeight=960"
-              alt="One Fourteen Bar atmosphere"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              width={1200}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <div className="absolute inset-0 border border-neon-red-orange/20 rounded-xl" />
-          </motion.div>
-        </div>
-      </section>
+      {/* ===== IMAGE SECTION - REMOVED ===== */}
+      {/* Removed AI-generated imagery. Real bar photos will be added when available. */}
 
       <Footer />
     </div>

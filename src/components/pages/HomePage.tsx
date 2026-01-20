@@ -56,16 +56,8 @@ export default function HomePage() {
       <Header />
       {/* ===== HERO SECTION ===== */}
       <section className="relative w-full flex items-center justify-center pt-20 pb-0 px-4 overflow-hidden min-h-screen md:min-h-[90vh]">
-        {/* Background */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://static.wixstatic.com/media/528274_de41e140f4b5413493d5959e97c96f5a~mv2.png?originWidth=1920&originHeight=1024"
-            alt="One Fourteen Bar interior"
-            className="w-full h-full object-cover opacity-15"
-            width={1920}
-          />
-          <div className="absolute inset-0 bg-background" />
-        </div>
+        {/* Background - Pure texture, no AI images */}
+        <div className="absolute inset-0 z-0 bg-background" />
 
         {/* Content */}
         <div className="relative z-10 w-full max-w-[120rem] mx-auto text-left flex flex-col items-start justify-center min-h-[calc(100vh-80px)] md:min-h-[90vh] pl-4 md:pl-12">
