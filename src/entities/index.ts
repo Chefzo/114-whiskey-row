@@ -4,6 +4,64 @@
  */
 
 /**
+ * Collection ID: blogcategories
+ * Interface for BlogCategories
+ */
+export interface BlogCategories {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  name?: string;
+  /** @wixFieldType text */
+  slug?: string;
+  /** @wixFieldType text */
+  description?: string;
+  /** @wixFieldType text */
+  seoTitle?: string;
+  /** @wixFieldType text */
+  seoDescription?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  categoryImage?: string;
+}
+
+
+/**
+ * Collection ID: blogposts
+ * Interface for BlogPosts
+ */
+export interface BlogPosts {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  title?: string;
+  /** @wixFieldType text */
+  slug?: string;
+  /** @wixFieldType text */
+  excerpt?: string;
+  /** @wixFieldType text */
+  content?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  featuredImage?: string;
+  /** @wixFieldType text */
+  metaDescription?: string;
+  /** @wixFieldType text */
+  metaKeywords?: string;
+  /** @wixFieldType text */
+  author?: string;
+  /** @wixFieldType date */
+  publishDate?: Date | string;
+  /** @wixFieldType text */
+  category?: string;
+  /** @wixFieldType text */
+  tags?: string;
+  /** @wixFieldType text */
+  readTime?: string;
+}
+
+
+/**
  * Collection ID: events
  * Interface for Events
  */
