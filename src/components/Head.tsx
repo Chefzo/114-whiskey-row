@@ -1,6 +1,16 @@
 export const Head = () => {
   return (
     <>
+      {/* Google Analytics */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMM17LNJXM"></script>
+      <script dangerouslySetInnerHTML={{
+        __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JMM17LNJXM');`
+      }} />
+      {/* End Google Analytics */}
+      
       {/* Google Tag Manager */}
       <script dangerouslySetInnerHTML={{
         __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
