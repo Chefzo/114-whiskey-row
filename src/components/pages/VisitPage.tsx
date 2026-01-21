@@ -1,9 +1,23 @@
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 import { MapPin, Clock, Navigation } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export default function VisitPage() {
+  useEffect(() => {
+    // Google Tag Manager noscript fallback
+    const noscript = document.createElement('noscript');
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://www.googletagmanager.com/ns.html?id=GTM-WMRZT82N';
+    iframe.height = '0';
+    iframe.width = '0';
+    iframe.style.display = 'none';
+    iframe.style.visibility = 'hidden';
+    noscript.appendChild(iframe);
+    document.body.insertBefore(noscript, document.body.firstChild);
+  }, []);
+
   const address = '114 W Main St, Louisville, KY 40202';
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 

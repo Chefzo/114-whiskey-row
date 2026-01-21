@@ -12,6 +12,19 @@ export default function EventsPage() {
   const [filter, setFilter] = useState<'all' | 'upcoming' | 'past'>('upcoming');
 
   useEffect(() => {
+    // Google Tag Manager noscript fallback
+    const noscript = document.createElement('noscript');
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://www.googletagmanager.com/ns.html?id=GTM-WMRZT82N';
+    iframe.height = '0';
+    iframe.width = '0';
+    iframe.style.display = 'none';
+    iframe.style.visibility = 'hidden';
+    noscript.appendChild(iframe);
+    document.body.insertBefore(noscript, document.body.firstChild);
+  }, []);
+
+  useEffect(() => {
     const fetchEvents = async () => {
       const { items } = await BaseCrudService.getAll<Events>('events');
       

@@ -1,9 +1,22 @@
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export default function AboutPage() {
+  useEffect(() => {
+    // Google Tag Manager noscript fallback
+    const noscript = document.createElement('noscript');
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://www.googletagmanager.com/ns.html?id=GTM-WMRZT82N';
+    iframe.height = '0';
+    iframe.width = '0';
+    iframe.style.display = 'none';
+    iframe.style.visibility = 'hidden';
+    noscript.appendChild(iframe);
+    document.body.insertBefore(noscript, document.body.firstChild);
+  }, []);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
