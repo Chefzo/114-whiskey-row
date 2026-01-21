@@ -21,6 +21,10 @@ const seoTagsServiceConfig = await loadSEOTagsServiceConfig({
     <SEO.Tags seoTagsServiceConfig={seoTagsServiceConfig} slot="seo-tags" />
   </head>
   <body class="w-full h-full">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMRZT82N"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="root" class="w-full h-full">
       <AppRouter client:only="react" />
     </div>
