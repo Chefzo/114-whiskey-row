@@ -134,9 +134,14 @@ export default function Footer() {
             viewport={{ once: true }}
             className="pt-6 border-t border-neon-red-orange/10"
           >
-            <p className="font-paragraph text-xs text-center text-foreground/50">
-              © {new Date().getFullYear()} One Fourteen Bar. All rights reserved. | Whiskey Row, Louisville, KY
-            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+              <p className="font-paragraph text-xs text-foreground/50">
+                © {new Date().getFullYear()} One Fourteen Bar. All rights reserved. | Whiskey Row, Louisville, KY
+              </p>
+              <p className="font-paragraph text-xs text-neon-red-orange font-semibold">
+                Walk-ins only · 21+
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>
