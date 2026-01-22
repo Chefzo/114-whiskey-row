@@ -7,14 +7,23 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { BaseCrudService } from '@/integrations';
 import { GalleryPhotos } from '@/entities';
+import { getBarStatus, BarStatus } from '@/lib/bar-hours';
 
 export default function HomePage() {
   const [galleryPhotos, setGalleryPhotos] = useState<GalleryPhotos[]>([]);
   const [isLoadingGallery, setIsLoadingGallery] = useState(true);
+  const [barStatus, setBarStatus] = useState<BarStatus | null>(null);
 
   useEffect(() => {
     loadGallery();
+    updateBarStatus();
+    const interval = setInterval(updateBarStatus, 60000); // Update every minute
+    return () => clearInterval(interval);
   }, []);
+
+  const updateBarStatus = () => {
+    setBarStatus(getBarStatus());
+  };
 
   const loadGallery = async () => {
     try {
@@ -54,6 +63,23 @@ export default function HomePage() {
               After the Show.<br />
               <span className="text-primary">Late Night on Whiskey Row.</span>
             </h1>
+            
+            {barStatus && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="mb-8"
+              >
+                <div className="inline-flex items-center gap-3 bg-black/50 border-2 border-foreground/20 px-6 py-3 rounded-full">
+                  <div className={`w-3 h-3 rounded-full ${barStatus.isOpen ? 'bg-primary animate-pulse' : 'bg-foreground/30'}`} />
+                  <span className="font-paragraph text-lg md:text-xl text-foreground tracking-wide">
+                    {barStatus.isOpen ? 'OPEN NOW' : 'CLOSED'} • {barStatus.nextEvent}
+                  </span>
+                </div>
+              </motion.div>
+            )}
+            
             <p className="font-paragraph text-xl md:text-2xl text-foreground/80 mb-12 tracking-wide">
               Loud music. Strong drinks. Walk-ins only.
             </p>
