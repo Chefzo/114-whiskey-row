@@ -58,11 +58,15 @@ export default function HomePage() {
             transition={{ duration: 0.9, ease: 'easeOut' }}
             className="max-w-5xl"
           >
-            <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl text-foreground mb-8 leading-[0.95] tracking-tight">
+            <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl text-foreground mb-6 leading-[1.1] tracking-tight">
               Before the Game.<br />
               After the Show.<br />
               <span className="text-primary">Late Night on Whiskey Row.</span>
             </h1>
+            
+            <p className="font-paragraph text-xl md:text-2xl text-foreground/80 mb-12 tracking-wide">
+              Loud music. Strong drinks. Walk-ins only.
+            </p>
             
             {barStatus && (
               <motion.div
@@ -79,10 +83,6 @@ export default function HomePage() {
                 </div>
               </motion.div>
             )}
-            
-            <p className="font-paragraph text-xl md:text-2xl text-foreground/80 mb-12 tracking-wide">
-              Loud music. Strong drinks. Walk-ins only.
-            </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
