@@ -45,16 +45,18 @@ export function getBarStatus(): BarStatus {
   // Determine next event
   let nextEvent = '';
   if (isClosed) {
-    nextEvent = 'Opens Tuesday at 4pm';
+    nextEvent = 'Opens Tuesday at 4:00pm';
   } else if (isOpen) {
-    nextEvent = 'Late night';
+    const closeHour = Math.floor(todaySchedule.close / 60) % 24;
+    const closeMinute = todaySchedule.close % 60;
+    const isMidnightOrLater = todaySchedule.close >= 24 * 60;
+    const displayHour = closeHour === 0 ? 12 : closeHour > 12 ? closeHour - 12 : closeHour;
+    const ampm = isMidnightOrLater ? 'am' : (closeHour >= 12 ? 'pm' : 'am');
+    nextEvent = `Closes at ${displayHour}:${closeMinute.toString().padStart(2, '0')}${ampm}`;
   } else {
     const openHour = Math.floor(todaySchedule.open / 60);
     const openMinute = todaySchedule.open % 60;
-    const displayHour = openHour === 0 ? 12 : openHour > 12 ? openHour - 12 : openHour;
-    const ampm = openHour >= 12 ? 'pm' : 'am';
-    const timeString = openMinute > 0 ? `${displayHour}:${openMinute.toString().padStart(2, '0')}${ampm}` : `${displayHour}${ampm}`;
-    nextEvent = `Opens today at ${timeString}`;
+    nextEvent = `Opens at ${openHour === 0 ? 12 : openHour > 12 ? openHour - 12 : openHour}:${openMinute.toString().padStart(2, '0')}${openHour >= 12 ? 'pm' : 'am'}`;
   }
 
   return {
