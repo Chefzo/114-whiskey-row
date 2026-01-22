@@ -27,8 +27,8 @@ export default function HomePage() {
 
   const loadGallery = async () => {
     try {
-      const result = await BaseCrudService.getAll<GalleryPhotos>('galleryphotos', [], { limit: 4 });
-      setGalleryPhotos(result.items.slice(0, 4));
+      const result = await BaseCrudService.getAll<GalleryPhotos>('galleryphotos', [], { limit: 3 });
+      setGalleryPhotos(result.items.slice(0, 3));
     } catch (error) {
       console.error('Error loading gallery:', error);
     } finally {
@@ -59,13 +59,16 @@ export default function HomePage() {
             className="max-w-5xl"
           >
             <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl text-foreground mb-6 leading-[1.1] tracking-tight">
-              Before the Game.<br />
-              After the Show.<br />
-              <span className="text-primary">Late Night on Whiskey Row.</span>
+              Whiskey Row's<br />
+              <span className="text-primary">late-night walk-in bar.</span>
             </h1>
             
-            <p className="font-paragraph text-xl md:text-2xl text-foreground/80 mb-12 tracking-wide">
-              Loud music. Strong drinks. Walk-ins only.
+            <p className="font-paragraph text-xl md:text-2xl text-foreground/80 mb-4 tracking-wide">
+              Loud music. Strong drinks. DJs, game days, and after-hours energy.
+            </p>
+            
+            <p className="font-paragraph text-base md:text-lg text-foreground/60 mb-12 tracking-wide">
+              Open late · Walk-ins only · 114 W Main St
             </p>
             
             {barStatus && (
@@ -75,11 +78,16 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="mb-8"
               >
-                <div className="inline-flex items-center gap-3 bg-black/50 border-2 border-foreground/20 px-6 py-3 rounded-full">
-                  <div className={`w-3 h-3 rounded-full ${barStatus.isOpen ? 'bg-primary animate-pulse' : 'bg-foreground/30'}`} />
-                  <span className="font-paragraph text-lg md:text-xl text-foreground tracking-wide">
-                    {barStatus.isOpen ? 'OPEN NOW' : 'CLOSED'} • {barStatus.nextEvent}
-                  </span>
+                <div className="inline-flex items-center gap-4 bg-black/50 border-2 border-primary/40 px-8 py-4 rounded-full">
+                  <div className={`w-4 h-4 rounded-full ${barStatus.isOpen ? 'bg-primary animate-pulse' : 'bg-foreground/30'}`} />
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
+                    <span className="font-heading text-2xl md:text-3xl text-foreground tracking-tight">
+                      {barStatus.isOpen ? 'OPEN NOW' : 'CLOSED'}
+                    </span>
+                    <span className="font-paragraph text-sm md:text-base text-foreground/70 tracking-wide">
+                      {barStatus.nextEvent}
+                    </span>
+                  </div>
                 </div>
               </motion.div>
             )}
@@ -107,7 +115,7 @@ export default function HomePage() {
       </section>
 
       {/* What This Place Is */}
-      <section className="w-full py-32 md:py-40 bg-[#1a1a1a]">
+      <section className="w-full py-16 md:py-20 bg-[#1a1a1a]">
         <div className="w-full max-w-[120rem] mx-auto px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0 }}
@@ -141,7 +149,7 @@ export default function HomePage() {
       </section>
 
       {/* What's On / Events Preview */}
-      <section id="events-section" className="w-full py-32 md:py-40 bg-black">
+      <section id="events-section" className="w-full py-16 md:py-20 bg-black">
         <div className="w-full max-w-[120rem] mx-auto px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -149,71 +157,31 @@ export default function HomePage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="font-heading text-5xl md:text-7xl text-foreground mb-16">
+            <h2 className="font-heading text-5xl md:text-7xl text-foreground mb-10">
               What's On
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-8 mb-16">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="border-l-4 border-primary pl-8 py-4"
-              >
-                <div className="font-paragraph text-3xl md:text-4xl text-foreground/50 mb-2">THU</div>
-                <div className="font-heading text-4xl md:text-5xl text-foreground">DJs</div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="border-l-4 border-foreground pl-8 py-4"
-              >
-                <div className="font-paragraph text-3xl md:text-4xl text-foreground/50 mb-2">FRI</div>
-                <div className="font-heading text-4xl md:text-5xl text-foreground">Late Night</div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="border-l-4 border-foreground pl-8 py-4"
-              >
-                <div className="font-paragraph text-3xl md:text-4xl text-foreground/50 mb-2">SAT</div>
-                <div className="font-heading text-4xl md:text-5xl text-foreground">DJs till close</div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="border-l-4 border-primary pl-8 py-4"
-              >
-                <div className="font-paragraph text-3xl md:text-4xl text-foreground/50 mb-2">GAME DAYS</div>
-                <div className="font-heading text-4xl md:text-5xl text-foreground">Sound on</div>
-              </motion.div>
+            <div className="mb-10">
+              <p className="font-paragraph text-xl md:text-2xl text-foreground/90 leading-relaxed whitespace-pre-line">
+                This week at One Fourteen{'\n'}
+                DJs Friday & Saturday · 10pm–close{'\n'}
+                Game days: sound on, late energy{'\n'}
+                Walk-ins always welcome
+              </p>
             </div>
 
-            <Button 
-              size="lg"
-              variant="outline"
-              className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-black font-paragraph text-lg px-10 py-7 h-auto"
-              onClick={() => window.location.href = '/events'}
+            <a 
+              href="/events"
+              className="font-paragraph text-base md:text-lg text-primary hover:text-primary/80 underline underline-offset-4 transition-colors"
             >
-              VIEW EVENTS
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+              View full events →
+            </a>
           </motion.div>
         </div>
       </section>
 
       {/* Gallery Preview */}
-      <section className="w-full py-32 md:py-40 bg-[#1a1a1a]">
+      <section className="w-full py-16 md:py-20 bg-[#1a1a1a]">
         <div className="w-full max-w-[120rem] mx-auto px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -221,11 +189,11 @@ export default function HomePage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="font-heading text-5xl md:text-7xl text-foreground mb-16">
+            <h2 className="font-heading text-5xl md:text-7xl text-foreground mb-10">
               The Scene
             </h2>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12" style={{ minHeight: '300px' }}>
+            <div className="grid grid-cols-3 gap-4 mb-8" style={{ minHeight: '300px' }}>
               {isLoadingGallery ? null : galleryPhotos.length > 0 ? (
                 galleryPhotos.map((photo, index) => (
                   <motion.div
@@ -246,7 +214,7 @@ export default function HomePage() {
                 ))
               ) : (
                 <>
-                  {[1, 2, 3, 4].map((i) => (
+                  {[1, 2, 3].map((i) => (
                     <motion.div
                       key={i}
                       initial={{ opacity: 0, scale: 0.95 }}
@@ -267,15 +235,17 @@ export default function HomePage() {
               )}
             </div>
 
-            <Button 
-              size="lg"
-              variant="outline"
-              className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-black font-paragraph text-lg px-10 py-7 h-auto"
-              onClick={() => window.location.href = '/gallery'}
-            >
-              VIEW FULL GALLERY
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+            <div className="text-center">
+              <Button 
+                size="lg"
+                variant="outline"
+                className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-black font-paragraph text-lg px-10 py-7 h-auto"
+                onClick={() => window.location.href = '/gallery'}
+              >
+                VIEW FULL GALLERY
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
