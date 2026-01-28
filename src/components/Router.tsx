@@ -10,6 +10,7 @@ import VisitPage from '@/components/pages/VisitPage';
 import ContactPage from '@/components/pages/ContactPage';
 import BlogPage from '@/components/pages/BlogPage';
 import BlogPostPage from '@/components/pages/BlogPostPage';
+import StoryPage from '@/components/pages/StoryPage';
 
 // Layout component that includes ScrollToTop
 function Layout() {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: "blog/:slug",
         element: <BlogPostPage />,
+      },
+      {
+        path: "story",
+        element: <StoryPage />,
       },
       {
         path: "*",
