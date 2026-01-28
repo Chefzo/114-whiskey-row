@@ -76,7 +76,7 @@ export default function HomePage() {
                 className="mb-8"
               >
                 <div className="inline-flex items-center gap-3 bg-black/50 border-2 border-foreground/20 px-6 py-3 rounded-full">
-                  <div className={`w-3 h-3 rounded-full ${barStatus.isOpen ? 'bg-primary animate-pulse' : 'bg-foreground/30'}`} />
+                  <div className={`w-3 h-3 rounded-full ${barStatus.isOpen ? 'bg-green-500 animate-pulse' : 'bg-foreground/30'}`} />
                   <span className="font-paragraph text-lg md:text-xl text-foreground tracking-wide">
                     {barStatus.isOpen ? 'OPEN NOW' : 'CLOSED'} • {barStatus.nextEvent}
                   </span>
