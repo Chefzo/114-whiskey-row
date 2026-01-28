@@ -67,62 +67,80 @@ export default function AboutPage() {
             viewport={{ once: true, margin: "-100px" }}
             className="space-y-12 sm:space-y-16"
           >
-            {/* Vision Block */}
+            {/* Opening Block */}
             <motion.div variants={itemVariants} className="max-w-2xl space-y-4">
               <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
-                One Fourteen started with a simple idea: create a place where people show up as themselves. Where conversations matter more than appearances.
+                More than ten years ago, <span className="text-neon-red-orange font-semibold">Enzo Palombino</span> used to walk past this building on Main Street and picture it as a coffee shop called Whiskey Row Café.
               </p>
-              <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed italic">
-                It was a kid's dream. <span className="text-neon-red-orange font-semibold">Enzo Palombino</span> dreamed this.
+              <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
+                Not because it was trendy — because it felt like the kind of place people would return to.
+              </p>
+              <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
+                A place built around conversation, routine, and showing up.
               </p>
             </motion.div>
 
-            {/* Philosophy Block */}
+            {/* Vision Evolution Block */}
             <motion.div variants={itemVariants} className="max-w-2xl space-y-4">
               <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
-                When we opened, we didn't cover the scars or polish the edges. We kept the honesty. We kept the real.
+                As time passed, the idea evolved. It was never really about coffee.
               </p>
-              <div className="pt-2">
-                <p className="font-handwriting text-2xl sm:text-3xl text-neon-red-orange leading-relaxed">
-                  Because people connect with real.
+              <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
+                It was about taking a simple space and filling it with energy.
+              </p>
+              <div className="pt-2 space-y-2">
+                <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
+                  Late nights.
+                </p>
+                <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
+                  Familiar faces.
+                </p>
+                <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
+                  People finding their people.
                 </p>
               </div>
             </motion.div>
 
-            {/* Core Values Block */}
+            {/* Core Philosophy Block */}
             <motion.div variants={itemVariants} className="max-w-2xl space-y-6">
               <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground">
-                What We Stand For
+                One Fourteen
               </h2>
               <div className="space-y-4">
-                <div>
-                  <h3 className="font-heading text-lg font-bold text-neon-red-orange mb-2">No Polish</h3>
-                  <p className="font-paragraph text-base text-foreground/80 leading-relaxed">
-                    We don't pretend to be something we're not. The building has character. The bar has soul.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-heading text-lg font-bold text-neon-red-orange mb-2">No Pretense</h3>
-                  <p className="font-paragraph text-base text-foreground/80 leading-relaxed">
-                    Walk in as you are. No dress code. No attitude. Just people being people.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-heading text-lg font-bold text-neon-red-orange mb-2">All In</h3>
-                  <p className="font-paragraph text-base text-foreground/80 leading-relaxed">
-                    Loud music. Strong drinks. Real conversations. We're committed to creating an experience that feels genuine.
-                  </p>
-                </div>
+                <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
+                  One Fourteen came from that original thought.
+                </p>
+                <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
+                  A bar built on connection, not polish.
+                </p>
+                <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
+                  On atmosphere, not pretense.
+                </p>
+                <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
+                  A place where the room comes alive because of the people in it.
+                </p>
               </div>
             </motion.div>
 
             {/* Closing Block */}
             <motion.div variants={itemVariants} className="max-w-2xl space-y-4 pt-6 border-t border-neon-red-orange/20">
               <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
-                One Fourteen is about what happens inside. The conversations. The energy. The people who show up as themselves.
+                Because in the end, it's never about what the space looks like from the outside.
               </p>
               <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
-                It's not about the building. It's about the feeling.
+                It's about who you become when you walk inside.
+              </p>
+              <div className="pt-4">
+                <p className="font-handwriting text-2xl sm:text-3xl text-neon-red-orange leading-relaxed">
+                  That's One Fourteen.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Location Block */}
+            <motion.div variants={itemVariants} className="max-w-2xl space-y-2 pt-4">
+              <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed">
+                📍 Whiskey Row
               </p>
             </motion.div>
           </motion.div>
