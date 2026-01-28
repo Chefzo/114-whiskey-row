@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, MapPin, Zap, Music, Users, Flame } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { BaseCrudService } from '@/integrations';
@@ -390,6 +391,27 @@ export default function HomePage() {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* The Story Section */}
+      <section className="w-full py-16 md:py-24 bg-black border-t border-foreground/10">
+        <div className="w-full max-w-[120rem] mx-auto px-6 md:px-16">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <Link 
+              to="/story"
+              className="inline-block group"
+            >
+              <h3 className="font-heading text-2xl md:text-3xl text-foreground/60 group-hover:text-foreground transition-colors duration-300">
+                The Story of One Fourteen
+              </h3>
+            </Link>
           </motion.div>
         </div>
       </section>
