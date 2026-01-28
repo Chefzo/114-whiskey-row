@@ -29,7 +29,7 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="group flex items-center">
             <Image 
-              src="https://static.wixstatic.com/media/528274_363951d44b154fd697adf91d897f90f4~mv2.png" 
+              src="https://static.wixstatic.com/media/528274_1a04146915634452a50902902f39b638~mv2.png" 
               alt="One Fourteen Bar Logo" 
               width={120}
               className="h-12 w-auto object-contain group-hover:opacity-90 transition-opacity duration-300"
