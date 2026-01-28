@@ -72,6 +72,9 @@ export default function AboutPage() {
               <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed">
                 One Fourteen started with a simple idea: create a place where people show up as themselves. Where conversations matter more than appearances.
               </p>
+              <p className="font-paragraph text-base sm:text-lg text-foreground/90 leading-relaxed italic">
+                It was a kid's dream. <span className="text-neon-red-orange font-semibold">Enzo Palombino</span> dreamed this.
+              </p>
             </motion.div>
 
             {/* Philosophy Block */}
