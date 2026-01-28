@@ -9,7 +9,7 @@ import { Events } from '@/entities';
 
 export default function EventsPage() {
   const [events, setEvents] = useState<Events[]>([]);
-  const [filter, setFilter] = useState<'all' | 'upcoming' | 'past'>('all');
+  const [filter, setFilter] = useState<'all' | 'upcoming' | 'past'>('upcoming');
 
   useEffect(() => {
     // Google Tag Manager noscript fallback
