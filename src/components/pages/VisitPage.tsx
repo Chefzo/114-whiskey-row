@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
-import { MapPin, Clock, Navigation } from 'lucide-react';
+import { MapPin, Clock, Navigation, Zap, Users, Lightbulb } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Button } from '@/components/ui/button';
 
 export default function VisitPage() {
   useEffect(() => {
@@ -173,6 +174,66 @@ export default function VisitPage() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* What to Expect Section */}
+      <section className="w-full py-32 md:py-40 bg-black">
+        <div className="w-full max-w-[120rem] mx-auto px-6 md:px-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="font-heading text-5xl md:text-7xl text-foreground mb-20">
+              What to Expect
+            </h2>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: Zap,
+                  title: 'High Energy',
+                  description: 'Loud music, louder crowds. This is where the night gets real. Come ready to have a good time.'
+                },
+                {
+                  icon: Users,
+                  title: 'Real People',
+                  description: 'No dress code. No attitude. Just genuine connections and good vibes with locals and visitors.'
+                },
+                {
+                  icon: Lightbulb,
+                  title: 'Unforgettable Nights',
+                  description: 'Whether it\'s a game day, DJ night, or just a Tuesday, you\'ll leave with stories to tell.'
+                }
+              ].map((item, index) => {
+                const IconComponent = item.icon;
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="group"
+                  >
+                    <div className="flex flex-col h-full p-8 bg-gradient-to-br from-neon-red-orange/5 to-transparent border border-neon-red-orange/20 rounded-lg hover:border-neon-red-orange/50 transition-all duration-300">
+                      <div className="w-12 h-12 rounded-full bg-neon-red-orange/20 flex items-center justify-center mb-4 group-hover:bg-neon-red-orange/30 transition-colors">
+                        <IconComponent size={24} className="text-neon-red-orange" />
+                      </div>
+                      <h3 className="font-heading text-xl font-bold text-foreground mb-3">
+                        {item.title}
+                      </h3>
+                      <p className="font-paragraph text-sm text-foreground/70 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.div>
         </div>
       </section>
 

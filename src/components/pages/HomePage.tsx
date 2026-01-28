@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, MapPin } from 'lucide-react';
+import { ArrowRight, MapPin, Zap, Music, Users, Flame } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
@@ -212,6 +212,81 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Why One Fourteen */}
+      <section className="w-full py-32 md:py-40 bg-black">
+        <div className="w-full max-w-[120rem] mx-auto px-6 md:px-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="font-heading text-5xl md:text-7xl text-foreground mb-20">
+              Why One Fourteen
+            </h2>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: Zap,
+                  title: 'High Energy',
+                  description: 'Loud music, louder crowds. This is where the night gets real.'
+                },
+                {
+                  icon: Music,
+                  title: 'Live Entertainment',
+                  description: 'DJs spinning all weekend. Game days with sound on. Always something happening.'
+                },
+                {
+                  icon: Users,
+                  title: 'Real People',
+                  description: 'No dress code. No attitude. Just genuine connections and good vibes.'
+                },
+                {
+                  icon: Flame,
+                  title: 'Strong Drinks',
+                  description: 'Crafted cocktails and cold beer. We know how to pour.'
+                },
+                {
+                  icon: MapPin,
+                  title: 'Prime Location',
+                  description: 'Right on Whiskey Row. The heart of Louisville nightlife.'
+                },
+                {
+                  icon: ArrowRight,
+                  title: 'Walk-Ins Welcome',
+                  description: 'No reservations needed. Show up as you are, whenever you want.'
+                }
+              ].map((item, index) => {
+                const IconComponent = item.icon;
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="group"
+                  >
+                    <div className="flex flex-col h-full p-8 bg-gradient-to-br from-neon-red-orange/5 to-transparent border border-neon-red-orange/20 rounded-lg hover:border-neon-red-orange/50 transition-all duration-300">
+                      <div className="w-12 h-12 rounded-full bg-neon-red-orange/20 flex items-center justify-center mb-4 group-hover:bg-neon-red-orange/30 transition-colors">
+                        <IconComponent size={24} className="text-neon-red-orange" />
+                      </div>
+                      <h3 className="font-heading text-xl font-bold text-foreground mb-3">
+                        {item.title}
+                      </h3>
+                      <p className="font-paragraph text-sm text-foreground/70 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Gallery Preview */}
       <section className="w-full py-32 md:py-40 bg-[#1a1a1a]">
         <div className="w-full max-w-[120rem] mx-auto px-6 md:px-16">
@@ -234,7 +309,7 @@ export default function HomePage() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="relative aspect-square overflow-hidden"
+                    className="relative aspect-square overflow-hidden rounded-lg"
                   >
                     <Image
                       src={photo.photo || 'https://static.wixstatic.com/media/528274_9a5eac4526fd48bca44e841c71d9fe4f~mv2.png?originWidth=384&originHeight=384'}
@@ -253,7 +328,7 @@ export default function HomePage() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6, delay: i * 0.1 }}
-                      className="relative aspect-square overflow-hidden bg-black/50"
+                      className="relative aspect-square overflow-hidden bg-black/50 rounded-lg"
                     >
                       <Image
                         src="https://static.wixstatic.com/media/528274_f518207e582240d69cafec056473a326~mv2.png?originWidth=384&originHeight=384"
@@ -276,6 +351,45 @@ export default function HomePage() {
               VIEW FULL GALLERY
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="w-full py-32 md:py-40 bg-gradient-to-r from-neon-red-orange/10 via-black to-neon-red-orange/5 border-t border-neon-red-orange/20">
+        <div className="w-full max-w-[120rem] mx-auto px-6 md:px-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <h2 className="font-heading text-5xl md:text-7xl text-foreground mb-6">
+              See You <span className="text-neon-red-orange">Tonight</span>
+            </h2>
+            <p className="font-paragraph text-lg md:text-xl text-foreground/80 mb-12 max-w-2xl mx-auto">
+              Open Tue-Sun, 4pm-2am. Walk-ins only. 21+. No reservations needed.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                className="bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-lg px-10 py-7 h-auto"
+                onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
+              >
+                <MapPin className="w-5 h-5 mr-2" />
+                GET DIRECTIONS
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="border-2 border-neon-red-orange text-neon-red-orange hover:bg-neon-red-orange hover:text-white font-paragraph text-lg px-10 py-7 h-auto"
+                onClick={() => window.location.href = '/contact'}
+              >
+                CONTACT US
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
