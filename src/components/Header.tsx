@@ -28,12 +28,12 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="group flex items-center">
-            <Image 
-              src="https://static.wixstatic.com/media/528274_1a04146915634452a50902902f39b638~mv2.png" 
-              alt="One Fourteen Bar Logo" 
+            <Image
+              src="https://static.wixstatic.com/media/528274_112a88f0f95c4632b6449db5f7575a0b~mv2.png"
               width={120}
               className="h-12 w-auto object-contain group-hover:opacity-90 transition-opacity duration-300"
-            />
+              originWidth={1024}
+              originHeight={1024} />
           </Link>
 
           {/* Desktop Navigation */}
@@ -89,7 +89,6 @@ export default function Header() {
           </motion.button>
         </div>
       </div>
-
       {/* Mobile Navigation */}
       <AnimatePresence>
         {isMenuOpen && (
