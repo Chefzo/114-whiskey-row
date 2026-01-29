@@ -59,56 +59,47 @@ export default function HomePage() {
             transition={{ duration: 0.9, ease: 'easeOut' }}
             className="max-w-5xl"
           >
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-foreground mb-4 sm:mb-6 leading-[1.1] tracking-tight">
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-foreground mb-8 sm:mb-12 md:mb-16 leading-[1.1] tracking-tight">
               Before the Game.<br className="hidden sm:block" />
               After the Show.<br className="hidden sm:block" />
               <span className="text-primary">Late Night on Whiskey Row.</span>
             </h1>
             
-            <p className="font-paragraph text-base sm:text-lg md:text-xl lg:text-2xl text-foreground/80 mb-8 sm:mb-12 tracking-wide">
-              Loud music. Strong drinks. Walk-ins only.
+            <p className="font-paragraph text-base sm:text-lg md:text-xl lg:text-2xl text-foreground/80 mb-12 sm:mb-16 md:mb-20 tracking-wide">
+              Loud music. Strong drinks. Walk-ins.
             </p>
             
-            {barStatus && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="mb-6 sm:mb-8"
-              >
-                <div className="inline-flex items-center gap-2 sm:gap-3 bg-black/50 border-2 border-foreground/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full">
-                  <div className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${barStatus.isOpen ? 'bg-green-500 animate-pulse' : 'bg-foreground/30'}`} />
-                  <span className="font-paragraph text-sm sm:text-base md:text-lg lg:text-xl text-foreground tracking-wide">
-                    {barStatus.isOpen ? 'OPEN NOW' : 'CLOSED'} • {barStatus.nextEvent}
-                  </span>
-                </div>
-              </motion.div>
-            )}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto w-full sm:w-auto"
-                onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
-              >
-                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                GET DIRECTIONS
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-black font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto w-full sm:w-auto"
-                onClick={scrollToEvents}
-              >
-                TONIGHT AT ONE FOURTEEN
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
-              </Button>
-            </div>
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto"
+              onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
+            >
+              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              GET DIRECTIONS
+            </Button>
           </motion.div>
         </div>
       </section>
 
+      {/* Open Status */}
+      {barStatus && (
+        <section className="w-full py-4 sm:py-6 bg-black border-b border-foreground/10" aria-label="Bar status">
+          <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <p className="font-paragraph text-sm sm:text-base text-foreground/70 tracking-wide">
+                {barStatus.isOpen ? 'OPEN NOW' : 'CLOSED'} · Closes at 2:00am
+              </p>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       {/* What's On / Events Preview */}
-      <section id="events-section" className="w-full py-20 sm:py-24 md:py-32 lg:py-40 bg-black" aria-label="What's on this week">
+      <section id="events-section" className="w-full py-20 sm:py-24 md:py-32 lg:py-40 bg-black" aria-label="Tonight at One Fourteen">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -117,7 +108,7 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-foreground mb-8 sm:mb-12 md:mb-16">
-              What's On
+              Tonight at One Fourteen
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 md:mb-16">
