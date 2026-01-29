@@ -17,7 +17,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-black/80 border-t border-foreground/5 backdrop-blur-sm grain-texture">
+    <footer className="bg-black/80 border-t border-foreground/5 backdrop-blur-sm grain-texture" role="contentinfo">
       <div className="w-full px-4 py-12 sm:py-16">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
@@ -27,12 +27,12 @@ export default function Footer() {
             viewport={{ once: true }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8"
           >
-            {/* Brand */}
-            <motion.div variants={itemVariants}>
-              <h3 className="font-heading text-xl sm:text-2xl font-bold mb-3">
-                <span className="text-neon-red-orange">One Fourteen</span>
-                <span className="text-foreground ml-2">Bar</span>
-              </h3>
+             {/* Brand */}
+             <motion.div variants={itemVariants}>
+               <h3 className="font-heading text-xl sm:text-2xl font-bold mb-3">
+                 <span className="text-neon-red-orange">One Fourteen</span>
+                 <span className="text-foreground ml-2">Bar</span>
+               </h3>
               <p className="font-paragraph text-xs sm:text-sm text-foreground/70 mb-4 leading-relaxed">
                 Modern dive on Whiskey Row.
               </p>
@@ -62,12 +62,12 @@ export default function Footer() {
               </div>
             </motion.div>
 
-            {/* Location */}
-            <motion.div variants={itemVariants}>
-              <h4 className="font-heading text-base sm:text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                <MapPin size={18} className="text-neon-red-orange flex-shrink-0" />
-                Location
-              </h4>
+             {/* Location */}
+             <motion.div variants={itemVariants}>
+               <h4 className="font-heading text-base sm:text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                 <MapPin size={18} className="text-neon-red-orange flex-shrink-0" aria-hidden="true" />
+                 Location
+               </h4>
               <div className="space-y-2">
                 <p className="font-paragraph text-xs sm:text-sm text-foreground/90">
                   114 W Main St
@@ -87,12 +87,12 @@ export default function Footer() {
               </div>
             </motion.div>
 
-            {/* Hours */}
-            <motion.div variants={itemVariants}>
-              <h4 className="font-heading text-base sm:text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                <Clock size={18} className="text-neon-red-orange flex-shrink-0" />
-                Hours
-              </h4>
+             {/* Hours */}
+             <motion.div variants={itemVariants}>
+               <h4 className="font-heading text-base sm:text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                 <Clock size={18} className="text-neon-red-orange flex-shrink-0" aria-hidden="true" />
+                 Hours
+               </h4>
               <div className="font-paragraph text-xs sm:text-sm text-foreground/90 space-y-2">
                 <div className="flex justify-between">
                   <span>Monday</span>

@@ -23,21 +23,22 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-background/98 to-background/95 backdrop-blur-md border-b border-neon-red-orange/10 grain-texture">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-background/98 to-background/95 backdrop-blur-md border-b border-neon-red-orange/10 grain-texture" role="banner">
       <div className="max-w-[120rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="group flex items-center">
+          <Link to="/" className="group flex items-center" aria-label="One Fourteen Bar - Home">
             <Image
               src="https://static.wixstatic.com/media/528274_112a88f0f95c4632b6449db5f7575a0b~mv2.png"
               width={120}
               className="h-12 w-auto object-contain group-hover:opacity-90 transition-opacity duration-300"
               originWidth={1024}
-              originHeight={1024} />
+              originHeight={1024}
+              alt="One Fourteen Bar logo" />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-10">
+          <nav className="hidden md:flex items-center gap-10" aria-label="Main navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -98,6 +99,7 @@ export default function Header() {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             className="md:hidden bg-background/95 border-t border-foreground/5 overflow-hidden grain-texture"
+            aria-label="Mobile navigation"
           >
             <div className="px-4 py-6 space-y-3">
               {navLinks.map((link, index) => (

@@ -49,7 +49,7 @@ export default function HomePage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative w-full min-h-screen md:min-h-[95vh] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full min-h-screen md:min-h-[95vh] flex items-center justify-center overflow-hidden" aria-label="Hero section">
         <div className="absolute inset-0 bg-black z-0" />
         
         <div className="relative z-10 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16 py-20 sm:py-24 md:py-32">
@@ -108,7 +108,7 @@ export default function HomePage() {
       </section>
 
       {/* What's On / Events Preview */}
-      <section id="events-section" className="w-full py-20 sm:py-24 md:py-32 lg:py-40 bg-black">
+      <section id="events-section" className="w-full py-20 sm:py-24 md:py-32 lg:py-40 bg-black" aria-label="What's on this week">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -180,7 +180,7 @@ export default function HomePage() {
       </section>
 
       {/* Why One Fourteen */}
-      <section className="w-full py-20 sm:py-24 md:py-32 lg:py-40 bg-black">
+      <section className="w-full py-20 sm:py-24 md:py-32 lg:py-40 bg-black" aria-label="Why choose One Fourteen">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -240,7 +240,7 @@ export default function HomePage() {
       </section>
 
       {/* Gallery Preview */}
-      <section className="w-full py-20 sm:py-24 md:py-32 lg:py-40 bg-[#1a1a1a]">
+      <section className="w-full py-20 sm:py-24 md:py-32 lg:py-40 bg-[#1a1a1a]" aria-label="Gallery preview">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -308,7 +308,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-20 sm:py-24 md:py-32 lg:py-40 bg-gradient-to-r from-neon-red-orange/10 via-black to-neon-red-orange/5 border-t border-neon-red-orange/20">
+      <section className="w-full py-20 sm:py-24 md:py-32 lg:py-40 bg-gradient-to-r from-neon-red-orange/10 via-black to-neon-red-orange/5 border-t border-neon-red-orange/20" aria-label="Call to action">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -347,7 +347,7 @@ export default function HomePage() {
       </section>
 
       {/* The Story Section */}
-      <section className="w-full py-12 sm:py-16 md:py-20 lg:py-24 bg-black border-t border-foreground/10">
+      <section className="w-full py-12 sm:py-16 md:py-20 lg:py-24 bg-black border-t border-foreground/10" aria-label="The story of One Fourteen">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0 }}
