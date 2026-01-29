@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, MapPin, Zap, Music, Users, Flame } from 'lucide-react';
+import { ArrowRight, MapPin, Music, Users } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -195,11 +195,6 @@ export default function HomePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
               {[
                 {
-                  icon: Zap,
-                  title: 'High Energy',
-                  description: 'Loud music, louder crowds. This is where the night gets real.'
-                },
-                {
                   icon: Music,
                   title: 'Live Entertainment',
                   description: 'DJs spinning all weekend. Game days with sound on. Always something happening.'
@@ -210,17 +205,7 @@ export default function HomePage() {
                   description: 'No dress code. No attitude. Just genuine connections and good vibes.'
                 },
                 {
-                  icon: Flame,
-                  title: 'Strong Drinks',
-                  description: 'Crafted cocktails and cold beer. We know how to pour.'
-                },
-                {
                   icon: MapPin,
-                  title: 'Prime Location',
-                  description: 'Right on Whiskey Row. The heart of Louisville nightlife.'
-                },
-                {
-                  icon: ArrowRight,
                   title: 'Walk-Ins Welcome',
                   description: 'No reservations needed. Show up as you are, whenever you want.'
                 }
