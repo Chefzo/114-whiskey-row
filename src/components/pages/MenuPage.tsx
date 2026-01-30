@@ -10,10 +10,10 @@ export default function MenuPage() {
         <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center">
             <Image
-              src="https://static.wixstatic.com/media/528274_ec60ebe9efe2493599b8cdfe29001ccc~mv2.png?originWidth=768&originHeight=576"
-              alt="Menu"
+              src="https://static.wixstatic.com/media/528274_baaf48c63a384a3185ae067e1f14a43d~mv2.jpg"
               width={800}
-            />
+              originWidth={1024}
+              originHeight={1536} />
           </div>
         </div>
       </main>
