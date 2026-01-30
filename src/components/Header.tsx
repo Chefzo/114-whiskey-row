@@ -14,6 +14,7 @@ export default function Header() {
     { path: '/gallery', label: 'Gallery' },
     { path: '/visit', label: 'Visit' },
     { path: '/about', label: 'About' },
+    { path: '/menu', label: 'Menu' },
     { path: '/contact', label: 'Contact' },
   ];
 
