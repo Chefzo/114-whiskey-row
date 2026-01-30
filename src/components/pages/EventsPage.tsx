@@ -161,7 +161,7 @@ export default function EventsPage() {
               View our full drink and food offerings for your next visit.
             </p>
             <a
-              href="https://www.canva.com/design/DAG_2euCblU/8ml73XaAuSMoKD2MeyyDGQ/edit?utm_content=DAG_2euCblU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+              href="https://www.canva.com/design/DAG_2euCblU/ckgz_XuNGPefPUcU3OJPtw/view?utm_content=DAG_2euCblU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf0f4a319b5"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-sm uppercase tracking-wider px-8 py-4 rounded transition-all hover:shadow-[0_0_20px_rgba(255,69,0,0.5)]"
