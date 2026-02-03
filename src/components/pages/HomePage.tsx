@@ -119,6 +119,19 @@ export default function HomePage() {
                 <div className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground/50 mb-1 sm:mb-2">GAME DAYS</div>
                 <div className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground">Sound on</div>
               </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="border-l-4 border-foreground pl-4 sm:pl-6 md:pl-8 py-3 sm:py-4"
+              >
+                <div className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground/50 mb-1 sm:mb-2">SUN</div>
+                <div className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground mb-2">Industry Night</div>
+                <div className="font-paragraph text-sm sm:text-base text-foreground/60">9pm–2am</div>
+                <div className="font-paragraph text-xs sm:text-sm text-foreground/50 mt-2">Service industry welcome.</div>
+              </motion.div>
             </div>
 
             <Button 
