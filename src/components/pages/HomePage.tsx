@@ -236,7 +236,7 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed"
               >
-                114 West Main Street. A corner on Whiskey Row that's seen it all. From the roar of the crowd before game day to the pulse of the night after the show ends, this address has become synonymous with one thing: where Louisville comes to let loose.
+                More than ten years ago, I used to walk past this building on Main Street and picture it as a coffee shop called Whiskey Row Café. Not because it was trendy — because it felt like the kind of place people would return to. A place built around conversation, routine, and showing up.
               </motion.p>
 
               <motion.p
@@ -246,7 +246,7 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.15 }}
                 className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed"
               >
-                One Fourteen isn't just a bar. It's a state of mind. It's the place where strangers become friends over a strong drink and louder music. It's where the energy never dies, where walk-ins are always welcome, and where the night is always young.
+                As time passed, I realized the idea was never really about coffee. It was about taking a simple space and filling it with energy. Late nights. Familiar faces. People finding their people.
               </motion.p>
 
               <motion.p
@@ -256,7 +256,27 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed"
               >
-                Before the game. After the show. Late nights on Whiskey Row. This is where the city's heartbeat is strongest. No reservations. No dress code. No attitude. Just real people, real drinks, and real moments that matter.
+                One Fourteen came from that original thought. A bar built on connection, not polish. On atmosphere, not pretense. A place where the room comes alive because of the people in it.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+                className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed"
+              >
+                Because in the end, it's never about what the space looks like from the outside. It's about who you become when you walk inside. That's One Fourteen.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed"
+              >
+                📍 Whiskey Row
               </motion.p>
             </div>
 
