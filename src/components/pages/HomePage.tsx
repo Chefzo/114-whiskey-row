@@ -215,8 +215,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* The Story of One Fourteen */}
-      <section className="w-full py-16 sm:py-20 md:py-24 bg-black" aria-label="The story of One Fourteen">
+      {/* The Story of One Fourteen - Link Only */}
+      <section className="w-full py-12 sm:py-16 md:py-20 bg-black" aria-label="The story of One Fourteen">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -224,69 +224,12 @@ export default function HomePage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground mb-8 sm:mb-10 md:mb-12">
-              The Story of <span className="text-primary">One Fourteen</span>
-            </h2>
-
-            <div className="space-y-6 sm:space-y-8 md:space-y-10 max-w-4xl mb-8 sm:mb-10 md:mb-12">
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed"
-              >
-                More than ten years ago, I used to walk past this building on Main Street and picture it as a coffee shop called Whiskey Row Café. Not because it was trendy — because it felt like the kind of place people would return to. A place built around conversation, routine, and showing up.
-              </motion.p>
-
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.15 }}
-                className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed"
-              >
-                As time passed, I realized the idea was never really about coffee. It was about taking a simple space and filling it with energy. Late nights. Familiar faces. People finding their people.
-              </motion.p>
-
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed"
-              >
-                One Fourteen came from that original thought. A bar built on connection, not polish. On atmosphere, not pretense. A place where the room comes alive because of the people in it.
-              </motion.p>
-
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.25 }}
-                className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed"
-              >
-                Because in the end, it's never about what the space looks like from the outside. It's about who you become when you walk inside. That's One Fourteen.
-              </motion.p>
-
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed"
-              >
-                📍 Whiskey Row
-              </motion.p>
-            </div>
-
             <Button 
-              size="lg"
-              variant="outline"
-              className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-black font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto w-full sm:w-auto"
+              variant="ghost"
+              className="text-foreground/60 hover:text-foreground font-paragraph text-base sm:text-lg px-0 py-2 h-auto hover:bg-transparent"
               onClick={() => window.location.href = '/story'}
             >
-              READ FULL STORY
+              our story
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
             </Button>
           </motion.div>
