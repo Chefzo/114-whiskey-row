@@ -42,13 +42,9 @@ export default function HomePage() {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="max-w-5xl"
           >
-            <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-foreground mb-4 sm:mb-6 leading-[1.1] tracking-tight">
-              One Fourteen
-            </h1>
-            
-            <p className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground mb-3 sm:mb-4 tracking-wide">
+            <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-foreground mb-2 sm:mb-3 leading-[1.1] tracking-tight">
               Late nights on Whiskey Row.
-            </p>
+            </h1>
             
             <p className="font-paragraph text-sm sm:text-base md:text-lg text-foreground/70 mb-8 sm:mb-10 tracking-wide">
               Walk-ins only. 21+.
