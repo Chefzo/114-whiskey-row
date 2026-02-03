@@ -215,6 +215,64 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* The Story of One Fourteen */}
+      <section className="w-full py-16 sm:py-20 md:py-24 bg-black" aria-label="The story of One Fourteen">
+        <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground mb-8 sm:mb-10 md:mb-12">
+              The Story of <span className="text-primary">One Fourteen</span>
+            </h2>
+
+            <div className="space-y-6 sm:space-y-8 md:space-y-10 max-w-4xl mb-8 sm:mb-10 md:mb-12">
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed"
+              >
+                114 West Main Street. A corner on Whiskey Row that's seen it all. From the roar of the crowd before game day to the pulse of the night after the show ends, this address has become synonymous with one thing: where Louisville comes to let loose.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed"
+              >
+                One Fourteen isn't just a bar. It's a state of mind. It's the place where strangers become friends over a strong drink and louder music. It's where the energy never dies, where walk-ins are always welcome, and where the night is always young.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed"
+              >
+                Before the game. After the show. Late nights on Whiskey Row. This is where the city's heartbeat is strongest. No reservations. No dress code. No attitude. Just real people, real drinks, and real moments that matter.
+              </motion.p>
+            </div>
+
+            <Button 
+              size="lg"
+              variant="outline"
+              className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-black font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto w-full sm:w-auto"
+              onClick={() => window.location.href = '/story'}
+            >
+              READ FULL STORY
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Location & Hours */}
       <section className="w-full py-16 sm:py-20 md:py-24 bg-black border-t border-foreground/10" aria-label="Location and hours">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
