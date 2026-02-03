@@ -72,6 +72,8 @@ export interface Events {
   /** @wixFieldType text */
   eventName?: string;
   /** @wixFieldType text */
+  location?: string;
+  /** @wixFieldType text */
   eventType?: string;
   /** @wixFieldType date */
   eventDate?: Date | string;
