@@ -45,7 +45,11 @@ export default function EventsPage() {
     if (!event.eventDate) return filter === 'all';
     
     const eventDate = new Date(event.eventDate);
+    // Set to start of day for comparison
+    eventDate.setHours(0, 0, 0, 0);
+    
     const now = new Date();
+    now.setHours(0, 0, 0, 0);
     
     if (filter === 'upcoming') return eventDate >= now;
     if (filter === 'past') return eventDate < now;
@@ -144,39 +148,10 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* Menu Section */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-16">
-        <div className="max-w-[120rem] mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-gradient-to-r from-neon-red-orange/10 to-warm-amber/10 border border-neon-red-orange/30 rounded-lg p-8 md:p-12 text-center"
-          >
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Check Our <span className="text-neon-red-orange">Menu</span>
-            </h2>
-            <p className="font-paragraph text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
-              View our full drink and food offerings for your next visit.
-            </p>
-            <a
-              href="https://www.canva.com/design/DAG_2euCblU/ckgz_XuNGPefPUcU3OJPtw/view?utm_content=DAG_2euCblU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf0f4a319b5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-sm uppercase tracking-wider px-8 py-4 rounded transition-all hover:shadow-[0_0_20px_rgba(255,69,0,0.5)]"
-            >
-              View Menu
-              <ExternalLink size={18} />
-            </a>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Events Grid */}
       <section className="px-4 sm:px-6 lg:px-8 pb-24">
         <div className="max-w-[120rem] mx-auto">
-          {filteredEvents.length > 0 ? (
+          {filteredEvents.length > 0 && (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {filteredEvents.map((event, index) => (
                 <motion.article
@@ -261,19 +236,36 @@ export default function EventsPage() {
                 </motion.article>
               ))}
             </div>
-          ) : (
-            <div className="text-center py-24">
-              <Calendar size={64} className="text-neon-red-orange/30 mx-auto mb-6" />
-              <h3 className="font-heading text-2xl font-bold text-foreground mb-3">
-                No Events Found
-              </h3>
-              <p className="font-paragraph text-foreground/60">
-                {filter === 'upcoming' && 'Check back soon for upcoming events.'}
-                {filter === 'past' && 'No past events to display.'}
-                {filter === 'all' && 'No events available at the moment.'}
-              </p>
-            </div>
           )}
+        </div>
+      </section>
+
+      {/* Menu Section */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="max-w-[120rem] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-gradient-to-r from-neon-red-orange/10 to-warm-amber/10 border border-neon-red-orange/30 rounded-lg p-8 md:p-12 text-center"
+          >
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Check Our <span className="text-neon-red-orange">Menu</span>
+            </h2>
+            <p className="font-paragraph text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
+              View our full drink and food offerings for your next visit.
+            </p>
+            <a
+              href="https://www.canva.com/design/DAG_2euCblU/ckgz_XuNGPefPUcU3OJPtw/view?utm_content=DAG_2euCblU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf0f4a319b5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-sm uppercase tracking-wider px-8 py-4 rounded transition-all hover:shadow-[0_0_20px_rgba(255,69,0,0.5)]"
+            >
+              View Menu
+              <ExternalLink size={18} />
+            </a>
+          </motion.div>
         </div>
       </section>
 
