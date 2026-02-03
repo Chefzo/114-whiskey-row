@@ -168,9 +168,9 @@ export default function VisitPage() {
 
                     {/* Open/Closed Status Indicator */}
                     <div className="mb-6 pb-6 border-b border-neon-red-orange/10">
-                      <div className="flex items-center gap-2">
-                        <div className={`w-2 h-2 rounded-full ${status.isOpen ? 'bg-foreground/40' : 'bg-foreground/30'}`} />
-                        <p className={`font-paragraph text-base ${status.statusColor}`}>
+                      <div className="flex items-center gap-3">
+                        <div className={`w-3 h-3 rounded-full flex-shrink-0 ${status.isOpen ? 'bg-green-500 shadow-lg shadow-green-500/50' : 'bg-red-500 shadow-lg shadow-red-500/50'}`} />
+                        <p className={`font-paragraph text-base font-medium ${status.isOpen ? 'text-green-400' : 'text-red-400'}`}>
                           {status.text}
                         </p>
                       </div>
