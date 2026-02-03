@@ -31,17 +31,13 @@ export default function HomePage() {
     <div className="min-h-screen bg-black">
       <Header />
       
-      {/* Hero Section - Clean */}
+      {/* Hero Section - Optimized for mobile performance */}
       <section className="relative w-full min-h-screen md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-16" aria-label="Hero section">
         <div className="absolute inset-0 bg-black z-0" />
         
         <div className="relative z-10 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16 py-12 sm:py-16 md:py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="max-w-5xl"
-          >
+          {/* Hero headline renders immediately without animation on mobile */}
+          <div className="max-w-5xl">
             <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-foreground mb-2 sm:mb-3 leading-[1.1] tracking-tight">
               Late nights on Whiskey Row.
             </h1>
@@ -50,15 +46,21 @@ export default function HomePage() {
               Walk-ins only. 21+.
             </p>
 
-            <Button 
-              size="lg"
-              className="bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto"
-              onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
             >
-              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-              Get Directions
-            </Button>
-          </motion.div>
+              <Button 
+                size="lg"
+                className="bg-neon-red-orange hover:bg-neon-red-orange/90 text-black font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto"
+                onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
+              >
+                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                Get Directions
+              </Button>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -136,8 +138,7 @@ export default function HomePage() {
 
             <Button 
               size="lg"
-              variant="outline"
-              className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-black font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto w-full sm:w-auto"
+              className="bg-neon-red-orange hover:bg-neon-red-orange/90 text-black font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto w-full sm:w-auto"
               onClick={() => window.location.href = '/events'}
             >
               VIEW EVENTS
@@ -204,7 +205,6 @@ export default function HomePage() {
 
             <Button 
               size="lg"
-              variant="outline"
               className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-black font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto w-full sm:w-auto"
               onClick={() => window.location.href = '/gallery'}
             >

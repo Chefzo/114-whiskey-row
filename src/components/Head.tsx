@@ -49,16 +49,22 @@ export const Head = () => {
 
   return (
     <>
-      {/* Google Analytics */}
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMM17LNJXM"></script>
-      <script dangerouslySetInnerHTML={{
-        __html: `window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-JMM17LNJXM');`
+      {/* Early Connection Hints for Wix Services - Performance Optimization */}
+      <link rel="preconnect" href="https://wixapis.com" />
+      <link rel="preconnect" href="https://edge.wixapis.com" />
+      <link rel="preconnect" href="https://static.parastorage.com" />
+      <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+      
+      {/* Defer Google Analytics - Load after first paint */}
+      <script defer src="https://www.googletagmanager.com/gtag/js?id=G-JMM17LNJXM"></script>
+      <script defer dangerouslySetInnerHTML={{
+        __html: `window.dataLayer = window.dataLayer || [];\\nfunction gtag(){dataLayer.push(arguments);}\\ngtag('js', new Date());\\ngtag('config', 'G-JMM17LNJXM');`
       }} />
       {/* End Google Analytics */}
       
-      {/* Google Tag Manager */}
-      <script dangerouslySetInnerHTML={{
-        __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-WMRZT82N');`
+      {/* Defer Google Tag Manager - Load after first paint */}
+      <script defer dangerouslySetInnerHTML={{
+        __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.defer=true;j.src=\\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\\n})(window,document,'script','dataLayer','GTM-WMRZT82N');`
       }} />
       {/* End Google Tag Manager */}
       
