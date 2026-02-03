@@ -1,11 +1,62 @@
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { MapPin, Clock, Navigation, Zap, Users, Lightbulb } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 
+// Helper function to determine open/closed status
+function getOpenStatus() {
+  const now = new Date();
+  const day = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const currentTime = hours * 60 + minutes; // Convert to minutes since midnight
+
+  // Monday (1) is closed
+  if (day === 1) {
+    // Closed on Monday, opens at 4pm Tuesday
+    return {
+      isOpen: false,
+      text: 'Closed · Opens at 4:00 PM',
+      statusColor: 'text-foreground/60'
+    };
+  }
+
+  // Tuesday-Sunday: 4:00 PM (960 min) - 2:00 AM (120 min next day)
+  const openTime = 16 * 60; // 4:00 PM in minutes
+  const closeTime = 2 * 60; // 2:00 AM in minutes
+
+  let isOpen = false;
+  let nextEvent = '';
+
+  if (currentTime >= openTime) {
+    // After 4 PM - still open (closes at 2 AM)
+    isOpen = true;
+    nextEvent = 'Closes at 2:00 AM';
+  } else if (currentTime < closeTime) {
+    // Before 2 AM - still open from previous day
+    isOpen = true;
+    nextEvent = 'Closes at 2:00 AM';
+  } else {
+    // Between 2 AM and 4 PM - closed
+    isOpen = false;
+    nextEvent = 'Opens at 4:00 PM';
+  }
+
+  const statusText = isOpen ? `Open now · ${nextEvent}` : `Closed · ${nextEvent}`;
+  const statusColor = isOpen ? 'text-foreground/80' : 'text-foreground/60';
+
+  return {
+    isOpen,
+    text: statusText,
+    statusColor
+  };
+}
+
 export default function VisitPage() {
+  const [status, setStatus] = useState(getOpenStatus());
+
   useEffect(() => {
     // Google Tag Manager noscript fallback
     const noscript = document.createElement('noscript');
@@ -17,6 +68,13 @@ export default function VisitPage() {
     iframe.style.visibility = 'hidden';
     noscript.appendChild(iframe);
     document.body.insertBefore(noscript, document.body.firstChild);
+
+    // Update status every minute
+    const interval = setInterval(() => {
+      setStatus(getOpenStatus());
+    }, 60000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const address = '114 W Main St, Louisville, KY 40202';
@@ -105,8 +163,18 @@ export default function VisitPage() {
                   <Clock className="text-neon-red-orange flex-shrink-0 mt-1" size={28} />
                   <div className="flex-1">
                     <h2 className="font-heading text-3xl font-bold text-foreground mb-6">
-                      Hours
+                      Location & Hours
                     </h2>
+
+                    {/* Open/Closed Status Indicator */}
+                    <div className="mb-6 pb-6 border-b border-neon-red-orange/10">
+                      <div className="flex items-center gap-2">
+                        <div className={`w-2 h-2 rounded-full ${status.isOpen ? 'bg-foreground/40' : 'bg-foreground/30'}`} />
+                        <p className={`font-paragraph text-base ${status.statusColor}`}>
+                          {status.text}
+                        </p>
+                      </div>
+                    </div>
                     
                     <div className="space-y-4">
                       <div className="flex justify-between items-center pb-3 border-b border-neon-red-orange/10">
