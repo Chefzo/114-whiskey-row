@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, MapPin, Music, Users } from 'lucide-react';
+import { ArrowRight, MapPin } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -37,46 +37,38 @@ export default function HomePage() {
     }
   };
 
-  const scrollToEvents = () => {
-    const eventsSection = document.getElementById('events-section');
-    if (eventsSection) {
-      eventsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <div className="min-h-screen bg-black">
       <Header />
       
       {/* Hero Section */}
-      <section className="relative w-full min-h-screen md:min-h-[95vh] flex items-center justify-center overflow-hidden" aria-label="Hero section">
+      <section className="relative w-full min-h-screen md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-16" aria-label="Hero section">
         <div className="absolute inset-0 bg-black z-0" />
         
-        <div className="relative z-10 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16 py-20 sm:py-24 md:py-32">
+        <div className="relative z-10 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16 py-12 sm:py-16 md:py-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: 'easeOut' }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
             className="max-w-5xl"
           >
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-foreground mb-8 sm:mb-12 md:mb-16 leading-[1.1] tracking-tight">
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-foreground mb-6 sm:mb-8 md:mb-10 leading-[1.1] tracking-tight">
               Before the Game.<br className="hidden sm:block" />
               After the Show.<br className="hidden sm:block" />
               <span className="text-primary">Late Night on Whiskey Row.</span>
             </h1>
             
-            <p className="font-paragraph text-base sm:text-lg md:text-xl lg:text-2xl text-foreground/80 mb-12 sm:mb-16 md:mb-20 tracking-wide">
-              Loud music. Strong drinks. Walk-ins.
-            </p>
-            
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto"
-              onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
-            >
-              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-              GET DIRECTIONS
-            </Button>
+            <div className="space-y-4 mb-8 sm:mb-10 md:mb-12">
+              <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/90 tracking-wide">
+                114 W Main St. Whiskey Row. Louisville, KY
+              </p>
+              <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/90 tracking-wide">
+                Tue - Sun, 4pm - 2am
+              </p>
+              <p className="font-paragraph text-base sm:text-lg md:text-xl text-neon-red-orange font-semibold tracking-wide">
+                Walk-ins. 21+
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -99,61 +91,61 @@ export default function HomePage() {
       )}
 
       {/* What's On / Events Preview */}
-      <section id="events-section" className="w-full py-20 sm:py-24 md:py-32 lg:py-40 bg-black" aria-label="Tonight at One Fourteen">
+      <section id="events-section" className="w-full py-16 sm:py-20 md:py-24 bg-black" aria-label="Tonight at One Fourteen">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-foreground mb-8 sm:mb-12 md:mb-16">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground mb-8 sm:mb-10 md:mb-12">
               Tonight at One Fourteen
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 md:mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
                 className="border-l-4 border-primary pl-4 sm:pl-6 md:pl-8 py-3 sm:py-4"
               >
-                <div className="font-paragraph text-xl sm:text-2xl md:text-3xl lg:text-4xl text-foreground/50 mb-1 sm:mb-2">THU</div>
-                <div className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground">DJs</div>
+                <div className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground/50 mb-1 sm:mb-2">THU</div>
+                <div className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground">DJs</div>
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                transition={{ duration: 0.5, delay: 0.15 }}
                 className="border-l-4 border-foreground pl-4 sm:pl-6 md:pl-8 py-3 sm:py-4"
               >
-                <div className="font-paragraph text-xl sm:text-2xl md:text-3xl lg:text-4xl text-foreground/50 mb-1 sm:mb-2">FRI</div>
-                <div className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground">Late Night</div>
+                <div className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground/50 mb-1 sm:mb-2">FRI</div>
+                <div className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground">Late Night</div>
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
                 className="border-l-4 border-foreground pl-4 sm:pl-6 md:pl-8 py-3 sm:py-4"
               >
-                <div className="font-paragraph text-xl sm:text-2xl md:text-3xl lg:text-4xl text-foreground/50 mb-1 sm:mb-2">SAT</div>
-                <div className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground">DJs till close</div>
+                <div className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground/50 mb-1 sm:mb-2">SAT</div>
+                <div className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground">DJs till close</div>
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                transition={{ duration: 0.5, delay: 0.25 }}
                 className="border-l-4 border-primary pl-4 sm:pl-6 md:pl-8 py-3 sm:py-4"
               >
-                <div className="font-paragraph text-xl sm:text-2xl md:text-3xl lg:text-4xl text-foreground/50 mb-1 sm:mb-2">GAME DAYS</div>
-                <div className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground">Sound on</div>
+                <div className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground/50 mb-1 sm:mb-2">GAME DAYS</div>
+                <div className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground">Sound on</div>
               </motion.div>
             </div>
 
@@ -170,80 +162,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why One Fourteen */}
-      <section className="w-full py-20 sm:py-24 md:py-32 lg:py-40 bg-black" aria-label="Why choose One Fourteen">
-        <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-foreground mb-12 sm:mb-16 md:mb-20">
-              Why One Fourteen
-            </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-              {[
-                {
-                  icon: Music,
-                  title: 'Live Entertainment',
-                  description: 'DJs spinning all weekend. Game days with sound on. Always something happening.'
-                },
-                {
-                  icon: Users,
-                  title: 'Real People',
-                  description: 'No dress code. No attitude. Just genuine connections and good vibes.'
-                },
-                {
-                  icon: MapPin,
-                  title: 'Walk-Ins Welcome',
-                  description: 'No reservations needed. Show up as you are, whenever you want.'
-                }
-              ].map((item, index) => {
-                const IconComponent = item.icon;
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="group"
-                  >
-                    <div className="flex flex-col h-full p-4 sm:p-6 md:p-8 bg-gradient-to-br from-neon-red-orange/5 to-transparent border border-neon-red-orange/20 rounded-lg hover:border-neon-red-orange/50 transition-all duration-300">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-neon-red-orange/20 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-neon-red-orange/30 transition-colors">
-                        <IconComponent size={20} className="text-neon-red-orange sm:w-6 sm:h-6" />
-                      </div>
-                      <h3 className="font-heading text-lg sm:text-xl text-foreground mb-2 sm:mb-3">
-                        {item.title}
-                      </h3>
-                      <p className="font-paragraph text-xs sm:text-sm text-foreground/70 leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Gallery Preview */}
-      <section className="w-full py-20 sm:py-24 md:py-32 lg:py-40 bg-[#1a1a1a]" aria-label="Gallery preview">
+      <section className="w-full py-16 sm:py-20 md:py-24 bg-[#1a1a1a]" aria-label="Gallery preview">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-foreground mb-8 sm:mb-12 md:mb-16">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground mb-8 sm:mb-10 md:mb-12">
               The Scene
             </h2>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-8 sm:mb-12 md:mb-16" style={{ minHeight: '250px' }}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-8 sm:mb-10 md:mb-12" style={{ minHeight: '250px' }}>
               {isLoadingGallery ? null : galleryPhotos.length > 0 ? (
                 galleryPhotos.map((photo, index) => (
                   <motion.div
@@ -251,7 +183,7 @@ export default function HomePage() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    transition={{ duration: 0.5, delay: index * 0.08 }}
                     className="relative aspect-square overflow-hidden rounded-lg"
                   >
                     <Image
@@ -270,7 +202,7 @@ export default function HomePage() {
                       initial={{ opacity: 0, scale: 0.95 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: i * 0.1 }}
+                      transition={{ duration: 0.5, delay: i * 0.08 }}
                       className="relative aspect-square overflow-hidden bg-black/50 rounded-lg"
                     >
                       <Image
@@ -299,19 +231,19 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-20 sm:py-24 md:py-32 lg:py-40 bg-gradient-to-r from-neon-red-orange/10 via-black to-neon-red-orange/5 border-t border-neon-red-orange/20" aria-label="Call to action">
+      <section className="w-full py-16 sm:py-20 md:py-24 bg-gradient-to-r from-neon-red-orange/10 via-black to-neon-red-orange/5 border-t border-neon-red-orange/20" aria-label="Call to action">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-foreground mb-4 sm:mb-6">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground mb-4 sm:mb-6">
               See You <span className="text-neon-red-orange">Tonight</span>
             </h2>
-            <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 mb-8 sm:mb-12 max-w-2xl mx-auto px-2">
+            <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 mb-8 sm:mb-10 max-w-2xl mx-auto px-2">
               Open Tue-Sun, 4pm-2am. Walk-ins only. 21+. No reservations needed.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
@@ -338,13 +270,13 @@ export default function HomePage() {
       </section>
 
       {/* The Story Section */}
-      <section className="w-full py-12 sm:py-16 md:py-20 lg:py-24 bg-black border-t border-foreground/10" aria-label="The story of One Fourteen">
+      <section className="w-full py-12 sm:py-16 md:py-20 bg-black border-t border-foreground/10" aria-label="The story of One Fourteen">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
           >
             <Link 
               to="/story"

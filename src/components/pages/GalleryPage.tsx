@@ -61,7 +61,7 @@ export default function GalleryPage() {
               The <span className="text-neon-red-orange">Vibe</span>
             </h1>
             <p className="font-paragraph text-lg sm:text-xl text-foreground/70 max-w-3xl">
-              Real moments. Real energy. This is what 114 looks like when the lights go down.
+              Real moments. Real energy. This is what 114 looks like.
             </p>
           </motion.div>
         </div>

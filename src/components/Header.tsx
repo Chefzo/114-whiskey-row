@@ -1,74 +1,46 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, MapPin } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Image } from '@/components/ui/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
   const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/events', label: 'Events' },
-    { path: '/gallery', label: 'Gallery' },
-    { path: '/visit', label: 'Visit' },
-    { path: '/about', label: 'About' },
-    { path: '/contact', label: 'Contact' },
+    { path: '/', label: 'HOME' },
+    { path: '/events', label: 'EVENTS' },
+    { path: '/gallery', label: 'GALLERY' },
+    { path: '/contact', label: 'CONTACT' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
 
-  const handleGetDirections = () => {
-    window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank');
-  };
-
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-background/98 to-background/95 backdrop-blur-md border-b border-neon-red-orange/10 grain-texture" role="banner">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-foreground/10" role="banner">
       <div className="max-w-[120rem] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+        <div className="flex items-center justify-between h-16">
+          {/* Logo Text */}
           <Link to="/" className="group flex items-center" aria-label="One Fourteen Bar - Home">
-            <Image
-              src="https://static.wixstatic.com/media/528274_112a88f0f95c4632b6449db5f7575a0b~mv2.png"
-              width={120}
-              className="h-12 w-auto object-contain group-hover:opacity-90 transition-opacity duration-300"
-              originWidth={1024}
-              originHeight={1024}
-              alt="One Fourteen Bar logo" />
+            <span className="font-heading text-lg sm:text-xl font-bold text-foreground group-hover:text-neon-red-orange transition-colors">
+              ONE FOURTEEN
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-10" aria-label="Main navigation">
+          <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`font-paragraph text-xs uppercase tracking-widest transition-all relative group text-center ${
-                  isActive(link.path) ? 'text-foreground' : 'text-foreground/60 hover:text-foreground/90'
+                className={`font-paragraph text-xs uppercase tracking-widest transition-colors ${
+                  isActive(link.path) ? 'text-foreground' : 'text-foreground/70 hover:text-foreground'
                 }`}
               >
                 {link.label}
-                <motion.span
-                  layoutId={isActive(link.path) ? 'activeNav' : undefined}
-                  className={`absolute -bottom-2 left-0 h-0.5 bg-foreground transition-all ${
-                    isActive(link.path) ? 'w-full' : 'w-0 group-hover:w-full'
-                  }`}
-                />
               </Link>
             ))}
           </nav>
-
-          {/* Desktop Get Directions Button */}
-          <motion.button
-            onClick={handleGetDirections}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="hidden md:flex items-center gap-2 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-xs uppercase tracking-wider font-semibold px-5 py-2.5 rounded-lg transition-all"
-          >
-            <MapPin size={16} />
-            Get Directions
-          </motion.button>
 
           {/* Mobile Menu Button */}
           <motion.button
@@ -98,42 +70,23 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-background/95 border-t border-foreground/5 overflow-hidden grain-texture"
+            transition={{ duration: 0.2 }}
+            className="md:hidden bg-background border-t border-foreground/10 overflow-hidden"
             aria-label="Mobile navigation"
           >
-            <div className="px-4 py-6 space-y-3">
-              {navLinks.map((link, index) => (
-                <motion.div
+            <div className="px-4 py-4 space-y-2">
+              {navLinks.map((link) => (
+                <Link
                   key={link.path}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
+                  to={link.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block font-paragraph text-sm uppercase tracking-wider transition-colors py-2 px-3 ${
+                    isActive(link.path) ? 'text-neon-red-orange' : 'text-foreground/70 hover:text-foreground'
+                  }`}
                 >
-                  <Link
-                    to={link.path}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={`block font-paragraph text-sm uppercase tracking-wider transition-colors py-2 px-3 rounded ${
-                      isActive(link.path) ? 'text-neon-red-orange bg-neon-red-orange/10' : 'text-foreground/80 hover:text-neon-red-orange hover:bg-neon-red-orange/5'
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                </motion.div>
+                  {link.label}
+                </Link>
               ))}
-              <motion.button
-                onClick={() => {
-                  handleGetDirections();
-                  setIsMenuOpen(false);
-                }}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navLinks.length * 0.05 }}
-                className="w-full flex items-center justify-center gap-2 bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-xs uppercase tracking-wider font-semibold px-4 py-3 rounded-lg transition-all mt-4"
-              >
-                <MapPin size={16} />
-                Get Directions
-              </motion.button>
             </div>
           </motion.nav>
         )}

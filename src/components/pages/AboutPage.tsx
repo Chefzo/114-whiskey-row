@@ -140,7 +140,7 @@ export default function AboutPage() {
             {/* Location Block */}
             <motion.div variants={itemVariants} className="max-w-2xl space-y-2 pt-4">
               <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed">
-                📍 Whiskey Row
+                114 W Main St. Whiskey Row. Louisville, KY
               </p>
             </motion.div>
           </motion.div>

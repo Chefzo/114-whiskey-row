@@ -1,6 +1,5 @@
-import { Instagram, Facebook, MapPin, Clock, ExternalLink } from 'lucide-react';
+import { Instagram, Facebook } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const containerVariants = {
@@ -17,7 +16,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-black/80 border-t border-foreground/5 backdrop-blur-sm grain-texture" role="contentinfo">
+    <footer className="bg-black border-t border-foreground/10" role="contentinfo">
       <div className="w-full px-4 py-12 sm:py-16">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
@@ -25,17 +24,13 @@ export default function Footer() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8"
           >
              {/* Brand */}
              <motion.div variants={itemVariants}>
                <h3 className="font-heading text-xl sm:text-2xl font-bold mb-3">
                  <span className="text-neon-red-orange">One Fourteen</span>
-                 <span className="text-foreground ml-2">Bar</span>
                </h3>
-              <p className="font-paragraph text-xs sm:text-sm text-foreground/70 mb-4 leading-relaxed">
-                Modern dive on Whiskey Row.
-              </p>
               <div className="flex gap-3">
                 <motion.a
                   href="https://www.instagram.com/onefourteenwhiskeyrow/"
@@ -64,8 +59,7 @@ export default function Footer() {
 
              {/* Location */}
              <motion.div variants={itemVariants}>
-               <h4 className="font-heading text-base sm:text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                 <MapPin size={18} className="text-neon-red-orange flex-shrink-0" aria-hidden="true" />
+               <h4 className="font-heading text-base sm:text-lg font-bold text-foreground mb-4">
                  Location
                </h4>
               <div className="space-y-2">
@@ -75,22 +69,12 @@ export default function Footer() {
                 <p className="font-paragraph text-xs sm:text-sm text-foreground/90">
                   Louisville, KY 40202
                 </p>
-                <p className="font-paragraph text-xs text-neon-red-orange">
-                  Loud music. Strong drinks.
-                </p>
-                <button
-                  onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
-                  className="font-paragraph text-xs text-warm-amber hover:text-neon-red-orange transition-colors mt-2 inline-flex items-center gap-1"
-                >
-                  Get Directions <ExternalLink size={12} />
-                </button>
               </div>
             </motion.div>
 
              {/* Hours */}
              <motion.div variants={itemVariants}>
-               <h4 className="font-heading text-base sm:text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                 <Clock size={18} className="text-neon-red-orange flex-shrink-0" aria-hidden="true" />
+               <h4 className="font-heading text-base sm:text-lg font-bold text-foreground mb-4">
                  Hours
                </h4>
               <div className="font-paragraph text-xs sm:text-sm text-foreground/90 space-y-2">
@@ -104,27 +88,6 @@ export default function Footer() {
                 </div>
               </div>
             </motion.div>
-
-            {/* Quick Links */}
-            <motion.div variants={itemVariants}>
-              <h4 className="font-heading text-base sm:text-lg font-bold text-foreground mb-4">
-                Quick Links
-              </h4>
-              <div className="space-y-2">
-                <Link to="/" className="font-paragraph text-xs sm:text-sm text-foreground/80 hover:text-neon-red-orange transition-colors block">
-                  Home
-                </Link>
-                <Link to="/events" className="font-paragraph text-xs sm:text-sm text-foreground/80 hover:text-neon-red-orange transition-colors block">
-                  Events
-                </Link>
-                <Link to="/gallery" className="font-paragraph text-xs sm:text-sm text-foreground/80 hover:text-neon-red-orange transition-colors block">
-                  Gallery
-                </Link>
-                <Link to="/contact" className="font-paragraph text-xs sm:text-sm text-foreground/80 hover:text-neon-red-orange transition-colors block">
-                  Contact
-                </Link>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Bottom Bar */}
@@ -132,11 +95,11 @@ export default function Footer() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="pt-6 border-t border-neon-red-orange/10"
+            className="pt-6 border-t border-foreground/10"
           >
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
               <p className="font-paragraph text-xs text-foreground/50">
-                © {new Date().getFullYear()} One Fourteen Bar. All rights reserved. | Whiskey Row, Louisville, KY
+                © {new Date().getFullYear()} One Fourteen Bar. All rights reserved.
               </p>
               <p className="font-paragraph text-xs text-neon-red-orange font-semibold">
                 Walk-ins only · 21+
