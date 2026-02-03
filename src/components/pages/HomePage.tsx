@@ -312,6 +312,9 @@ export default function HomePage() {
               <p className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground tracking-wide">
                 Open Tue–Sun · 4pm–2am
               </p>
+              <p className="font-paragraph text-xs text-foreground/30 mt-8 pt-4 border-t border-foreground/5 hover:text-foreground/60 transition-colors cursor-pointer">
+                <a href="/story" className="hover:underline">our story</a>
+              </p>
             </div>
           </motion.div>
         </div>
