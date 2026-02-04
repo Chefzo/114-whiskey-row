@@ -150,7 +150,7 @@ export default function VisitPage() {
                   href={googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-neon-red-orange text-black font-paragraph text-sm uppercase tracking-wider px-6 py-3 rounded transition-all hover:bg-neon-red-orange/90"
+                  className="inline-flex items-center gap-2 bg-neon-red-orange text-black font-paragraph text-sm uppercase tracking-wider px-6 py-3 rounded transition-all hover:bg-neon-red-orange/90 contrast-[1.25]"
                 >
                   <Navigation size={18} />
                   Get Directions
@@ -325,7 +325,7 @@ export default function VisitPage() {
                 href={googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-neon-red-orange text-white font-paragraph text-sm uppercase tracking-wider px-8 py-3 rounded transition-all hover:shadow-[0_0_20px_rgba(255,69,0,0.5)]"
+                className="inline-flex items-center justify-center gap-2 bg-neon-red-orange text-white font-paragraph text-sm uppercase tracking-wider px-8 py-3 rounded transition-all hover:shadow-[0_0_20px_rgba(255,69,0,0.5)] contrast-[1.25]"
               >
                 <Navigation size={18} />
                 Navigate Here

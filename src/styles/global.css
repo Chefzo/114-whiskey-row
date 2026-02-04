@@ -24,6 +24,17 @@
         transparent 2px
       );
   }
+
+  /* Critical CSS for hero section - inline for faster rendering */
+  h1 {
+    font-family: syne, sans-serif;
+    font-weight: 700;
+  }
+
+  p {
+    font-family: azeret-mono, monospace;
+    font-weight: 400;
+  }
 }
 
 /* Grain texture utility for black/dark backgrounds */

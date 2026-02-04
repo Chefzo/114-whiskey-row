@@ -5,6 +5,7 @@ import { Head } from "@/components/Head";
 import AppRouter from "@/components/Router";
 import "@wix/wix-vibe-plugins/plugins-vars.css";
 import "@wix/wix-vibe-plugins/plugins-theme.css";
+import "@/styles/critical.css";
 import "@/styles/global.css";
 
 const seoTagsServiceConfig = await loadSEOTagsServiceConfig({
@@ -24,7 +25,7 @@ const seoTagsServiceConfig = await loadSEOTagsServiceConfig({
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     
     <!-- Defer Google Analytics - Load after first paint -->
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-JMM17LNJXM"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMM17LNJXM"></script>
     <script defer>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
