@@ -7,25 +7,65 @@ export default function StoryPage() {
     <div className="min-h-screen bg-black">
       <Header />
       
-      <section className="w-full py-32 md:py-40 bg-black">
+      <section className="w-full py-24 md:py-32 lg:py-40 bg-black">
         <div className="w-full max-w-[100rem] mx-auto px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="font-heading text-6xl md:text-8xl text-foreground mb-16 leading-tight tracking-tight">
-              The Story of <span className="text-primary">One Fourteen</span>
+            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl text-primary mb-12 md:mb-16 lg:mb-20 leading-tight tracking-tight">
+              THE STORY OF ONE FOURTEEN
             </h1>
 
-            <div className="space-y-12 max-w-4xl">
+            <div className="space-y-8 md:space-y-10 lg:space-y-12 max-w-4xl">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <p className="font-paragraph text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
+                  More than ten years ago, the founder of One Fourteen used to walk past this building on Main Street.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+              >
+                <p className="font-paragraph text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
+                  Not looking for a concept.
+                  <br />
+                  Not chasing a trend.
+                  <br />
+                  Just noticing a space that felt like it should matter.
+                </p>
+              </motion.div>
+
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <p className="font-paragraph text-xl md:text-2xl text-foreground/80 leading-relaxed">
-                  114 West Main Street. A corner on Whiskey Row that's seen it all. From the roar of the crowd before game day to the pulse of the night after the show ends, this address has become synonymous with one thing: where Louisville comes to let loose.
+                <p className="font-paragraph text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
+                  At the time, the idea was a coffee shop called Whiskey Row Café.
+                  <br />
+                  Not because coffee was the point — but because it felt like the kind of place people return to.
+                  <br />
+                  Built around conversation, routine, and showing up.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+              >
+                <p className="font-paragraph text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
+                  Over time, it became clear the idea was never really about coffee.
+                  <br />
+                  It was about the room.
                 </p>
               </motion.div>
 
@@ -34,8 +74,30 @@ export default function StoryPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                <p className="font-paragraph text-xl md:text-2xl text-foreground/80 leading-relaxed">
-                  One Fourteen isn't just a bar. It's a state of mind. It's the place where strangers become friends over a strong drink and louder music. It's where the energy never dies, where walk-ins are always welcome, and where the night is always young.
+                <p className="font-paragraph text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
+                  A simple space filled with energy.
+                  <br />
+                  Late nights.
+                  <br />
+                  Familiar faces.
+                  <br />
+                  People finding their people.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.35 }}
+              >
+                <p className="font-paragraph text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
+                  One Fourteen came from that original thought.
+                  <br />
+                  A bar built on connection, not polish.
+                  <br />
+                  Atmosphere over pretense.
+                  <br />
+                  A place where the room comes alive because of who's inside it.
                 </p>
               </motion.div>
 
@@ -44,31 +106,22 @@ export default function StoryPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <p className="font-paragraph text-xl md:text-2xl text-foreground/80 leading-relaxed">
-                  Before the game. After the show. Late nights on Whiskey Row. This is where the city's heartbeat is strongest. No reservations. No dress code. No attitude. Just real people, real drinks, and real moments that matter.
+                <p className="font-paragraph text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
+                  Because in the end, it's never about how a space looks from the outside.
+                  <br />
+                  It's about what happens once you walk in.
                 </p>
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
+                transition={{ duration: 0.6, delay: 0.45 }}
               >
-                <p className="font-paragraph text-xl md:text-2xl text-foreground/80 leading-relaxed">
-                  The story of One Fourteen is still being written. Every night brings new faces, new stories, new memories. It's a place where the night never ends, where the music never stops, and where everyone belongs.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="pt-8 border-t border-foreground/20"
-              >
-                <p className="font-paragraph text-lg md:text-xl text-primary font-bold">
-                  Open Tue-Sun, 4pm-2am<br />
-                  114 W Main St, Louisville, KY 40202<br />
-                  21+ • Walk-ins Welcome • No Reservations
+                <p className="font-paragraph text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
+                  That's One Fourteen.
+                  <br />
+                  Whiskey Row.
                 </p>
               </motion.div>
             </div>
