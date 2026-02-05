@@ -6,7 +6,6 @@ export default function StoryPage() {
   return (
     <div className="min-h-screen bg-black">
       <Header />
-      
       <section className="w-full py-24 md:py-32 lg:py-40 bg-black">
         <div className="w-full max-w-[100rem] mx-auto px-6 md:px-16">
           <motion.div
@@ -24,9 +23,7 @@ export default function StoryPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                <p className="font-paragraph text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
-                  More than ten years ago, Enzo Palombino, the founder of One Fourteen, used to walk past this building on Main Street.
-                </p>
+                <p className="font-paragraph text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">More than ten years ago, the founder  of One Fourteen used to walk past this building on Main Street.</p>
               </motion.div>
 
               <motion.div
@@ -128,7 +125,6 @@ export default function StoryPage() {
           </motion.div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
