@@ -1,31 +1,74 @@
+import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Image } from '@/components/ui/image';
 
 export default function MenuPage() {
+  const menuSections = [
+    {
+      title: 'COCKTAILS',
+      alt: 'One Fourteen cocktail menu – modern dive bar on Whiskey Row in Louisville, KY',
+      image: 'https://static.wixstatic.com/media/528274_0c35cdb8b2f8467688a450314756dc1f~mv2.png?originWidth=768&originHeight=576',
+    },
+    {
+      title: 'FROZEN / BAD IDEAS',
+      alt: 'One Fourteen frozen and bad ideas menu – modern dive bar on Whiskey Row in Louisville, KY',
+      image: 'https://static.wixstatic.com/media/528274_8ef0d062393e4ad18ad2feeff21827aa~mv2.png?originWidth=768&originHeight=576',
+    },
+    {
+      title: 'BEER & CANS',
+      alt: 'One Fourteen beer and cans menu – modern dive bar on Whiskey Row in Louisville, KY',
+      image: 'https://static.wixstatic.com/media/528274_72b630d5c7b24728bfa71dd32801f50a~mv2.png?originWidth=768&originHeight=576',
+    },
+    {
+      title: 'NO PROOF',
+      alt: 'One Fourteen no proof and house rules menu – modern dive bar on Whiskey Row in Louisville, KY',
+      image: 'https://static.wixstatic.com/media/528274_668701e915a9472189a5dd4cfdf8e5fd~mv2.png?originWidth=768&originHeight=576',
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-32 pb-20">
-        <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-4">
+      
+      <main className="w-full">
+        {/* Page Title Section */}
+        <section className="w-full bg-background py-16 md:py-24">
+          <div className="max-w-[100rem] mx-auto px-4 md:px-8">
+            <h1 className="font-heading text-5xl md:text-7xl font-bold text-foreground">
               Menu
             </h1>
-            <p className="font-paragraph text-lg sm:text-xl text-foreground/80 max-w-2xl">
-              Craft cocktails, cold beer, and spirits that hit different. We keep it simple. Strong drinks, no fuss.
-            </p>
           </div>
-          <div className="flex justify-center">
-            <Image
-              src="https://static.wixstatic.com/media/528274_baaf48c63a384a3185ae067e1f14a43d~mv2.jpg"
-              width={800}
-              originWidth={1024}
-              originHeight={1536}
-              alt="One Fourteen Bar menu" />
+        </section>
+
+        {/* Menu Sections */}
+        <section className="w-full bg-background py-8 md:py-12">
+          <div className="max-w-[100rem] mx-auto px-4 md:px-8">
+            <div className="space-y-20 md:space-y-28">
+              {menuSections.map((section, index) => (
+                <div key={index} className="w-full">
+                  {/* Section Header */}
+                  <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-8 md:mb-12">
+                    {section.title}
+                  </h2>
+
+                  {/* Menu Image - Full width on mobile, centered on desktop */}
+                  <div className="w-full md:flex md:justify-center">
+                    <div className="w-full md:max-w-2xl">
+                      <Image
+                        src={section.image}
+                        alt={section.alt}
+                        width={800}
+                        className="w-full h-auto"
+                      />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
       </main>
+
       <Footer />
     </div>
   );
