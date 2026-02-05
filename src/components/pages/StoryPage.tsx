@@ -25,7 +25,7 @@ export default function StoryPage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
                 <p className="font-paragraph text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
-                  More than ten years ago, the founder of One Fourteen used to walk past this building on Main Street.
+                  More than ten years ago, Enzo Palombino, the founder of One Fourteen, used to walk past this building on Main Street.
                 </p>
               </motion.div>
 
