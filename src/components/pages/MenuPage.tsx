@@ -3,11 +3,12 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { MapPin, Clock } from 'lucide-react';
-import { useState } from 'react';
+import { MapPin, Clock, AlertCircle } from 'lucide-react';
+import { useState, useCallback, useEffect } from 'react';
 
 export default function MenuPage() {
   const [activeSection, setActiveSection] = useState(0);
+  const [error, setError] = useState<string | null>(null);
 
   const menuSections = [
     {
@@ -40,11 +41,33 @@ export default function MenuPage() {
     },
   ];
 
-  const scrollToSection = (index: number) => {
+  const scrollToSection = useCallback((index: number) => {
     setActiveSection(index);
     const element = document.getElementById(menuSections[index].id);
-    element?.scrollIntoView({ behavior: 'smooth' });
-  };
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      // Focus the section for accessibility
+      element.focus();
+    }
+  }, [menuSections]);
+
+  // Track active section on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = menuSections.map(s => document.getElementById(s.id)).filter(Boolean);
+      
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section && section.getBoundingClientRect().top < window.innerHeight / 2) {
+          setActiveSection(i);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [menuSections]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -52,19 +75,38 @@ export default function MenuPage() {
       
       <main className="w-full">
         {/* Hero Section */}
-        <section className="w-full bg-background pt-24 pb-12 sm:pt-32 md:pt-40 md:pb-24">
-          <div className="max-w-[120rem] mx-auto px-4 sm:px-6 md:px-8">
+        <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 bg-background" />
+          </div>
+
+          <div className="relative z-10 max-w-[120rem] mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="max-w-3xl"
             >
-              <h1 className="font-heading text-4xl sm:text-5xl md:text-8xl font-bold text-foreground mb-4 sm:mb-6">
-                Menu
+              <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl font-bold text-foreground mb-6">
+                Menu | One Fourteen Bar on Whiskey Row
               </h1>
-              <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 mb-6 sm:mb-8 leading-relaxed">
-                Explore our carefully curated selection of cocktails, beers, and spirits. From craft creations to classic favorites, there's something for every taste at One Fourteen.
+              <p className="font-paragraph text-lg sm:text-xl text-foreground/70 max-w-3xl">
+                Explore our carefully curated selection of cocktails, beers, and spirits. From craft creations to classic favorites, there's something for every taste.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* SEO Intro Text */}
+        <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 bg-background border-b border-neon-red-orange/10">
+          <div className="max-w-[120rem] mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <p className="font-paragraph text-base sm:text-lg text-foreground/80 max-w-3xl leading-relaxed">
+                The complete menu for <a href="/" className="text-neon-red-orange hover:underline">One Fourteen, a late-night bar on Whiskey Row</a> in downtown Louisville, Kentucky. Browse our craft cocktails, rotating beer selection, happy hour specials, and shots. Open Tuesday–Sunday, 4pm–2am. Walk-ins only. 21+.
               </p>
             </motion.div>
           </div>
@@ -85,6 +127,7 @@ export default function MenuPage() {
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  aria-current={activeSection === index ? 'page' : undefined}
                 >
                   {section.title}
                 </motion.button>
@@ -93,9 +136,22 @@ export default function MenuPage() {
           </div>
         </section>
 
+        {/* Error State */}
+        {error && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mx-4 sm:mx-6 lg:mx-8 mt-6 p-4 bg-destructive/10 border border-destructive/30 rounded flex items-start gap-3"
+            role="alert"
+          >
+            <AlertCircle className="text-destructive flex-shrink-0 mt-0.5" size={20} />
+            <p className="font-paragraph text-sm text-destructive">{error}</p>
+          </motion.div>
+        )}
+
         {/* Menu Sections */}
-        <section className="w-full bg-background py-8 sm:py-12 md:py-20">
-          <div className="max-w-[120rem] mx-auto px-4 sm:px-6 md:px-8">
+        <section className="w-full bg-background py-8 sm:py-12 md:py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[120rem] mx-auto">
             <div className="space-y-16 sm:space-y-24 md:space-y-32">
               {menuSections.map((section, index) => (
                 <motion.div
@@ -105,7 +161,8 @@ export default function MenuPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-100px' }}
                   transition={{ duration: 0.6 }}
-                  className="w-full"
+                  className="w-full focus:outline-none focus:ring-2 focus:ring-neon-red-orange rounded p-4"
+                  tabIndex={-1}
                 >
                   {/* Section Header with Description */}
                   <div className={`mb-8 sm:mb-12 md:mb-16 ${index % 2 === 1 ? 'md:ml-auto md:max-w-2xl' : ''}`}>
@@ -167,8 +224,8 @@ export default function MenuPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full bg-background py-12 sm:py-16 md:py-24">
-          <div className="max-w-[120rem] mx-auto px-4 sm:px-6 md:px-8">
+        <section className="w-full bg-background py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[120rem] mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -180,7 +237,7 @@ export default function MenuPage() {
                 Ready to experience One Fourteen?
               </h3>
               <p className="font-paragraph text-sm sm:text-base md:text-lg text-foreground/70 mb-6 sm:mb-8 max-w-2xl mx-auto">
-                Join us for late nights on Whiskey Row. Walk-ins only. 21+.
+                Join us for late nights on Whiskey Row. Walk-ins only. 21+. Open Tuesday–Sunday, 4pm–2am.
               </p>
               
               <div className="flex flex-col gap-3 sm:gap-4">
