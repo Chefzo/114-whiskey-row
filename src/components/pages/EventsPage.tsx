@@ -26,10 +26,26 @@ export default function EventsPage() {
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const { items } = await BaseCrudService.getAll<Events>('events');
+      const { items } = await BaseCrudService.getAll<any>('Events/Events');
+      
+      // Map Wix Events app fields to our Events interface
+      const mappedEvents: Events[] = items.map((item: any) => ({
+        _id: item._id,
+        _createdDate: item._createdDate,
+        _updatedDate: item._updatedDate,
+        eventName: item.title,
+        location: item.location,
+        eventType: item.eventType,
+        eventDate: item.eventDate,
+        startTime: item.startTime,
+        endTime: item.endTime,
+        eventDescription: item.description,
+        eventImage: item.image,
+        callToActionUrl: item.url,
+      }));
       
       // Sort by date (upcoming first)
-      const sorted = items.sort((a, b) => {
+      const sorted = mappedEvents.sort((a, b) => {
         const dateA = a.eventDate ? new Date(a.eventDate).getTime() : Infinity;
         const dateB = b.eventDate ? new Date(b.eventDate).getTime() : Infinity;
         return dateA - dateB;
