@@ -172,7 +172,7 @@ export default function EventsPage() {
       <section className="px-4 sm:px-6 lg:px-8 pb-24">
         <div className="max-w-[120rem] mx-auto">
           {filteredEvents.length > 0 && (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredEvents.map((event, index) => (
                 <motion.article
                   key={event._id}
@@ -180,81 +180,94 @@ export default function EventsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="group relative bg-black/40 border border-neon-red-orange/20 rounded overflow-hidden hover:border-neon-red-orange/60 transition-all"
+                  className="group relative bg-black/60 border border-neon-red-orange/30 rounded-lg overflow-hidden hover:border-neon-red-orange/80 transition-all duration-300 hover:shadow-lg hover:shadow-neon-red-orange/20 flex flex-col h-full"
                 >
-                  <div className="grid md:grid-cols-5 gap-0">
-                    {/* Image */}
-                    {event.eventImage && (
-                      <div className="md:col-span-2 aspect-square md:aspect-auto overflow-hidden">
-                        <Image
-                          src={event.eventImage}
-                          alt={event.eventName || 'Event image'}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                          width={400}
-                        />
-                      </div>
-                    )}
-
-                    {/* Content */}
-                    <div className={`${event.eventImage ? 'md:col-span-3' : 'md:col-span-5'} p-8`}>
+                  {/* Image Container */}
+                  {event.eventImage && (
+                    <div className="relative w-full aspect-video overflow-hidden bg-black/40">
+                      <Image
+                        src={event.eventImage}
+                        alt={event.eventName || 'Event image'}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        width={500}
+                      />
                       {event.eventType && (
-                        <span className="inline-block font-paragraph text-xs uppercase tracking-wider text-warm-amber mb-3 px-3 py-1 bg-warm-amber/10 rounded">
-                          {event.eventType}
-                        </span>
-                      )}
-
-                      <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-4">
-                        {event.eventName}
-                      </h2>
-
-                      {event.eventDescription && (
-                        <p className="font-paragraph text-base text-foreground/80 mb-6">
-                          {event.eventDescription}
-                        </p>
-                      )}
-
-                      <div className="space-y-3">
-                        {event.eventDate && (
-                          <div className="flex items-center gap-3 text-foreground/70">
-                            <Calendar size={18} className="text-neon-red-orange flex-shrink-0" />
-                            <span className="font-paragraph text-sm">
-                              {new Date(event.eventDate).toLocaleDateString('en-US', {
-                                weekday: 'long',
-                                month: 'long',
-                                day: 'numeric',
-                                year: 'numeric',
-                              })}
-                            </span>
-                          </div>
-                        )}
-
-                        {(event.startTime || event.endTime) && (
-                          <div className="flex items-center gap-3 text-foreground/70">
-                            <Clock size={18} className="text-neon-red-orange flex-shrink-0" />
-                            <span className="font-paragraph text-sm">
-                              {formatTime(event.startTime)}
-                              {event.startTime && event.endTime && ' - '}
-                              {formatTime(event.endTime)}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-
-                      {event.callToActionUrl && (
-                        <a
-                          href={event.callToActionUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 mt-6 bg-neon-red-orange text-white font-paragraph text-sm uppercase tracking-wider px-6 py-3 rounded transition-all hover:shadow-[0_0_20px_rgba(255,69,0,0.5)]"
-                        >
-                          Learn More
-                          <ExternalLink size={16} />
-                        </a>
+                        <div className="absolute top-4 left-4">
+                          <span className="inline-block font-paragraph text-xs uppercase tracking-wider text-white bg-neon-red-orange px-3 py-1.5 rounded">
+                            {event.eventType}
+                          </span>
+                        </div>
                       )}
                     </div>
+                  )}
+
+                  {/* Content Container */}
+                  <div className="flex flex-col flex-grow p-6">
+                    {!event.eventImage && event.eventType && (
+                      <span className="inline-block font-paragraph text-xs uppercase tracking-wider text-white bg-neon-red-orange px-3 py-1.5 rounded mb-3 w-fit">
+                        {event.eventType}
+                      </span>
+                    )}
+
+                    <h2 className="font-heading text-2xl font-bold text-foreground mb-3 line-clamp-2">
+                      {event.eventName}
+                    </h2>
+
+                    {event.eventDescription && (
+                      <p className="font-paragraph text-sm text-foreground/70 mb-4 line-clamp-2 flex-grow">
+                        {event.eventDescription}
+                      </p>
+                    )}
+
+                    {/* Event Details */}
+                    <div className="space-y-2 mb-6 border-t border-neon-red-orange/20 pt-4">
+                      {event.eventDate && (
+                        <div className="flex items-center gap-2 text-foreground/80">
+                          <Calendar size={16} className="text-neon-red-orange flex-shrink-0" />
+                          <span className="font-paragraph text-xs">
+                            {new Date(event.eventDate).toLocaleDateString('en-US', {
+                              month: 'short',
+                              day: 'numeric',
+                              year: 'numeric',
+                            })}
+                          </span>
+                        </div>
+                      )}
+
+                      {(event.startTime || event.endTime) && (
+                        <div className="flex items-center gap-2 text-foreground/80">
+                          <Clock size={16} className="text-neon-red-orange flex-shrink-0" />
+                          <span className="font-paragraph text-xs">
+                            {formatTime(event.startTime)}
+                            {event.startTime && event.endTime && ' - '}
+                            {formatTime(event.endTime)}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* CTA Button */}
+                    {event.callToActionUrl && (
+                      <a
+                        href={event.callToActionUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 w-full bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-xs uppercase tracking-wider px-4 py-3 rounded transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,69,0,0.5)]"
+                      >
+                        Learn More
+                        <ExternalLink size={14} />
+                      </a>
+                    )}
                   </div>
                 </motion.article>
               ))}
+            </div>
+          )}
+          {filteredEvents.length === 0 && (
+            <div className="text-center py-16">
+              <p className="font-paragraph text-lg text-foreground/60">
+                No {filter !== 'all' ? filter : ''} events at the moment.
+              </p>
             </div>
           )}
         </div>
