@@ -7,7 +7,7 @@ export default function MenuPage() {
     {
       title: 'COCKTAILS',
       alt: 'One Fourteen cocktail menu – modern dive bar on Whiskey Row in Louisville, KY',
-      image: 'https://static.wixstatic.com/media/528274_56367eb8a6bf4221bf692e19e02842d6~mv2.png?originWidth=768&originHeight=576',
+      image: 'https://static.wixstatic.com/media/528274_640990ba91134702b82fec2797323e66~mv2.png',
     },
     {
       title: 'FROZEN / BAD IDEAS',
