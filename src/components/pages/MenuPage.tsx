@@ -10,19 +10,19 @@ export default function MenuPage() {
       image: 'https://static.wixstatic.com/media/528274_640990ba91134702b82fec2797323e66~mv2.png',
     },
     {
-      title: 'FROZEN / BAD IDEAS',
-      alt: 'One Fourteen frozen and bad ideas menu – modern dive bar on Whiskey Row in Louisville, KY',
-      image: 'https://static.wixstatic.com/media/528274_6038e57361b54571ab575030aefa8f94~mv2.png?originWidth=768&originHeight=576',
-    },
-    {
       title: 'BEER & CANS',
       alt: 'One Fourteen beer and cans menu – modern dive bar on Whiskey Row in Louisville, KY',
       image: 'https://static.wixstatic.com/media/528274_0d9e6a4253104d8fa5c724b23eabc95d~mv2.png',
     },
     {
-      title: 'NO PROOF',
-      alt: 'One Fourteen no proof and house rules menu – modern dive bar on Whiskey Row in Louisville, KY',
-      image: 'https://static.wixstatic.com/media/528274_b1265fd9581c4378b918f9c4e35f610a~mv2.png?originWidth=768&originHeight=576',
+      title: 'HAPPY HOUR',
+      alt: 'One Fourteen happy hour menu – weekdays 4-7 PM',
+      image: 'https://static.wixstatic.com/media/528274_37c545ac599e4795b4cc69c70b810a3b~mv2.png',
+    },
+    {
+      title: 'SHOTS & BOILERMAKERS',
+      alt: 'One Fourteen shots and boilermakers menu – modern dive bar on Whiskey Row in Louisville, KY',
+      image: 'https://static.wixstatic.com/media/528274_6218139bf6e2426588a1aba9e9b9b049~mv2.png',
     },
   ];
 
