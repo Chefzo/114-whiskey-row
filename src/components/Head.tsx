@@ -96,7 +96,7 @@ export const Head = () => {
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       
       {/* SEO Meta Tags */}
-      <title>Late Night Bar on Whiskey Row | Louisville, KY</title>
+      <title>Bars in Louisville, KY | One Fourteen on Whiskey Row</title>
       <meta name="description" content="One Fourteen is a late night bar on Whiskey Row in downtown Louisville. Open Tue–Sun until 2am. Walk-ins only. DJs and game day sound on." />
       <meta name="keywords" content="bar, Louisville, Whiskey Row, late night bar, downtown Louisville, nightlife, walk-ins" />
       <meta name="author" content="One Fourteen" />
@@ -105,7 +105,7 @@ export const Head = () => {
       
       {/* Open Graph Tags */}
       <meta property="og:type" content="business.business" />
-      <meta property="og:title" content="Late Night Bar on Whiskey Row | Louisville, KY" />
+      <meta property="og:title" content="Bars in Louisville, KY | One Fourteen on Whiskey Row" />
       <meta property="og:description" content={businessDescription} />
       <meta property="og:url" content={siteUrl} />
       <meta property="og:site_name" content={businessName} />
@@ -116,7 +116,7 @@ export const Head = () => {
       
       {/* Twitter Card Tags */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Late Night Bar on Whiskey Row | Louisville, KY" />
+      <meta name="twitter:title" content="Bars in Louisville, KY | One Fourteen on Whiskey Row" />
       <meta name="twitter:description" content={businessDescription} />
       <meta name="twitter:image" content="https://static.wixstatic.com/media/528274_112a88f0f95c4632b6449db5f7575a0b~mv2.png" />
       
