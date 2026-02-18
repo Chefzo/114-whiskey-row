@@ -66,9 +66,20 @@ export default function EventsPage() {
       if (militaryMatch) {
         let hours = parseInt(militaryMatch[1], 10);
         const minutes = militaryMatch[2];
-        const period = hours >= 12 ? 'PM' : 'AM';
-        hours = hours % 12 || 12;
-        return `${hours}:${minutes} ${period}`;
+        
+        // Create a date object for today to format with timezone
+        const today = new Date();
+        today.setHours(hours, parseInt(minutes, 10), 0, 0);
+        
+        // Format time in ET timezone
+        const etTime = new Intl.DateTimeFormat('en-US', {
+          hour: 'numeric',
+          minute: '2-digit',
+          hour12: true,
+          timeZone: 'America/New_York'
+        }).format(today);
+        
+        return `${etTime} ET`;
       }
       return timeValue;
     }
