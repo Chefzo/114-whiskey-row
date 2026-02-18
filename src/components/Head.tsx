@@ -3,7 +3,7 @@ export const Head = () => {
   const businessName = 'One Fourteen';
   const businessDescription = 'One Fourteen is a late night bar on Whiskey Row in downtown Louisville. Open Tue–Sun until 2am. Walk-ins only. DJs and game day sound on.';
   const address = '114 W Main St, Louisville, KY 40202';
-  const phone = '+1-502-555-0114';
+  const phone = '+1-502-907-1400';
   
   const localBusinessSchema = {
     '@context': 'https://schema.org',
