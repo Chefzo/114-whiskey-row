@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, ExternalLink, MapPin } from 'lucide-react';
+import { Calendar, Clock, ExternalLink } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -10,19 +10,6 @@ import { Events } from '@/entities';
 export default function EventsPage() {
   const [events, setEvents] = useState<Events[]>([]);
   const [filter, setFilter] = useState<'all' | 'upcoming' | 'past'>('upcoming');
-
-  useEffect(() => {
-    // Google Tag Manager noscript fallback
-    const noscript = document.createElement('noscript');
-    const iframe = document.createElement('iframe');
-    iframe.src = 'https://www.googletagmanager.com/ns.html?id=GTM-WMRZT82N';
-    iframe.height = '0';
-    iframe.width = '0';
-    iframe.style.display = 'none';
-    iframe.style.visibility = 'hidden';
-    noscript.appendChild(iframe);
-    document.body.insertBefore(noscript, document.body.firstChild);
-  }, []);
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -45,7 +32,6 @@ export default function EventsPage() {
     if (!event.eventDate) return filter === 'all';
     
     const eventDate = new Date(event.eventDate);
-    // Set to start of day for comparison
     eventDate.setHours(0, 0, 0, 0);
     
     const now = new Date();
@@ -90,15 +76,6 @@ export default function EventsPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-
-      {/* Mobile Fixed Get Directions Button - Deferred animation for performance */}
-      <button
-        onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
-        className="fixed bottom-6 left-4 right-4 md:hidden z-40 flex items-center justify-center gap-2 bg-neon-red-orange hover:bg-neon-red-orange/90 text-black font-paragraph text-xs uppercase tracking-wider font-semibold px-6 py-3 rounded-lg transition-all shadow-xl hover:shadow-2xl hover:shadow-neon-red-orange/40"
-      >
-        <MapPin size={16} />
-        Get Directions
-      </button>
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
