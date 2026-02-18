@@ -64,6 +64,22 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* SEO Paragraph Section */}
+      <section className="w-full py-12 sm:py-16 md:py-20 bg-black border-b border-foreground/10" aria-label="About One Fourteen">
+        <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="font-paragraph text-base sm:text-lg text-foreground/80 max-w-3xl leading-relaxed">
+              One Fourteen is a late night bar located at 114 W Main Street on <a href="/visit" className="text-neon-red-orange hover:underline">Whiskey Row</a> in downtown Louisville, KY. Steps from the Yum Center, we're open Tuesday through Sunday until 2am with DJs, game day sound on, and a steady nightlife crowd. Walk-ins only. 21+.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Tonight at One Fourteen */}
       <section id="events-section" className="w-full py-16 sm:py-20 md:py-24 bg-black" aria-label="Tonight at One Fourteen">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">

@@ -1,13 +1,13 @@
 export const Head = () => {
-  const siteUrl = 'https://onefourteenbar.com';
-  const businessName = 'One Fourteen Bar';
-  const businessDescription = 'A modern dive bar on Whiskey Row in downtown Louisville. Loud music, strong drinks, and late nights. No reservations. Just show up.';
+  const siteUrl = 'https://www.114barwhiskeyrow.com/';
+  const businessName = 'One Fourteen';
+  const businessDescription = 'One Fourteen is a late night bar on Whiskey Row in downtown Louisville. Open Tue–Sun until 2am. Walk-ins only. DJs and game day sound on.';
   const address = '114 W Main St, Louisville, KY 40202';
   const phone = '+1-502-555-0114';
   
   const localBusinessSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Bar',
+    '@type': 'BarOrPub',
     'name': businessName,
     'description': businessDescription,
     'url': siteUrl,
@@ -39,11 +39,9 @@ export const Head = () => {
         'closes': '00:00'
       }
     ],
-    'priceRange': '$$',
-    'servesCuisine': 'Bar Food',
+    'priceRange': '$',
     'sameAs': [
-      'https://www.instagram.com/onefourteenwhiskeyrow/',
-      'https://facebook.com'
+      'https://www.instagram.com/onefourteenwhiskeyrow/'
     ]
   };
 
@@ -76,16 +74,16 @@ export const Head = () => {
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       
       {/* SEO Meta Tags */}
-      <title>One Fourteen Bar | Downtown Louisville Bar on Whiskey Row</title>
-      <meta name="description" content="A modern dive bar on Whiskey Row in downtown Louisville. Loud music, strong drinks, and late nights. No reservations. Just show up." />
-      <meta name="keywords" content="bar, Louisville, Whiskey Row, dive bar, downtown Louisville, live music, cocktails, nightlife" />
-      <meta name="author" content="One Fourteen Bar" />
+      <title>Late Night Bar on Whiskey Row | Louisville, KY</title>
+      <meta name="description" content="One Fourteen is a late night bar on Whiskey Row in downtown Louisville. Open Tue–Sun until 2am. Walk-ins only. DJs and game day sound on." />
+      <meta name="keywords" content="bar, Louisville, Whiskey Row, late night bar, downtown Louisville, nightlife, walk-ins" />
+      <meta name="author" content="One Fourteen" />
       <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       <link rel="canonical" href={siteUrl} />
       
       {/* Open Graph Tags */}
       <meta property="og:type" content="business.business" />
-      <meta property="og:title" content="One Fourteen Bar | Downtown Louisville Bar on Whiskey Row" />
+      <meta property="og:title" content="Late Night Bar on Whiskey Row | Louisville, KY" />
       <meta property="og:description" content={businessDescription} />
       <meta property="og:url" content={siteUrl} />
       <meta property="og:site_name" content={businessName} />
@@ -96,7 +94,7 @@ export const Head = () => {
       
       {/* Twitter Card Tags */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="One Fourteen Bar | Downtown Louisville Bar on Whiskey Row" />
+      <meta name="twitter:title" content="Late Night Bar on Whiskey Row | Louisville, KY" />
       <meta name="twitter:description" content={businessDescription} />
       <meta name="twitter:image" content="https://static.wixstatic.com/media/528274_112a88f0f95c4632b6449db5f7575a0b~mv2.png" />
       

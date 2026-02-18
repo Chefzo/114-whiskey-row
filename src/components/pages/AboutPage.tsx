@@ -48,10 +48,10 @@ export default function AboutPage() {
             className="max-w-3xl"
           >
             <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl font-bold leading-tight text-foreground mb-6">
-              The Story of <span className="text-neon-red-orange">One Fourteen</span>
+              About One Fourteen | Whiskey Row Bar in Louisville
             </h1>
             <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed max-w-2xl">
-              Built for real people. Real moments.
+              One Fourteen is a late night bar on Whiskey Row in downtown Louisville, KY. Built around music, walk-in culture, and a no-reservations policy, it's a spot that keeps the night moving. Open until 2am Tuesday through Sunday.
             </p>
           </motion.div>
         </div>

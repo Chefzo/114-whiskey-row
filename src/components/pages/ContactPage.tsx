@@ -71,10 +71,42 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl font-bold text-foreground mb-6">
-              Get In <span className="text-neon-red-orange">Touch</span>
+              Contact One Fourteen | Louisville Bar
             </h1>
             <p className="font-paragraph text-lg sm:text-xl text-foreground/80 max-w-3xl">
               Questions? Events? Just want to say what's up? Drop us a line.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SEO Paragraph */}
+      <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 bg-background border-b border-neon-red-orange/10">
+        <div className="max-w-[120rem] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="font-paragraph text-base sm:text-lg text-foreground/80 max-w-3xl leading-relaxed">
+              Questions about One Fourteen? We're located at 114 W Main Street on Whiskey Row in downtown Louisville. Open late Tuesday through Sunday.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SEO Paragraph */}
+      <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 bg-background border-b border-neon-red-orange/10">
+        <div className="max-w-[120rem] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="font-paragraph text-base sm:text-lg text-foreground/80 max-w-3xl leading-relaxed">
+              Questions about One Fourteen? We're located at 114 W Main Street on Whiskey Row in downtown Louisville. Open late Tuesday through Sunday.
             </p>
           </motion.div>
         </div>

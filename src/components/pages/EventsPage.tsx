@@ -113,13 +113,26 @@ export default function EventsPage() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl font-bold text-foreground mb-6">
-              What's <span className="text-neon-red-orange">On</span>
+              Events at One Fourteen | Louisville Nightlife
             </h1>
             <p className="font-paragraph text-lg sm:text-xl text-foreground/70 max-w-3xl">
               Weekly DJs, game days, and live entertainment at One Fourteen Bar on Whiskey Row.
             </p>
-            <p className="font-paragraph text-base text-foreground/60 mt-4 max-w-3xl">
-              Some nights spill into the backyard.
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SEO Intro Paragraph */}
+      <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 bg-background border-b border-neon-red-orange/10">
+        <div className="max-w-[120rem] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="font-paragraph text-base sm:text-lg text-foreground/80 max-w-3xl leading-relaxed">
+              One Fourteen hosts weekly DJs and recurring Industry Night every Sunday on Whiskey Row in downtown Louisville. Our events focus on late night energy, music, and a steady crowd. Check below for upcoming dates.
             </p>
           </motion.div>
         </div>

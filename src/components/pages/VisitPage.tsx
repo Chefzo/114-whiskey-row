@@ -97,17 +97,23 @@ export default function VisitPage() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl font-bold text-foreground mb-6">
-              Find <span className="text-neon-red-orange">Us</span>
-              <span className="block text-base sm:text-lg md:text-xl font-paragraph font-normal text-foreground/80 mt-4">
-                One Fourteen Bar on Whiskey Row
-              </span>
+              Visit One Fourteen on <span className="text-neon-red-orange">Whiskey Row</span>
             </h1>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SEO Paragraph */}
+      <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 bg-background border-b border-neon-red-orange/10">
+        <div className="max-w-[120rem] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <p className="font-paragraph text-base sm:text-lg text-foreground/80 max-w-3xl leading-relaxed">
-              Located at 114 W Main St in downtown Louisville.
-              <br />
-              Right on Whiskey Row, across from the Yum Center.
-              <br />
-              Open late. Walk-ins always welcome.
+              Find One Fourteen at 114 W Main Street on historic Whiskey Row in downtown Louisville, KY. We're a late night bar near the Yum Center and just steps from other Whiskey Row nightlife. Open Tuesday through Sunday from 4pm to 2am. Walk-ins only. No reservations.
             </p>
           </motion.div>
         </div>
