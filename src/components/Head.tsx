@@ -12,6 +12,7 @@ export const Head = () => {
     'description': businessDescription,
     'url': siteUrl,
     'telephone': phone,
+    'servesCuisine': 'Bar',
     'address': {
       '@type': 'PostalAddress',
       'streetAddress': '114 W Main St',
@@ -31,24 +32,9 @@ export const Head = () => {
         'dayOfWeek': ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
         'opens': '16:00',
         'closes': '02:00'
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        'dayOfWeek': 'Monday',
-        'opens': '00:00',
-        'closes': '00:00'
       }
     ],
-    'priceRange': '$',
-    'sameAs': [
-      'https://www.instagram.com/onefourteenwhiskeyrow/'
-    ],
-    'image': 'https://static.wixstatic.com/media/528274_112a88f0f95c4632b6449db5f7575a0b~mv2.png',
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': '4.8',
-      'ratingCount': '150'
-    }
+    'priceRange': '$$'
   };
 
   const organizationSchema = {
@@ -78,13 +64,20 @@ export const Head = () => {
       {/* Defer Google Analytics - Load after first paint */}
       <script defer src="https://www.googletagmanager.com/gtag/js?id=G-JMM17LNJXM"></script>
       <script defer dangerouslySetInnerHTML={{
-        __html: `window.dataLayer = window.dataLayer || [];\\nfunction gtag(){dataLayer.push(arguments);}\\ngtag('js', new Date());\\ngtag('config', 'G-JMM17LNJXM');`
+        __html: `window.dataLayer = window.dataLayer || [];\
+function gtag(){dataLayer.push(arguments);}\
+gtag('js', new Date());\
+gtag('config', 'G-JMM17LNJXM');`
       }} />
       {/* End Google Analytics */}
       
       {/* Defer Google Tag Manager - Load after first paint */}
       <script defer dangerouslySetInnerHTML={{
-        __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.defer=true;j.src=\\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\\n})(window,document,'script','dataLayer','GTM-WMRZT82N');`
+        __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.defer=true;j.src=\
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\
+})(window,document,'script','dataLayer','GTM-WMRZT82N');`
       }} />
       {/* End Google Tag Manager */}
       
