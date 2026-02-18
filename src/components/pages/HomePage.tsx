@@ -231,27 +231,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* The Story of One Fourteen - Link Only */}
-      <section className="w-full py-12 sm:py-16 md:py-20 bg-black" aria-label="The story of One Fourteen">
-        <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <Button 
-              variant="ghost"
-              className="text-foreground/60 hover:text-foreground font-paragraph text-base sm:text-lg px-0 py-2 h-auto hover:bg-transparent"
-              onClick={() => window.location.href = '/story'}
-            >
-              our story
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Location & Hours */}
       <section className="w-full py-16 sm:py-20 md:py-24 bg-black border-t border-foreground/10" aria-label="Location and hours">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
@@ -271,9 +250,14 @@ export default function HomePage() {
               <p className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground tracking-wide">
                 Open Tue–Sun · 4pm–2am
               </p>
-              <p className="font-paragraph text-xs text-foreground/30 mt-8 pt-4 border-t border-foreground/5 hover:text-foreground/60 transition-colors cursor-pointer">
-                <a href="/story" className="hover:underline">our story</a>
-              </p>
+              <Button 
+                variant="ghost"
+                className="text-foreground/60 hover:text-foreground font-paragraph text-base sm:text-lg px-0 py-2 h-auto hover:bg-transparent mt-6"
+                onClick={() => window.location.href = '/story'}
+              >
+                our story
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+              </Button>
             </div>
           </motion.div>
         </div>
