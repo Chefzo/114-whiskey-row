@@ -42,7 +42,29 @@ export const Head = () => {
     'priceRange': '$',
     'sameAs': [
       'https://www.instagram.com/onefourteenwhiskeyrow/'
-    ]
+    ],
+    'image': 'https://static.wixstatic.com/media/528274_112a88f0f95c4632b6449db5f7575a0b~mv2.png',
+    'aggregateRating': {
+      '@type': 'AggregateRating',
+      'ratingValue': '4.8',
+      'ratingCount': '150'
+    }
+  };
+
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    'name': businessName,
+    'url': siteUrl,
+    'logo': 'https://static.wixstatic.com/media/528274_112a88f0f95c4632b6449db5f7575a0b~mv2.png',
+    'sameAs': [
+      'https://www.instagram.com/onefourteenwhiskeyrow/'
+    ],
+    'contactPoint': {
+      '@type': 'ContactPoint',
+      'contactType': 'Customer Service',
+      'telephone': phone
+    }
   };
 
   return (
@@ -100,6 +122,9 @@ export const Head = () => {
       
       {/* Local Business Schema */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      
+      {/* Organization Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       
       {/* Fonts */}
       <link rel="preconnect" href="https://static.parastorage.com" />
