@@ -52,18 +52,18 @@ export default function MenuPage() {
       
       <main className="w-full">
         {/* Hero Section */}
-        <section className="w-full bg-background pt-32 pb-16 md:pt-40 md:pb-24">
-          <div className="max-w-[120rem] mx-auto px-4 md:px-8">
+        <section className="w-full bg-background pt-24 pb-12 sm:pt-32 md:pt-40 md:pb-24">
+          <div className="max-w-[120rem] mx-auto px-4 sm:px-6 md:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="max-w-3xl"
             >
-              <h1 className="font-heading text-6xl md:text-8xl font-bold text-foreground mb-6">
+              <h1 className="font-heading text-4xl sm:text-5xl md:text-8xl font-bold text-foreground mb-4 sm:mb-6">
                 Menu
               </h1>
-              <p className="font-paragraph text-lg md:text-xl text-foreground/80 mb-8 leading-relaxed">
+              <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 mb-6 sm:mb-8 leading-relaxed">
                 Explore our carefully curated selection of cocktails, beers, and spirits. From craft creations to classic favorites, there's something for every taste at One Fourteen.
               </p>
             </motion.div>
@@ -72,13 +72,13 @@ export default function MenuPage() {
 
         {/* Quick Navigation */}
         <section className="w-full bg-background/50 sticky top-16 z-40 border-b border-foreground/10 backdrop-blur-sm">
-          <div className="max-w-[120rem] mx-auto px-4 md:px-8">
-            <div className="flex overflow-x-auto gap-2 md:gap-4 py-4 md:py-6 scrollbar-hide">
+          <div className="max-w-[120rem] mx-auto px-4 sm:px-6 md:px-8">
+            <div className="flex overflow-x-auto gap-2 py-3 sm:py-4 md:py-6 scrollbar-hide">
               {menuSections.map((section, index) => (
                 <motion.button
                   key={section.id}
                   onClick={() => scrollToSection(index)}
-                  className={`font-paragraph text-xs md:text-sm uppercase tracking-widest whitespace-nowrap px-4 py-2 rounded-full transition-all ${ 
+                  className={`font-paragraph text-xs sm:text-xs md:text-sm uppercase tracking-widest whitespace-nowrap px-3 sm:px-4 py-2 rounded-full transition-all flex-shrink-0 ${ 
                     activeSection === index
                       ? 'bg-primary text-primary-foreground'
                       : 'bg-foreground/10 text-foreground hover:bg-foreground/20'
@@ -94,9 +94,9 @@ export default function MenuPage() {
         </section>
 
         {/* Menu Sections */}
-        <section className="w-full bg-background py-12 md:py-20">
-          <div className="max-w-[120rem] mx-auto px-4 md:px-8">
-            <div className="space-y-24 md:space-y-32">
+        <section className="w-full bg-background py-8 sm:py-12 md:py-20">
+          <div className="max-w-[120rem] mx-auto px-4 sm:px-6 md:px-8">
+            <div className="space-y-16 sm:space-y-24 md:space-y-32">
               {menuSections.map((section, index) => (
                 <motion.div
                   key={section.id}
@@ -108,17 +108,17 @@ export default function MenuPage() {
                   className="w-full"
                 >
                   {/* Section Header with Description */}
-                  <div className={`mb-12 md:mb-16 ${index % 2 === 1 ? 'md:ml-auto md:max-w-2xl' : ''}`}>
+                  <div className={`mb-8 sm:mb-12 md:mb-16 ${index % 2 === 1 ? 'md:ml-auto md:max-w-2xl' : ''}`}>
                     <motion.div
                       initial={{ opacity: 0, x: index % 2 === 1 ? 20 : -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5 }}
                     >
-                      <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">
+                      <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4">
                         {section.title}
                       </h2>
-                      <p className="font-paragraph text-base md:text-lg text-foreground/70 leading-relaxed">
+                      <p className="font-paragraph text-sm sm:text-base md:text-lg text-foreground/70 leading-relaxed">
                         {section.description}
                       </p>
                     </motion.div>
@@ -157,7 +157,7 @@ export default function MenuPage() {
                       whileInView={{ opacity: 1, scaleX: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6, delay: 0.2 }}
-                      className="mt-24 md:mt-32 h-px bg-gradient-to-r from-transparent via-foreground/20 to-transparent"
+                      className="mt-16 sm:mt-24 md:mt-32 h-px bg-gradient-to-r from-transparent via-foreground/20 to-transparent"
                     />
                   )}
                 </motion.div>
@@ -167,47 +167,47 @@ export default function MenuPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full bg-background py-16 md:py-24">
-          <div className="max-w-[120rem] mx-auto px-4 md:px-8">
+        <section className="w-full bg-background py-12 sm:py-16 md:py-24">
+          <div className="max-w-[120rem] mx-auto px-4 sm:px-6 md:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-foreground/5 border border-foreground/10 rounded-lg p-8 md:p-12 text-center"
+              className="bg-foreground/5 border border-foreground/10 rounded-lg p-6 sm:p-8 md:p-12 text-center"
             >
-              <h3 className="font-heading text-3xl md:text-4xl text-foreground mb-4">
+              <h3 className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground mb-3 sm:mb-4">
                 Ready to experience One Fourteen?
               </h3>
-              <p className="font-paragraph text-base md:text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
+              <p className="font-paragraph text-sm sm:text-base md:text-lg text-foreground/70 mb-6 sm:mb-8 max-w-2xl mx-auto">
                 Join us for late nights on Whiskey Row. Walk-ins only. 21+.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex flex-col gap-3 sm:gap-4">
                 <Button
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-paragraph text-base px-8 py-6 h-auto w-full sm:w-auto"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-paragraph text-sm sm:text-base px-6 sm:px-8 py-5 sm:py-6 h-auto w-full"
                   onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
                 >
-                  <MapPin className="w-5 h-5 mr-2" />
+                  <MapPin className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
                   Get Directions
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-foreground/30 text-foreground hover:bg-foreground/10 font-paragraph text-base px-8 py-6 h-auto w-full sm:w-auto"
+                  className="border-foreground/30 text-foreground hover:bg-foreground/10 font-paragraph text-sm sm:text-base px-6 sm:px-8 py-5 sm:py-6 h-auto w-full"
                   onClick={() => window.location.href = '/contact'}
                 >
-                  <Clock className="w-5 h-5 mr-2" />
+                  <Clock className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
                   Contact Us
                 </Button>
               </div>
 
-              <div className="mt-8 pt-8 border-t border-foreground/10 space-y-2">
-                <p className="font-paragraph text-sm text-foreground/60">
+              <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-foreground/10 space-y-1 sm:space-y-2">
+                <p className="font-paragraph text-xs sm:text-sm text-foreground/60">
                   114 W Main St, Louisville, KY 40202
                 </p>
-                <p className="font-paragraph text-sm text-foreground/60">
+                <p className="font-paragraph text-xs sm:text-sm text-foreground/60">
                   Open Tue–Sun · 4pm–2am
                 </p>
               </div>
