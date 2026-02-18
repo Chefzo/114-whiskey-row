@@ -61,8 +61,8 @@ export default function EventsPage() {
     
     // Handle if it's already a formatted string
     if (typeof timeValue === 'string') {
-      // Check if it's in military time format (HH:MM or HHMM)
-      const militaryMatch = timeValue.match(/^(\d{1,2}):?(\d{2})$/);
+      // Check if it's in military time format (HH:MM:SS.mmm or HH:MM or HHMM)
+      const militaryMatch = timeValue.match(/^(\d{1,2}):?(\d{2})(?::(\d{2}))?(?:\.(\d{3}))?$/);
       if (militaryMatch) {
         let hours = parseInt(militaryMatch[1], 10);
         const minutes = militaryMatch[2];
