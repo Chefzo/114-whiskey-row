@@ -17,7 +17,7 @@ export default function MenuPage() {
     {
       title: 'BEER & CANS',
       alt: 'One Fourteen beer and cans menu – modern dive bar on Whiskey Row in Louisville, KY',
-      image: 'https://static.wixstatic.com/media/528274_3edc546cba1840278265f24759ddad7f~mv2.png?originWidth=768&originHeight=576',
+      image: 'https://static.wixstatic.com/media/528274_0d9e6a4253104d8fa5c724b23eabc95d~mv2.png',
     },
     {
       title: 'NO PROOF',
