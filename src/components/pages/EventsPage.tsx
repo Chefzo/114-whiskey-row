@@ -17,8 +17,8 @@ export default function EventsPage() {
       
       // Sort by date (upcoming first)
       const sorted = items.sort((a, b) => {
-        const dateA = a.eventDate ? new Date(a.eventDate).getTime() : Infinity;
-        const dateB = b.eventDate ? new Date(b.eventDate).getTime() : Infinity;
+        const dateA = a.eventDate ? new Date(a.eventDate + 'T00:00:00').getTime() : Infinity;
+        const dateB = b.eventDate ? new Date(b.eventDate + 'T00:00:00').getTime() : Infinity;
         return dateA - dateB;
       });
       
@@ -31,7 +31,7 @@ export default function EventsPage() {
   const filteredEvents = events.filter((event) => {
     if (!event.eventDate) return filter === 'all';
     
-    const eventDate = new Date(event.eventDate);
+    const eventDate = new Date(event.eventDate + 'T00:00:00');
     eventDate.setHours(0, 0, 0, 0);
     
     const now = new Date();
@@ -210,10 +210,11 @@ export default function EventsPage() {
                         <div className="flex items-center gap-2 text-foreground/80">
                           <Calendar size={16} className="text-neon-red-orange flex-shrink-0" />
                           <span className="font-paragraph text-xs">
-                            {new Date(event.eventDate).toLocaleDateString('en-US', {
+                            {new Date(event.eventDate + 'T00:00:00').toLocaleDateString('en-US', {
                               month: 'short',
                               day: 'numeric',
                               year: 'numeric',
+                              timeZone: 'UTC'
                             })}
                           </span>
                         </div>
