@@ -32,17 +32,17 @@ export default function HomePage() {
       <Header />
       
       {/* Hero Section - Optimized for mobile performance */}
-      <section className="relative w-full min-h-screen md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-16" aria-label="Hero section">
+      <section className="relative w-full min-h-screen md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 md:pt-16" aria-label="Hero section">
         <div className="absolute inset-0 bg-black z-0" />
         
         <div className="relative z-10 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16 py-12 sm:py-16 md:py-20">
           {/* Hero headline renders immediately without animation on mobile */}
           <div className="max-w-5xl">
-            <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-foreground mb-2 sm:mb-3 leading-[1.1] tracking-tight">
+            <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-foreground mb-4 sm:mb-6 leading-[1.1] tracking-tight">
               Late nights on Whiskey Row.
             </h1>
             
-            <p className="font-paragraph text-sm sm:text-base md:text-lg text-foreground/70 mb-8 sm:mb-10 tracking-wide">
+            <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/70 mb-8 sm:mb-10 md:mb-12 tracking-wide leading-relaxed">
               Walk-ins only. 21+.
             </p>
 

@@ -119,7 +119,7 @@ export default function GalleryPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-24 md:pt-32 pb-16 px-4 sm:px-6 md:px-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-background" />
         </div>
@@ -130,10 +130,10 @@ export default function GalleryPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl font-bold text-foreground mb-6">
+            <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 sm:mb-8">
               Gallery | One Fourteen Bar on Whiskey Row
             </h1>
-            <p className="font-paragraph text-lg sm:text-xl text-foreground/70 max-w-3xl">
+            <p className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground/70 max-w-3xl leading-relaxed">
               Real moments. Real energy. This is what 114 looks like.
             </p>
           </motion.div>
@@ -141,7 +141,7 @@ export default function GalleryPage() {
       </section>
 
       {/* SEO Intro Text */}
-      <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 bg-background border-b border-neon-red-orange/10">
+      <section className="px-4 sm:px-6 md:px-16 py-8 sm:py-12 md:py-16 bg-background border-b border-neon-red-orange/10">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -149,7 +149,7 @@ export default function GalleryPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="font-paragraph text-base sm:text-lg text-foreground/80 max-w-3xl leading-relaxed">
+            <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 max-w-3xl leading-relaxed">
               Photos from One Fourteen, a <a href="/" className="text-neon-red-orange hover:underline">late night bar on Whiskey Row</a> in downtown Louisville. Inside the crowd, neon lighting, bartenders at work, and the after-dark energy that defines Louisville nightlife.
             </p>
           </motion.div>
@@ -157,7 +157,7 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Grid */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24">
+      <section className="px-4 sm:px-6 md:px-16 py-16 sm:py-20 md:py-24">
         <div className="max-w-[120rem] mx-auto">
           {/* Error State */}
           {error && (

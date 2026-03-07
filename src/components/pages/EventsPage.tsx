@@ -78,7 +78,7 @@ export default function EventsPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-24 md:pt-32 pb-16 px-4 sm:px-6 md:px-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-background" />
         </div>
@@ -89,10 +89,10 @@ export default function EventsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl font-bold text-foreground mb-6">
+            <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 sm:mb-8">
               Events at One Fourteen | Louisville Nightlife
             </h1>
-            <p className="font-paragraph text-lg sm:text-xl text-foreground/70 max-w-3xl">
+            <p className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground/70 max-w-3xl leading-relaxed">
               Weekly DJs, game days, and live entertainment at One Fourteen Bar on Whiskey Row.
             </p>
           </motion.div>
@@ -100,7 +100,7 @@ export default function EventsPage() {
       </section>
 
       {/* SEO Intro Paragraph */}
-      <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 bg-background border-b border-neon-red-orange/10">
+      <section className="px-4 sm:px-6 md:px-16 py-8 sm:py-12 md:py-16 bg-background border-b border-neon-red-orange/10">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -108,7 +108,7 @@ export default function EventsPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="font-paragraph text-base sm:text-lg text-foreground/80 max-w-3xl leading-relaxed">
+            <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 max-w-3xl leading-relaxed">
               One Fourteen hosts weekly DJs and recurring Industry Night every Sunday on Whiskey Row in downtown Louisville. Our events focus on late night energy, music, and a steady crowd. Check below for upcoming dates.
             </p>
           </motion.div>
