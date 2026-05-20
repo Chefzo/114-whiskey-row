@@ -179,10 +179,7 @@ export default function GalleryPage() {
             </div>
           ) : displayedPhotos.length > 0 ? (
             <>
-              <p className="font-paragraph text-sm text-foreground/60 mb-8">
-                Backyard
-              </p>
-              <div 
+              <div
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
                 ref={gridRef}
               >
