@@ -242,12 +242,7 @@ export default function HomePage() {
           >
             <div className="space-y-4">
               <p className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground tracking-wide">
-                114 W Main St
-              </p>
-              <p className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground tracking-wide">
-                Whiskey Row, Louisville, KY
-              </p>
-              <p className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground tracking-wide">
+                114 W Main St, Whiskey Row, Louisville, KY<br />
                 Open Tue–Sun · 4pm–2am
               </p>
               <Button 
