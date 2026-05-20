@@ -157,7 +157,7 @@ export default function MenuPage() {
                 <motion.button
                   key={section.id}
                   onClick={() => scrollToSection(index)}
-                  className={`font-paragraph text-xs sm:text-xs md:text-sm uppercase tracking-widest whitespace-nowrap px-3 sm:px-4 py-2 rounded-full transition-all flex-shrink-0 ${ 
+                  className={`font-paragraph text-xs sm:text-xs md:text-sm uppercase tracking-widest whitespace-nowrap px-3 sm:px-4 py-2 rounded-full transition-all flex-shrink-0 ${
                     activeSection === index
                       ? 'bg-primary text-primary-foreground'
                       : 'bg-foreground/10 text-foreground hover:bg-foreground/20'
