@@ -5,18 +5,55 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { MapPin, Clock, AlertCircle } from 'lucide-react';
 import { useState, useCallback, useEffect } from 'react';
+import { BaseCrudService } from '@/integrations';
+import { Cocktails } from '@/entities';
+
+type MenuSection =
+  | {
+      id: string;
+      title: string;
+      description: string;
+      alt: string;
+      image: string;
+      layout?: 'image';
+    }
+  | {
+      id: string;
+      title: string;
+      description: string;
+      layout: 'cms-cocktails';
+    };
 
 export default function MenuPage() {
   const [activeSection, setActiveSection] = useState(0);
   const [error, setError] = useState<string | null>(null);
+  const [cocktails, setCocktails] = useState<Cocktails[]>([]);
 
-  const menuSections = [
+  // Fetch cocktails from the CMS so the COCKTAILS section renders as a
+  // grid of photo cards (one per drink) instead of a single static image.
+  useEffect(() => {
+    const fetchCocktails = async () => {
+      try {
+        const { items } = await BaseCrudService.getAll<Cocktails>('cocktails');
+        const sorted = items.sort(
+          (a, b) => (a.displayOrder ?? 999) - (b.displayOrder ?? 999),
+        );
+        setCocktails(sorted);
+      } catch (e) {
+        setError(
+          e instanceof Error ? e.message : 'Could not load the cocktail menu.',
+        );
+      }
+    };
+    fetchCocktails();
+  }, []);
+
+  const menuSections: MenuSection[] = [
     {
       id: 'cocktails',
       title: 'COCKTAILS',
       description: 'Bourbon-forward with a few left turns. Old-fashioneds built on Old Forester, espresso pours, and house riffs made for late nights on Whiskey Row.',
-      alt: 'One Fourteen cocktail menu – modern dive bar on Whiskey Row in Louisville, KY',
-      image: 'https://static.wixstatic.com/media/528274_640990ba91134702b82fec2797323e66~mv2.png',
+      layout: 'cms-cocktails',
     },
     {
       id: 'beer',
@@ -181,31 +218,103 @@ export default function MenuPage() {
                     </motion.div>
                   </div>
 
-                  {/* Menu Image with Hover Effect */}
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, margin: '-100px' }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                    className={`w-full ${index % 2 === 1 ? 'md:flex md:justify-end' : ''}`}
-                  >
-                    <div className="w-full md:max-w-2xl group cursor-pointer">
-                      <div className="relative overflow-hidden rounded-lg">
-                        <motion.div
-                          whileHover={{ scale: 1.02 }}
-                          transition={{ duration: 0.3 }}
-                          className="origin-center"
+                  {section.layout === 'cms-cocktails' ? (
+                    /* Cocktails — CMS-driven photo grid, one card per drink */
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: '-100px' }}
+                      transition={{ duration: 0.6, delay: 0.1 }}
+                      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10"
+                    >
+                      {cocktails.length === 0 && !error && (
+                        <div className="col-span-full text-center font-paragraph text-sm text-foreground/50 py-12">
+                          Loading the menu…
+                        </div>
+                      )}
+                      {cocktails.map((cocktail, cIndex) => (
+                        <motion.article
+                          key={cocktail._id}
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true, margin: '-50px' }}
+                          transition={{ duration: 0.5, delay: cIndex * 0.05 }}
+                          whileHover={{ y: -4 }}
+                          className="group bg-black/40 border border-neon-red-orange/20 rounded-lg overflow-hidden hover:border-neon-red-orange/50 transition-colors"
                         >
-                          <Image
-                            src={section.image}
-                            alt={section.alt}
-                            width={800}
-                            className="w-full h-auto"
-                          />
-                        </motion.div>
+                          {cocktail.photo && (
+                            <div className="aspect-square overflow-hidden bg-black/60">
+                              <motion.div
+                                whileHover={{ scale: 1.04 }}
+                                transition={{ duration: 0.4 }}
+                                className="origin-center w-full h-full"
+                              >
+                                <Image
+                                  src={cocktail.photo}
+                                  alt={`${cocktail.title} cocktail at One Fourteen Bar on Whiskey Row, Louisville KY`}
+                                  width={600}
+                                  className="w-full h-full object-cover"
+                                />
+                              </motion.div>
+                            </div>
+                          )}
+                          <div className="p-5 sm:p-6">
+                            <div className="flex items-baseline justify-between gap-3 mb-2">
+                              <h3 className="font-heading text-xl sm:text-2xl font-bold text-foreground leading-tight">
+                                {cocktail.title}
+                              </h3>
+                              {typeof cocktail.price === 'number' && (
+                                <div className="font-heading text-lg sm:text-xl text-neon-red-orange whitespace-nowrap">
+                                  ${cocktail.price}
+                                </div>
+                              )}
+                            </div>
+                            {cocktail.spiritBase && (
+                              <div className="font-paragraph text-[10px] sm:text-xs uppercase tracking-widest text-warm-amber mb-3">
+                                {cocktail.spiritBase}
+                              </div>
+                            )}
+                            {cocktail.ingredients && (
+                              <p className="font-paragraph text-xs sm:text-sm text-foreground/60 leading-relaxed mb-3">
+                                {cocktail.ingredients}
+                              </p>
+                            )}
+                            {cocktail.description && (
+                              <p className="font-paragraph text-sm sm:text-base text-foreground/85 leading-relaxed italic">
+                                {cocktail.description}
+                              </p>
+                            )}
+                          </div>
+                        </motion.article>
+                      ))}
+                    </motion.div>
+                  ) : (
+                    /* Menu Image with Hover Effect (BEER / HAPPY HOUR / SHOTS) */
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true, margin: '-100px' }}
+                      transition={{ duration: 0.6, delay: 0.1 }}
+                      className={`w-full ${index % 2 === 1 ? 'md:flex md:justify-end' : ''}`}
+                    >
+                      <div className="w-full md:max-w-2xl group cursor-pointer">
+                        <div className="relative overflow-hidden rounded-lg">
+                          <motion.div
+                            whileHover={{ scale: 1.02 }}
+                            transition={{ duration: 0.3 }}
+                            className="origin-center"
+                          >
+                            <Image
+                              src={section.image}
+                              alt={section.alt}
+                              width={800}
+                              className="w-full h-auto"
+                            />
+                          </motion.div>
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
+                    </motion.div>
+                  )}
 
                   {/* Divider */}
                   {index < menuSections.length - 1 && (
