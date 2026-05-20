@@ -14,7 +14,7 @@ export default function MenuPage() {
     {
       id: 'cocktails',
       title: 'COCKTAILS',
-      description: 'Craft cocktails made with premium spirits and fresh ingredients. Our signature drinks showcase the best of what Whiskey Row has to offer.',
+      description: 'Bourbon-forward with a few left turns. Old-fashioneds built on Old Forester, espresso pours, and house riffs made for late nights on Whiskey Row.',
       alt: 'One Fourteen cocktail menu – modern dive bar on Whiskey Row in Louisville, KY',
       image: 'https://static.wixstatic.com/media/528274_640990ba91134702b82fec2797323e66~mv2.png',
     },
@@ -28,8 +28,8 @@ export default function MenuPage() {
     {
       id: 'happy-hour',
       title: 'HAPPY HOUR',
-      description: 'Weekdays 4–7 PM. Specials on select cocktails and beers. The perfect way to start your evening.',
-      alt: 'One Fourteen happy hour menu – weekdays 4-7 PM',
+      description: 'Drink specials before the crowd hits. Check the board on the wall for tonight\'s pricing.',
+      alt: 'One Fourteen happy hour menu – drink specials at the bar on Whiskey Row in Louisville, KY',
       image: 'https://static.wixstatic.com/media/528274_37c545ac599e4795b4cc69c70b810a3b~mv2.png',
     },
     {
