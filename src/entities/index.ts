@@ -62,6 +62,33 @@ export interface BlogPosts {
 
 
 /**
+ * Collection ID: cocktails
+ * Interface for Cocktails
+ */
+export interface Cocktails {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  title?: string;
+  /** @wixFieldType number */
+  price?: number;
+  /** @wixFieldType text */
+  spiritBase?: string;
+  /** @wixFieldType text */
+  ingredients?: string;
+  /** @wixFieldType text */
+  description?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  photo?: string;
+  /** @wixFieldType text */
+  section?: string;
+  /** @wixFieldType number */
+  displayOrder?: number;
+}
+
+
+/**
  * Collection ID: events
  * Interface for Events
  */
@@ -95,33 +122,6 @@ export interface Events {
   eventImage?: string;
   /** @wixFieldType url */
   callToActionUrl?: string;
-}
-
-
-/**
- * Collection ID: cocktails
- * Interface for Cocktails
- */
-export interface Cocktails {
-  _id: string;
-  _createdDate?: Date;
-  _updatedDate?: Date;
-  /** @wixFieldType text */
-  title?: string;
-  /** @wixFieldType number */
-  price?: number;
-  /** @wixFieldType text */
-  spiritBase?: string;
-  /** @wixFieldType text */
-  ingredients?: string;
-  /** @wixFieldType text */
-  description?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  photo?: string;
-  /** @wixFieldType text */
-  section?: string;
-  /** @wixFieldType number */
-  displayOrder?: number;
 }
 
 

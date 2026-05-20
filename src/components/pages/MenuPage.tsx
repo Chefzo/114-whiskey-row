@@ -124,7 +124,7 @@ export default function MenuPage() {
               transition={{ duration: 0.6 }}
             >
               <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl font-bold text-foreground mb-6">
-                Menu | One Fourteen Bar on Whiskey Row
+                Thirsty?
               </h1>
               <p className="font-paragraph text-lg sm:text-xl text-foreground/70 max-w-3xl">
                 Explore our carefully curated selection of cocktails, beers, and spirits. From craft creations to classic favorites, there's something for every taste.
