@@ -27,7 +27,7 @@ export default function ContactPage() {
       '@type': 'LocalBusiness',
       'name': 'One Fourteen Bar',
       'description': 'Late-night bar on Whiskey Row in downtown Louisville, Kentucky. Open Tuesday–Sunday, 4pm–2am. Walk-ins only. 21+.',
-      'url': 'https://onefourteen.bar',
+      'url': 'https://114barwhiskeyrow.com',
       'telephone': '+15029071400',
       'email': 'info@114whiskeyrow.com',
       'address': {
@@ -44,17 +44,10 @@ export default function ContactPage() {
           'dayOfWeek': ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
           'opens': '16:00',
           'closes': '02:00'
-        },
-        {
-          '@type': 'OpeningHoursSpecification',
-          'dayOfWeek': 'Monday',
-          'opens': '00:00',
-          'closes': '00:00'
         }
       ],
       'sameAs': [
-        'https://www.instagram.com/onefourteenwhiskeyrow/',
-        'https://facebook.com'
+        'https://www.instagram.com/onefourteenwhiskeyrow/'
       ]
     };
     const script = document.createElement('script');
@@ -87,8 +80,24 @@ export default function ContactPage() {
         throw new Error('Please fill in all required fields.');
       }
 
-      // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // Submit to Formspree
+      const response = await fetch('https://formspree.io/f/xyzgwqvk', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message. Please try again.');
+      }
 
       setSubmitSuccess(true);
       toast({
@@ -429,22 +438,6 @@ export default function ContactPage() {
                     <div>
                       <p className="font-paragraph text-sm font-medium text-foreground">Instagram</p>
                       <p className="font-paragraph text-xs text-foreground/60">@onefourteenwhiskeyrow</p>
-                    </div>
-                  </a>
-
-                  <a
-                    href="https://facebook.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 bg-gradient-to-r from-neon-red-orange/10 to-transparent border border-neon-red-orange/30 rounded hover:border-neon-red-orange/60 transition-all group"
-                    aria-label="Follow One Fourteen on Facebook"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-neon-red-orange/20 flex items-center justify-center group-hover:bg-neon-red-orange transition-colors">
-                      <Facebook size={24} className="text-neon-red-orange group-hover:text-white transition-colors" />
-                    </div>
-                    <div>
-                      <p className="font-paragraph text-sm font-medium text-foreground">Facebook</p>
-                      <p className="font-paragraph text-xs text-foreground/60">114 Whiskey Row</p>
                     </div>
                   </a>
                 </div>
