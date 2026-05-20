@@ -26,12 +26,6 @@ export async function GET() {
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.114barwhiskeyrow.com/about</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.114barwhiskeyrow.com/contact</loc>
     <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
