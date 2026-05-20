@@ -60,21 +60,21 @@ export default function MenuPage() {
       title: 'BEER & CANS',
       description: 'A rotating selection of local and craft beers, plus classic canned favorites. Always cold, always fresh.',
       alt: 'One Fourteen beer and cans menu – modern dive bar on Whiskey Row in Louisville, KY',
-      image: 'https://static.wixstatic.com/media/528274_0d9e6a4253104d8fa5c724b23eabc95d~mv2.png',
+      image: 'https://static.wixstatic.com/media/528274_4436bb1e92cc442cb585b1d70b3fc1c4~mv2.png',
     },
     {
       id: 'happy-hour',
       title: 'HAPPY HOUR',
       description: 'Drink specials before the crowd hits. Check the board on the wall for tonight\'s pricing.',
       alt: 'One Fourteen happy hour menu – drink specials at the bar on Whiskey Row in Louisville, KY',
-      image: 'https://static.wixstatic.com/media/528274_37c545ac599e4795b4cc69c70b810a3b~mv2.png',
+      image: 'https://static.wixstatic.com/media/528274_3230c9da8c484a2180f35dd85db6e599~mv2.png',
     },
     {
       id: 'shots',
       title: 'SHOTS & BOILERMAKERS',
       description: 'Quick hits and classic combinations. Perfect for groups or when you want to keep the night moving.',
       alt: 'One Fourteen shots and boilermakers menu – modern dive bar on Whiskey Row in Louisville, KY',
-      image: 'https://static.wixstatic.com/media/528274_6218139bf6e2426588a1aba9e9b9b049~mv2.png',
+      image: 'https://static.wixstatic.com/media/528274_413deccf778f49e190fe61166c47d62e~mv2.png',
     },
   ];
 
