@@ -134,7 +134,7 @@ export default function MenuPage() {
         </section>
 
         {/* SEO Intro Text */}
-        <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 bg-background border-b border-neon-red-orange/10">
+        <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 bg-background border-b border-vintage-rust/10">
           <div className="max-w-[120rem] mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -143,7 +143,7 @@ export default function MenuPage() {
               transition={{ duration: 0.6 }}
             >
               <p className="font-paragraph text-base sm:text-lg text-foreground/80 max-w-3xl leading-relaxed">
-                The complete menu for <a href="/" className="text-neon-red-orange hover:underline">One Fourteen, a late-night bar on Whiskey Row</a> in downtown Louisville, Kentucky.
+                The complete menu for <a href="/" className="text-vintage-rust hover:underline">One Fourteen, a late-night bar on Whiskey Row</a> in downtown Louisville, Kentucky.
               </p>
             </motion.div>
           </div>

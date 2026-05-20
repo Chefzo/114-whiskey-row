@@ -4,22 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Grain texture for black backgrounds */
+/* Vintage paper texture for backgrounds */
 @layer base {
   body {
     @apply bg-background;
     background-image: 
       repeating-linear-gradient(
         0deg,
-        rgba(0, 0, 0, 0.015),
-        rgba(0, 0, 0, 0.015) 1px,
+        rgba(0, 0, 0, 0.03),
+        rgba(0, 0, 0, 0.03) 1px,
         transparent 1px,
         transparent 2px
       ),
       repeating-linear-gradient(
         90deg,
-        rgba(0, 0, 0, 0.015),
-        rgba(0, 0, 0, 0.015) 1px,
+        rgba(0, 0, 0, 0.03),
+        rgba(0, 0, 0, 0.03) 1px,
         transparent 1px,
         transparent 2px
       );
@@ -37,36 +37,36 @@
   }
 }
 
-/* Grain texture utility for black/dark backgrounds */
+/* Vintage paper texture utility for backgrounds */
 @layer components {
   .grain-texture {
     background-image: 
       repeating-linear-gradient(
         0deg,
-        rgba(0, 0, 0, 0.015),
-        rgba(0, 0, 0, 0.015) 1px,
+        rgba(0, 0, 0, 0.03),
+        rgba(0, 0, 0, 0.03) 1px,
         transparent 1px,
         transparent 2px
       ),
       repeating-linear-gradient(
         90deg,
-        rgba(0, 0, 0, 0.015),
-        rgba(0, 0, 0, 0.015) 1px,
+        rgba(0, 0, 0, 0.03),
+        rgba(0, 0, 0, 0.03) 1px,
         transparent 1px,
         transparent 2px
       );
   }
 }
 
-/* Reviews Widget Styling - Blend with site theme */
+/* Reviews Widget Styling - Vintage theme */
 @layer components {
   /* Main reviews container */
   [class*="reviews"],
   [class*="Review"],
   .wix-reviews,
   .wix-reviews-widget {
-    background-color: #222222 !important;
-    color: #FFFFFF !important;
+    background-color: #2A2420 !important;
+    color: #F5E6D3 !important;
   }
 
   /* Review cards/items */
@@ -76,9 +76,9 @@
   [class*="ReviewCard"],
   .wix-reviews-item,
   .wix-review-card {
-    background-color: #1a1a1a !important;
-    border-color: rgba(255, 255, 255, 0.1) !important;
-    color: #FFFFFF !important;
+    background-color: #3E2723 !important;
+    border-color: rgba(212, 163, 115, 0.2) !important;
+    color: #F5E6D3 !important;
   }
 
   /* Review text */
@@ -88,7 +88,7 @@
   [class*="ReviewContent"],
   .wix-review-text,
   .wix-review-content {
-    color: #FFFFFF !important;
+    color: #F5E6D3 !important;
   }
 
   /* Review author/name */
@@ -98,7 +98,7 @@
   [class*="ReviewerName"],
   .wix-review-author,
   .wix-reviewer-name {
-    color: #FFFFFF !important;
+    color: #F5E6D3 !important;
     font-family: syne, sans-serif !important;
     font-weight: 600 !important;
   }
@@ -110,7 +110,7 @@
   [class*="ReviewMeta"],
   .wix-review-date,
   .wix-review-meta {
-    color: rgba(255, 255, 255, 0.6) !important;
+    color: rgba(245, 230, 211, 0.6) !important;
     font-family: azeret-mono, monospace !important;
   }
 
@@ -121,7 +121,7 @@
   [class*="Rating"],
   .wix-star,
   .wix-rating {
-    color: #FF4500 !important;
+    color: #C85A3A !important;
   }
 
   /* Buttons in reviews */
@@ -130,9 +130,9 @@
   .wix-review-button,
   button[class*="review"],
   button[class*="Review"] {
-    background-color: #FF4500 !important;
-    color: #000000 !important;
-    border-color: #FF4500 !important;
+    background-color: #C85A3A !important;
+    color: #F5E6D3 !important;
+    border-color: #C85A3A !important;
     font-family: azeret-mono, monospace !important;
     font-weight: 600 !important;
   }
@@ -142,7 +142,7 @@
   .wix-review-button:hover,
   button[class*="review"]:hover,
   button[class*="Review"]:hover {
-    background-color: rgba(255, 69, 0, 0.9) !important;
+    background-color: rgba(200, 90, 58, 0.9) !important;
     opacity: 0.9 !important;
   }
 
@@ -152,9 +152,9 @@
   input[class*="review"],
   textarea[class*="review"],
   .wix-review-input {
-    background-color: #1a1a1a !important;
-    border-color: rgba(255, 255, 255, 0.2) !important;
-    color: #FFFFFF !important;
+    background-color: #3E2723 !important;
+    border-color: rgba(212, 163, 115, 0.2) !important;
+    color: #F5E6D3 !important;
   }
 
   [class*="review-input"]::placeholder,
@@ -162,7 +162,7 @@
   input[class*="review"]::placeholder,
   textarea[class*="review"]::placeholder,
   .wix-review-input::placeholder {
-    color: rgba(255, 255, 255, 0.5) !important;
+    color: rgba(245, 230, 211, 0.5) !important;
   }
 
   /* Review form labels */
@@ -170,7 +170,7 @@
   [class*="ReviewLabel"],
   label[class*="review"],
   .wix-review-label {
-    color: #FFFFFF !important;
+    color: #F5E6D3 !important;
     font-family: syne, sans-serif !important;
   }
 
@@ -181,7 +181,7 @@
   [class*="ReviewsTitle"],
   .wix-reviews-heading,
   .wix-reviews-title {
-    color: #FFFFFF !important;
+    color: #F5E6D3 !important;
     font-family: syne, sans-serif !important;
     font-weight: 700 !important;
   }
@@ -193,7 +193,7 @@
   [class*="ReviewSummary"],
   .wix-review-count,
   .wix-review-summary {
-    color: rgba(255, 255, 255, 0.8) !important;
+    color: rgba(245, 230, 211, 0.8) !important;
   }
 
   /* Dividers in reviews */
@@ -201,7 +201,7 @@
   [class*="ReviewDivider"],
   hr[class*="review"],
   .wix-review-divider {
-    border-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(212, 163, 115, 0.2) !important;
   }
 
   /* Review helpful/vote buttons */
@@ -211,7 +211,7 @@
   [class*="Vote"],
   .wix-helpful,
   .wix-vote {
-    color: rgba(255, 255, 255, 0.7) !important;
+    color: rgba(245, 230, 211, 0.7) !important;
   }
 
   [class*="helpful"]:hover,
@@ -220,7 +220,7 @@
   [class*="Vote"]:hover,
   .wix-helpful:hover,
   .wix-vote:hover {
-    color: #FF4500 !important;
+    color: #C85A3A !important;
   }
 
   /* Review modal/dialog */
@@ -230,8 +230,8 @@
   [class*="ReviewDialog"],
   .wix-review-modal,
   .wix-review-dialog {
-    background-color: #222222 !important;
-    color: #FFFFFF !important;
+    background-color: #2A2420 !important;
+    color: #F5E6D3 !important;
   }
 
   /* Review overlay/backdrop */

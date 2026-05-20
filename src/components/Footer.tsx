@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
-    <footer className="bg-black border-t border-foreground/10" role="contentinfo">
+    <footer className="bg-vintage-brown border-t border-foreground/20" role="contentinfo">
       <div className="w-full px-4 py-12 sm:py-16">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
@@ -32,7 +32,7 @@ export default function Footer() {
                 href="https://www.instagram.com/onefourteenwhiskeyrow/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-neon-red-orange hover:text-neon-red-orange/80 transition-colors"
+                className="inline-flex items-center gap-2 text-vintage-rust hover:text-vintage-rust/80 transition-colors"
                 aria-label="Instagram"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -48,7 +48,7 @@ export default function Footer() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="pt-6 mt-6 border-t border-foreground/10"
+            className="pt-6 mt-6 border-t border-foreground/20"
           >
             <p className="font-paragraph text-xs text-foreground/50 text-center">
               One Fourteen · Whiskey Row · Louisville, KY

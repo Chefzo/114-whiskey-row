@@ -24,17 +24,22 @@ export default {
                 handwriting: "caveat"
             },
             colors: {
-                'neon-red-orange': '#FF4500',
+                'neon-red-orange': '#C85A3A',
                 'warm-amber': '#D4A373',
                 'whiskey-glow': '#F0E68C',
+                'vintage-cream': '#F5E6D3',
+                'vintage-gold': '#B8860B',
+                'vintage-brown': '#3E2723',
+                'vintage-rust': '#8B4513',
+                'vintage-olive': '#556B2F',
                 destructive: '#DC2626',
                 'destructive-foreground': '#FFFFFF',
-                background: '#222222',
+                background: '#2A2420',
                 secondary: '#D4A373',
-                foreground: '#FFFFFF',
+                foreground: '#F5E6D3',
                 'secondary-foreground': '#000000',
-                'primary-foreground': '#FFFFFF',
-                primary: '#FF4500'
+                'primary-foreground': '#F5E6D3',
+                primary: '#C85A3A'
             },
             backgroundImage: {
                 'grain': 'url("data:image/svg+xml,%3Csvg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise" /%3E%3CfeColorMatrix in="noise" type="saturate" values="0" /%3E%3C/filter%3E%3Crect width="400" height="400" fill="%23222222" /%3E%3Crect width="400" height="400" fill="%23000000" opacity="0.03" filter="url(%23noiseFilter)" /%3E%3C/svg%3E")',
