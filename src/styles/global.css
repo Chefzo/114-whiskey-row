@@ -57,3 +57,187 @@
       );
   }
 }
+
+/* Reviews Widget Styling - Blend with site theme */
+@layer components {
+  /* Main reviews container */
+  [class*="reviews"],
+  [class*="Review"],
+  .wix-reviews,
+  .wix-reviews-widget {
+    background-color: #222222 !important;
+    color: #FFFFFF !important;
+  }
+
+  /* Review cards/items */
+  [class*="review-item"],
+  [class*="ReviewItem"],
+  [class*="review-card"],
+  [class*="ReviewCard"],
+  .wix-reviews-item,
+  .wix-review-card {
+    background-color: #1a1a1a !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: #FFFFFF !important;
+  }
+
+  /* Review text */
+  [class*="review-text"],
+  [class*="ReviewText"],
+  [class*="review-content"],
+  [class*="ReviewContent"],
+  .wix-review-text,
+  .wix-review-content {
+    color: #FFFFFF !important;
+  }
+
+  /* Review author/name */
+  [class*="review-author"],
+  [class*="ReviewAuthor"],
+  [class*="reviewer-name"],
+  [class*="ReviewerName"],
+  .wix-review-author,
+  .wix-reviewer-name {
+    color: #FFFFFF !important;
+    font-family: syne, sans-serif !important;
+    font-weight: 600 !important;
+  }
+
+  /* Review date/meta */
+  [class*="review-date"],
+  [class*="ReviewDate"],
+  [class*="review-meta"],
+  [class*="ReviewMeta"],
+  .wix-review-date,
+  .wix-review-meta {
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-family: azeret-mono, monospace !important;
+  }
+
+  /* Star ratings */
+  [class*="star"],
+  [class*="Star"],
+  [class*="rating"],
+  [class*="Rating"],
+  .wix-star,
+  .wix-rating {
+    color: #FF4500 !important;
+  }
+
+  /* Buttons in reviews */
+  [class*="review-button"],
+  [class*="ReviewButton"],
+  .wix-review-button,
+  button[class*="review"],
+  button[class*="Review"] {
+    background-color: #FF4500 !important;
+    color: #000000 !important;
+    border-color: #FF4500 !important;
+    font-family: azeret-mono, monospace !important;
+    font-weight: 600 !important;
+  }
+
+  [class*="review-button"]:hover,
+  [class*="ReviewButton"]:hover,
+  .wix-review-button:hover,
+  button[class*="review"]:hover,
+  button[class*="Review"]:hover {
+    background-color: rgba(255, 69, 0, 0.9) !important;
+    opacity: 0.9 !important;
+  }
+
+  /* Input fields in reviews */
+  [class*="review-input"],
+  [class*="ReviewInput"],
+  input[class*="review"],
+  textarea[class*="review"],
+  .wix-review-input {
+    background-color: #1a1a1a !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #FFFFFF !important;
+  }
+
+  [class*="review-input"]::placeholder,
+  [class*="ReviewInput"]::placeholder,
+  input[class*="review"]::placeholder,
+  textarea[class*="review"]::placeholder,
+  .wix-review-input::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  /* Review form labels */
+  [class*="review-label"],
+  [class*="ReviewLabel"],
+  label[class*="review"],
+  .wix-review-label {
+    color: #FFFFFF !important;
+    font-family: syne, sans-serif !important;
+  }
+
+  /* Review section headings */
+  [class*="reviews-heading"],
+  [class*="ReviewsHeading"],
+  [class*="reviews-title"],
+  [class*="ReviewsTitle"],
+  .wix-reviews-heading,
+  .wix-reviews-title {
+    color: #FFFFFF !important;
+    font-family: syne, sans-serif !important;
+    font-weight: 700 !important;
+  }
+
+  /* Review count/summary */
+  [class*="review-count"],
+  [class*="ReviewCount"],
+  [class*="review-summary"],
+  [class*="ReviewSummary"],
+  .wix-review-count,
+  .wix-review-summary {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  /* Dividers in reviews */
+  [class*="review-divider"],
+  [class*="ReviewDivider"],
+  hr[class*="review"],
+  .wix-review-divider {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Review helpful/vote buttons */
+  [class*="helpful"],
+  [class*="Helpful"],
+  [class*="vote"],
+  [class*="Vote"],
+  .wix-helpful,
+  .wix-vote {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  [class*="helpful"]:hover,
+  [class*="Helpful"]:hover,
+  [class*="vote"]:hover,
+  [class*="Vote"]:hover,
+  .wix-helpful:hover,
+  .wix-vote:hover {
+    color: #FF4500 !important;
+  }
+
+  /* Review modal/dialog */
+  [class*="review-modal"],
+  [class*="ReviewModal"],
+  [class*="review-dialog"],
+  [class*="ReviewDialog"],
+  .wix-review-modal,
+  .wix-review-dialog {
+    background-color: #222222 !important;
+    color: #FFFFFF !important;
+  }
+
+  /* Review overlay/backdrop */
+  [class*="review-overlay"],
+  [class*="ReviewOverlay"],
+  .wix-review-overlay {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+  }
+}

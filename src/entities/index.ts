@@ -119,3 +119,26 @@ export interface GalleryPhotos {
   /** @wixFieldType text */
   altText?: string;
 }
+
+
+/**
+ * Collection ID: ThirstyCocktails
+ * Interface for Thirsty
+ */
+export interface Thirsty {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  cocktailName?: string;
+  /** @wixFieldType text */
+  description?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  image?: string;
+  /** @wixFieldType text */
+  ingredients?: string;
+  /** @wixFieldType boolean */
+  isAlcoholic?: boolean;
+  /** @wixFieldType time */
+  preparationTime?: any;
+}
