@@ -109,7 +109,7 @@ export default function EventsPage() {
             transition={{ duration: 0.6 }}
           >
             <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 max-w-3xl leading-relaxed">
-              One Fourteen hosts weekly DJs and recurring Industry Night every Sunday on Whiskey Row in downtown Louisville. Our events focus on late night energy, music, and a steady crowd. Check below for upcoming dates.
+              Weekly DJs, Industry Night, and live entertainment on Whiskey Row. Check upcoming dates below.
             </p>
           </motion.div>
         </div>

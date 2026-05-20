@@ -162,7 +162,7 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
           >
             <p className="font-paragraph text-base sm:text-lg text-foreground/80 max-w-3xl leading-relaxed">
-              Contact <a href="/" className="text-neon-red-orange hover:underline">One Fourteen, a late-night bar on Whiskey Row</a> in downtown Louisville, Kentucky. Located at 114 W Main Street, we're open Tuesday–Sunday from 4pm–2am. Walk-ins only. 21+. Call us at (502) 907-1400 or email info@114whiskeyrow.com for inquiries about private events, group bookings, or general questions.
+              Contact <a href="/" className="text-neon-red-orange hover:underline">One Fourteen, a late-night bar on Whiskey Row</a> in downtown Louisville, Kentucky.
             </p>
           </motion.div>
         </div>

@@ -150,7 +150,7 @@ export default function GalleryPage() {
             transition={{ duration: 0.6 }}
           >
             <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 max-w-3xl leading-relaxed">
-              Photos from One Fourteen, a <a href="/" className="text-neon-red-orange hover:underline">late night bar on Whiskey Row</a> in downtown Louisville. Inside the crowd, neon lighting, bartenders at work, and the after-dark energy that defines Louisville nightlife.
+              Photos from One Fourteen, a <a href="/" className="text-neon-red-orange hover:underline">late night bar on Whiskey Row</a> in downtown Louisville.
             </p>
           </motion.div>
         </div>

@@ -106,7 +106,7 @@ export default function MenuPage() {
               transition={{ duration: 0.6 }}
             >
               <p className="font-paragraph text-base sm:text-lg text-foreground/80 max-w-3xl leading-relaxed">
-                The complete menu for <a href="/" className="text-neon-red-orange hover:underline">One Fourteen, a late-night bar on Whiskey Row</a> in downtown Louisville, Kentucky. Browse our craft cocktails, rotating beer selection, happy hour specials, and shots. Open Tuesday–Sunday, 4pm–2am. Walk-ins only. 21+.
+                The complete menu for <a href="/" className="text-neon-red-orange hover:underline">One Fourteen, a late-night bar on Whiskey Row</a> in downtown Louisville, Kentucky.
               </p>
             </motion.div>
           </div>
