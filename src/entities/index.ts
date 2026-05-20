@@ -72,6 +72,14 @@ export interface Events {
   /** @wixFieldType text */
   eventName?: string;
   /** @wixFieldType text */
+  instagramHandle?: string;
+  /** @wixFieldType text */
+  featuredArtist?: string;
+  /** @wixFieldType number */
+  coverCharge?: number;
+  /** @wixFieldType text */
+  shortDescription?: string;
+  /** @wixFieldType text */
   location?: string;
   /** @wixFieldType text */
   eventType?: string;
