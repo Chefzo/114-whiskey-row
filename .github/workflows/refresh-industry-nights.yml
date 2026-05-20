@@ -1,0 +1,40 @@
+name: Refresh Industry Night events
+
+# Keeps the One Fourteen Bar Wix CMS `events` collection stocked with
+# upcoming Industry Night Sundays. Runs weekly and tops up to 12 weeks
+# of future inventory if fewer than 8 Sundays are still on the calendar.
+
+on:
+  schedule:
+    # Sundays at 13:00 UTC = 9:00 AM ET (EST) / 8:00 AM ET (EDT)
+    # Cron is in UTC. GitHub may delay the trigger by a few minutes.
+    - cron: "0 13 * * 0"
+  # Allow manual runs from the Actions tab (useful for first run + testing)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run — log what would be inserted without writing"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Refresh Industry Night events
+        env:
+          WIX_API_KEY: ${{ secrets.WIX_API_KEY }}
+          WIX_ACCOUNT_ID: "528274c8-6baf-4841-b1d8-305158ee5f9c"
+          WIX_SITE_ID: "7bd08814-4825-4a72-8a50-4e4fc3727dc6"
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/refresh-industry-nights.mjs
