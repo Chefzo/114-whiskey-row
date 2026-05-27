@@ -122,6 +122,10 @@ export interface Events {
   eventImage?: string;
   /** @wixFieldType url */
   callToActionUrl?: string;
+  /** @wixFieldType datetime */
+  publishDate?: Date | string;
+  /** @wixFieldType text */
+  unpublishDate?: string;
 }
 
 

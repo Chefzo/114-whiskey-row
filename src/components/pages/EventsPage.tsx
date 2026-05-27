@@ -78,78 +78,115 @@ export default function EventsPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-24 md:pt-32 pb-16 px-4 sm:px-6 md:px-16 overflow-hidden">
+      <section className="relative pt-32 md:pt-40 pb-20 md:pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-black/40" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-neon-red-orange/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-warm-amber/5 rounded-full blur-3xl" />
         </div>
 
         <div className="relative z-10 max-w-[120rem] mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="space-y-6 md:space-y-8"
           >
-            <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 sm:mb-8">
-              Events at One Fourteen | Louisville Nightlife
+            <div className="inline-block">
+              <motion.span
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="font-paragraph text-xs md:text-sm uppercase tracking-widest text-neon-red-orange font-bold"
+              >
+                ✦ Live Entertainment
+              </motion.span>
+            </div>
+            
+            <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-foreground leading-tight">
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="block"
+              >
+                Events &
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="block text-neon-red-orange"
+              >
+                Nightlife
+              </motion.span>
             </h1>
-            <p className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground/70 max-w-3xl leading-relaxed">
-              Weekly DJs, game days, and live entertainment at One Fourteen Bar on Whiskey Row.
-            </p>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground/75 max-w-2xl leading-relaxed"
+            >
+              Weekly DJs, game days, and live entertainment at One Fourteen Bar on Whiskey Row. Experience Louisville's premier nightlife destination.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="flex flex-wrap gap-4 pt-4"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-neon-red-orange rounded-full" />
+                <span className="font-paragraph text-sm text-foreground/70">Upcoming Events</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-warm-amber rounded-full" />
+                <span className="font-paragraph text-sm text-foreground/70">Live DJs & Artists</span>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* SEO Intro Paragraph */}
-      <section className="px-4 sm:px-6 md:px-16 py-8 sm:py-12 md:py-16 bg-background border-b border-neon-red-orange/10">
+      {/* Filter Section */}
+      <section className="px-4 sm:px-6 lg:px-8 py-12 md:py-16 border-b border-neon-red-orange/10">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="space-y-8"
           >
-            <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 max-w-3xl leading-relaxed">
-              Weekly DJs, Industry Night, and live entertainment on Whiskey Row. Check upcoming dates below.
-            </p>
+            <div>
+              <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2">
+                Browse Events
+              </h2>
+              <p className="font-paragraph text-sm text-foreground/60">
+                Filter by event status to find what you're looking for
+              </p>
+            </div>
+            
+            <div className="flex flex-wrap gap-3">
+              {['all', 'upcoming', 'past'].map((filterOption) => (
+                <motion.button
+                  key={filterOption}
+                  onClick={() => setFilter(filterOption as 'all' | 'upcoming' | 'past')}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`font-paragraph text-xs uppercase tracking-widest font-bold px-6 py-3 rounded-lg transition-all duration-300 ${
+                    filter === filterOption
+                      ? 'bg-neon-red-orange text-white shadow-lg shadow-neon-red-orange/30'
+                      : 'bg-black/40 text-foreground/70 border border-foreground/20 hover:border-neon-red-orange/50 hover:text-foreground'
+                  }`}
+                >
+                  {filterOption.charAt(0).toUpperCase() + filterOption.slice(1)}
+                </motion.button>
+              ))}
+            </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Filter Section */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-8">
-        <div className="max-w-[120rem] mx-auto">
-          <div className="flex gap-6 pb-4">
-            <button
-              onClick={() => setFilter('all')}
-              className={`font-paragraph text-xs uppercase tracking-wider transition-all ${
-                filter === 'all'
-                  ? 'text-foreground'
-                  : 'text-foreground/50 hover:text-foreground/70'
-              }`}
-            >
-              All
-            </button>
-            <button
-              onClick={() => setFilter('upcoming')}
-              className={`font-paragraph text-xs uppercase tracking-wider transition-all ${
-                filter === 'upcoming'
-                  ? 'text-foreground'
-                  : 'text-foreground/50 hover:text-foreground/70'
-              }`}
-            >
-              Upcoming
-            </button>
-            <button
-              onClick={() => setFilter('past')}
-              className={`font-paragraph text-xs uppercase tracking-wider transition-all ${
-                filter === 'past'
-                  ? 'text-foreground'
-                  : 'text-foreground/50 hover:text-foreground/70'
-              }`}
-            >
-              Past
-            </button>
-          </div>
         </div>
       </section>
 
