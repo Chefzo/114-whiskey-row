@@ -47,7 +47,7 @@ export default function HomePage() {
           {/* Hero headline renders immediately without animation on mobile */}
           <div className="max-w-5xl">
             <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-foreground mb-4 sm:mb-6 leading-[1.1] tracking-tight">
-              Late nights on Whiskey Row.
+              A LATE ROOM ON WHISKEY ROW.
             </h1>
             
             <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/70 mb-8 sm:mb-10 md:mb-12 tracking-wide leading-relaxed">
