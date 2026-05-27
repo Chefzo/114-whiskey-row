@@ -145,6 +145,10 @@ export interface GalleryPhotos {
   photographerCredit?: string;
   /** @wixFieldType text */
   altText?: string;
+  /** @wixFieldType text */
+  publishDate?: string;
+  /** @wixFieldType text */
+  unpublishDate?: string;
 }
 
 
