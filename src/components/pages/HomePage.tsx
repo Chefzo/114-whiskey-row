@@ -42,7 +42,6 @@ export default function HomePage() {
             width={1920}
           />
         </div>
-        <div className="absolute inset-0 z-6 bg-gradient-to-b from-blue-950/40 via-purple-950/30 to-black/50" />
         
         <div className="relative z-10 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16 py-12 sm:py-16 md:py-20">
           {/* Hero headline renders immediately without animation on mobile */}
