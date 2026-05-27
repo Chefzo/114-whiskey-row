@@ -7,6 +7,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { BaseCrudService } from '@/integrations';
 import { GalleryPhotos } from '@/entities';
+import { HERO_IMAGES } from '@/lib/images';
 
 export default function HomePage() {
   const [galleryPhotos, setGalleryPhotos] = useState<GalleryPhotos[]>([]);
@@ -27,23 +28,39 @@ export default function HomePage() {
     }
   };
 
+  // Only a direct http(s) URL is safe for a plain <img>; Wix `wix:image://`
+  // protocol URLs need the Image component, so fall back to a static photo.
+  const firstPhoto = galleryPhotos[0]?.photo;
+  const heroImage = firstPhoto?.startsWith('http') ? firstPhoto : HERO_IMAGES.crowd;
+
   return (
     <div className="min-h-screen bg-black">
       <Header />
-      
-      {/* Hero Section - Optimized for mobile performance */}
-      <section className="relative w-full min-h-screen md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 md:pt-16" aria-label="Hero section">
-        <div className="absolute inset-0 bg-black z-0" />
-        
-        <div className="relative z-10 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16 py-12 sm:py-16 md:py-20">
-          {/* Hero headline renders immediately without animation on mobile */}
+
+      {/* Hero Section - full-bleed venue photography with legibility scrims */}
+      <section className="relative w-full min-h-[100svh] md:min-h-screen flex items-end overflow-hidden" aria-label="Hero section">
+        <img
+          src={heroImage}
+          alt="Late-night crowd inside One Fourteen bar on Whiskey Row in downtown Louisville"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: 'center 35%' }}
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/65 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/35 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/90 to-transparent" />
+
+        <div className="relative z-10 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16 pb-16 sm:pb-20 md:pb-28 pt-32">
           <div className="max-w-5xl">
-            <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-foreground mb-4 sm:mb-6 leading-[1.1] tracking-tight">
+            <div className="font-paragraph text-xs sm:text-sm uppercase tracking-[0.3em] text-neon-red-orange mb-4 sm:mb-6">
+              Whiskey Row · Downtown Louisville
+            </div>
+            <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-foreground mb-4 sm:mb-6 leading-[1.05] tracking-tight">
               Late nights on Whiskey Row.
             </h1>
-            
-            <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/70 mb-8 sm:mb-10 md:mb-12 tracking-wide leading-relaxed">
-              Walk-ins only. 21+.
+
+            <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/75 mb-8 sm:mb-10 md:mb-12 tracking-wide leading-relaxed">
+              Walk-ins only. 21+. Open Tue–Sun til 2am.
             </p>
 
             <motion.div
@@ -51,7 +68,7 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
             >
-              <Button 
+              <Button
                 size="lg"
                 className="bg-neon-red-orange hover:bg-neon-red-orange/90 text-black font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto"
                 onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
@@ -81,8 +98,9 @@ export default function HomePage() {
       </section>
 
       {/* Tonight at One Fourteen */}
-      <section id="events-section" className="w-full py-16 sm:py-20 md:py-24 bg-black" aria-label="Tonight at One Fourteen">
-        <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
+      <section id="events-section" className="relative w-full py-16 sm:py-20 md:py-24 bg-black overflow-hidden" aria-label="Tonight at One Fourteen">
+        <div className="pointer-events-none absolute -top-32 -right-32 w-[36rem] h-[36rem] rounded-full bg-neon-red-orange/10 blur-[120px]" />
+        <div className="relative w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -232,8 +250,9 @@ export default function HomePage() {
       </section>
 
       {/* Location & Hours */}
-      <section className="w-full py-16 sm:py-20 md:py-24 bg-black border-t border-foreground/10" aria-label="Location and hours">
-        <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
+      <section className="relative w-full py-16 sm:py-20 md:py-24 bg-black border-t border-foreground/10 overflow-hidden" aria-label="Location and hours">
+        <div className="pointer-events-none absolute -bottom-32 -left-32 w-[34rem] h-[34rem] rounded-full bg-warm-amber/10 blur-[120px]" />
+        <div className="relative w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

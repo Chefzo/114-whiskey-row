@@ -1,22 +1,28 @@
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PageHero from '@/components/PageHero';
+import { HERO_IMAGES } from '@/lib/images';
 
 export default function StoryPage() {
   return (
     <div className="min-h-screen bg-black">
       <Header />
-      <section className="w-full py-24 md:py-32 lg:py-40 bg-black">
+      <PageHero
+        image={HERO_IMAGES.interior}
+        imageAlt="The room at One Fourteen on Whiskey Row in downtown Louisville"
+        eyebrow="Whiskey Row"
+        title="Our Story"
+        subtitle="A bar built on connection, not polish. Atmosphere over pretense."
+        objectPosition="center 50%"
+      />
+      <section className="w-full py-16 md:py-24 lg:py-32 bg-black">
         <div className="w-full max-w-[100rem] mx-auto px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl text-primary mb-12 md:mb-16 lg:mb-20 leading-tight tracking-tight">
-              THE STORY OF ONE FOURTEEN
-            </h1>
-
             <div className="space-y-8 md:space-y-10 lg:space-y-12 max-w-4xl">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
