@@ -34,6 +34,14 @@ export default function HomePage() {
       {/* Hero Section - Optimized for mobile performance */}
       <section className="relative w-full min-h-screen md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 md:pt-16" aria-label="Hero section">
         <div className="absolute inset-0 bg-black z-0" />
+        <div className="absolute inset-0 z-5 opacity-20">
+          <Image
+            src="https://static.wixstatic.com/media/528274_954f033955f34763abb709faf84fe8ff~mv2.png?originWidth=1920&originHeight=1024"
+            alt="Faded background image of One Fourteen bar"
+            className="w-full h-full object-cover"
+            width={1920}
+          />
+        </div>
         
         <div className="relative z-10 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16 py-12 sm:py-16 md:py-20">
           {/* Hero headline renders immediately without animation on mobile */}
