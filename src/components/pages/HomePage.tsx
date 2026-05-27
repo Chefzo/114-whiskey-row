@@ -89,7 +89,7 @@ export default function HomePage() {
       </section>
 
       {/* Tonight at One Fourteen */}
-      <section id="events-section" className="w-full py-16 sm:py-20 md:py-24 bg-black" aria-label="Tonight at One Fourteen">
+      <section id="events-section" className="w-full py-16 sm:py-20 md:py-24 bg-black border-t border-foreground/10" aria-label="Tonight at One Fourteen">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -97,66 +97,87 @@ export default function HomePage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground mb-8 sm:mb-10 md:mb-12">
-              Tonight at One Fourteen
-            </h2>
+            <div className="mb-12 sm:mb-14 md:mb-16">
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground mb-3 sm:mb-4">
+                Tonight at One Fourteen
+              </h2>
+              <p className="font-paragraph text-base sm:text-lg text-foreground/60 max-w-2xl">
+                Experience our nightly lineup of DJs, live entertainment, and special events.
+              </p>
+            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 sm:mb-14 md:mb-16">
+              {/* Thursday */}
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="border-l-4 border-primary pl-4 sm:pl-6 md:pl-8 py-3 sm:py-4"
+                className="group relative bg-gradient-to-br from-foreground/5 to-transparent border border-foreground/10 rounded-lg p-6 sm:p-8 hover:border-primary/50 transition-all duration-300"
               >
-                <div className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground/50 mb-1 sm:mb-2">THU</div>
-                <div className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground">DJs</div>
+                <div className="absolute top-0 left-0 w-1 h-12 bg-primary rounded-r" />
+                <div className="font-paragraph text-sm sm:text-base text-primary uppercase tracking-widest mb-3">Thursday</div>
+                <div className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground mb-2">DJs</div>
+                <p className="font-paragraph text-sm sm:text-base text-foreground/60">Spin all night long</p>
               </motion.div>
 
+              {/* Friday */}
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.15 }}
-                className="border-l-4 border-foreground pl-4 sm:pl-6 md:pl-8 py-3 sm:py-4"
+                className="group relative bg-gradient-to-br from-foreground/5 to-transparent border border-foreground/10 rounded-lg p-6 sm:p-8 hover:border-primary/50 transition-all duration-300"
               >
-                <div className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground/50 mb-1 sm:mb-2">FRI</div>
-                <div className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground">late night</div>
+                <div className="absolute top-0 left-0 w-1 h-12 bg-foreground/40 rounded-r" />
+                <div className="font-paragraph text-sm sm:text-base text-foreground/60 uppercase tracking-widest mb-3">Friday</div>
+                <div className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground mb-2">Late Night</div>
+                <p className="font-paragraph text-sm sm:text-base text-foreground/60">Weekend energy starts here</p>
               </motion.div>
 
+              {/* Saturday */}
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="border-l-4 border-foreground pl-4 sm:pl-6 md:pl-8 py-3 sm:py-4"
+                className="group relative bg-gradient-to-br from-foreground/5 to-transparent border border-foreground/10 rounded-lg p-6 sm:p-8 hover:border-primary/50 transition-all duration-300"
               >
-                <div className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground/50 mb-1 sm:mb-2">SAT</div>
-                <div className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground">DJs till close</div>
+                <div className="absolute top-0 left-0 w-1 h-12 bg-primary rounded-r" />
+                <div className="font-paragraph text-sm sm:text-base text-primary uppercase tracking-widest mb-3">Saturday</div>
+                <div className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground mb-2">DJs Till Close</div>
+                <p className="font-paragraph text-sm sm:text-base text-foreground/60">Peak nightlife experience</p>
               </motion.div>
 
+              {/* Game Days */}
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.25 }}
-                className="border-l-4 border-primary pl-4 sm:pl-6 md:pl-8 py-3 sm:py-4"
+                className="group relative bg-gradient-to-br from-foreground/5 to-transparent border border-foreground/10 rounded-lg p-6 sm:p-8 hover:border-primary/50 transition-all duration-300"
               >
-                <div className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground/50 mb-1 sm:mb-2">GAME DAYS</div>
-                <div className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground">Sound on</div>
+                <div className="absolute top-0 left-0 w-1 h-12 bg-primary rounded-r" />
+                <div className="font-paragraph text-sm sm:text-base text-primary uppercase tracking-widest mb-3">Game Days</div>
+                <div className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground mb-2">Sound On</div>
+                <p className="font-paragraph text-sm sm:text-base text-foreground/60">Catch the action with us</p>
               </motion.div>
 
+              {/* Sunday - Industry Night */}
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="border-l-4 border-foreground pl-4 sm:pl-6 md:pl-8 py-3 sm:py-4"
+                className="group relative bg-gradient-to-br from-foreground/5 to-transparent border border-foreground/10 rounded-lg p-6 sm:p-8 hover:border-primary/50 transition-all duration-300"
               >
-                <div className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground/50 mb-1 sm:mb-2">SUN</div>
-                <div className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground mb-2">Industry Night</div>
-                <div className="font-paragraph text-sm sm:text-base text-foreground/60">9pm–2am</div>
-                <div className="font-paragraph text-xs sm:text-sm text-foreground/50 mt-2">Service industry welcome.</div>
+                <div className="absolute top-0 left-0 w-1 h-12 bg-foreground/40 rounded-r" />
+                <div className="font-paragraph text-sm sm:text-base text-foreground/60 uppercase tracking-widest mb-3">Sunday</div>
+                <div className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground mb-3">Industry Night</div>
+                <div className="space-y-2">
+                  <p className="font-paragraph text-sm sm:text-base text-foreground/80">9pm–2am</p>
+                  <p className="font-paragraph text-xs sm:text-sm text-foreground/60">Service industry welcome</p>
+                </div>
               </motion.div>
             </div>
 
@@ -165,7 +186,7 @@ export default function HomePage() {
               className="bg-neon-red-orange hover:bg-neon-red-orange/90 text-black font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto w-full sm:w-auto"
               onClick={() => window.location.href = '/events'}
             >
-              VIEW EVENTS
+              VIEW ALL EVENTS
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
             </Button>
           </motion.div>
