@@ -46,7 +46,7 @@ export default function HomePage() {
         <div className="relative z-10 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16 py-12 sm:py-16 md:py-20">
           {/* Hero headline renders immediately without animation on mobile */}
           <div className="max-w-5xl">
-            <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-foreground mb-4 sm:mb-6 leading-[1.1] tracking-tight">
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground mb-4 sm:mb-6 leading-[1.1] tracking-tight">
               A LATE ROOM ON WHISKEY ROW.
             </h1>
             
