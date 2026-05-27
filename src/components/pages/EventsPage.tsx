@@ -78,11 +78,11 @@ export default function EventsPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 md:pt-40 pb-20 md:pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-20 md:pt-24 pb-12 md:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-black/40" />
-          <div className="absolute top-0 right-0 w-96 h-96 bg-neon-red-orange/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-warm-amber/5 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-72 h-72 bg-neon-red-orange/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-warm-amber/5 rounded-full blur-3xl" />
         </div>
 
         <div className="relative z-10 max-w-[120rem] mx-auto">
@@ -90,20 +90,20 @@ export default function EventsPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="space-y-6 md:space-y-8"
+            className="space-y-3 md:space-y-4"
           >
             <div className="inline-block">
               <motion.span
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="font-paragraph text-xs md:text-sm uppercase tracking-widest text-neon-red-orange font-bold"
+                className="font-paragraph text-xs uppercase tracking-widest text-neon-red-orange font-bold"
               >
                 ✦ Live Entertainment
               </motion.span>
             </div>
             
-            <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-foreground leading-tight">
+            <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-tight">
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -126,24 +126,24 @@ export default function EventsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground/75 max-w-2xl leading-relaxed"
+              className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/75 max-w-2xl leading-relaxed"
             >
-              Weekly DJs, game days, and live entertainment at One Fourteen Bar on Whiskey Row. Experience Louisville's premier nightlife destination.
+              Weekly DJs, game days, and live entertainment at One Fourteen Bar on Whiskey Row.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex flex-wrap gap-4 pt-4"
+              className="flex flex-wrap gap-3 pt-2"
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-neon-red-orange rounded-full" />
-                <span className="font-paragraph text-sm text-foreground/70">Upcoming Events</span>
+                <span className="font-paragraph text-xs text-foreground/70">Upcoming Events</span>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-warm-amber rounded-full" />
-                <span className="font-paragraph text-sm text-foreground/70">Live DJs & Artists</span>
+                <span className="font-paragraph text-xs text-foreground/70">Live DJs & Artists</span>
               </div>
             </motion.div>
           </motion.div>
