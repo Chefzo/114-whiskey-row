@@ -188,46 +188,77 @@ export default function EventsPage() {
 
                   {/* Content Container */}
                   <div className="flex flex-col flex-grow p-6">
+                    {/* Event Type Badge */}
                     {!event.eventImage && event.eventType && (
-                      <span className="inline-block font-paragraph text-xs uppercase tracking-wider text-white bg-neon-red-orange px-3 py-1.5 rounded mb-3 w-fit">
+                      <span className="inline-block font-paragraph text-xs uppercase tracking-wider text-white bg-neon-red-orange px-3 py-1.5 rounded mb-4 w-fit">
                         {event.eventType}
                       </span>
                     )}
 
-                    <h2 className="font-heading text-2xl font-bold text-foreground mb-3 line-clamp-2">
+                    {/* Event Name - Enhanced */}
+                    <h2 className="font-heading text-3xl font-bold text-foreground mb-2 line-clamp-3 leading-tight">
                       {event.eventName}
                     </h2>
 
+                    {/* Featured Artist - Enhanced Visibility */}
+                    {event.featuredArtist && (
+                      <div className="mb-4 pb-4 border-b border-neon-red-orange/30">
+                        <p className="font-paragraph text-xs uppercase tracking-widest text-neon-red-orange/70 mb-1">
+                          Featured
+                        </p>
+                        <p className="font-heading text-xl font-bold text-neon-red-orange">
+                          {event.featuredArtist}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Event Description */}
                     {event.eventDescription && (
-                      <p className="font-paragraph text-sm text-foreground/70 mb-4 line-clamp-2 flex-grow">
+                      <p className="font-paragraph text-sm text-foreground/75 mb-4 line-clamp-2 flex-grow leading-relaxed">
                         {event.eventDescription}
                       </p>
                     )}
 
-                    {/* Event Details */}
-                    <div className="space-y-2 mb-6 border-t border-neon-red-orange/20 pt-4">
-                      {event.eventDate && (
-                        <div className="flex items-center gap-2 text-foreground/80">
-                          <Calendar size={16} className="text-neon-red-orange flex-shrink-0" />
-                          <span className="font-paragraph text-xs">
-                            {new Date(event.eventDate + 'T00:00:00').toLocaleDateString('en-US', {
-                              month: 'short',
-                              day: 'numeric',
-                              year: 'numeric',
-                              timeZone: 'UTC'
-                            })}
-                          </span>
+                    {/* Event Details - Enhanced Layout */}
+                    <div className="space-y-3 mb-6 bg-black/30 rounded-lg p-4">
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex items-center gap-2 flex-1">
+                          <Calendar size={18} className="text-neon-red-orange flex-shrink-0" />
+                          <div>
+                            <p className="font-paragraph text-xs text-foreground/60 uppercase tracking-wider">Date</p>
+                            <p className="font-heading text-sm font-bold text-foreground">
+                              {event.eventDate
+                                ? new Date(event.eventDate + 'T00:00:00').toLocaleDateString('en-US', {
+                                    month: 'short',
+                                    day: 'numeric',
+                                    year: 'numeric',
+                                    timeZone: 'UTC'
+                                  })
+                                : 'TBA'}
+                            </p>
+                          </div>
                         </div>
-                      )}
+                        {event.coverCharge && event.coverCharge > 0 && (
+                          <div className="text-right">
+                            <p className="font-paragraph text-xs text-foreground/60 uppercase tracking-wider">Cover</p>
+                            <p className="font-heading text-sm font-bold text-neon-red-orange">
+                              ${event.coverCharge}
+                            </p>
+                          </div>
+                        )}
+                      </div>
 
                       {(event.startTime || event.endTime) && (
-                        <div className="flex items-center gap-2 text-foreground/80">
-                          <Clock size={16} className="text-neon-red-orange flex-shrink-0" />
-                          <span className="font-paragraph text-xs">
-                            {formatTime(event.startTime)}
-                            {event.startTime && event.endTime && ' - '}
-                            {formatTime(event.endTime)}
-                          </span>
+                        <div className="flex items-center gap-2">
+                          <Clock size={18} className="text-neon-red-orange flex-shrink-0" />
+                          <div>
+                            <p className="font-paragraph text-xs text-foreground/60 uppercase tracking-wider">Time</p>
+                            <p className="font-heading text-sm font-bold text-foreground">
+                              {formatTime(event.startTime)}
+                              {event.startTime && event.endTime && ' - '}
+                              {formatTime(event.endTime)}
+                            </p>
+                          </div>
                         </div>
                       )}
                     </div>
@@ -238,7 +269,7 @@ export default function EventsPage() {
                         href={event.callToActionUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 w-full bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-xs uppercase tracking-wider px-4 py-3 rounded transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,69,0,0.5)]"
+                        className="inline-flex items-center justify-center gap-2 w-full bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-xs uppercase tracking-wider px-4 py-3 rounded transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,69,0,0.5)] font-bold"
                       >
                         Learn More
                         <ExternalLink size={14} />
