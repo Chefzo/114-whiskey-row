@@ -1,6 +1,8 @@
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header'
 import Footer from '@/components/Footer';
+import PageHero from '@/components/PageHero';
+import { HERO_IMAGES } from '@/lib/images';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { MapPin, Clock, AlertCircle } from 'lucide-react';
@@ -112,26 +114,14 @@ export default function MenuPage() {
       
       <main className="w-full">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-background" />
-          </div>
-
-          <div className="relative z-10 max-w-[120rem] mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl font-bold text-foreground mb-6">
-                Thirsty?
-              </h1>
-              <p className="font-paragraph text-lg sm:text-xl text-foreground/70 max-w-3xl">
-                Explore our carefully curated selection of cocktails, beers, and spirits. From craft creations to classic favorites, there's something for every taste.
-              </p>
-            </motion.div>
-          </div>
-        </section>
+        <PageHero
+          image={HERO_IMAGES.interior}
+          imageAlt="The bar at One Fourteen on Whiskey Row in downtown Louisville"
+          eyebrow="The Pour"
+          title="Thirsty?"
+          subtitle="Bourbon-forward cocktails, cold cans, and late-night shots. Craft creations and classic favorites — something for every taste."
+          objectPosition="center 50%"
+        />
 
         {/* SEO Intro Text */}
         <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 bg-background border-b border-neon-red-orange/10">

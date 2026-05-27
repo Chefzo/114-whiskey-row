@@ -4,6 +4,8 @@ import { Calendar, Clock, ExternalLink } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PageHero from '@/components/PageHero';
+import { HERO_IMAGES } from '@/lib/images';
 import { BaseCrudService } from '@/integrations';
 import { Events } from '@/entities';
 
@@ -78,26 +80,14 @@ export default function EventsPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-24 md:pt-32 pb-16 px-4 sm:px-6 md:px-16 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-background" />
-        </div>
-
-        <div className="relative z-10 max-w-[120rem] mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 sm:mb-8">
-              Events at One Fourteen | Louisville Nightlife
-            </h1>
-            <p className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground/70 max-w-3xl leading-relaxed">
-              Weekly DJs, game days, and live entertainment at One Fourteen Bar on Whiskey Row.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        image={HERO_IMAGES.crowd}
+        imageAlt="DJ night crowd at One Fourteen Bar on Whiskey Row in Louisville"
+        eyebrow="What's On"
+        title="Events"
+        subtitle="Weekly DJs, game days, and Industry Night at One Fourteen on Whiskey Row."
+        objectPosition="center 40%"
+      />
 
       {/* SEO Intro Paragraph */}
       <section className="px-4 sm:px-6 md:px-16 py-8 sm:py-12 md:py-16 bg-background border-b border-neon-red-orange/10">

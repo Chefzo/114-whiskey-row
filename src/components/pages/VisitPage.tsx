@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { MapPin, Clock, Navigation, Zap, Users, Lightbulb } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PageHero from '@/components/PageHero';
+import { HERO_IMAGES } from '@/lib/images';
 import { Button } from '@/components/ui/button';
 
 // Helper function to determine open/closed status
@@ -85,23 +87,14 @@ export default function VisitPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-background" />
-        </div>
-
-        <div className="relative z-10 max-w-[120rem] mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl font-bold text-foreground mb-6">
-              Visit One Fourteen on <span className="text-neon-red-orange">Whiskey Row</span>
-            </h1>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        image={HERO_IMAGES.crowd}
+        imageAlt="One Fourteen bar at 114 W Main Street on Whiskey Row in downtown Louisville"
+        eyebrow="Find Us"
+        title={<>Visit One Fourteen on <span className="text-neon-red-orange">Whiskey Row</span></>}
+        subtitle="114 W Main Street, across from the KFC Yum Center. Open Tue–Sun, 4pm–2am."
+        objectPosition="center 40%"
+      />
 
       {/* SEO Paragraph */}
       <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 bg-background border-b border-neon-red-orange/10">
