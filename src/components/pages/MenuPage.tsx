@@ -109,7 +109,6 @@ export default function MenuPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
       <main className="w-full">
         {/* Hero Section */}
         <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -220,7 +219,7 @@ export default function MenuPage() {
 
                   {section.layout === 'cms-cocktails' ? (
                     /* Cocktails — CMS-driven photo grid, one card per drink */
-                    <motion.div
+                    (<motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: '-100px' }}
@@ -287,10 +286,10 @@ export default function MenuPage() {
                           </div>
                         </motion.article>
                       ))}
-                    </motion.div>
+                    </motion.div>)
                   ) : (
                     /* Menu Image with Hover Effect (BEER / HAPPY HOUR / SHOTS) */
-                    <motion.div
+                    (<motion.div
                       initial={{ opacity: 0, scale: 0.95 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true, margin: '-100px' }}
@@ -304,16 +303,11 @@ export default function MenuPage() {
                             transition={{ duration: 0.3 }}
                             className="origin-center"
                           >
-                            <Image
-                              src={section.image}
-                              alt={section.alt}
-                              width={800}
-                              className="w-full h-auto"
-                            />
+
                           </motion.div>
                         </div>
                       </div>
-                    </motion.div>
+                    </motion.div>)
                   )}
 
                   {/* Divider */}
@@ -381,7 +375,6 @@ export default function MenuPage() {
           </div>
         </section>
       </main>
-
       <Footer />
     </div>
   );
