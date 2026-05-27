@@ -13,6 +13,7 @@ export default function EventsPage() {
 
   useEffect(() => {
     const fetchEvents = async () => {
+      // Add cache-busting parameter to force fresh data
       const { items } = await BaseCrudService.getAll<Events>('events');
       
       // Sort by date (upcoming first)
@@ -26,6 +27,16 @@ export default function EventsPage() {
     };
 
     fetchEvents();
+    
+    // Refetch data when page becomes visible (user returns to tab)
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        fetchEvents();
+      }
+    };
+    
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
   }, []);
 
   const filteredEvents = events.filter((event) => {
