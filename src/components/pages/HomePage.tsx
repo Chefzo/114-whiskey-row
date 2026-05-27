@@ -28,12 +28,12 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black">
       <Header />
       
       {/* Hero Section - Optimized for mobile performance */}
       <section className="relative w-full min-h-screen md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 md:pt-16" aria-label="Hero section">
-        <div className="absolute inset-0 bg-background z-0" />
+        <div className="absolute inset-0 bg-black z-0" />
         
         <div className="relative z-10 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16 py-12 sm:py-16 md:py-20">
           {/* Hero headline renders immediately without animation on mobile */}
@@ -53,7 +53,7 @@ export default function HomePage() {
             >
               <Button 
                 size="lg"
-                className="bg-vintage-rust hover:bg-vintage-rust/90 text-vintage-cream font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto"
+                className="bg-neon-red-orange hover:bg-neon-red-orange/90 text-black font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto"
                 onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
               >
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
@@ -65,7 +65,7 @@ export default function HomePage() {
       </section>
 
       {/* SEO Paragraph Section */}
-      <section className="w-full py-12 sm:py-16 md:py-20 bg-background border-b border-foreground/20" aria-label="About One Fourteen">
+      <section className="w-full py-12 sm:py-16 md:py-20 bg-black border-b border-foreground/10" aria-label="About One Fourteen">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -74,14 +74,14 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
           >
             <p className="font-paragraph text-base sm:text-lg text-foreground/80 max-w-3xl leading-relaxed">
-              One Fourteen is a late night bar located at 114 W Main Street on <a href="/visit" className="text-vintage-rust hover:underline">Whiskey Row</a> in downtown Louisville, KY. Steps from the Yum Center, we're open Tuesday through Sunday until 2am with DJs, game day sound on, and a steady nightlife crowd. Walk-ins only. 21+.
+              One Fourteen is a late night bar located at 114 W Main Street on <a href="/visit" className="text-neon-red-orange hover:underline">Whiskey Row</a> in downtown Louisville, KY. Steps from the Yum Center, we're open Tuesday through Sunday until 2am with DJs, game day sound on, and a steady nightlife crowd. Walk-ins only. 21+.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Tonight at One Fourteen */}
-      <section id="events-section" className="w-full py-16 sm:py-20 md:py-24 bg-background" aria-label="Tonight at One Fourteen">
+      <section id="events-section" className="w-full py-16 sm:py-20 md:py-24 bg-black" aria-label="Tonight at One Fourteen">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -154,7 +154,7 @@ export default function HomePage() {
 
             <Button 
               size="lg"
-              className="bg-vintage-rust hover:bg-vintage-rust/90 text-vintage-cream font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto w-full sm:w-auto"
+              className="bg-neon-red-orange hover:bg-neon-red-orange/90 text-black font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto w-full sm:w-auto"
               onClick={() => window.location.href = '/events'}
             >
               VIEW EVENTS
@@ -165,7 +165,7 @@ export default function HomePage() {
       </section>
 
       {/* Gallery Preview - Inside One Fourteen */}
-      <section className="w-full py-16 sm:py-20 md:py-24 bg-vintage-brown" aria-label="Inside One Fourteen">
+      <section className="w-full py-16 sm:py-20 md:py-24 bg-[#1a1a1a]" aria-label="Inside One Fourteen">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -232,7 +232,7 @@ export default function HomePage() {
       </section>
 
       {/* Location & Hours */}
-      <section className="w-full py-16 sm:py-20 md:py-24 bg-background border-t border-foreground/20" aria-label="Location and hours">
+      <section className="w-full py-16 sm:py-20 md:py-24 bg-black border-t border-foreground/10" aria-label="Location and hours">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -242,7 +242,12 @@ export default function HomePage() {
           >
             <div className="space-y-4">
               <p className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground tracking-wide">
-                114 W Main St, Whiskey Row, Louisville, KY<br />
+                114 W Main St
+              </p>
+              <p className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground tracking-wide">
+                Whiskey Row, Louisville, KY
+              </p>
+              <p className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground tracking-wide">
                 Open Tue–Sun · 4pm–2am
               </p>
               <Button 

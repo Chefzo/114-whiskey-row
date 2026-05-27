@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider, Navigate, Outlet } from 'react-rou
 import { ScrollToTop } from '@/lib/scroll-to-top';
 import ErrorPage from '@/integrations/errorHandlers/ErrorPage';
 import HomePage from '@/components/pages/HomePage';
+import AboutPage from '@/components/pages/AboutPage';
 import EventsPage from '@/components/pages/EventsPage';
 import GalleryPage from '@/components/pages/GalleryPage';
 import VisitPage from '@/components/pages/VisitPage';
@@ -33,11 +34,8 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        // Merged into /story — keep this route as a client-side redirect
-        // for old bookmarks and anchor links. Server-side 301 is also
-        // configured in astro.config.mjs so most traffic never hits here.
         path: "about",
-        element: <Navigate to="/story" replace />,
+        element: <AboutPage />,
       },
       {
         path: "events",

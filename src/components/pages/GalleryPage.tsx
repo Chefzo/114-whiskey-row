@@ -150,7 +150,7 @@ export default function GalleryPage() {
             transition={{ duration: 0.6 }}
           >
             <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 max-w-3xl leading-relaxed">
-              Photos from One Fourteen, a <a href="/" className="text-neon-red-orange hover:underline">late night bar on Whiskey Row</a> in downtown Louisville.
+              Photos from One Fourteen, a <a href="/" className="text-neon-red-orange hover:underline">late night bar on Whiskey Row</a> in downtown Louisville. Inside the crowd, neon lighting, bartenders at work, and the after-dark energy that defines Louisville nightlife.
             </p>
           </motion.div>
         </div>
@@ -179,7 +179,10 @@ export default function GalleryPage() {
             </div>
           ) : displayedPhotos.length > 0 ? (
             <>
-              <div
+              <p className="font-paragraph text-sm text-foreground/60 mb-8">
+                Backyard
+              </p>
+              <div 
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
                 ref={gridRef}
               >

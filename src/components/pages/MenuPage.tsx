@@ -5,76 +5,39 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { MapPin, Clock, AlertCircle } from 'lucide-react';
 import { useState, useCallback, useEffect } from 'react';
-import { BaseCrudService } from '@/integrations';
-import { Cocktails } from '@/entities';
-
-type MenuSection =
-  | {
-      id: string;
-      title: string;
-      description: string;
-      alt: string;
-      image: string;
-      layout?: 'image';
-    }
-  | {
-      id: string;
-      title: string;
-      description: string;
-      layout: 'cms-cocktails';
-    };
 
 export default function MenuPage() {
   const [activeSection, setActiveSection] = useState(0);
   const [error, setError] = useState<string | null>(null);
-  const [cocktails, setCocktails] = useState<Cocktails[]>([]);
 
-  // Fetch cocktails from the CMS so the COCKTAILS section renders as a
-  // grid of photo cards (one per drink) instead of a single static image.
-  useEffect(() => {
-    const fetchCocktails = async () => {
-      try {
-        const { items } = await BaseCrudService.getAll<Cocktails>('cocktails');
-        const sorted = items.sort(
-          (a, b) => (a.displayOrder ?? 999) - (b.displayOrder ?? 999),
-        );
-        setCocktails(sorted);
-      } catch (e) {
-        setError(
-          e instanceof Error ? e.message : 'Could not load the cocktail menu.',
-        );
-      }
-    };
-    fetchCocktails();
-  }, []);
-
-  const menuSections: MenuSection[] = [
+  const menuSections = [
     {
       id: 'cocktails',
       title: 'COCKTAILS',
-      description: 'Bourbon-forward with a few left turns. Old-fashioneds built on Old Forester, espresso pours, and house riffs made for late nights on Whiskey Row.',
-      layout: 'cms-cocktails',
+      description: 'Craft cocktails made with premium spirits and fresh ingredients. Our signature drinks showcase the best of what Whiskey Row has to offer.',
+      alt: 'One Fourteen cocktail menu – modern dive bar on Whiskey Row in Louisville, KY',
+      image: 'https://static.wixstatic.com/media/528274_640990ba91134702b82fec2797323e66~mv2.png',
     },
     {
       id: 'beer',
       title: 'BEER & CANS',
       description: 'A rotating selection of local and craft beers, plus classic canned favorites. Always cold, always fresh.',
       alt: 'One Fourteen beer and cans menu – modern dive bar on Whiskey Row in Louisville, KY',
-      image: 'https://static.wixstatic.com/media/528274_4436bb1e92cc442cb585b1d70b3fc1c4~mv2.png',
+      image: 'https://static.wixstatic.com/media/528274_0d9e6a4253104d8fa5c724b23eabc95d~mv2.png',
     },
     {
       id: 'happy-hour',
       title: 'HAPPY HOUR',
-      description: 'Drink specials before the crowd hits. Check the board on the wall for tonight\'s pricing.',
-      alt: 'One Fourteen happy hour menu – drink specials at the bar on Whiskey Row in Louisville, KY',
-      image: 'https://static.wixstatic.com/media/528274_3230c9da8c484a2180f35dd85db6e599~mv2.png',
+      description: 'Weekdays 4–7 PM. Specials on select cocktails and beers. The perfect way to start your evening.',
+      alt: 'One Fourteen happy hour menu – weekdays 4-7 PM',
+      image: 'https://static.wixstatic.com/media/528274_37c545ac599e4795b4cc69c70b810a3b~mv2.png',
     },
     {
       id: 'shots',
       title: 'SHOTS & BOILERMAKERS',
       description: 'Quick hits and classic combinations. Perfect for groups or when you want to keep the night moving.',
       alt: 'One Fourteen shots and boilermakers menu – modern dive bar on Whiskey Row in Louisville, KY',
-      image: 'https://static.wixstatic.com/media/528274_413deccf778f49e190fe61166c47d62e~mv2.png',
+      image: 'https://static.wixstatic.com/media/528274_6218139bf6e2426588a1aba9e9b9b049~mv2.png',
     },
   ];
 
@@ -124,7 +87,7 @@ export default function MenuPage() {
               transition={{ duration: 0.6 }}
             >
               <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl font-bold text-foreground mb-6">
-                Thirsty?
+                Menu | One Fourteen Bar on Whiskey Row
               </h1>
               <p className="font-paragraph text-lg sm:text-xl text-foreground/70 max-w-3xl">
                 Explore our carefully curated selection of cocktails, beers, and spirits. From craft creations to classic favorites, there's something for every taste.
@@ -134,7 +97,7 @@ export default function MenuPage() {
         </section>
 
         {/* SEO Intro Text */}
-        <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 bg-background border-b border-vintage-rust/10">
+        <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 bg-background border-b border-neon-red-orange/10">
           <div className="max-w-[120rem] mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -143,7 +106,7 @@ export default function MenuPage() {
               transition={{ duration: 0.6 }}
             >
               <p className="font-paragraph text-base sm:text-lg text-foreground/80 max-w-3xl leading-relaxed">
-                The complete menu for <a href="/" className="text-vintage-rust hover:underline">One Fourteen, a late-night bar on Whiskey Row</a> in downtown Louisville, Kentucky.
+                The complete menu for <a href="/" className="text-neon-red-orange hover:underline">One Fourteen, a late-night bar on Whiskey Row</a> in downtown Louisville, Kentucky. Browse our craft cocktails, rotating beer selection, happy hour specials, and shots. Open Tuesday–Sunday, 4pm–2am. Walk-ins only. 21+.
               </p>
             </motion.div>
           </div>
@@ -157,7 +120,7 @@ export default function MenuPage() {
                 <motion.button
                   key={section.id}
                   onClick={() => scrollToSection(index)}
-                  className={`font-paragraph text-xs sm:text-xs md:text-sm uppercase tracking-widest whitespace-nowrap px-3 sm:px-4 py-2 rounded-full transition-all flex-shrink-0 ${
+                  className={`font-paragraph text-xs sm:text-xs md:text-sm uppercase tracking-widest whitespace-nowrap px-3 sm:px-4 py-2 rounded-full transition-all flex-shrink-0 ${ 
                     activeSection === index
                       ? 'bg-primary text-primary-foreground'
                       : 'bg-foreground/10 text-foreground hover:bg-foreground/20'
@@ -218,103 +181,31 @@ export default function MenuPage() {
                     </motion.div>
                   </div>
 
-                  {section.layout === 'cms-cocktails' ? (
-                    /* Cocktails — CMS-driven photo grid, one card per drink */
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: '-100px' }}
-                      transition={{ duration: 0.6, delay: 0.1 }}
-                      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10"
-                    >
-                      {cocktails.length === 0 && !error && (
-                        <div className="col-span-full text-center font-paragraph text-sm text-foreground/50 py-12">
-                          Loading the menu…
-                        </div>
-                      )}
-                      {cocktails.map((cocktail, cIndex) => (
-                        <motion.article
-                          key={cocktail._id}
-                          initial={{ opacity: 0, y: 30 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true, margin: '-50px' }}
-                          transition={{ duration: 0.5, delay: cIndex * 0.05 }}
-                          whileHover={{ y: -4 }}
-                          className="group bg-black/40 border border-neon-red-orange/20 rounded-lg overflow-hidden hover:border-neon-red-orange/50 transition-colors"
+                  {/* Menu Image with Hover Effect */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, margin: '-100px' }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                    className={`w-full ${index % 2 === 1 ? 'md:flex md:justify-end' : ''}`}
+                  >
+                    <div className="w-full md:max-w-2xl group cursor-pointer">
+                      <div className="relative overflow-hidden rounded-lg">
+                        <motion.div
+                          whileHover={{ scale: 1.02 }}
+                          transition={{ duration: 0.3 }}
+                          className="origin-center"
                         >
-                          {cocktail.photo && (
-                            <div className="aspect-square overflow-hidden bg-black/60">
-                              <motion.div
-                                whileHover={{ scale: 1.04 }}
-                                transition={{ duration: 0.4 }}
-                                className="origin-center w-full h-full"
-                              >
-                                <Image
-                                  src={cocktail.photo}
-                                  alt={`${cocktail.title} cocktail at One Fourteen Bar on Whiskey Row, Louisville KY`}
-                                  width={600}
-                                  className="w-full h-full object-cover"
-                                />
-                              </motion.div>
-                            </div>
-                          )}
-                          <div className="p-5 sm:p-6">
-                            <div className="flex items-baseline justify-between gap-3 mb-2">
-                              <h3 className="font-heading text-xl sm:text-2xl font-bold text-foreground leading-tight">
-                                {cocktail.title}
-                              </h3>
-                              {typeof cocktail.price === 'number' && (
-                                <div className="font-heading text-lg sm:text-xl text-neon-red-orange whitespace-nowrap">
-                                  ${cocktail.price}
-                                </div>
-                              )}
-                            </div>
-                            {cocktail.spiritBase && (
-                              <div className="font-paragraph text-[10px] sm:text-xs uppercase tracking-widest text-warm-amber mb-3">
-                                {cocktail.spiritBase}
-                              </div>
-                            )}
-                            {cocktail.ingredients && (
-                              <p className="font-paragraph text-xs sm:text-sm text-foreground/60 leading-relaxed mb-3">
-                                {cocktail.ingredients}
-                              </p>
-                            )}
-                            {cocktail.description && (
-                              <p className="font-paragraph text-sm sm:text-base text-foreground/85 leading-relaxed italic">
-                                {cocktail.description}
-                              </p>
-                            )}
-                          </div>
-                        </motion.article>
-                      ))}
-                    </motion.div>
-                  ) : (
-                    /* Menu Image with Hover Effect (BEER / HAPPY HOUR / SHOTS) */
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true, margin: '-100px' }}
-                      transition={{ duration: 0.6, delay: 0.1 }}
-                      className={`w-full ${index % 2 === 1 ? 'md:flex md:justify-end' : ''}`}
-                    >
-                      <div className="w-full md:max-w-2xl group cursor-pointer">
-                        <div className="relative overflow-hidden rounded-lg">
-                          <motion.div
-                            whileHover={{ scale: 1.02 }}
-                            transition={{ duration: 0.3 }}
-                            className="origin-center"
-                          >
-                            <Image
-                              src={section.image}
-                              alt={section.alt}
-                              width={800}
-                              className="w-full h-auto"
-                            />
-                          </motion.div>
-                        </div>
+                          <Image
+                            src={section.image}
+                            alt={section.alt}
+                            width={800}
+                            className="w-full h-auto"
+                          />
+                        </motion.div>
                       </div>
-                    </motion.div>
-                  )}
+                    </div>
+                  </motion.div>
 
                   {/* Divider */}
                   {index < menuSections.length - 1 && (

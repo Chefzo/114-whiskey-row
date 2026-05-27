@@ -97,14 +97,14 @@ export default function VisitPage() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl font-bold text-foreground mb-6">
-              Visit One Fourteen on <span className="text-vintage-rust">Whiskey Row</span>
+              Visit One Fourteen on <span className="text-neon-red-orange">Whiskey Row</span>
             </h1>
           </motion.div>
         </div>
       </section>
 
       {/* SEO Paragraph */}
-      <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 bg-background border-b border-vintage-rust/10">
+      <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 bg-background border-b border-neon-red-orange/10">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -113,7 +113,7 @@ export default function VisitPage() {
             transition={{ duration: 0.6 }}
           >
             <p className="font-paragraph text-base sm:text-lg text-foreground/80 max-w-3xl leading-relaxed">
-              Find One Fourteen at 114 W Main Street on historic Whiskey Row in downtown Louisville, KY.
+              Find One Fourteen at 114 W Main Street on historic Whiskey Row in downtown Louisville, KY. We're a late night bar near the Yum Center and just steps from other Whiskey Row nightlife. Open Tuesday through Sunday from 4pm to 2am. Walk-ins only. No reservations.
             </p>
           </motion.div>
         </div>
@@ -132,9 +132,9 @@ export default function VisitPage() {
               className="space-y-12"
             >
               {/* Address */}
-              <div className="bg-black/40 border border-vintage-rust/20 rounded p-8">
+              <div className="bg-black/40 border border-neon-red-orange/20 rounded p-8">
                 <div className="flex items-start gap-4 mb-6">
-                  <MapPin className="text-vintage-rust flex-shrink-0 mt-1" size={28} />
+                  <MapPin className="text-neon-red-orange flex-shrink-0 mt-1" size={28} />
                   <div>
                     <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
                       Location
@@ -156,7 +156,7 @@ export default function VisitPage() {
                   href={googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-vintage-rust text-vintage-cream font-paragraph text-sm uppercase tracking-wider px-6 py-3 rounded transition-all hover:bg-vintage-rust/90 contrast-[1.25]"
+                  className="inline-flex items-center gap-2 bg-neon-red-orange text-black font-paragraph text-sm uppercase tracking-wider px-6 py-3 rounded transition-all hover:bg-neon-red-orange/90 contrast-[1.25]"
                 >
                   <Navigation size={18} />
                   Get Directions
@@ -164,16 +164,16 @@ export default function VisitPage() {
               </div>
 
               {/* Hours */}
-              <div className="bg-black/40 border border-vintage-rust/20 rounded p-8">
+              <div className="bg-black/40 border border-neon-red-orange/20 rounded p-8">
                 <div className="flex items-start gap-4 mb-6">
-                  <Clock className="text-vintage-rust flex-shrink-0 mt-1" size={28} />
+                  <Clock className="text-neon-red-orange flex-shrink-0 mt-1" size={28} />
                   <div className="flex-1">
                     <h2 className="font-heading text-3xl font-bold text-foreground mb-6">
                       Location & Hours
                     </h2>
 
                     {/* Open/Closed Status Indicator */}
-                    <div className="mb-6 pb-6 border-b border-vintage-rust/10">
+                    <div className="mb-6 pb-6 border-b border-neon-red-orange/10">
                       <div className="flex items-center gap-3">
                         <div className={`w-3 h-3 rounded-full flex-shrink-0 ${status.isOpen ? 'bg-green-500 shadow-lg shadow-green-500/50' : 'bg-red-500 shadow-lg shadow-red-500/50'}`} />
                         <p className={`font-paragraph text-base font-medium ${status.isOpen ? 'text-green-400' : 'text-red-400'}`}>
@@ -183,17 +183,17 @@ export default function VisitPage() {
                     </div>
                     
                     <div className="space-y-4">
-                      <div className="flex justify-between items-center pb-3 border-b border-vintage-rust/10">
+                      <div className="flex justify-between items-center pb-3 border-b border-neon-red-orange/10">
                         <span className="font-paragraph text-base text-foreground/80">Monday</span>
                         <span className="font-paragraph text-base text-foreground/60 font-medium">Closed</span>
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="font-paragraph text-base text-foreground/80">Tuesday - Sunday</span>
-                        <span className="font-paragraph text-base text-vintage-rust font-medium">4:00 PM - 2:00 AM</span>
+                        <span className="font-paragraph text-base text-neon-red-orange font-medium">4:00 PM - 2:00 AM</span>
                       </div>
                     </div>
 
-                    <p className="font-paragraph text-sm text-foreground/70 mt-6 pt-4 border-t border-vintage-rust/10">
+                    <p className="font-paragraph text-sm text-foreground/70 mt-6 pt-4 border-t border-neon-red-orange/10">
                       Indoor bar with a backyard out back.
                     </p>
                   </div>
@@ -225,14 +225,14 @@ export default function VisitPage() {
               <div className="bg-black/40 border border-neon-red-orange/20 rounded overflow-hidden">
                 <div className="aspect-square lg:aspect-[4/5]">
                   <iframe
-                    src="https://maps.google.com/maps?q=114%20W%20Main%20St%2C%20Louisville%2C%20KY%2040202&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3133.0234567890123!2d-85.75912!3d38.25432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDE1JzE1LjYiTiA4NcKwNDUnMzIuOCJX!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="One Fourteen Bar — 114 W Main St, Louisville, KY 40202"
+                    title="114 Whiskey Row Location Map"
                   />
                 </div>
               </div>

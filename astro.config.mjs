@@ -15,11 +15,6 @@ const isBuild = process.env.NODE_ENV == "production";
 // https://astro.build/config
 export default defineConfig({
   output: "server",
-  redirects: {
-    // Merged the founder story into /story — keep /about working as a 301
-    // for old links, social shares, and bookmarks.
-    "/about": "/story",
-  },
   integrations: [
     {
       name: "framewire",
