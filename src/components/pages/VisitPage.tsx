@@ -113,7 +113,7 @@ export default function VisitPage() {
             transition={{ duration: 0.6 }}
           >
             <p className="font-paragraph text-base sm:text-lg text-foreground/80 max-w-3xl leading-relaxed">
-              Find One Fourteen at 114 W Main Street on historic Whiskey Row in downtown Louisville, KY. We're a late night bar near the Yum Center and just steps from other Whiskey Row nightlife. Open Tuesday through Sunday from 4pm to 2am. Walk-ins only. No reservations.
+              Find One Fourteen at 114 W Main Street on historic Whiskey Row in downtown Louisville, KY.
             </p>
           </motion.div>
         </div>
@@ -225,14 +225,14 @@ export default function VisitPage() {
               <div className="bg-black/40 border border-neon-red-orange/20 rounded overflow-hidden">
                 <div className="aspect-square lg:aspect-[4/5]">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3133.0234567890123!2d-85.75912!3d38.25432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDE1JzE1LjYiTiA4NcKwNDUnMzIuOCJX!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                    src="https://maps.google.com/maps?q=114%20W%20Main%20St%2C%20Louisville%2C%20KY%2040202&t=&z=16&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="114 Whiskey Row Location Map"
+                    title="One Fourteen Bar — 114 W Main St, Louisville, KY 40202"
                   />
                 </div>
               </div>

@@ -11,7 +11,8 @@ export default function Header() {
     { path: '/', label: 'HOME' },
     { path: '/events', label: 'EVENTS' },
     { path: '/gallery', label: 'GALLERY' },
-    { path: '/menu', label: 'MENU' },
+    { path: '/menu', label: 'THIRSTY?' },
+    { path: '/visit', label: 'VISIT' },
     { path: '/contact', label: 'CONTACT' },
   ];
 

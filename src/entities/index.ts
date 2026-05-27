@@ -62,6 +62,33 @@ export interface BlogPosts {
 
 
 /**
+ * Collection ID: cocktails
+ * Interface for Cocktails
+ */
+export interface Cocktails {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  title?: string;
+  /** @wixFieldType number */
+  price?: number;
+  /** @wixFieldType text */
+  spiritBase?: string;
+  /** @wixFieldType text */
+  ingredients?: string;
+  /** @wixFieldType text */
+  description?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  photo?: string;
+  /** @wixFieldType text */
+  section?: string;
+  /** @wixFieldType number */
+  displayOrder?: number;
+}
+
+
+/**
  * Collection ID: events
  * Interface for Events
  */
@@ -71,6 +98,14 @@ export interface Events {
   _updatedDate?: Date;
   /** @wixFieldType text */
   eventName?: string;
+  /** @wixFieldType text */
+  instagramHandle?: string;
+  /** @wixFieldType text */
+  featuredArtist?: string;
+  /** @wixFieldType number */
+  coverCharge?: number;
+  /** @wixFieldType text */
+  shortDescription?: string;
   /** @wixFieldType text */
   location?: string;
   /** @wixFieldType text */
@@ -110,4 +145,27 @@ export interface GalleryPhotos {
   photographerCredit?: string;
   /** @wixFieldType text */
   altText?: string;
+}
+
+
+/**
+ * Collection ID: ThirstyCocktails
+ * Interface for Thirsty
+ */
+export interface Thirsty {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  cocktailName?: string;
+  /** @wixFieldType text */
+  description?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  image?: string;
+  /** @wixFieldType text */
+  ingredients?: string;
+  /** @wixFieldType boolean */
+  isAlcoholic?: boolean;
+  /** @wixFieldType time */
+  preparationTime?: any;
 }
