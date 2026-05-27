@@ -1,5 +1,5 @@
 import { Image } from '@/components/ui/image';
-import Header from '@/components/Header'
+import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
