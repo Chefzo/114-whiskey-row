@@ -131,7 +131,7 @@ export default function ContactPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-24 sm:pt-20 md:pt-28 pb-8 sm:pb-12 md:pb-16 px-3 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-background" />
         </div>
@@ -142,10 +142,10 @@ export default function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl font-bold text-foreground mb-6">
+            <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-3 sm:mb-4">
               Contact One Fourteen | Louisville Bar
             </h1>
-            <p className="font-paragraph text-lg sm:text-xl text-foreground/70 max-w-3xl">
+            <p className="font-paragraph text-xs sm:text-sm md:text-lg text-foreground/70 max-w-3xl">
               Questions about events, reservations, or just want to say what's up? Reach out to One Fourteen on Whiskey Row.
             </p>
           </motion.div>

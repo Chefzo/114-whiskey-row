@@ -32,7 +32,7 @@ export default function HomePage() {
       <Header />
       
       {/* Hero Section - Optimized for mobile performance */}
-      <section className="relative w-full min-h-screen md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 md:pt-16" aria-label="Hero section">
+      <section className="relative w-full min-h-screen sm:min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 sm:pt-20 md:pt-16" aria-label="Hero section">
         <div className="absolute inset-0 bg-black z-0" />
         <div className="absolute inset-0 z-5 opacity-20">
           <Image
@@ -43,14 +43,14 @@ export default function HomePage() {
           />
         </div>
         
-        <div className="relative z-10 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16 py-12 sm:py-16 md:py-20">
+        <div className="relative z-10 w-full max-w-[120rem] mx-auto px-3 sm:px-6 md:px-16 py-8 sm:py-12 md:py-20">
           {/* Hero headline renders immediately without animation on mobile */}
           <div className="max-w-5xl">
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground mb-4 sm:mb-6 leading-[1.1] tracking-tight">
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-foreground mb-3 sm:mb-4 md:mb-6 leading-[1.1] tracking-tight">
               A LATE ROOM ON WHISKEY ROW.
             </h1>
             
-            <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/70 mb-8 sm:mb-10 md:mb-12 tracking-wide leading-relaxed">
+            <p className="font-paragraph text-sm sm:text-base md:text-lg text-foreground/70 mb-6 sm:mb-8 md:mb-10 tracking-wide leading-relaxed">
               Walk-ins only. 21+.
             </p>
 
@@ -61,10 +61,10 @@ export default function HomePage() {
             >
               <Button 
                 size="lg"
-                className="bg-neon-red-orange hover:bg-neon-red-orange/90 text-black font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto"
+                className="bg-neon-red-orange hover:bg-neon-red-orange/90 text-black font-paragraph text-sm sm:text-base px-4 sm:px-8 py-4 sm:py-6 h-auto w-full sm:w-auto"
                 onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
               >
-                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                <MapPin className="w-4 h-4 mr-2" />
                 Get Directions
               </Button>
             </motion.div>
@@ -73,15 +73,15 @@ export default function HomePage() {
       </section>
 
       {/* SEO Paragraph Section */}
-      <section className="w-full py-12 sm:py-16 md:py-20 bg-black border-b border-foreground/10" aria-label="About One Fourteen">
-        <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
+      <section className="w-full py-8 sm:py-12 md:py-16 bg-black border-b border-foreground/10" aria-label="About One Fourteen">
+        <div className="w-full max-w-[120rem] mx-auto px-3 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="font-paragraph text-base sm:text-lg text-foreground/80 max-w-3xl leading-relaxed">
+            <p className="font-paragraph text-sm sm:text-base md:text-lg text-foreground/80 max-w-3xl leading-relaxed">
               One Fourteen is a late night bar located at 114 W Main Street on <a href="/visit" className="text-neon-red-orange hover:underline">Whiskey Row</a> in downtown Louisville, KY. Steps from the Yum Center, we're open Tuesday through Sunday until 2am with DJs, game day sound on, and a steady nightlife crowd. Walk-ins only. 21+.
             </p>
           </motion.div>

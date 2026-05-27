@@ -85,7 +85,7 @@ export default function VisitPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-24 sm:pt-20 md:pt-28 pb-8 sm:pb-12 md:pb-16 px-3 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-background" />
         </div>
@@ -96,7 +96,7 @@ export default function VisitPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl font-bold text-foreground mb-6">
+            <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-3 sm:mb-4">
               Visit One Fourteen on <span className="text-neon-red-orange">Whiskey Row</span>
             </h1>
           </motion.div>
@@ -104,7 +104,7 @@ export default function VisitPage() {
       </section>
 
       {/* SEO Paragraph */}
-      <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 bg-background border-b border-neon-red-orange/10">
+      <section className="px-3 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-12 bg-background border-b border-neon-red-orange/10">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -112,7 +112,7 @@ export default function VisitPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="font-paragraph text-base sm:text-lg text-foreground/80 max-w-3xl leading-relaxed">
+            <p className="font-paragraph text-xs sm:text-sm md:text-lg text-foreground/80 max-w-3xl leading-relaxed">
               Find One Fourteen at 114 W Main Street on historic Whiskey Row in downtown Louisville, KY.
             </p>
           </motion.div>
@@ -120,9 +120,9 @@ export default function VisitPage() {
       </section>
 
       {/* Main Content */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-24">
+      <section className="px-3 sm:px-6 lg:px-8 pb-16 sm:pb-20 md:pb-24">
         <div className="max-w-[120rem] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
             {/* Location Info */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}

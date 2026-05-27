@@ -84,9 +84,9 @@ export default function BlogPostPage() {
       <Header />
 
       {/* Hero Section with Featured Image */}
-      <article className="w-full pt-24">
+      <article className="w-full pt-16 sm:pt-20 md:pt-24">
         {post.featuredImage && (
-          <div className="relative w-full h-[60vh] min-h-[400px] max-h-[700px] overflow-hidden">
+          <div className="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] min-h-[300px] max-h-[600px] overflow-hidden">
             <Image
               src={post.featuredImage}
               alt={post.title || 'Blog post'}
@@ -98,34 +98,34 @@ export default function BlogPostPage() {
         )}
 
         {/* Article Header */}
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 -mt-32 relative z-10">
+        <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-12 -mt-20 sm:-mt-24 md:-mt-32 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-background/95 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-foreground/10"
+            className="bg-background/95 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 border border-foreground/10"
           >
             {/* Back Link */}
             <Link
               to="/blog"
-              className="inline-flex items-center gap-2 text-primary font-paragraph mb-6 hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-primary font-paragraph mb-4 sm:mb-6 hover:gap-3 transition-all text-xs sm:text-sm"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="w-3 h-3 sm:w-4 sm:h-4" />
               Back to Blog
             </Link>
 
             {/* Category Badge */}
             {post.category && (
-              <div className="mb-4">
-                <span className="inline-flex items-center gap-2 bg-primary/10 text-primary font-paragraph text-sm px-4 py-2 rounded-full">
-                  <Tag className="w-4 h-4" />
+              <div className="mb-3 sm:mb-4">
+                <span className="inline-flex items-center gap-1 sm:gap-2 bg-primary/10 text-primary font-paragraph text-xs sm:text-sm px-2 sm:px-4 py-1 sm:py-2 rounded-full">
+                  <Tag className="w-3 h-3 sm:w-4 sm:h-4" />
                   {post.category}
                 </span>
               </div>
             )}
 
             {/* Title */}
-            <h1 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            <h1 className="font-heading text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4 md:mb-6">
               {post.title}
             </h1>
 

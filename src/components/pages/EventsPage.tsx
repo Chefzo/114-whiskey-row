@@ -89,11 +89,11 @@ export default function EventsPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-16 md:pt-24 pb-8 md:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-24 sm:pt-20 md:pt-28 pb-6 sm:pb-8 md:pb-12 px-3 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-black/40" />
-          <div className="absolute top-0 right-0 w-40 sm:w-72 h-40 sm:h-72 bg-neon-red-orange/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-1/4 w-32 sm:w-64 h-32 sm:h-64 bg-warm-amber/5 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-32 sm:w-56 h-32 sm:h-56 bg-neon-red-orange/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-1/4 w-24 sm:w-48 h-24 sm:h-48 bg-warm-amber/5 rounded-full blur-3xl" />
         </div>
 
         <div className="relative z-10 max-w-[120rem] mx-auto">
@@ -114,7 +114,7 @@ export default function EventsPage() {
               </motion.span>
             </div>
             
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold text-foreground leading-tight">
+            <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -137,7 +137,7 @@ export default function EventsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="font-paragraph text-sm sm:text-base md:text-xl text-foreground/75 max-w-2xl leading-relaxed"
+              className="font-paragraph text-xs sm:text-sm md:text-lg text-foreground/75 max-w-2xl leading-relaxed"
             >
               Weekly DJs, game days, and live entertainment at One Fourteen Bar on Whiskey Row.
             </motion.p>
