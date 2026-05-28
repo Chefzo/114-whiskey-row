@@ -10,6 +10,7 @@ import BlogPage from '@/components/pages/BlogPage';
 import BlogPostPage from '@/components/pages/BlogPostPage';
 import StoryPage from '@/components/pages/StoryPage';
 import MenuPage from '@/components/pages/MenuPage';
+import AboutPage from '@/components/pages/AboutPage';
 
 // Layout component that includes ScrollToTop
 function Layout() {
@@ -31,11 +32,8 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        // Merged into /story — keep this route as a client-side redirect
-        // for old bookmarks and anchor links. Server-side 301 is also
-        // configured in astro.config.mjs so most traffic never hits here.
         path: "about",
-        element: <Navigate to="/story" replace />,
+        element: <AboutPage />,
       },
       {
         path: "events",
