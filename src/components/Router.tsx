@@ -1,16 +1,29 @@
 import { MemberProvider } from '@/integrations';
 import { createBrowserRouter, RouterProvider, Navigate, Outlet } from 'react-router-dom';
 import { ScrollToTop } from '@/lib/scroll-to-top';
-import HomePage from '@/components/pages/HomePage';
-import EventsPage from '@/components/pages/EventsPage';
-import GalleryPage from '@/components/pages/GalleryPage';
-import VisitPage from '@/components/pages/VisitPage';
-import ContactPage from '@/components/pages/ContactPage';
-import BlogPage from '@/components/pages/BlogPage';
-import BlogPostPage from '@/components/pages/BlogPostPage';
-import StoryPage from '@/components/pages/StoryPage';
-import MenuPage from '@/components/pages/MenuPage';
-import AboutPage from '@/components/pages/AboutPage';
+import { lazy, Suspense } from 'react';
+import { LoadingSpinner } from '@/components/ui/loading-spinner';
+
+// Lazy load all page components to prevent circular dependencies
+const HomePage = lazy(() => import('@/components/pages/HomePage'));
+const EventsPage = lazy(() => import('@/components/pages/EventsPage'));
+const GalleryPage = lazy(() => import('@/components/pages/GalleryPage'));
+const VisitPage = lazy(() => import('@/components/pages/VisitPage'));
+const ContactPage = lazy(() => import('@/components/pages/ContactPage'));
+const BlogPage = lazy(() => import('@/components/pages/BlogPage'));
+const BlogPostPage = lazy(() => import('@/components/pages/BlogPostPage'));
+const StoryPage = lazy(() => import('@/components/pages/StoryPage'));
+const MenuPage = lazy(() => import('@/components/pages/MenuPage'));
+const AboutPage = lazy(() => import('@/components/pages/AboutPage'));
+
+// Fallback component for lazy loading
+function PageLoader() {
+  return (
+    <div className="min-h-screen bg-background flex items-center justify-center">
+      <LoadingSpinner />
+    </div>
+  );
+}
 
 // Layout component that includes ScrollToTop
 function Layout() {
@@ -29,43 +42,43 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <HomePage />,
+        element: <Suspense fallback={<PageLoader />}><HomePage /></Suspense>,
       },
       {
         path: "about",
-        element: <AboutPage />,
+        element: <Suspense fallback={<PageLoader />}><AboutPage /></Suspense>,
       },
       {
         path: "events",
-        element: <EventsPage />,
+        element: <Suspense fallback={<PageLoader />}><EventsPage /></Suspense>,
       },
       {
         path: "gallery",
-        element: <GalleryPage />,
+        element: <Suspense fallback={<PageLoader />}><GalleryPage /></Suspense>,
       },
       {
         path: "visit",
-        element: <VisitPage />,
+        element: <Suspense fallback={<PageLoader />}><VisitPage /></Suspense>,
       },
       {
         path: "menu",
-        element: <MenuPage />,
+        element: <Suspense fallback={<PageLoader />}><MenuPage /></Suspense>,
       },
       {
         path: "contact",
-        element: <ContactPage />,
+        element: <Suspense fallback={<PageLoader />}><ContactPage /></Suspense>,
       },
       {
         path: "blog",
-        element: <BlogPage />,
+        element: <Suspense fallback={<PageLoader />}><BlogPage /></Suspense>,
       },
       {
         path: "blog/:slug",
-        element: <BlogPostPage />,
+        element: <Suspense fallback={<PageLoader />}><BlogPostPage /></Suspense>,
       },
       {
         path: "story",
-        element: <StoryPage />,
+        element: <Suspense fallback={<PageLoader />}><StoryPage /></Suspense>,
       },
       {
         path: "*",
