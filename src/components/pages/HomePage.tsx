@@ -88,8 +88,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Tonight at One Fourteen */}
-      <section id="events-section" className="w-full py-16 sm:py-20 md:py-24 bg-black border-t border-foreground/10" aria-label="Tonight at One Fourteen">
+      {/* The Events Carousel */}
+      <section id="events-section" className="w-full py-16 sm:py-20 md:py-24 bg-black border-t border-foreground/10" aria-label="The Events Carousel">
         <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -99,7 +99,7 @@ export default function HomePage() {
           >
             <div className="mb-12 sm:mb-14 md:mb-16">
               <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground mb-3 sm:mb-4">
-                Tonight at One Fourteen
+                The Events Carousel
               </h2>
               <p className="font-paragraph text-base sm:text-lg text-foreground/60 max-w-2xl">
                 Experience our nightly lineup of DJs, live entertainment, and special events.
