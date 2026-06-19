@@ -5,6 +5,7 @@ import "@wix/wix-vibe-plugins/plugins-vars.css";
 import "@wix/wix-vibe-plugins/plugins-theme.css";
 import "@/styles/critical.css";
 import "@/styles/global.css";
+const pathname = Astro.url.pathname;
 ---
 
 <html lang="en" class="w-full h-full">
@@ -14,7 +15,7 @@ import "@/styles/global.css";
     <link rel="preconnect" href="https://edge.wixapis.com" />
     <link rel="preconnect" href="https://static.parastorage.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    
+
     <!-- Defer Google Analytics - Load after first paint -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMM17LNJXM"></script>
     <script defer>
@@ -23,7 +24,7 @@ import "@/styles/global.css";
       gtag('js', new Date());
       gtag('config', 'G-JMM17LNJXM');
     </script>
-    
+
     <!-- Defer Google Tag Manager - Load after first paint -->
     <script defer>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -32,7 +33,7 @@ import "@/styles/global.css";
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-WMRZT82N');
     </script>
-    
+
     <Head />
   </head>
   <body class="w-full h-full">
