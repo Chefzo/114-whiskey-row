@@ -21,7 +21,7 @@ export default function HomePage() {
 
   const loadGallery = async () => {
     try {
-      const result = await BaseCrudService.getAll<GalleryPhotos>('galleryphotos', [], { limit: 4 });
+      const result = await BaseCrudService.getAll<GalleryPhotos>('galleryphotos', {}, { limit: 4 });
       setGalleryPhotos(result.items.slice(0, 4));
     } catch (error) {
       console.error('Error loading gallery:', error);
