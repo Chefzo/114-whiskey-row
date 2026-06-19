@@ -1,127 +1,131 @@
-export const Head = () => {
-  const siteUrl = 'https://www.114barwhiskeyrow.com/';
-  const businessName = 'One Fourteen';
-  const businessDescription = 'One Fourteen is a late night bar on Whiskey Row in downtown Louisville. Open Tue–Sun until 2am. Walk-ins only. DJs and game day sound on.';
-  const address = '114 W Main St, Louisville, KY 40202';
-  const phone = '+1-502-907-1400';
-
-  const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BarOrPub',
-    'name': businessName,
-    'description': businessDescription,
-    'url': siteUrl,
-    'telephone': phone,
-    'servesCuisine': 'Bar',
-    'image': 'https://static.wixstatic.com/media/528274_112a88f0f95c4632b6449db5f7575a0b~mv2.png',
-    'address': {
-      '@type': 'PostalAddress',
-      'streetAddress': '114 W Main St',
-      'addressLocality': 'Louisville',
-      'addressRegion': 'KY',
-      'postalCode': '40202',
-      'addressCountry': 'US'
-    },
-    'geo': {
-      '@type': 'GeoCoordinates',
-      'latitude': '38.2526',
-      'longitude': '-85.7585'
-    },
-    'openingHoursSpecification': [
-      {
-        '@type': 'OpeningHoursSpecification',
-        'dayOfWeek': ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        'opens': '16:00',
-        'closes': '02:00'
-      }
-    ],
-    'priceRange': '$$'
-  };
-
-  const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    'name': businessName,
-    'url': siteUrl,
-    'logo': 'https://static.wixstatic.com/media/528274_112a88f0f95c4632b6449db5f7575a0b~mv2.png',
-    'sameAs': [
-      'https://www.instagram.com/onefourteenwhiskeyrow/'
-    ],
-    'contactPoint': {
-      '@type': 'ContactPoint',
-      'contactType': 'Customer Service',
-      'telephone': phone
+interface HeadProps {
+    pathname?: string;
     }
-  };
 
-  return (
-    <>
-      {/* Early Connection Hints for Wix Services - Performance Optimization */}
-      <link rel="preconnect" href="https://wixapis.com" />
-      <link rel="preconnect" href="https://edge.wixapis.com" />
-      <link rel="preconnect" href="https://static.parastorage.com" />
-      <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    export const Head = ({ pathname = '/' }: HeadProps) => {
+      const siteUrl = 'https://www.114barwhiskeyrow.com/';
+        const businessName = 'One Fourteen';
+          const businessDescription = 'One Fourteen is a late night bar on Whiskey Row in downtown Louisville. Open Tue–Sun until 2am. Walk-ins only. DJs and game day sound on.';
+            const phone = '+1-502-907-1400';
 
-      {/* Defer Google Analytics - Load after first paint */}
-      <script defer src="https://www.googletagmanager.com/gtag/js?id=G-JMM17LNJXM"></script>
-      <script defer dangerouslySetInnerHTML={{
-        __html: `window.dataLayer = window.dataLayer || [];\
-function gtag(){dataLayer.push(arguments);}\
-gtag('js', new Date());\
-gtag('config', 'G-JMM17LNJXM');`
-      }} />
-      {/* End Google Analytics */}
+              const pageSEO: Record<string, { title: string; description: string; canonical: string }> = {
+                  '/': {
+                        title: 'One Fourteen | Late-Night Bar on Whiskey Row, Louisville KY',
+                              description: 'Late-night bar on Whiskey Row, steps from the KFC Yum Center. Tue–Sun, 4pm–2am. Walk-ins only. 21+. DJs, game-day sound on, Sunday industry night.',
+                                    canonical: 'https://www.114barwhiskeyrow.com/',
+                                        },
+                                            '/visit': {
+                                                  title: 'Visit One Fourteen | Hours, Parking & Directions on Whiskey Row',
+                                                        description: 'Find One Fourteen at 114 W Main St on Whiskey Row, across from the KFC Yum Center. Open Tue–Sun, 4pm–2am. Walk-ins only. Get directions, parking, what to expect.',
+                                                              canonical: 'https://www.114barwhiskeyrow.com/visit',
+                                                                  },
+                                                                      '/events': {
+                                                                            title: 'Events at One Fourteen | DJs, Industry Night & Game Days on Whiskey Row',
+                                                                                  description: 'Weekly DJs, Sunday Industry Night, and game-day sound on at One Fourteen, a late-night bar on Whiskey Row in downtown Louisville. See what is on tonight.',
+                                                                                        canonical: 'https://www.114barwhiskeyrow.com/events',
+                                                                                            },
+                                                                                                '/gallery': {
+                                                                                                      title: 'Gallery | Inside One Fourteen Bar on Whiskey Row, Louisville',
+                                                                                                            description: 'Photos from One Fourteen, the late-night room on Whiskey Row. Cocktails, the Yard, DJs, and downtown Louisville nightlife.',
+                                                                                                                  canonical: 'https://www.114barwhiskeyrow.com/gallery',
+                                                                                                                      },
+                                                                                                                          '/contact': {
+                                                                                                                                title: 'Contact One Fourteen | Whiskey Row Bar in Downtown Louisville',
+                                                                                                                                      description: 'Contact One Fourteen on Whiskey Row in downtown Louisville. (502) 907-1400, info@114whiskeyrow.com, Tue–Sun, 4pm–2am. Walk-ins only. 21+.',
+                                                                                                                                            canonical: 'https://www.114barwhiskeyrow.com/contact',
+                                                                                                                                                },
+                                                                                                                                                  };
 
-      {/* Defer Google Tag Manager - Load after first paint */}
-      <script defer dangerouslySetInnerHTML={{
-        __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.defer=true;j.src=\
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\
-})(window,document,'script','dataLayer','GTM-WMRZT82N');`
-      }} />
-      {/* End Google Tag Manager */}
+                                                                                                                                                    const normalized = pathname && pathname !== '/' ? pathname.replace(/\/$/, '') : '/';
+                                                                                                                                                      const seo = pageSEO[normalized] || pageSEO['/'];
 
-      {/* Core Meta Tags */}
-      <meta charSet="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="theme-color" content="#222222" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+                                                                                                                                                        const logoUrl = 'https://static.wixstatic.com/media/528274_112a88f0f95c4632b6449db5f7575a0b~mv2.png';
 
-      {/* SEO Meta Tags */}
-      <title>Bars in Louisville, KY | One Fourteen on Whiskey Row</title>
-      <meta name="description" content="One Fourteen is a late night bar on Whiskey Row in downtown Louisville. Open Tue–Sun until 2am. Walk-ins only. DJs and game day sound on." />
-      <meta name="keywords" content="bar, Louisville, Whiskey Row, late night bar, downtown Louisville, nightlife, walk-ins" />
-      <meta name="author" content="One Fourteen" />
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      <link rel="canonical" href={siteUrl} />
+                                                                                                                                                          const localBusinessSchema = {
+                                                                                                                                                              '@context': 'https://schema.org',
+                                                                                                                                                                  '@type': 'BarOrPub',
+                                                                                                                                                                      'name': businessName,
+                                                                                                                                                                          'description': businessDescription,
+                                                                                                                                                                              'url': seo.canonical,
+                                                                                                                                                                                  'telephone': phone,
+                                                                                                                                                                                      'servesCuisine': 'Bar',
+                                                                                                                                                                                          'image': logoUrl,
+                                                                                                                                                                                              'address': {
+                                                                                                                                                                                                    '@type': 'PostalAddress',
+                                                                                                                                                                                                          'streetAddress': '114 W Main St',
+                                                                                                                                                                                                                'addressLocality': 'Louisville',
+                                                                                                                                                                                                                      'addressRegion': 'KY',
+                                                                                                                                                                                                                            'postalCode': '40202',
+                                                                                                                                                                                                                                  'addressCountry': 'US'
+                                                                                                                                                                                                                                      },
+                                                                                                                                                                                                                                          'geo': {
+                                                                                                                                                                                                                                                '@type': 'GeoCoordinates',
+                                                                                                                                                                                                                                                      'latitude': '38.2526',
+                                                                                                                                                                                                                                                            'longitude': '-85.7585'
+                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                    'openingHoursSpecification': [
+                                                                                                                                                                                                                                                                          {
+                                                                                                                                                                                                                                                                                  '@type': 'OpeningHoursSpecification',
+                                                                                                                                                                                                                                                                                          'dayOfWeek': ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                                                                                                                                                                                                                                                                                                  'opens': '16:00',
+                                                                                                                                                                                                                                                                                                          'closes': '02:00'
+                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                    ],
+                                                                                                                                                                                                                                                                                                                        'priceRange': '$$',
+                                                                                                                                                                                                                                                                                                                            'sameAs': [
+                                                                                                                                                                                                                                                                                                                                  'https://www.instagram.com/onefourteenwhiskeyrow/'
+                                                                                                                                                                                                                                                                                                                                      ]
+                                                                                                                                                                                                                                                                                                                                        };
 
-      {/* Open Graph Tags */}
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="Bars in Louisville, KY | One Fourteen on Whiskey Row" />
-      <meta property="og:description" content={businessDescription} />
-      <meta property="og:url" content={siteUrl} />
-      <meta property="og:site_name" content={businessName} />
-      <meta property="og:image" content="https://static.wixstatic.com/media/528274_112a88f0f95c4632b6449db5f7575a0b~mv2.png" />
-      <meta property="og:image:width" content="1024" />
-      <meta property="og:image:height" content="1024" />
-      <meta property="og:locale" content="en_US" />
+                                                                                                                                                                                                                                                                                                                                          const organizationSchema = {
+                                                                                                                                                                                                                                                                                                                                              '@context': 'https://schema.org',
+                                                                                                                                                                                                                                                                                                                                                  '@type': 'Organization',
+                                                                                                                                                                                                                                                                                                                                                      'name': businessName,
+                                                                                                                                                                                                                                                                                                                                                          'url': siteUrl,
+                                                                                                                                                                                                                                                                                                                                                              'logo': logoUrl,
+                                                                                                                                                                                                                                                                                                                                                                  'sameAs': [
+                                                                                                                                                                                                                                                                                                                                                                        'https://www.instagram.com/onefourteenwhiskeyrow/'
+                                                                                                                                                                                                                                                                                                                                                                            ],
+                                                                                                                                                                                                                                                                                                                                                                                'contactPoint': {
+                                                                                                                                                                                                                                                                                                                                                                                      '@type': 'ContactPoint',
+                                                                                                                                                                                                                                                                                                                                                                                            'contactType': 'Customer Service',
+                                                                                                                                                                                                                                                                                                                                                                                                  'telephone': phone
+                                                                                                                                                                                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                                                                                                                                                                                        };
 
-      {/* Twitter Card Tags */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Bars in Louisville, KY | One Fourteen on Whiskey Row" />
-      <meta name="twitter:description" content={businessDescription} />
-      <meta name="twitter:image" content="https://static.wixstatic.com/media/528274_112a88f0f95c4632b6449db5f7575a0b~mv2.png" />
+                                                                                                                                                                                                                                                                                                                                                                                                          return (
+                                                                                                                                                                                                                                                                                                                                                                                                              <>
+                                                                                                                                                                                                                                                                                                                                                                                                                    <title>{seo.title}</title>
+                                                                                                                                                                                                                                                                                                                                                                                                                          <meta name="description" content={seo.description} />
+                                                                                                                                                                                                                                                                                                                                                                                                                                <link rel="canonical" href={seo.canonical} />
 
-      {/* Local Business Schema */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+                                                                                                                                                                                                                                                                                                                                                                                                                                      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                            <meta name="author" content={businessName} />
 
-      {/* Organization Schema */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                  <meta property="og:type" content="website" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        <meta property="og:title" content={seo.title} />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                              <meta property="og:description" content={seo.description} />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <meta property="og:url" content={seo.canonical} />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <meta property="og:site_name" content={businessName} />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <meta property="og:image" content={logoUrl} />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <meta property="og:image:width" content="1024" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <meta property="og:image:height" content="1024" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <meta property="og:locale" content="en_US" />
 
-      {/* Fonts */}
-      <link rel="preconnect" href="https://static.parastorage.com" />
-    </>
-  );
-};
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <meta name="twitter:card" content="summary_large_image" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <meta name="twitter:title" content={seo.title} />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <meta name="twitter:description" content={seo.description} />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <meta name="twitter:image" content={logoUrl} />
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <style>{`
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: 9999; }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            .skip-link:focus { position: fixed; left: 1rem; top: 1rem; width: auto; height: auto; padding: 0.75rem 1rem; background: #fff; color: #000; font-weight: 700; border: 2px solid #FF5722; text-decoration: none; }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    *:focus-visible { outline: 3px solid #FF5722 !important; outline-offset: 2px !important; }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          `}</style>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              </>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                );
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                };
+}
