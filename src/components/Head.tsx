@@ -13,6 +13,7 @@ export const Head = () => {
     'url': siteUrl,
     'telephone': phone,
     'servesCuisine': 'Bar',
+    'image': 'https://static.wixstatic.com/media/528274_112a88f0f95c4632b6449db5f7575a0b~mv2.png',
     'address': {
       '@type': 'PostalAddress',
       'streetAddress': '114 W Main St',
