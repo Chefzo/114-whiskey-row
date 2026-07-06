@@ -303,7 +303,14 @@ export default function MenuPage() {
                             transition={{ duration: 0.3 }}
                             className="origin-center"
                           >
-
+                            {section.layout !== 'cms-cocktails' && 'image' in section && section.image && (
+                              <Image
+                                src={section.image}
+                                alt={section.alt}
+                                width={800}
+                                className="w-full h-auto"
+                              />
+                            )}
                           </motion.div>
                         </div>
                       </div>
