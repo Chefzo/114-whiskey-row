@@ -7,9 +7,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { BaseCrudService } from '@/integrations';
 import { GalleryPhotos, Events } from '@/entities';
-import { formatTime } from '@/lib/time-formatter';
-import { sortEventsByDate, filterEventsByStatus, formatEventDate } from '@/lib/date-utils';
-import { handleFetchError } from '@/lib/error-handler';
 
 export default function HomePage() {
   const [galleryPhotos, setGalleryPhotos] = useState<GalleryPhotos[]>([]);
