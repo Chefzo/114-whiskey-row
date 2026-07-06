@@ -9,6 +9,7 @@ import Footer from '@/components/Footer';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { Calendar, Clock, Tag, User, ArrowLeft } from 'lucide-react';
 import { format } from 'date-fns';
+import { handleFetchError } from '@/lib/error-handler';
 
 export default function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -37,7 +38,7 @@ export default function BlogPostPage() {
         setRelatedPosts(related);
       }
     } catch (error) {
-      console.error('Error loading blog post:', error);
+      handleFetchError({ component: 'BlogPostPage', operation: 'load-blog-post' }, error);
     } finally {
       setIsLoading(false);
     }

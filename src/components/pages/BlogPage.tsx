@@ -8,6 +8,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Calendar, Clock, Tag, ArrowRight } from 'lucide-react';
 import { format } from 'date-fns';
+import { handleFetchError } from '@/lib/error-handler';
 
 export default function BlogPage() {
   const [posts, setPosts] = useState<BlogPosts[]>([]);
@@ -34,7 +35,7 @@ export default function BlogPage() {
       const uniqueCategories = Array.from(new Set(sortedPosts.map(p => p.category).filter(Boolean))) as string[];
       setCategories(uniqueCategories);
     } catch (error) {
-      console.error('Error loading blog posts:', error);
+      handleFetchError({ component: 'BlogPage', operation: 'load-blog' }, error);
     } finally {
       setIsLoading(false);
     }

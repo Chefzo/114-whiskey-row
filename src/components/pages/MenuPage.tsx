@@ -7,6 +7,7 @@ import { MapPin, Clock, AlertCircle } from 'lucide-react';
 import { useState, useCallback, useEffect } from 'react';
 import { BaseCrudService } from '@/integrations';
 import { Cocktails } from '@/entities';
+import { handleFetchError } from '@/lib/error-handler';
 
 type MenuSection =
   | {
@@ -41,7 +42,7 @@ export default function MenuPage() {
         setCocktails(sorted);
       } catch (e) {
         setError(
-          e instanceof Error ? e.message : 'Could not load the cocktail menu.',
+          handleFetchError({ component: 'MenuPage', operation: 'load-cocktails' }, e)
         );
       }
     };

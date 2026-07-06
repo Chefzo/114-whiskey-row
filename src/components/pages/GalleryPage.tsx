@@ -7,6 +7,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { BaseCrudService } from '@/integrations';
 import { GalleryPhotos } from '@/entities';
+import { handleFetchError } from '@/lib/error-handler';
 
 const PHOTOS_PER_PAGE = 12;
 
@@ -44,8 +45,9 @@ export default function GalleryPage() {
         setDisplayedPhotos(initialPhotos);
         setHasMore(sorted.length > PHOTOS_PER_PAGE);
       } catch (err) {
-        setError('Failed to load gallery photos. Please try again later.');
-        console.error('Gallery fetch error:', err);
+        setError(
+          handleFetchError({ component: 'GalleryPage', operation: 'load-gallery' }, err)
+        );
       } finally {
         setIsLoading(false);
       }
