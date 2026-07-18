@@ -353,23 +353,25 @@ export default function HomePage() {
                 ))
               ) : (
                 <>
-                  {[1, 2, 3, 4].map((i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: i * 0.08 }}
-                      className="relative aspect-square overflow-hidden bg-black/50"
-                    >
-                      <Image
-                        src="https://static.wixstatic.com/media/528274_f518207e582240d69cafec056473a326~mv2.png?originWidth=384&originHeight=384"
-                        alt="Inside One Fourteen, a downtown Louisville bar"
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                        width={400}
-                      />
-                    </motion.div>
-                  ))}
+                  {[1, 2, 3, 4].map((i) => {
+                    return (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: i * 0.08 }}
+                        className="relative aspect-square overflow-hidden bg-black/50"
+                      >
+                        <Image
+                          src="https://static.wixstatic.com/media/528274_f518207e582240d69cafec056473a326~mv2.png?originWidth=384&originHeight=384"
+                          alt="Inside One Fourteen, a downtown Louisville bar"
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                          width={400}
+                        />
+                      </motion.div>
+                    );
+                  })}
                 </>
               )}
             </div>
