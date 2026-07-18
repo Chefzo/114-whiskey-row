@@ -7,7 +7,6 @@ import Footer from '@/components/Footer';
 import { BaseCrudService } from '@/integrations';
 import { Events } from '@/entities';
 import { formatTime } from '@/lib/time-formatter';
-import { sortEventsByDate, filterEventsByStatus, formatEventDate } from '@/lib/date-utils';
 import { handleFetchError } from '@/lib/error-handler';
 
 export default function EventsPage() {
@@ -16,17 +15,20 @@ export default function EventsPage() {
 
   useEffect(() => {
     const fetchEvents = async () => {
-      // Add cache-busting parameter to force fresh data
-      const { items } = await BaseCrudService.getAll<Events>('events');
-      
-      // Sort by date (upcoming first)
-      const sorted = items.sort((a, b) => {
-        const dateA = a.eventDate ? new Date(a.eventDate + 'T00:00:00').getTime() : Infinity;
-        const dateB = b.eventDate ? new Date(b.eventDate + 'T00:00:00').getTime() : Infinity;
-        return dateA - dateB;
-      });
-      
-      setEvents(sorted);
+      try {
+        const { items } = await BaseCrudService.getAll<Events>('events');
+        
+        // Sort by date (upcoming first)
+        const sorted = items.sort((a, b) => {
+          const dateA = a.eventDate ? new Date(a.eventDate + 'T00:00:00').getTime() : Infinity;
+          const dateB = b.eventDate ? new Date(b.eventDate + 'T00:00:00').getTime() : Infinity;
+          return dateA - dateB;
+        });
+        
+        setEvents(sorted);
+      } catch (error) {
+        handleFetchError({ component: 'EventsPage', operation: 'load-events' }, error);
+      }
     };
 
     fetchEvents();
@@ -55,37 +57,6 @@ export default function EventsPage() {
     if (filter === 'past') return eventDate < now;
     return true;
   });
-
-  const formatTime = (timeValue: any) => {
-    if (!timeValue) return '';
-    
-    // Handle if it's already a formatted string
-    if (typeof timeValue === 'string') {
-      // Check if it's in military time format (HH:MM:SS.mmm or HH:MM or HHMM)
-      const militaryMatch = timeValue.match(/^(\d{1,2}):?(\d{2})(?::(\d{2}))?(?:\.(\d{3}))?$/);
-      if (militaryMatch) {
-        let hours = parseInt(militaryMatch[1], 10);
-        const minutes = militaryMatch[2];
-        
-        // Create a date object for today to format with timezone
-        const today = new Date();
-        today.setHours(hours, parseInt(minutes, 10), 0, 0);
-        
-        // Format time in ET timezone
-        const etTime = new Intl.DateTimeFormat('en-US', {
-          hour: 'numeric',
-          minute: '2-digit',
-          hour12: true,
-          timeZone: 'America/New_York'
-        }).format(today);
-        
-        return `${etTime} ET`;
-      }
-      return timeValue;
-    }
-    
-    return '';
-  };
 
   return (
     <div className="min-h-screen bg-background">
