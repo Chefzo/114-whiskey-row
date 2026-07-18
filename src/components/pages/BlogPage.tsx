@@ -74,11 +74,7 @@ export default function BlogPage() {
           <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
             <button
               onClick={() => setSelectedCategory('all')}
-              className={`font-paragraph text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full transition-all ${
-                selectedCategory === 'all'
-                  ? 'bg-primary text-primary-foreground'
-                  : 'bg-foreground/5 text-foreground hover:bg-foreground/10'
-              }`}
+              className={`font-paragraph text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full transition-all ${\n                selectedCategory === 'all'\n                  ? 'bg-primary text-primary-foreground'\n                  : 'bg-foreground/5 text-foreground hover:bg-foreground/10'\n              }`}
             >
               All Posts
             </button>
@@ -86,11 +82,7 @@ export default function BlogPage() {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`font-paragraph text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full transition-all ${
-                  selectedCategory === category
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-foreground/5 text-foreground hover:bg-foreground/10'
-                }`}
+                className={`font-paragraph text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full transition-all ${\n                  selectedCategory === category\n                    ? 'bg-primary text-primary-foreground'\n                    : 'bg-foreground/5 text-foreground hover:bg-foreground/10'\n                }`}
               >
                 {category}
               </button>
