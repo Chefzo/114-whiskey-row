@@ -132,8 +132,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SEO Paragraph Section */}
-      <section className="w-full py-8 sm:py-12 md:py-16 bg-black border-b border-foreground/10" aria-label="About One Fourteen">
+      {/* Utility Strip - Status & Facts */}
+      <section className="w-full bg-[#1D1410] border-b border-[#DCD0B8]/20 py-4 sm:py-5" aria-label="Status and facts">
+        <div className="w-full max-w-[120rem] mx-auto px-3 sm:px-6 md:px-16">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 md:gap-12">
+            <div className="flex-1">
+              <p className="font-paragraph text-xs uppercase tracking-widest text-[#DCD0B8]/60 mb-1">Late Night Status</p>
+              <p className="font-heading text-sm sm:text-base text-[#EEE5D4]">Open Tue–Sun · 4pm–2am</p>
+            </div>
+            <div className="flex-1">
+              <p className="font-paragraph text-xs uppercase tracking-widest text-[#DCD0B8]/60 mb-1">Access</p>
+              <p className="font-heading text-sm sm:text-base text-[#EEE5D4]">Whiskey Row · Walk-ins · 21+</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEO Paragraph Section - The Room */}
+      <section id="about" className="w-full py-12 sm:py-16 md:py-20 bg-black border-b border-[#DCD0B8]/10" aria-label="About One Fourteen">
         <div className="w-full max-w-[120rem] mx-auto px-3 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -141,33 +157,33 @@ export default function HomePage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
+            <div className="mb-6 sm:mb-8">
+              <p className="font-paragraph text-xs uppercase tracking-[0.15em] text-[#F1B653] mb-3">01 / THE ROOM</p>
+              <div className="w-8 h-px bg-[#F1B653]/40" />
+            </div>
             <p className="font-paragraph text-sm sm:text-base md:text-lg text-foreground/80 max-w-3xl leading-relaxed">
-              One Fourteen is a late night bar located at 114 W Main Street on <a href="/visit" className="text-neon-red-orange hover:underline">Whiskey Row</a> in downtown Louisville, KY. Steps from the Yum Center, we're open Tuesday through Sunday until 2am with DJs, game day sound on, and a steady nightlife crowd. Walk-ins only. 21+.
+              One Fourteen is a late night bar located at 114 W Main Street on <a href="/visit" className="text-[#F1B653] hover:text-[#F1B653]/80 transition-colors">Whiskey Row</a> in downtown Louisville, KY. Steps from the Yum Center, we're open Tuesday through Sunday until 2am with DJs, game day sound on, and a steady nightlife crowd. Walk-ins only. 21+.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Upcoming Events */}
-      <section id="events-section" className="w-full py-16 sm:py-20 md:py-24 bg-black border-t border-foreground/10" aria-label="Upcoming Events">
-        <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
+      {/* Upcoming Events - Tonight */}
+      <section id="events-section" className="w-full py-12 sm:py-16 md:py-20 bg-black border-t border-[#DCD0B8]/10" aria-label="Upcoming Events">
+        <div className="w-full max-w-[120rem] mx-auto px-3 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="mb-12 sm:mb-14 md:mb-16">
-              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground mb-3 sm:mb-4">
-                Upcoming Events
-              </h2>
-              <p className="font-paragraph text-base sm:text-lg text-foreground/60 max-w-2xl">
-                Experience our nightly lineup of DJs, live entertainment, and special events.
-              </p>
+            <div className="mb-10 sm:mb-12 md:mb-14">
+              <p className="font-paragraph text-xs uppercase tracking-[0.15em] text-[#F1B653] mb-3">02 / TONIGHT</p>
+              <div className="w-8 h-px bg-[#F1B653]/40" />
             </div>
 
             {isLoadingEvents ? null : events.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 sm:mb-14 md:mb-16">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-10 sm:mb-12 md:mb-14">
                 {events.map((event, index) => (
                   <motion.article
                     key={event._id}
@@ -175,7 +191,7 @@ export default function HomePage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="group relative bg-black/60 border border-neon-red-orange/30 rounded-lg overflow-hidden hover:border-neon-red-orange/80 transition-all duration-300 hover:shadow-lg hover:shadow-neon-red-orange/20 flex flex-col h-full"
+                    className="group relative bg-black border border-[#DCD0B8]/30 overflow-hidden hover:border-[#F1B653]/60 transition-all duration-300 flex flex-col h-full"
                   >
                     {/* Image Container */}
                     {event.eventImage && (
@@ -186,89 +202,70 @@ export default function HomePage() {
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           width={500}
                         />
-                        {event.eventType && (
-                          <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
-                            <span className="inline-block font-paragraph text-xs uppercase tracking-wider text-white bg-neon-red-orange px-2 sm:px-3 py-1 sm:py-1.5 rounded">
-                              {event.eventType}
-                            </span>
-                          </div>
-                        )}
                       </div>
                     )}
 
                     {/* Content Container */}
-                    <div className="flex flex-col flex-grow p-4 sm:p-6">
-                      {/* Event Type Badge */}
-                      {!event.eventImage && event.eventType && (
-                        <span className="inline-block font-paragraph text-xs uppercase tracking-wider text-white bg-neon-red-orange px-2 sm:px-3 py-1 sm:py-1.5 rounded mb-3 sm:mb-4 w-fit">
-                          {event.eventType}
-                        </span>
+                    <div className="flex flex-col flex-grow p-4 sm:p-5 md:p-6">
+                      {/* Day Label */}
+                      {event.eventDate && (
+                        <p className="font-paragraph text-xs uppercase tracking-widest text-[#DCD0B8]/60 mb-2">
+                          {new Date(event.eventDate + 'T00:00:00').toLocaleDateString('en-US', {
+                            weekday: 'short',
+                            timeZone: 'UTC'
+                          })}
+                        </p>
                       )}
 
                       {/* Event Name */}
-                      <h2 className="font-heading text-2xl sm:text-3xl font-bold text-foreground mb-2 line-clamp-3 leading-tight">
+                      <h3 className="font-heading text-lg sm:text-xl md:text-2xl font-bold text-[#EEE5D4] mb-2 line-clamp-2 leading-tight">
                         {event.eventName}
-                      </h2>
+                      </h3>
 
                       {/* Featured Artist */}
                       {event.featuredArtist && (
-                        <div className="mb-3 sm:mb-4 pb-3 sm:pb-4 border-b border-neon-red-orange/30">
-                          <p className="font-paragraph text-xs uppercase tracking-widest text-neon-red-orange/70 mb-1">
-                            Featured
-                          </p>
-                          <p className="font-heading text-lg sm:text-xl font-bold text-neon-red-orange">
-                            {event.featuredArtist}
-                          </p>
-                        </div>
+                        <p className="font-paragraph text-xs sm:text-sm text-[#F1B653] mb-3 font-semibold">
+                          {event.featuredArtist}
+                        </p>
                       )}
 
                       {/* Event Description */}
                       {event.eventDescription && (
-                        <p className="font-paragraph text-xs sm:text-sm text-foreground/75 mb-3 sm:mb-4 line-clamp-2 flex-grow leading-relaxed">
+                        <p className="font-paragraph text-xs sm:text-sm text-[#DCD0B8]/70 mb-4 line-clamp-2 flex-grow leading-relaxed">
                           {event.eventDescription}
                         </p>
                       )}
 
-                      {/* Event Details */}
-                      <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6 bg-black/30 rounded-lg p-3 sm:p-4">
-                        <div className="flex items-start justify-between gap-3 sm:gap-4">
-                          <div className="flex items-center gap-2 flex-1 min-w-0">
-                            <Calendar size={16} className="text-neon-red-orange flex-shrink-0" />
-                            <div className="min-w-0">
-                              <p className="font-paragraph text-xs text-foreground/60 uppercase tracking-wider">Date</p>
-                              <p className="font-heading text-xs sm:text-sm font-bold text-foreground truncate">
-                                {event.eventDate
-                                  ? new Date(event.eventDate + 'T00:00:00').toLocaleDateString('en-US', {
-                                      month: 'short',
-                                      day: 'numeric',
-                                      year: 'numeric',
-                                      timeZone: 'UTC'
-                                    })
-                                  : 'TBA'}
-                              </p>
-                            </div>
+                      {/* Event Details - Compact */}
+                      <div className="space-y-2 mb-4 border-t border-[#DCD0B8]/20 pt-3">
+                        <div className="flex items-center justify-between gap-2">
+                          <div className="flex items-center gap-2 flex-1">
+                            <Calendar size={14} className="text-[#F1B653] flex-shrink-0" />
+                            <p className="font-paragraph text-xs text-[#DCD0B8]/80">
+                              {event.eventDate
+                                ? new Date(event.eventDate + 'T00:00:00').toLocaleDateString('en-US', {
+                                    month: 'short',
+                                    day: 'numeric',
+                                    timeZone: 'UTC'
+                                  })
+                                : 'TBA'}
+                            </p>
                           </div>
                           {event.coverCharge && event.coverCharge > 0 && (
-                            <div className="text-right flex-shrink-0">
-                              <p className="font-paragraph text-xs text-foreground/60 uppercase tracking-wider">Cover</p>
-                              <p className="font-heading text-xs sm:text-sm font-bold text-neon-red-orange">
-                                ${event.coverCharge}
-                              </p>
-                            </div>
+                            <p className="font-heading text-xs text-[#F1B653] font-semibold">
+                              ${event.coverCharge}
+                            </p>
                           )}
                         </div>
 
                         {(event.startTime || event.endTime) && (
                           <div className="flex items-center gap-2">
-                            <Clock size={16} className="text-neon-red-orange flex-shrink-0" />
-                            <div className="min-w-0">
-                              <p className="font-paragraph text-xs text-foreground/60 uppercase tracking-wider">Time</p>
-                              <p className="font-heading text-xs sm:text-sm font-bold text-foreground truncate">
-                                {formatTime(event.startTime)}
-                                {event.startTime && event.endTime && ' - '}
-                                {formatTime(event.endTime)}
-                              </p>
-                            </div>
+                            <Clock size={14} className="text-[#F1B653] flex-shrink-0" />
+                            <p className="font-paragraph text-xs text-[#DCD0B8]/80">
+                              {formatTime(event.startTime)}
+                              {event.startTime && event.endTime && ' - '}
+                              {formatTime(event.endTime)}
+                            </p>
                           </div>
                         )}
                       </div>
@@ -279,10 +276,10 @@ export default function HomePage() {
                           href={event.callToActionUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center gap-2 w-full bg-neon-red-orange hover:bg-neon-red-orange/90 text-white font-paragraph text-xs uppercase tracking-wider px-3 sm:px-4 py-2 sm:py-3 rounded transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,69,0,0.5)] font-bold"
+                          className="inline-flex items-center justify-center gap-2 w-full bg-[#F1B653] hover:bg-[#F1B653]/90 text-[#1D1410] font-paragraph text-xs uppercase tracking-wider px-3 sm:px-4 py-2 sm:py-2.5 transition-all duration-300 font-semibold"
                         >
                           Learn More
-                          <ExternalLink size={14} />
+                          <ExternalLink size={13} />
                         </a>
                       )}
                     </div>
@@ -290,7 +287,7 @@ export default function HomePage() {
                 ))}
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 sm:mb-14 md:mb-16">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-10 sm:mb-12 md:mb-14">
                 {/* Fallback placeholder cards */}
                 {[1, 2, 3].map((i) => (
                   <motion.div
@@ -299,12 +296,11 @@ export default function HomePage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
-                    className="group relative bg-gradient-to-br from-foreground/5 to-transparent border border-foreground/10 rounded-lg p-6 sm:p-8 hover:border-primary/50 transition-all duration-300"
+                    className="group relative bg-black border border-[#DCD0B8]/20 p-5 sm:p-6 hover:border-[#F1B653]/40 transition-all duration-300"
                   >
-                    <div className="absolute top-0 left-0 w-1 h-12 bg-primary rounded-r" />
-                    <div className="font-paragraph text-sm sm:text-base text-primary uppercase tracking-widest mb-3">Event {i}</div>
-                    <div className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground mb-2">Coming Soon</div>
-                    <p className="font-paragraph text-sm sm:text-base text-foreground/60">Check back for updates</p>
+                    <div className="font-paragraph text-xs uppercase tracking-widest text-[#DCD0B8]/60 mb-3">Event {i}</div>
+                    <div className="font-heading text-lg sm:text-xl text-[#EEE5D4] mb-2">Coming Soon</div>
+                    <p className="font-paragraph text-xs sm:text-sm text-[#DCD0B8]/60">Check back for updates</p>
                   </motion.div>
                 ))}
               </div>
@@ -312,7 +308,7 @@ export default function HomePage() {
 
             <Button 
               size="lg"
-              className="bg-neon-red-orange hover:bg-neon-red-orange/90 text-black font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto w-full sm:w-auto"
+              className="bg-[#F1B653] hover:bg-[#F1B653]/90 text-[#1D1410] font-paragraph text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 h-auto w-full sm:w-auto font-semibold"
               onClick={() => window.location.href = '/events'}
             >
               VIEW ALL EVENTS
@@ -322,18 +318,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Gallery Preview - Inside One Fourteen */}
-      <section className="w-full py-16 sm:py-20 md:py-24 bg-[#1a1a1a]" aria-label="Inside One Fourteen">
-        <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
+      {/* Gallery Preview - Inside 114 */}
+      <section id="gallery" className="w-full py-12 sm:py-16 md:py-20 bg-black border-t border-[#DCD0B8]/10" aria-label="Inside One Fourteen">
+        <div className="w-full max-w-[120rem] mx-auto px-3 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground mb-8 sm:mb-10 md:mb-12">
-              Inside One Fourteen
-            </h2>
+            <div className="mb-8 sm:mb-10 md:mb-12">
+              <p className="font-paragraph text-xs uppercase tracking-[0.15em] text-[#F1B653] mb-3">03 / INSIDE 114</p>
+              <div className="w-8 h-px bg-[#F1B653]/40" />
+            </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-8 sm:mb-10 md:mb-12" style={{ minHeight: '250px' }}>
               {isLoadingGallery ? null : galleryPhotos.length > 0 ? (
@@ -344,7 +341,7 @@ export default function HomePage() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.08 }}
-                    className="relative aspect-square overflow-hidden rounded-lg"
+                    className="relative aspect-square overflow-hidden"
                   >
                     <Image
                       src={photo.photo || 'https://static.wixstatic.com/media/528274_9a5eac4526fd48bca44e841c71d9fe4f~mv2.png?originWidth=384&originHeight=384'}
@@ -363,7 +360,7 @@ export default function HomePage() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: i * 0.08 }}
-                      className="relative aspect-square overflow-hidden bg-black/50 rounded-lg"
+                      className="relative aspect-square overflow-hidden bg-black/50"
                     >
                       <Image
                         src="https://static.wixstatic.com/media/528274_f518207e582240d69cafec056473a326~mv2.png?originWidth=384&originHeight=384"
@@ -379,7 +376,7 @@ export default function HomePage() {
 
             <Button 
               size="lg"
-              className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-black font-paragraph text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 h-auto w-full sm:w-auto"
+              className="border-2 border-[#DCD0B8] text-[#DCD0B8] hover:bg-[#DCD0B8] hover:text-[#1D1410] font-paragraph text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 h-auto w-full sm:w-auto transition-all duration-300 font-semibold"
               onClick={() => window.location.href = '/gallery'}
             >
               VIEW FULL GALLERY
@@ -389,27 +386,43 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Location & Hours */}
-      <section className="w-full py-16 sm:py-20 md:py-24 bg-black border-t border-foreground/10" aria-label="Location and hours">
-        <div className="w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16">
+      {/* Location & Hours - Find Us */}
+      <section id="location" className="w-full py-12 sm:py-16 md:py-20 bg-[#EEE5D4]" aria-label="Location and hours">
+        <div className="w-full max-w-[120rem] mx-auto px-3 sm:px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="space-y-4">
-              <p className="font-paragraph text-lg sm:text-xl md:text-2xl text-foreground tracking-wide">
-                114 W Main St, Whiskey Row, Louisville, KY<br />
-                Open Tue–Sun · 4pm–2am
-              </p>
+            <div className="mb-6 sm:mb-8">
+              <p className="font-paragraph text-xs uppercase tracking-[0.15em] text-[#1D1410] mb-3">04 / FIND US</p>
+              <div className="w-8 h-px bg-[#F1B653]" />
+            </div>
+
+            <div className="space-y-6 sm:space-y-8">
+              <div>
+                <p className="font-heading text-lg sm:text-xl md:text-2xl text-[#1D1410] font-semibold mb-2">
+                  114 W Main St
+                </p>
+                <p className="font-paragraph text-sm sm:text-base text-[#1D1410]/80 mb-4">
+                  Whiskey Row, Louisville, KY 40202
+                </p>
+                <p className="font-heading text-base sm:text-lg text-[#1D1410] font-semibold mb-1">
+                  Open Tue–Sun · 4pm–2am
+                </p>
+                <p className="font-paragraph text-sm sm:text-base text-[#1D1410]/70">
+                  Walk-ins only. 21+.
+                </p>
+              </div>
+
               <Button 
-                variant="ghost"
-                className="text-foreground/60 hover:text-foreground font-paragraph text-base sm:text-lg px-0 py-2 h-auto hover:bg-transparent mt-6"
-                onClick={() => window.location.href = '/story'}
+                size="lg"
+                className="bg-[#F1B653] hover:bg-[#F1B653]/90 text-[#1D1410] font-paragraph text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 h-auto w-full sm:w-auto font-semibold"
+                onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
               >
-                our story
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+                <MapPin className="w-4 h-4 mr-2" />
+                GET DIRECTIONS
               </Button>
             </div>
           </motion.div>
