@@ -40,7 +40,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 z-0 bg-background" />
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-[120rem] mx-auto text-left flex flex-col justify-center min-h-[60vh] md:min-h-[70vh]">
+        <div className="relative z-10 w-full max-w-[120rem] mx-auto text-left flex flex-col justify-center min-h-[60vh] md:min-h-[70vh] px-4 sm:px-6 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ export default function AboutPage() {
       </section>
 
       {/* ===== STORY SECTION ===== */}
-      <section className="w-full py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-16 border-t border-neon-red-orange/20">
+      <section className="w-full py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8 border-t border-neon-red-orange/20">
         <div className="max-w-[120rem] mx-auto">
           <motion.div
             variants={containerVariants}

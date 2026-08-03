@@ -51,7 +51,7 @@ export default function BlogPage() {
       
       {/* Hero Section */}
       <section className="relative w-full bg-gradient-to-br from-background via-background to-primary/10 pt-24 sm:pt-20 md:pt-28 pb-8 sm:pb-12 md:pb-16 px-3 sm:px-6 lg:px-12">
-        <div className="max-w-[100rem] mx-auto">
+        <div className="max-w-[120rem] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ export default function BlogPage() {
 
       {/* Category Filter */}
       <section className="w-full bg-background/50 border-y border-foreground/10 py-4 sm:py-6 md:py-8 px-3 sm:px-6 lg:px-12">
-        <div className="max-w-[100rem] mx-auto">
+        <div className="max-w-[120rem] mx-auto">
           <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
             <button
               onClick={() => setSelectedCategory('all')}
@@ -101,7 +101,7 @@ export default function BlogPage() {
 
       {/* Blog Posts Grid */}
       <section className="w-full py-8 sm:py-12 md:py-16 px-3 sm:px-6 lg:px-12">
-        <div className="max-w-[100rem] mx-auto">
+        <div className="max-w-[120rem] mx-auto">
           <div className="min-h-[400px] sm:min-h-[500px]">
             {isLoading ? null : filteredPosts.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
