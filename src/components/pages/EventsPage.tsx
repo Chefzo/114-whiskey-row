@@ -18,27 +18,8 @@ export default function EventsPage() {
       try {
         const { items } = await BaseCrudService.getAll<Events>('events', {}, { limit: 50 });
         
-        // Filter for published events only
-        const publishedEvents = items.filter(event => {
-          // If publishDate exists and is in the future, don't show it yet
-          if (event.publishDate) {
-            const publishDate = new Date(event.publishDate);
-            if (publishDate > new Date()) {
-              return false;
-            }
-          }
-          // If unpublishDate exists and is in the past, don't show it
-          if (event.unpublishDate) {
-            const unpublishDate = new Date(event.unpublishDate);
-            if (unpublishDate < new Date()) {
-              return false;
-            }
-          }
-          return true;
-        });
-        
-        // Sort by date (upcoming first)
-        const sorted = publishedEvents.sort((a, b) => {
+        // Sort by date (upcoming first) - show ALL events
+        const sorted = items.sort((a, b) => {
           const dateA = a.eventDate ? new Date(a.eventDate + 'T00:00:00').getTime() : Infinity;
           const dateB = b.eventDate ? new Date(b.eventDate + 'T00:00:00').getTime() : Infinity;
           return dateA - dateB;
