@@ -16,7 +16,7 @@ export default function EventsPage() {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const { items } = await BaseCrudService.getAll<Events>('events');
+        const { items } = await BaseCrudService.getAll<Events>('events', {}, { limit: 50 });
         
         // Sort by date (upcoming first)
         const sorted = items.sort((a, b) => {

@@ -4,25 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Grain texture for black backgrounds */
+/* Grain texture for black backgrounds - optimized for performance */
 @layer base {
   body {
     @apply bg-background;
-    background-image: 
-      repeating-linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.015),
-        rgba(0, 0, 0, 0.015) 1px,
-        transparent 1px,
-        transparent 2px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.015),
-        rgba(0, 0, 0, 0.015) 1px,
-        transparent 1px,
-        transparent 2px
-      );
+    /* Grain texture disabled for better performance - can be re-enabled if needed */
   }
 
   /* Critical CSS for hero section - inline for faster rendering */
@@ -37,24 +23,10 @@
   }
 }
 
-/* Grain texture utility for black/dark backgrounds */
+/* Grain texture utility for black/dark backgrounds - optimized for performance */
 @layer components {
   .grain-texture {
-    background-image: 
-      repeating-linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.015),
-        rgba(0, 0, 0, 0.015) 1px,
-        transparent 1px,
-        transparent 2px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.015),
-        rgba(0, 0, 0, 0.015) 1px,
-        transparent 1px,
-        transparent 2px
-      );
+    /* Grain texture disabled for better performance - can be re-enabled if needed */
   }
 }
 

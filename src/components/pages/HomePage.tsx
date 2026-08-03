@@ -32,7 +32,7 @@ export default function HomePage() {
 
   const loadEvents = async () => {
     try {
-      const { items } = await BaseCrudService.getAll<Events>('events');
+      const { items } = await BaseCrudService.getAll<Events>('events', {}, { limit: 10 });
       
       // Sort by date (upcoming first)
       const sorted = items.sort((a, b) => {

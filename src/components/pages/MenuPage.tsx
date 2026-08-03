@@ -35,7 +35,7 @@ export default function MenuPage() {
   useEffect(() => {
     const fetchCocktails = async () => {
       try {
-        const { items } = await BaseCrudService.getAll<Cocktails>('cocktails');
+        const { items } = await BaseCrudService.getAll<Cocktails>('cocktails', {}, { limit: 100 });
         const sorted = items.sort(
           (a, b) => (a.displayOrder ?? 999) - (b.displayOrder ?? 999),
         );

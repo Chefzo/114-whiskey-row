@@ -26,7 +26,7 @@ export default function BlogPostPage() {
   const loadPost = async () => {
     setIsLoading(true);
     try {
-      const result = await BaseCrudService.getAll<BlogPosts>('blogposts');
+      const result = await BaseCrudService.getAll<BlogPosts>('blogposts', {}, { limit: 50 });
       const foundPost = result.items.find(p => p.slug === slug);
       setPost(foundPost || null);
 

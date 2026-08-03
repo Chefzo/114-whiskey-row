@@ -7,9 +7,7 @@
   }
 }
 
+/* Scan animation disabled for performance - can be re-enabled if needed */
 img[src*='12d367_71ebdd7141d041e4be3d91d80d4578dd'] {
-  mask-image: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 1) 50%, transparent 100%);
-  mask-size: 100% 200%;
-  mask-repeat: no-repeat;
-  animation: scanMask 2s linear infinite;
+  /* Animation disabled for better performance */
 }

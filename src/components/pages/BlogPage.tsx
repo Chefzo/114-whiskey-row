@@ -23,7 +23,7 @@ export default function BlogPage() {
   const loadPosts = async () => {
     setIsLoading(true);
     try {
-      const result = await BaseCrudService.getAll<BlogPosts>('blogposts');
+      const result = await BaseCrudService.getAll<BlogPosts>('blogposts', {}, { limit: 50 });
       const sortedPosts = result.items.sort((a, b) => {
         const dateA = a.publishDate ? new Date(a.publishDate).getTime() : 0;
         const dateB = b.publishDate ? new Date(b.publishDate).getTime() : 0;

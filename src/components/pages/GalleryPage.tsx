@@ -29,7 +29,7 @@ export default function GalleryPage() {
       try {
         setIsLoading(true);
         setError(null);
-        const { items } = await BaseCrudService.getAll<GalleryPhotos>('galleryphotos');
+        const { items } = await BaseCrudService.getAll<GalleryPhotos>('galleryphotos', {}, { limit: 100 });
         
         // Sort by date taken (most recent first)
         const sorted = items.sort((a, b) => {
