@@ -7,19 +7,62 @@
 /* Grain texture for black backgrounds - optimized for performance */
 @layer base {
   body {
-    @apply bg-background;
+    @apply bg-background font-paragraph;
     /* Grain texture disabled for better performance - can be re-enabled if needed */
   }
 
-  /* Critical CSS for hero section - inline for faster rendering */
-  h1 {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
+  /* Consistent heading styles */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
   }
 
+  h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl lg:text-3xl;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl lg:text-2xl;
+  }
+
+  h6 {
+    @apply text-base md:text-lg lg:text-xl;
+  }
+
+  /* Consistent paragraph styles */
   p {
-    font-family: 'Azeret Mono', monospace;
-    font-weight: 400;
+    @apply font-paragraph font-normal text-base leading-relaxed;
+  }
+
+  /* Consistent link styles */
+  a {
+    @apply font-paragraph;
+  }
+
+  /* Consistent button styles */
+  button {
+    @apply font-paragraph font-medium;
+  }
+
+  /* Consistent label styles */
+  label {
+    @apply font-paragraph font-medium;
+  }
+
+  /* Consistent input/textarea styles */
+  input, textarea, select {
+    @apply font-paragraph;
   }
 }
 
