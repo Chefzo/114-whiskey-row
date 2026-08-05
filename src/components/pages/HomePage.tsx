@@ -90,7 +90,6 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-black">
       <Header />
-      
       {/* Hero Section - Optimized for mobile performance */}
       <section className="relative w-full min-h-[120vh] sm:min-h-[110vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-20 md:pt-16" aria-label="Hero section">
         <div className="absolute inset-0 bg-black z-0" />
@@ -121,7 +120,7 @@ export default function HomePage() {
             >
               <Button 
                 size="lg"
-                className="bg-neon-red-orange hover:bg-neon-red-orange/90 text-black font-paragraph text-sm sm:text-base px-4 sm:px-8 py-4 sm:py-6 h-auto w-full sm:w-auto"
+                className="bg-neon-red-orange hover:bg-neon-red-orange/90 text-black text-sm sm:text-base px-4 sm:px-8 py-4 sm:py-6 h-auto w-full sm:w-auto font-paragraph"
                 onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
               >
                 <MapPin className="w-4 h-4 mr-2" />
@@ -131,7 +130,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Utility Strip - Status & Facts */}
       <section className="w-full bg-[#1D1410] border-b border-[#DCD0B8]/20 py-4 sm:py-5" aria-label="Status and facts">
         <div className="w-full max-w-[120rem] mx-auto px-3 sm:px-6 md:px-16">
@@ -147,7 +145,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* SEO Paragraph Section - The Room */}
       <section id="about" className="w-full py-12 sm:py-16 md:py-20 bg-black border-b border-[#DCD0B8]/10" aria-label="About One Fourteen">
         <div className="w-full max-w-[120rem] mx-auto px-3 sm:px-6 md:px-16">
@@ -167,7 +164,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Upcoming Events - Tonight */}
       <section id="events-section" className="w-full py-12 sm:py-16 md:py-20 bg-black border-t border-[#DCD0B8]/10" aria-label="Upcoming Events">
         <div className="w-full max-w-[120rem] mx-auto px-3 sm:px-6 md:px-16">
@@ -317,7 +313,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Gallery Preview - Inside 114 */}
       <section id="gallery" className="w-full py-12 sm:py-16 md:py-20 bg-black border-t border-[#DCD0B8]/10" aria-label="Inside One Fourteen">
         <div className="w-full max-w-[120rem] mx-auto px-3 sm:px-6 md:px-16">
@@ -387,7 +382,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Location & Hours - Find Us */}
       <section id="location" className="w-full py-12 sm:py-16 md:py-20 bg-[#EEE5D4]" aria-label="Location and hours">
         <div className="w-full max-w-[120rem] mx-auto px-3 sm:px-6 md:px-16">
@@ -430,7 +424,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       <Footer />
     </div>
   );

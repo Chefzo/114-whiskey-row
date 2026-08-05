@@ -19,9 +19,10 @@ export default {
                 '9xl': ['8rem', { lineHeight: '1', letterSpacing: '0.025em', fontWeight: '700' }],
             },
             fontFamily: {
-                heading: "syne",
-                paragraph: "azeret-mono",
-                handwriting: "caveat"
+                heading: ["syne"],
+                paragraph: ["azeret-mono"],
+                handwriting: ["caveat"],
+                "noticia-text": ["noticia text", "serif"]
             },
             colors: {
                 'neon-red-orange': '#FF4500',
