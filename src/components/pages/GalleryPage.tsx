@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Camera, ChevronLeft, ChevronRight, AlertCircle } from 'lucide-react';
+import { Camera, ChevronLeft, ChevronRight, AlertCircle, Shuffle } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import Header from '@/components/Header';
@@ -116,6 +116,13 @@ export default function GalleryPage() {
     setSelectedIndex(newIndex);
   };
 
+  const shufflePhotos = useCallback(() => {
+    const shuffled = [...displayedPhotos].sort(() => Math.random() - 0.5);
+    setDisplayedPhotos(shuffled);
+    setSelectedPhoto(null);
+    setSelectedIndex(-1);
+  }, [displayedPhotos]);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -181,6 +188,23 @@ export default function GalleryPage() {
             </div>
           ) : displayedPhotos.length > 0 ? (
             <>
+              {/* Shuffle Button */}
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-6 sm:mb-8 flex justify-end"
+              >
+                <button
+                  onClick={shufflePhotos}
+                  className="flex items-center gap-2 px-4 py-2 bg-neon-red-orange/10 border border-neon-red-orange/30 text-neon-red-orange hover:bg-neon-red-orange/20 hover:border-neon-red-orange/60 transition-all rounded font-paragraph text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-neon-red-orange focus:ring-offset-2 focus:ring-offset-background"
+                  aria-label="Shuffle gallery photos"
+                  title="Randomize photo order"
+                >
+                  <Shuffle size={18} />
+                  Shuffle
+                </button>
+              </motion.div>
+
               <div
                 className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8 md:mb-12"
                 ref={gridRef}
