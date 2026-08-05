@@ -1,5 +1,40 @@
 @import './fonts.css';
 
+/* Vintage font faces */
+/* heading - bebas-neue */
+@font-face {
+  font-family: 'bebas-neue';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/public/fonts/bebasneue/v16/JTUSjIg69CK48gW7PXoo9WdhyyTh89Y.woff2) format('woff2');
+}
+
+/* paragraph - barlow-condensed */
+@font-face {
+  font-family: 'barlow-condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/public/fonts/barlowcondensed/v13/HTx3L3I-JCGChYJ8VI-L6OO_au7B6x_T2lv0tKk7aw.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'barlow-condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/public/fonts/barlowcondensed/v13/HTx3L3I-JCGChYJ8VI-L6OO_au7B6x7T2lv0tKk7aw.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'barlow-condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/public/fonts/barlowcondensed/v13/HTx3L3I-JCGChYJ8VI-L6OO_au7B6xHT2lv0tKk.woff2) format('woff2');
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -114,7 +149,7 @@
   .wix-review-author,
   .wix-reviewer-name {
     color: #FFFFFF !important;
-    font-family: 'Syne', sans-serif !important;
+    font-family: 'bebas-neue', sans-serif !important;
     font-weight: 600 !important;
   }
 
@@ -148,7 +183,7 @@
     background-color: #FF4500 !important;
     color: #000000 !important;
     border-color: #FF4500 !important;
-    font-family: 'Azeret Mono', monospace !important;
+    font-family: 'barlow-condensed', monospace !important;
     font-weight: 600 !important;
   }
 
@@ -186,7 +221,7 @@
   label[class*="review"],
   .wix-review-label {
     color: #FFFFFF !important;
-    font-family: 'Syne', sans-serif !important;
+    font-family: 'bebas-neue', sans-serif !important;
   }
 
   /* Review section headings */
@@ -197,7 +232,7 @@
   .wix-reviews-heading,
   .wix-reviews-title {
     color: #FFFFFF !important;
-    font-family: 'Syne', sans-serif !important;
+    font-family: 'bebas-neue', sans-serif !important;
     font-weight: 700 !important;
   }
 
