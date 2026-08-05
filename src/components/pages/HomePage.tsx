@@ -96,7 +96,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black z-0" />
         <div className="absolute inset-0 z-5 opacity-40">
           <Image
-            src="https://static.wixstatic.com/media/528274_7bc832b382af4413beb7821cd87c4bce~mv2.jpg"
+            src="https://static.wixstatic.com/media/528274_7097863a910e48d2806eb45584ab1745~mv2.png"
             alt="Faded background image of One Fourteen bar"
             className="w-full h-full object-cover"
             width={1920}
