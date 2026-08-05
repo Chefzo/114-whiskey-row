@@ -35,7 +35,7 @@ export default function Header() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`font-paragraph text-xs uppercase tracking-widest transition-colors ${
+                className={`font-heading text-xs uppercase tracking-widest transition-colors ${
                   isActive(link.path) ? 'text-foreground' : 'text-foreground/70 hover:text-foreground'
                 }`}
               >
