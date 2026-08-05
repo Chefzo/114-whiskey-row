@@ -82,7 +82,7 @@ export default function EventsPage() {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="font-paragraph text-xs uppercase tracking-[0.15em] text-neon-red-orange font-bold"
+                className="text-xs uppercase tracking-[0.15em] text-neon-red-orange font-bold"
               >
                 ✦ Live Entertainment
               </motion.span>

@@ -110,7 +110,7 @@ export default function HomePage() {
               A LATE ROOM ON WHISKEY ROW.
             </h1>
             
-            <p className="font-paragraph text-sm sm:text-base md:text-lg text-foreground/70 mb-6 sm:mb-8 md:mb-10 tracking-wide leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-foreground/70 mb-6 sm:mb-8 md:mb-10 tracking-wide leading-relaxed">
               Walk-ins only. 21+.
             </p>
 
@@ -121,7 +121,7 @@ export default function HomePage() {
             >
               <Button 
                 size="lg"
-                className="bg-neon-red-orange hover:bg-neon-red-orange/90 text-black font-paragraph text-sm sm:text-base px-4 sm:px-8 py-4 sm:py-6 h-auto w-full sm:w-auto"
+                className="bg-neon-red-orange hover:bg-neon-red-orange/90 text-black text-sm sm:text-base px-4 sm:px-8 py-4 sm:py-6 h-auto w-full sm:w-auto"
                 onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
               >
                 <MapPin className="w-4 h-4 mr-2" />
@@ -137,11 +137,11 @@ export default function HomePage() {
         <div className="w-full max-w-[120rem] mx-auto px-3 sm:px-6 md:px-16">
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 md:gap-12">
             <div className="flex-1">
-              <p className="font-paragraph text-xs uppercase tracking-widest text-[#DCD0B8]/60 mb-1">Late Night Status</p>
+              <p className="text-xs uppercase tracking-widest text-[#DCD0B8]/60 mb-1">Late Night Status</p>
               <p className="font-heading text-sm sm:text-base text-[#EEE5D4]">Open Tue–Sun · 4pm–2am</p>
             </div>
             <div className="flex-1">
-              <p className="font-paragraph text-xs uppercase tracking-widest text-[#DCD0B8]/60 mb-1">Access</p>
+              <p className="text-xs uppercase tracking-widest text-[#DCD0B8]/60 mb-1">Access</p>
               <p className="font-heading text-sm sm:text-base text-[#EEE5D4]">Whiskey Row · Walk-ins · 21+</p>
             </div>
           </div>

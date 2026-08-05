@@ -23,7 +23,7 @@ export default function StoryPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                <p className="font-paragraph text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">More than ten years ago, the founder of One Fourteen used to walk past this building on Main Street.</p>
+                <p className="text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">More than ten years ago, the founder of One Fourteen used to walk past this building on Main Street.</p>
               </motion.div>
 
               <motion.div
@@ -31,7 +31,7 @@ export default function StoryPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.15 }}
               >
-                <p className="font-paragraph text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
+                <p className="text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
                   Not looking for a concept.
                   <br />
                   Not chasing a trend.
@@ -45,7 +45,7 @@ export default function StoryPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <p className="font-paragraph text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
+                <p className="text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
                   At the time, the idea was a coffee shop called Whiskey Row Café.
                   <br />
                   Not because coffee was the point — but because it felt like the kind of place people return to.
@@ -59,7 +59,7 @@ export default function StoryPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.25 }}
               >
-                <p className="font-paragraph text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
+                <p className="text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
                   Over time, it became clear the idea was never really about coffee.
                   <br />
                   It was about the room.
@@ -71,7 +71,7 @@ export default function StoryPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                <p className="font-paragraph text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
+                <p className="text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
                   A simple space filled with energy.
                   <br />
                   Late nights.
@@ -87,7 +87,7 @@ export default function StoryPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.35 }}
               >
-                <p className="font-paragraph text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
+                <p className="text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
                   One Fourteen came from that original thought.
                   <br />
                   A bar built on connection, not polish.
@@ -103,7 +103,7 @@ export default function StoryPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <p className="font-paragraph text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
+                <p className="text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
                   Because in the end, it's never about how a space looks from the outside.
                   <br />
                   It's about what happens once you walk in.
@@ -115,7 +115,7 @@ export default function StoryPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.45 }}
               >
-                <p className="font-paragraph text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
+                <p className="text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed">
                   That's One Fourteen.
                   <br />
                   Whiskey Row.
