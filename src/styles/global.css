@@ -87,7 +87,7 @@
 
   /* Consistent button styles */
   button {
-    @apply font-paragraph font-medium;
+    @apply font-heading font-medium;
   }
 
   /* Consistent label styles */
