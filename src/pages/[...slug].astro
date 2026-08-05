@@ -10,6 +10,10 @@ const pathname = Astro.url.pathname;
 
 <html lang="en" class="w-full h-full">
   <head>
+    <!-- Critical: Viewport meta tag for mobile responsiveness -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    
     <!-- Early Connection Hints for Wix Services - Performance Optimization -->
     <link rel="preconnect" href="https://wixapis.com" />
     <link rel="preconnect" href="https://edge.wixapis.com" />

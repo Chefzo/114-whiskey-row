@@ -124,8 +124,8 @@ export interface Events {
   callToActionUrl?: string;
   /** @wixFieldType datetime */
   publishDate?: Date | string;
-  /** @wixFieldType text */
-  unpublishDate?: string;
+  /** @wixFieldType datetime */
+  unpublishDate?: Date | string;
 }
 
 
