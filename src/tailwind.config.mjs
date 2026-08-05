@@ -20,7 +20,7 @@ export default {
             },
             fontFamily: {
                 heading: ["syne"],
-                paragraph: ["azeret-mono"],
+                paragraph: ["system-ui", "sans-serif"],
                 handwriting: ["caveat"],
                 "noticia-text": ["noticia text", "serif"]
             },

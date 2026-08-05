@@ -161,7 +161,7 @@
   .wix-review-date,
   .wix-review-meta {
     color: rgba(255, 255, 255, 0.6) !important;
-    font-family: 'Azeret Mono', monospace !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
   }
 
   /* Star ratings */
