@@ -92,8 +92,8 @@ export default function HomePage() {
       <Header />
       {/* Hero Section - Optimized for mobile performance */}
       <section className="relative w-full min-h-[120vh] sm:min-h-[110vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-20 md:pt-16" aria-label="Hero section">
-        <div className="absolute inset-0 bg-black z-0" />
-        <div className="absolute inset-0 z-5 opacity-40">
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black z-0" />
+        <div className="absolute inset-0 z-5 opacity-25">
           <Image
             src="https://static.wixstatic.com/media/528274_7097863a910e48d2806eb45584ab1745~mv2.png"
             alt="Faded background image of One Fourteen bar"
@@ -101,6 +101,10 @@ export default function HomePage() {
             width={1920}
           />
         </div>
+        
+        {/* Enhanced gradient overlay for better text readability and depth */}
+        <div className="absolute inset-0 z-7 bg-gradient-to-r from-black/60 via-black/40 to-black/60" />
+        <div className="absolute inset-0 z-8 bg-gradient-to-b from-transparent via-transparent to-black/50" />
         
         <div className="relative z-10 w-full max-w-[120rem] mx-auto px-3 sm:px-6 md:px-16 py-8 sm:py-12 md:py-20">
           {/* Hero headline renders immediately without animation on mobile */}
