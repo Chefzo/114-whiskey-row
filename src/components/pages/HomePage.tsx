@@ -92,9 +92,9 @@ export default function HomePage() {
       <Header />
       
       {/* Hero Section - Optimized for mobile performance */}
-      <section className="relative w-full min-h-screen sm:min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 sm:pt-20 md:pt-16" aria-label="Hero section">
+      <section className="relative w-full min-h-[120vh] sm:min-h-[110vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-20 md:pt-16" aria-label="Hero section">
         <div className="absolute inset-0 bg-black z-0" />
-        <div className="absolute inset-0 z-5 opacity-20">
+        <div className="absolute inset-0 z-5 opacity-40">
           <Image
             src="https://static.wixstatic.com/media/528274_7bc832b382af4413beb7821cd87c4bce~mv2.jpg"
             alt="Faded background image of One Fourteen bar"
