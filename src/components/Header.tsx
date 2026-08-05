@@ -82,7 +82,7 @@ export default function Header() {
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`block font-paragraph text-sm uppercase tracking-wider transition-colors py-2 px-3 ${
+                  className={`block font-heading text-sm uppercase tracking-widest transition-colors py-2 px-3 ${
                     isActive(link.path) ? 'text-neon-red-orange' : 'text-foreground/70 hover:text-foreground'
                   }`}
                 >
