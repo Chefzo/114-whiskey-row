@@ -112,7 +112,7 @@ export default function VisitPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-xs sm:text-sm md:text-lg text-foreground/80 max-w-3xl leading-relaxed">
+            <p className="font-paragraph text-xs sm:text-sm md:text-lg text-foreground/80 max-w-3xl leading-relaxed">
               Visit One Fourteen, the best late-night bar in Louisville, KY, located at 114 W Main Street on historic Whiskey Row in downtown Louisville. We're open Tuesday through Sunday from 4pm to 2am. Walk-ins only. 21+. Find easy parking and directions to our bar in Louisville near the KFC Yum Center. Discover why One Fourteen is the top-rated bar on Whiskey Row for nightlife, DJs, and cocktails in downtown Louisville.
             </p>
           </motion.div>
@@ -139,7 +139,7 @@ export default function VisitPage() {
                     <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
                       Location
                     </h2>
-                    <address className="text-lg text-foreground/90 not-italic">
+                    <address className="font-paragraph text-lg text-foreground/90 not-italic">
                       114 W Main St<br />
                       Louisville, KY 40202
                     </address>
@@ -147,7 +147,7 @@ export default function VisitPage() {
                 </div>
 
                 <div className="bg-warm-amber/10 border border-warm-amber/30 rounded p-4 mb-6">
-                  <p className="text-sm text-warm-amber">
+                  <p className="font-paragraph text-sm text-warm-amber">
                     📍 Directly on Whiskey Row, across from the KFC Yum Center
                   </p>
                 </div>
@@ -156,7 +156,7 @@ export default function VisitPage() {
                   href={googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-neon-red-orange text-black text-sm uppercase tracking-wider px-6 py-3 rounded transition-all hover:bg-neon-red-orange/90 contrast-[1.25]"
+                  className="inline-flex items-center gap-2 bg-neon-red-orange text-black font-paragraph text-sm uppercase tracking-wider px-6 py-3 rounded transition-all hover:bg-neon-red-orange/90 contrast-[1.25]"
                 >
                   <Navigation size={18} />
                   Get Directions
@@ -176,7 +176,7 @@ export default function VisitPage() {
                     <div className="mb-6 pb-6 border-b border-neon-red-orange/10">
                       <div className="flex items-center gap-3">
                         <div className={`w-3 h-3 rounded-full flex-shrink-0 ${status.isOpen ? 'bg-green-500 shadow-lg shadow-green-500/50' : 'bg-red-500 shadow-lg shadow-red-500/50'}`} />
-                        <p className={`text-base font-medium ${status.isOpen ? 'text-green-400' : 'text-red-400'}`}>
+                        <p className={`font-paragraph text-base font-medium ${status.isOpen ? 'text-green-400' : 'text-red-400'}`}>
                           {status.text}
                         </p>
                       </div>
@@ -184,16 +184,16 @@ export default function VisitPage() {
                     
                     <div className="space-y-4">
                       <div className="flex justify-between items-center pb-3 border-b border-neon-red-orange/10">
-                        <span className="text-base text-foreground/80">Monday</span>
-                        <span className="text-base text-foreground/60 font-medium">Closed</span>
+                        <span className="font-paragraph text-base text-foreground/80">Monday</span>
+                        <span className="font-paragraph text-base text-foreground/60 font-medium">Closed</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-base text-foreground/80">Tuesday - Sunday</span>
-                        <span className="text-base text-neon-red-orange font-medium">4:00 PM - 2:00 AM</span>
+                        <span className="font-paragraph text-base text-foreground/80">Tuesday - Sunday</span>
+                        <span className="font-paragraph text-base text-neon-red-orange font-medium">4:00 PM - 2:00 AM</span>
                       </div>
                     </div>
 
-                    <p className="text-sm text-foreground/70 mt-6 pt-4 border-t border-neon-red-orange/10">
+                    <p className="font-paragraph text-sm text-foreground/70 mt-6 pt-4 border-t border-neon-red-orange/10">
                       Indoor bar with a backyard out back.
                     </p>
                   </div>
@@ -205,10 +205,10 @@ export default function VisitPage() {
                 <h3 className="font-heading text-2xl font-bold text-foreground mb-3">
                   Game Day Ready
                 </h3>
-                <p className="text-base text-foreground/80 mb-4">
+                <p className="font-paragraph text-base text-foreground/80 mb-4">
                   Perfect spot before and after games at the Yum Center. Get here early on game days — it fills up fast.
                 </p>
-                <p className="text-sm text-warm-amber">
+                <p className="font-paragraph text-sm text-warm-amber">
                   Cardinals, concerts, and everything in between.
                 </p>
               </div>
@@ -242,7 +242,7 @@ export default function VisitPage() {
                 <h3 className="font-heading text-xl font-bold text-foreground mb-3">
                   Parking
                 </h3>
-                <p className="text-sm text-foreground/80">
+                <p className="font-paragraph text-sm text-foreground/80">
                   Street parking and nearby lots available. On game days, arrive early or use rideshare.
                 </p>
               </div>
@@ -299,7 +299,7 @@ export default function VisitPage() {
                       <h3 className="font-heading text-xl font-bold text-foreground mb-3">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-foreground/70 leading-relaxed">
+                      <p className="font-paragraph text-sm text-foreground/70 leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -323,7 +323,7 @@ export default function VisitPage() {
             <h2 className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-4">
               See You <span className="text-neon-red-orange">Tonight</span>
             </h2>
-            <p className="text-lg text-foreground/80 mb-8 max-w-2xl mx-auto">
+            <p className="font-paragraph text-lg text-foreground/80 mb-8 max-w-2xl mx-auto">
               No reservations. No dress code. Just show up.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -331,7 +331,7 @@ export default function VisitPage() {
                 href={googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-neon-red-orange text-white text-sm uppercase tracking-wider px-8 py-3 rounded transition-all hover:shadow-[0_0_20px_rgba(255,69,0,0.5)] contrast-[1.25]"
+                className="inline-flex items-center justify-center gap-2 bg-neon-red-orange text-white font-paragraph text-sm uppercase tracking-wider px-8 py-3 rounded transition-all hover:shadow-[0_0_20px_rgba(255,69,0,0.5)] contrast-[1.25]"
               >
                 <Navigation size={18} />
                 Navigate Here

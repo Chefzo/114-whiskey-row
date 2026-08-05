@@ -212,7 +212,7 @@ export default function MenuPage() {
                       <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4">
                         {section.title}
                       </h2>
-                      <p className="text-sm sm:text-base md:text-lg text-foreground/70 leading-relaxed">
+                      <p className="font-paragraph text-sm sm:text-base md:text-lg text-foreground/70 leading-relaxed">
                         {section.description}
                       </p>
                     </motion.div>

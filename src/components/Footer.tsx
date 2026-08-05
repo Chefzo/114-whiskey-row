@@ -18,13 +18,13 @@ export default function Footer() {
                 One Fourteen
               </h3>
               <div className="space-y-2 mb-6">
-                <p className="text-sm sm:text-base text-foreground/90">
+                <p className="font-paragraph text-sm sm:text-base text-foreground/90">
                   114 W Main St, Louisville, KY 40202
                 </p>
-                <p className="text-sm sm:text-base text-foreground/90">
+                <p className="font-paragraph text-sm sm:text-base text-foreground/90">
                   Open Tue–Sun · 4pm–2am
                 </p>
-                <p className="text-sm sm:text-base text-foreground/90">
+                <p className="font-paragraph text-sm sm:text-base text-foreground/90">
                   Walk-ins only. 21+.
                 </p>
               </div>
@@ -38,7 +38,7 @@ export default function Footer() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Instagram size={20} />
-                <span className="text-sm">Instagram</span>
+                <span className="font-paragraph text-sm">Instagram</span>
               </motion.a>
             </div>
           </motion.div>
@@ -50,7 +50,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="pt-6 mt-6 border-t border-foreground/10"
           >
-            <p className="text-xs text-foreground/50 text-center">
+            <p className="font-paragraph text-xs text-foreground/50 text-center">
               One Fourteen · Whiskey Row · Louisville, KY
             </p>
           </motion.div>

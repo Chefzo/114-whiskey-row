@@ -20,6 +20,7 @@ export default {
             },
             fontFamily: {
                 heading: "syne",
+                paragraph: "azeret-mono",
                 handwriting: "caveat"
             },
             colors: {
