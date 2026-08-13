@@ -94,16 +94,16 @@ export default function HomePage() {
       <section className="relative w-full min-h-[120vh] sm:min-h-[110vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-20 md:pt-16" aria-label="Hero section">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://static.wixstatic.com/media/528274_7097863a910e48d2806eb45584ab1745~mv2.png"
-            alt="Background image of One Fourteen bar"
+            src="https://static.wixstatic.com/media/528274_54fc2f37f3c846ce863a78517dc71af9~mv2.jpg"
+            alt="Cocktail at One Fourteen bar with ambient lighting"
             className="w-full h-full object-cover"
             width={1920}
           />
         </div>
         
-        {/* Subtle gradient overlay for better text readability */}
-        <div className="absolute inset-0 z-5 bg-gradient-to-r from-black/50 via-black/30 to-black/50" />
-        <div className="absolute inset-0 z-6 bg-gradient-to-b from-transparent via-transparent to-black/40" />
+        {/* Subtle overlay for better text readability - not too overpowering */}
+        <div className="absolute inset-0 z-5 bg-gradient-to-r from-black/40 via-black/20 to-black/40" />
+        <div className="absolute inset-0 z-6 bg-gradient-to-b from-transparent via-transparent to-black/30" />
         
         <div className="relative z-7 w-full max-w-[120rem] mx-auto px-3 sm:px-6 md:px-16 py-8 sm:py-12 md:py-20">
           {/* Hero headline renders immediately without animation on mobile */}
