@@ -10,17 +10,6 @@ import { useToast } from '@/hooks/use-toast';
 
 export default function ContactPage() {
   useEffect(() => {
-    // Google Tag Manager noscript fallback
-    const noscript = document.createElement('noscript');
-    const iframe = document.createElement('iframe');
-    iframe.src = 'https://www.googletagmanager.com/ns.html?id=GTM-WMRZT82N';
-    iframe.height = '0';
-    iframe.width = '0';
-    iframe.style.display = 'none';
-    iframe.style.visibility = 'hidden';
-    noscript.appendChild(iframe);
-    document.body.insertBefore(noscript, document.body.firstChild);
-
     // Add JSON-LD schema markup for LocalBusiness
     const schema = {
       '@context': 'https://schema.org',
