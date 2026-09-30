@@ -108,4 +108,31 @@
   }
 }
 
+/* Hide Google reviews widget and other unwanted Wix plugins */
+[data-testid="google-reviews-widget"],
+.google-reviews-widget,
+.wix-google-reviews,
+iframe[src*="google"],
+iframe[src*="review"],
+.wix-plugin-google-reviews,
+.wix-reviews-widget,
+.goog-reviews,
+[class*="google-review"],
+[class*="google-rating"],
+[id*="google-review"],
+[id*="google-rating"],
+div[style*="google"],
+.reviews-widget,
+.rating-widget,
+.google-badge {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  pointer-events: none !important;
+}
+
 
