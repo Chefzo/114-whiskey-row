@@ -102,8 +102,8 @@ export default function HomePage() {
         </div>
         
         {/* Subtle overlay for better text readability - not too overpowering */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/50 via-black/30 to-black/50" />
-        <div className="absolute inset-0 z-20 bg-gradient-to-b from-transparent via-transparent to-black/40" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/25 via-black/15 to-black/25" />
+        <div className="absolute inset-0 z-20 bg-gradient-to-b from-transparent via-transparent to-black/20" />
         
         <div className="relative z-30 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16 py-8 sm:py-12 md:py-20">
           {/* Hero headline renders immediately without animation on mobile */}
