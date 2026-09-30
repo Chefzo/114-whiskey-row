@@ -91,7 +91,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-black">
       <Header />
       {/* Hero Section - Optimized for mobile performance */}
-      <section className="relative w-full min-h-[120vh] sm:min-h-[110vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-20 md:pt-16" aria-label="Hero section">
+      <section className="relative w-full min-h-[100vh] sm:min-h-[110vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-20 md:pt-16" aria-label="Hero section">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://static.wixstatic.com/media/528274_54fc2f37f3c846ce863a78517dc71af9~mv2.jpg"
@@ -102,17 +102,17 @@ export default function HomePage() {
         </div>
         
         {/* Subtle overlay for better text readability - not too overpowering */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/40 via-black/20 to-black/40" />
-        <div className="absolute inset-0 z-20 bg-gradient-to-b from-transparent via-transparent to-black/30" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/50 via-black/30 to-black/50" />
+        <div className="absolute inset-0 z-20 bg-gradient-to-b from-transparent via-transparent to-black/40" />
         
-        <div className="relative z-30 w-full max-w-[120rem] mx-auto px-3 sm:px-6 md:px-16 py-8 sm:py-12 md:py-20">
+        <div className="relative z-30 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-16 py-8 sm:py-12 md:py-20">
           {/* Hero headline renders immediately without animation on mobile */}
           <div className="max-w-5xl">
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-foreground mb-3 sm:mb-4 md:mb-6 leading-[1.1] tracking-tight">
+            <h1 className="font-heading text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-foreground mb-4 sm:mb-4 md:mb-6 leading-[1.1] tracking-tight">
               A LATE ROOM ON WHISKEY ROW.
             </h1>
             
-            <p className="font-paragraph text-sm sm:text-base md:text-lg text-foreground/70 mb-6 sm:mb-8 md:mb-10 tracking-wide leading-relaxed">
+            <p className="font-paragraph text-xs sm:text-base md:text-lg text-foreground/70 mb-6 sm:mb-8 md:mb-10 tracking-wide leading-relaxed">
               Walk-ins only. 21+.
             </p>
 
@@ -123,7 +123,7 @@ export default function HomePage() {
             >
               <Button 
                 size="lg"
-                className="bg-neon-red-orange hover:bg-neon-red-orange/90 text-black text-sm sm:text-base px-4 sm:px-8 py-4 sm:py-6 h-auto w-full sm:w-auto font-paragraph"
+                className="bg-neon-red-orange hover:bg-neon-red-orange/90 text-black text-xs sm:text-base px-4 sm:px-8 py-3 sm:py-6 h-auto w-full sm:w-auto font-paragraph"
                 onClick={() => window.open('https://maps.google.com/?q=114+W+Main+St+Louisville+KY+40202', '_blank')}
               >
                 <MapPin className="w-4 h-4 mr-2" />
