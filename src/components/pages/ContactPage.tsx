@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { HOURS_LINE, openingHoursSpecification } from '@/lib/bar-hours';
 
 export default function ContactPage() {
   useEffect(() => {
@@ -15,7 +16,7 @@ export default function ContactPage() {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
       'name': 'One Fourteen Bar',
-      'description': 'Late-night bar on Whiskey Row in downtown Louisville, Kentucky. Open Tuesday–Sunday, 4pm–2am. Walk-ins only. 21+.',
+      'description': `Late-night bar on Whiskey Row in downtown Louisville, Kentucky. ${HOURS_LINE}. Walk-ins only. 21+.`,
       'url': 'https://114barwhiskeyrow.com',
       'telephone': '+15029071400',
       'email': 'info@114whiskeyrow.com',
@@ -27,14 +28,7 @@ export default function ContactPage() {
         'postalCode': '40202',
         'addressCountry': 'US'
       },
-      'openingHoursSpecification': [
-        {
-          '@type': 'OpeningHoursSpecification',
-          'dayOfWeek': ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-          'opens': '16:00',
-          'closes': '02:00'
-        }
-      ],
+      'openingHoursSpecification': openingHoursSpecification,
       'sameAs': [
         'https://www.instagram.com/onefourteenwhiskeyrow/'
       ]
@@ -173,8 +167,7 @@ export default function ContactPage() {
               <div>
                 <h3 className="font-heading text-lg font-bold text-foreground mb-3">Hours</h3>
                 <div className="font-paragraph text-sm text-foreground/70 space-y-1">
-                  <p>Tuesday–Sunday: 4pm–2am</p>
-                  <p>Monday: Closed</p>
+                  <p>{HOURS_LINE}</p>
                   <p className="text-warm-amber mt-2">Walk-ins only • 21+</p>
                 </div>
               </div>
@@ -457,7 +450,7 @@ export default function ContactPage() {
               Ready to experience One Fourteen?
             </h3>
             <p className="font-paragraph text-sm sm:text-base md:text-lg text-foreground/70 mb-6 sm:mb-8 max-w-2xl mx-auto">
-              Join us for late nights on Whiskey Row. Walk-ins only. 21+. Open Tuesday–Sunday, 4pm–2am.
+              Join us for late nights on Whiskey Row. Walk-ins only. 21+. {HOURS_LINE}.
             </p>
             
             <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row sm:justify-center">

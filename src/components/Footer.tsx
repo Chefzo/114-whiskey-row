@@ -1,5 +1,6 @@
 import { Instagram } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { HOURS_LINE } from '@/lib/bar-hours';
 
 export default function Footer() {
   return (
@@ -22,7 +23,7 @@ export default function Footer() {
                   114 W Main St, Louisville, KY 40202
                 </p>
                 <p className="font-paragraph text-sm sm:text-base text-foreground/90">
-                  Open Tue–Sun · 4pm–2am
+                  {HOURS_LINE}
                 </p>
                 <p className="font-paragraph text-sm sm:text-base text-foreground/90">
                   Walk-ins only. 21+.

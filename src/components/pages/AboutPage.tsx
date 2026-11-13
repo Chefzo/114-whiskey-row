@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { HOURS_LINE } from '@/lib/bar-hours';
 
 export default function AboutPage() {
   useEffect(() => {
@@ -42,7 +43,7 @@ export default function AboutPage() {
               About One Fourteen | Whiskey Row Bar in Louisville
             </h1>
             <p className="font-paragraph text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed max-w-2xl">
-              One Fourteen is a late night bar on Whiskey Row in downtown Louisville, KY. Built around music, walk-in culture, and a no-reservations policy, it's a spot that keeps the night moving. Open until 2am Tuesday through Sunday.
+              One Fourteen is a late night bar on Whiskey Row in downtown Louisville, KY. Built around music, walk-in culture, and a no-reservations policy, it's a spot that keeps the night moving. {HOURS_LINE}.
             </p>
           </motion.div>
         </div>
