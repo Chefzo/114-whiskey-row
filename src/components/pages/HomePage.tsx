@@ -7,6 +7,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { BaseCrudService } from '@/integrations';
 import { GalleryPhotos, Events } from '@/entities';
+import { HOURS_LINE } from '@/lib/bar-hours';
 
 export default function HomePage() {
   const [galleryPhotos, setGalleryPhotos] = useState<GalleryPhotos[]>([]);
@@ -139,7 +140,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 md:gap-12">
             <div className="flex-1">
               <p className="font-paragraph text-xs uppercase tracking-widest text-[#DCD0B8]/60 mb-1">Late Night Status</p>
-              <p className="font-heading text-sm sm:text-base text-[#EEE5D4]">Open Tue–Sun · 4pm–2am</p>
+              <p className="font-heading text-sm sm:text-base text-[#EEE5D4]">{HOURS_LINE}</p>
             </div>
             <div className="flex-1">
               <p className="font-paragraph text-xs uppercase tracking-widest text-[#DCD0B8]/60 mb-1">Access</p>
@@ -162,7 +163,7 @@ export default function HomePage() {
               <div className="w-8 h-px bg-[#F1B653]/40" />
             </div>
             <p className="font-paragraph text-sm sm:text-base md:text-lg text-foreground/80 max-w-3xl leading-relaxed">
-              One Fourteen is a late night bar located at 114 W Main Street on <a href="/visit" className="text-[#F1B653] hover:text-[#F1B653]/80 transition-colors">Whiskey Row</a> in downtown Louisville, KY. Steps from the Yum Center, we're open Tuesday through Sunday until 2am with DJs, game day sound on, and a steady nightlife crowd. Walk-ins only. 21+.
+              One Fourteen is a late night bar located at 114 W Main Street on <a href="/visit" className="text-[#F1B653] hover:text-[#F1B653]/80 transition-colors">Whiskey Row</a> in downtown Louisville, KY. Steps from the Yum Center. {HOURS_LINE}. DJs, game day sound on, and a steady nightlife crowd. Walk-ins only. 21+.
             </p>
           </motion.div>
         </div>
@@ -408,7 +409,7 @@ export default function HomePage() {
                   Whiskey Row, Louisville, KY 40202
                 </p>
                 <p className="font-heading text-base sm:text-lg text-[#1D1410] font-semibold mb-1">
-                  Open Tue–Sun · 4pm–2am
+                  {HOURS_LINE}
                 </p>
                 <p className="font-paragraph text-sm sm:text-base text-[#1D1410]/70">
                   Walk-ins only. 21+.

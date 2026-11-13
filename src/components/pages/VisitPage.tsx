@@ -4,18 +4,18 @@ import { MapPin, Clock, Navigation, Zap, Users, Lightbulb } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import { HOURS_LINE } from '@/lib/bar-hours';
 
 // Helper function to determine open/closed status
 function getOpenStatus() {
   const now = new Date();
-  const day = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
+  const day = now.getDay(); // 0 = Sunday, 1 = Monday, 6 = Saturday
   const hours = now.getHours();
   const minutes = now.getMinutes();
   const currentTime = hours * 60 + minutes; // Convert to minutes since midnight
 
-  // Monday (1) is closed
+  // Monday (1) is closed. Tuesday opens at 4pm.
   if (day === 1) {
-    // Closed on Monday, opens at 4pm Tuesday
     return {
       isOpen: false,
       text: 'Closed · Opens at 4:00 PM',
@@ -23,15 +23,15 @@ function getOpenStatus() {
     };
   }
 
-  // Tuesday-Sunday: 4:00 PM (960 min) - 2:00 AM (120 min next day)
-  const openTime = 16 * 60; // 4:00 PM in minutes
+  // Saturday opens at noon. Tue–Fri and Sunday open at 4pm. All close at 2am.
+  const openTime = day === 6 ? 12 * 60 : 16 * 60;
   const closeTime = 2 * 60; // 2:00 AM in minutes
+  const opensLabel = day === 6 ? '12:00 PM' : '4:00 PM';
 
   let isOpen = false;
   let nextEvent = '';
 
   if (currentTime >= openTime) {
-    // After 4 PM - still open (closes at 2 AM)
     isOpen = true;
     nextEvent = 'Closes at 2:00 AM';
   } else if (currentTime < closeTime) {
@@ -39,9 +39,8 @@ function getOpenStatus() {
     isOpen = true;
     nextEvent = 'Closes at 2:00 AM';
   } else {
-    // Between 2 AM and 4 PM - closed
     isOpen = false;
-    nextEvent = 'Opens at 4:00 PM';
+    nextEvent = `Opens at ${opensLabel}`;
   }
 
   const statusText = isOpen ? `Open now · ${nextEvent}` : `Closed · ${nextEvent}`;
@@ -102,7 +101,7 @@ export default function VisitPage() {
             transition={{ duration: 0.6 }}
           >
             <p className="font-paragraph text-xs sm:text-sm md:text-lg text-foreground/80 max-w-3xl leading-relaxed">
-              Visit One Fourteen, the best late-night bar in Louisville, KY, located at 114 W Main Street on historic Whiskey Row in downtown Louisville. We're open Tuesday through Sunday from 4pm to 2am. Walk-ins only. 21+. Find easy parking and directions to our bar in Louisville near the KFC Yum Center. Discover why One Fourteen is the top-rated bar on Whiskey Row for nightlife, DJs, and cocktails in downtown Louisville.
+              Visit One Fourteen, the best late-night bar in Louisville, KY, located at 114 W Main Street on historic Whiskey Row in downtown Louisville. {HOURS_LINE}. Walk-ins only. 21+. Find easy parking and directions to our bar in Louisville near the KFC Yum Center. Discover why One Fourteen is the top-rated bar on Whiskey Row for nightlife, DJs, and cocktails in downtown Louisville.
             </p>
           </motion.div>
         </div>
@@ -176,8 +175,16 @@ export default function VisitPage() {
                         <span className="font-paragraph text-base text-foreground/80">Monday</span>
                         <span className="font-paragraph text-base text-foreground/60 font-medium">Closed</span>
                       </div>
+                      <div className="flex justify-between items-center pb-3 border-b border-neon-red-orange/10">
+                        <span className="font-paragraph text-base text-foreground/80">Tuesday – Friday</span>
+                        <span className="font-paragraph text-base text-neon-red-orange font-medium">4:00 PM - 2:00 AM</span>
+                      </div>
+                      <div className="flex justify-between items-center pb-3 border-b border-neon-red-orange/10">
+                        <span className="font-paragraph text-base text-foreground/80">Saturday</span>
+                        <span className="font-paragraph text-base text-neon-red-orange font-medium">12:00 PM - 2:00 AM</span>
+                      </div>
                       <div className="flex justify-between items-center">
-                        <span className="font-paragraph text-base text-foreground/80">Tuesday - Sunday</span>
+                        <span className="font-paragraph text-base text-foreground/80">Sunday</span>
                         <span className="font-paragraph text-base text-neon-red-orange font-medium">4:00 PM - 2:00 AM</span>
                       </div>
                     </div>

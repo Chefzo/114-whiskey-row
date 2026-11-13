@@ -1,8 +1,27 @@
 /**
  * Bar hours utility for One Fourteen Bar
  * Monday: Closed
- * Tuesday-Sunday: 4pm-2am
+ * Tuesday–Friday and Sunday: 4pm–2am
+ * Saturday: noon–2am
  */
+
+/** Short hours line used in visible copy and meta descriptions. */
+export const HOURS_LINE = 'Tue–Fri & Sun 4pm–2am, Sat noon–2am, closed Mon';
+
+export const openingHoursSpecification = [
+  {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Sunday'],
+    opens: '16:00',
+    closes: '02:00',
+  },
+  {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Saturday'],
+    opens: '12:00',
+    closes: '02:00',
+  },
+];
 
 export interface BarStatus {
   isOpen: boolean;
@@ -26,7 +45,7 @@ export function getBarStatus(): BarStatus {
     3: { open: 16 * 60, close: 2 * 60 + 24 * 60, label: 'Wed: 4pm - 2am' }, // Wednesday
     4: { open: 16 * 60, close: 2 * 60 + 24 * 60, label: 'Thu: 4pm - 2am' }, // Thursday
     5: { open: 16 * 60, close: 2 * 60 + 24 * 60, label: 'Fri: 4pm - 2am' }, // Friday
-    6: { open: 16 * 60, close: 2 * 60 + 24 * 60, label: 'Sat: 4pm - 2am' }, // Saturday
+    6: { open: 12 * 60, close: 2 * 60 + 24 * 60, label: 'Sat: noon - 2am' }, // Saturday
   };
 
   const todaySchedule = barHours[dayOfWeek];

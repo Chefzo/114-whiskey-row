@@ -1,3 +1,5 @@
+import { HOURS_LINE, openingHoursSpecification } from '@/lib/bar-hours';
+
 interface HeadProps {
   pathname?: string;
 }
@@ -5,18 +7,18 @@ interface HeadProps {
 export const Head = ({ pathname = '/' }: HeadProps) => {
   const siteUrl = 'https://www.114barwhiskeyrow.com/';
   const businessName = 'One Fourteen';
-  const businessDescription = 'One Fourteen is a late night bar on Whiskey Row in downtown Louisville, KY. Open Tue–Sun until 2am. Walk-ins only. DJs and game day sound on.';
+  const businessDescription = `One Fourteen is a late night bar on Whiskey Row in downtown Louisville, KY. ${HOURS_LINE}. Walk-ins only. DJs and game day sound on.`;
   const phone = '+1-502-907-1400';
 
   const pageSEO: Record<string, { title: string; description: string; canonical: string }> = {
     '/': {
       title: 'One Fourteen | Best Late-Night Bar in Louisville KY on Whiskey Row',
-      description: 'One Fourteen is the best late-night bar in Louisville, KY on Whiskey Row. Open Tue–Sun, 4pm–2am. Walk-ins only. 21+. DJs, game-day sound, cocktails, and Sunday industry night. Top-rated bar in downtown Louisville.',
+      description: `One Fourteen is the best late-night bar in Louisville, KY on Whiskey Row. ${HOURS_LINE}. Walk-ins only. 21+. DJs, game-day sound, cocktails, and Sunday industry night. Top-rated bar in downtown Louisville.`,
       canonical: 'https://www.114barwhiskeyrow.com/',
     },
     '/visit': {
       title: 'Visit One Fourteen | Hours, Parking & Directions | Best Bar in Louisville KY',
-      description: 'Visit One Fourteen bar at 114 W Main St on Whiskey Row in downtown Louisville, KY. Open Tue–Sun, 4pm–2am. Walk-ins only. Get directions, parking info, and what to expect at Louisville\'s best late-night bar.',
+      description: `Visit One Fourteen bar at 114 W Main St on Whiskey Row in downtown Louisville, KY. ${HOURS_LINE}. Walk-ins only. Get directions, parking info, and what to expect at Louisville's best late-night bar.`,
       canonical: 'https://www.114barwhiskeyrow.com/visit',
     },
     '/events': {
@@ -31,7 +33,7 @@ export const Head = ({ pathname = '/' }: HeadProps) => {
     },
     '/contact': {
       title: 'Contact One Fourteen Bar | Louisville KY | Whiskey Row',
-      description: 'Contact One Fourteen bar in Louisville, KY on Whiskey Row. Phone: (502) 907-1400, Email: info@114whiskeyrow.com. Open Tue–Sun, 4pm–2am. Walk-ins only. 21+.',
+      description: `Contact One Fourteen bar in Louisville, KY on Whiskey Row. Phone: (502) 907-1400, Email: info@114whiskeyrow.com. ${HOURS_LINE}. Walk-ins only. 21+.`,
       canonical: 'https://www.114barwhiskeyrow.com/contact',
     },
   };
@@ -63,14 +65,7 @@ export const Head = ({ pathname = '/' }: HeadProps) => {
       'latitude': '38.2526',
       'longitude': '-85.7585'
     },
-    'openingHoursSpecification': [
-      {
-        '@type': 'OpeningHoursSpecification',
-        'dayOfWeek': ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        'opens': '16:00',
-        'closes': '02:00'
-      }
-    ],
+    'openingHoursSpecification': openingHoursSpecification,
     'priceRange': '$$',
     'sameAs': [
       'https://www.instagram.com/onefourteenwhiskeyrow/'

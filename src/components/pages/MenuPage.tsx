@@ -8,6 +8,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { BaseCrudService } from '@/integrations';
 import { Cocktails } from '@/entities';
 import { handleFetchError } from '@/lib/error-handler';
+import { HOURS_LINE } from '@/lib/bar-hours';
 
 type MenuSection =
   | {
@@ -348,7 +349,7 @@ export default function MenuPage() {
                 Ready to experience One Fourteen?
               </h3>
               <p className="font-paragraph text-sm sm:text-base md:text-lg text-foreground/70 mb-6 sm:mb-8 max-w-2xl mx-auto">
-                Join us for late nights on Whiskey Row. Walk-ins only. 21+. Open Tuesday–Sunday, 4pm–2am.
+                Join us for late nights on Whiskey Row. Walk-ins only. 21+. {HOURS_LINE}.
               </p>
               
               <div className="flex flex-col gap-3 sm:gap-4">
@@ -376,7 +377,7 @@ export default function MenuPage() {
                   114 W Main St, Louisville, KY 40202
                 </p>
                 <p className="font-paragraph text-xs sm:text-sm text-foreground/60">
-                  Open Tue–Sun · 4pm–2am
+                  {HOURS_LINE}
                 </p>
               </div>
             </motion.div>
